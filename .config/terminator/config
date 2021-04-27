@@ -1,0 +1,50 @@
+[global_config]
+  geometry_hinting = True
+  borderless = True
+  tab_position = hidden
+  title_hide_sizetext = True
+  title_transmit_fg_color = "#eeefff"
+  title_receive_fg_color = "#eeefff"
+  inactive_color_offset = 1.0
+  suppress_multiple_term_dialog = True
+[keybindings]
+  zoom_in = <Primary>equal
+  new_tab = <Primary>m
+  go_next = <Primary>j
+  go_prev = <Primary>k
+  split_horiz = <Alt>n
+  split_vert = <Primary>n
+  page_up_half = <Alt>e
+  page_down_half = <Alt>d
+  resize_up = <Primary><Alt>k
+  resize_down = <Primary><Alt>j
+  resize_left = <Primary><Alt>h
+  resize_right = <Primary><Alt>l
+  move_tab_right = <Primary><Shift>l
+  move_tab_left = <Primary><Shift>h
+  scaled_zoom = <Alt>backslash
+  next_tab = <Primary>l
+  prev_tab = <Primary>h
+  group_all = <Alt>minus
+[profiles]
+  [[default]]
+    background_color = "#263238"
+    cursor_shape = underline
+    cursor_color = "#aaaaaa"
+    font = Liberation Mono 10
+    foreground_color = "#abb2bf"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#263238:#ff5370:#c3e88d:#ffcb6b:#82aaff:#6182b8:#89ddff:#eeefff:#ab7967:#e53935:#91b859:#ffb62c:#6182b8:#7c4dff:#39adb5:#eeefff"
+    use_system_font = False
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]
