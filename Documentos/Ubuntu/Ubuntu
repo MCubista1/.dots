@@ -1,0 +1,735 @@
+# ██╗   ██╗██████╗ ██╗   ██╗███╗   ██╗████████╗██╗   ██╗
+# ██║   ██║██╔══██╗██║   ██║████╗  ██║╚══██╔══╝██║   ██║
+# ██║   ██║██████╔╝██║   ██║██╔██╗ ██║   ██║   ██║   ██║
+# ██║   ██║██╔══██╗██║   ██║██║╚██╗██║   ██║   ██║   ██║
+# ╚██████╔╝██████╔╝╚██████╔╝██║ ╚████║   ██║   ╚██████╔╝
+#  ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝    ╚═════╝
+
+## Descomprimir rar
+sudo apt-get install rar unrar
+unrar x -e file.part1.rar
+
+# Configurar wine
+winecfg
+
+# Instalar progama
+sudo apt update
+sudo apt install nombre-del-paquete
+
+# Ejecutar exe
+wine archivo.exe
+
+# Montar disco
+sudo mkdir /media/x
+sudo mount <path>.iso /media/x
+sudo umount /media/x
+
+# Instalar Chrome
+sudo apt-get update
+sudo apt-get upgrade
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt-get install libxss1 libgconf2-4 libappindicator1 libindicator7
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+google-chrome
+
+# Desinstalar Chrome
+sudo apt-get purge google-chrome-stable
+sudo apt-get autoremove
+
+# Arduino Comprobacion/Permisos
+ls -l /dev | grep ACM
+sudo chmod 666 /dev/ttyACM0
+
+# Desisntalar Progamas Wine
+wine uninstaller
+
+# Ejecutar sh
+chmod +x filename.sh
+./filename.sh
+
+# Buscar Paquetes Aplicaciones
+sudo apt search keyword
+
+# Remover Paquetes Innecesarios
+sudo apt autoremove
+
+# Apagar
+sudo poweroff
+
+# Reiniciar
+sudo reboot
+
+# Editar Archivo
+sudo gedit /path/file
+
+# Ajustar brillo
+Editar /etc/rc.local
+echo '45' > /sys/class/backlight/intel_backlight/brightness
+exit 0
+
+# Administrador de Archivos
+sudo nautilus
+
+# Agregar Pulseaudio
+padsp winecfg
+//test sound
+padsp wine game_executable_name
+
+# Rosetta Stone
+env WINEPREFIX="$HOME/.wine32" wine Rosetta\ Stone.exe
+
+# Remover paquetes
+sudo apt-get remove “nombre-del-paquete”
+sudo apt-get purge “nombre-del-paquete”
+sudo apt-get clean “nombre-del-paquete”
+
+# Instalar Sublimetext
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install sublime-text-installer
+
+# creating 32 bit wineprefix
+WINEARCH=win32 WINEPREFIX="path_to_wineprefix" winecfg
+
+# path_to_wineprefix is the folder where everything goes
+# default is $HOME/.wine
+# use '$HOME/.wine32' for example
+# folder will be created automatically
+
+# installing Rosetta to new wineprefix
+WINEPREFIX="path_to_wineprefix" wine start /unix "path_to_Rosetta_installer"
+
+# running Winetricks to set ALSA
+env WINEPREFIX="$HOME/.wine32" winetricks --gui
+
+# Instalar geckodriver
+Go to the geckodriver releases page. Find the latest version of the driver for your platform and download it. For example:
+    wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
+Extract the file with:
+    tar -xvzf geckodriver*
+Make it executable:
+    chmod +x geckodriver
+Add the driver to your PATH so other tools can find it:
+    export PATH=$PATH:/usr/bin/geckodriver
+    export PATH=$PATH:/usr/local/bin/geckodriver
+
+# Checksum
+md5sum (file name)
+sha256sum (file name)
+sha1sum (file name)
+
+# pdf pdftk impares/pares
+pdftk hints.pdf cat 1-endeven output hints1.pdf
+pdftk hints.pdf cat 1-endodd output hints2.pdf
+
+# MiniDLNA
+sudo service minidlna restart [start, force-reload, stop]
+
+# MiniDLNA configuración
+sudo gedit /etc/minidlna.conf 
+sudo gedit /etc/default/minidlnavideo
+
+# Poweroff timer
+sudo shutdown -P +60  #60 min
+
+# Escritorio remoto
+DISPLAY=:0.0 rdesktop <server>
+
+# Raspberry ssh
+ssh pi@192.168.100.6
+
+# cortar video ffmpeg
+ffmpeg -i "input.mp4" -ss 00:37:45 -c copy -t 00:00:10 output.mp4
+
+# Unir subtitulos (muxing)
+mkvmerge -o movie_with_subs.mkv   movie.mp4  subs.srt
+
+# crop video
+ffmpeg -i in.mp4 -filter:v "crop=640:480:100:0" -crf 18 out.mp4
+(crop= with : height : x : y [top left corner])
+(crf 18# 23 # 28) [0 highest quality]
+
+# rotar video
+ffmpeg -i in.mov -vf "transpose=1" out.mov
+0 = 90CounterCLockwise and Vertical Flip (default)
+1 = 90Clockwise
+2 = 90CounterClockwise
+3 = 90Clockwise and Vertical Flip
+-vf "transpose=2,transpose=2" for 180 degrees.
+
+# reiniciar terminal
+tput reset
+
+
+
+# ██╗   ██╗██████╗ ██╗   ██╗███╗   ██╗████████╗██╗   ██╗    ██████╗
+# ██║   ██║██╔══██╗██║   ██║████╗  ██║╚══██╔══╝██║   ██║    ╚════██╗
+# ██║   ██║██████╔╝██║   ██║██╔██╗ ██║   ██║   ██║   ██║     █████╔╝
+# ██║   ██║██╔══██╗██║   ██║██║╚██╗██║   ██║   ██║   ██║     ╚═══██╗
+# ╚██████╔╝██████╔╝╚██████╔╝██║ ╚████║   ██║   ╚██████╔╝    ██████╔╝
+#  ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝    ╚═════╝     ╚═════╝
+
+## NVIDIA driver, black screen
+sudo apt-get purge nvidia*
+ubuntu-drivers devices
+
+# plymouth bootscreen
+sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/motion/motion.plymouth 100
+sudo update-alternatives --config default.plymouth
+sudo update-initramfs -u
+
+# transparent window
+sudo apt install devilspie
+mkdir -p ~/.devilspie
+nano ~/.devilspie/nautilus_transparent.ds
+devilspie
+
+# window name, info
+xprop
+
+# decimal to hex
+printf 0x%x $((0xffffffff * 80 / 100))
+
+# bright
+sudo crontab -e
+@reboot chown ed /sys/class/backlight/nv_backlight/brightness
+@reboot echo 65 > /sys/class/backlight/nv_backlight/brightness
+
+# windows session
+lwsm save session_n
+lwsm restore session_n
+
+# Sublime Text
+subl
+
+# htop rc
+~/.config/htop/htoprc
+
+ -delete pdf text
+pdftk file_1.pdf output file_unc.pdf uncompress
+sed 's/oldstring/newstring/g' < file_unc.pdf > file_mod.pdf
+pdftk file_mod.pdf output file_2.pdf compress
+
+# fit pdf to kobo
+k2pdfopt -h 1430p -w 1080p file.pdf -mode def -ocr-
+
+# crop pdf
+pdfcrop in.pdf out.pdf
+
+# trim pdf
+./crop -t "nleft ntop nright nbottom" in.pdf out.pdf 
+
+# extraer paginas pdf
+pdftk in.pdf cat n1-n2 output out.pdf
+
+# unir pdfs
+pdftk in_1.pdf in_2.pdf cat output out.pdf
+
+# copiar indice a pdf
+pdftk 1.pdf dump_data output bookmarks.txt
+:%s/#160/#8239/g
+pdftk 2.pdf update_info bookmarks.txt output 2_b.pdf
+
+# pdf images
+pdfimages -png file_path save_path
+
+# flip and invert color
+convert -flop -negate *.png 
+(-flip)
+
+# exFat
+sudo apt istall exfat-utils
+
+# ssh key
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519
+ssh-keygen -t rsa
+ssh-copy-id pi@192.168.100.99
+
+# python install
+python3 setup.py install
+
+# install .deb
+sudo apt install ./name.deb
+
+# webp to png
+dwebp file.webp -o file.png
+
+# rar folder
+rar a folder.rar folder
+
+# pi ssh client
+ssh pi@10.42.0.99
+raspberry
+
+# ssh filesystem client 
+sshfs pi@192.168.100.99:./fx /home/ed/Documentos/fx/midas/pi_ssh
+
+# tor ssh client 
+sudo apt install tor
+tor
+vim ~/.ssh/config
+Host raspi
+  HostName iehaunae9Eex4Hio.onion
+  User pi
+  ProxyCommand /usr/bin/nc -xlocalhost:9050 -X5 %h %p
+
+# flush cache
+sudo systemd-resolve --flush-caches
+sudo systemd-resolve --statistics
+
+# spicetify
+curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
+sudo chmod a+wr /usr/share/spotify 
+sudo chmod a+wr /usr/share/spotify/Apps -R 
+./spicetify
+./spicetify backup apply enable-devtool
+./spicetify update
+
+# spicetify theme
+spicetify config color_scheme <scheme name> 
+
+# retener version de paquete
+sudo apt-mark hold <package-name>
+sudo apt-mark unhold <package-name>
+sudo apt-mark showhold
+
+# lightweight-chart
+npx serve </dev/null &>/dev/null &
+
+# rice
+convert -crop 1360 09-21.png rr.png
+convert -append rr-0.png rr-1.png fn.pn
+
+# vscode vim
+"vim.neovimPath": "/usr/bin/nvim",
+"vim.enableNeovim": true,
+
+# vscode vim plugins key bindings
+# vim-surronud
+ys<motion><desired> # add <desired> arround <motion>
+ds<existing> #delete <existing>
+cs<exiting><desired> #change <existing> to <desired>
+S<desired> #surround visual selection
+# vim-commentary
+gcc #toggles line comment for curret line
+gc<motion> #toggles line comment for lines defined by <motion>
+gC<motion> #toggles block comment in <motion>
+# vim-identation-level
+<operator>ii # operator on this identation level
+<operator>ia #operator on this identation level and a line above
+# vim-sneak
+s<char><char> #move forward to the next <char><char>
+S<char><char> #move backward to the previous <char><char>
+<operator>z<char><char> #operator forward to the next <char><char>
+<operator>Z<char><char> #operator backward to the previous <char><char>
+# vscode
+ctrl+] / gd #go to definition
+af #in visual mode increase selection
+gh #hover mouse over cursor equivalent
+shift+<esc> #close all intellisense and notifications
+
+# pyphoon
+-x, no text
+-n LINES, [6,18,19,21,22,23,24,29,32]
+
+# vim over ssh
+vim scp://pi/~/.vimrc
+
+# restart gnome
+gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Eval 'Meta.restart(_("Restarting…"))'
+
+# video info
+ffprobe -v error -show_entries stream=index,codec_name,codec_type 1.mp4
+
+# extract audio from video
+ffmpeg -i 1.mp4 1.aac
+
+# trim audio file
+ffmpeg -i 1.aac -ss 00:00:20 -to 00:00:40 -c copy 2.aac 
+
+# reload .bashrc
+. ~/.bashrc
+
+# reload bash
+exec bash
+
+# scan network
+ifconfig 
+nmap -sP 192.168.100.0/24
+
+# run process in background
+nohup command &>/dev/null &
+
+# key generation
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519
+
+# Key based authentication
+ssh-copy-id -i .ssh/id_ed25519.pub pi@192.168.100.99
+
+# restart firefox
+about:profiles
+
+# reboot required
+cat /var/run/reboot-required
+sudo apt install needrestart
+sudo needrestart
+
+# sensors
+sudo apt install lm-sensors
+sudo sensors-detect
+
+# update and upgrade
+sudo apt update && sudo apt upgrade -y
+0 0 * * 6 root (apt-get update && apt-get -y -d upgrade) > /dev/null
+
+# remove package
+sudo apt purge <package_name>
+
+# search program
+sudo apt search <package_name>
+
+# debian version
+cat /etc/debian_version
+
+# Ethernet and network controllers
+lspci -nnk | grep -i net -A2
+
+# Change ethernet controller
+sudo modprobe ath9k
+
+# gnome notifications
+notify-send "Test" "This is a test"
+
+# media player tittle
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata | sed -n '/title/{n;p}' | cut -d '"' -f 2
+
+# media player play
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Play
+
+# media player pause
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause
+
+# media player play/pause toggle
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+
+# media player previous
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+
+# media player next
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+
+# install xbox 360 controll
+sudo apt install xboxdrv
+sudo rmmod xpad
+sudo xboxdrv
+
+# run xbox 360 controll driver
+sudo xboxdrv --silent
+
+# github ssh key
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/git -C <github_user_mail>
+eval "$(ssh-agent -s)"
+ssh-add .ssh/git
+ssh -T git@github.com
+
+# git commads
+git config --global user.name "Tu Nombre"
+git config --global user.email "you@example.com"
+git clone repo.git #download from remote
+git init #creates git files in current folder for working repo
+git init --bare #create git files for source repo
+git remote add origin repo.git #connect to remote repo
+git remote -v #show connected repos
+git add .
+git commit -m 'message' -m 'description'
+git commit -am 'message' -m 'description' #no new files to add
+git push -u origin master #first time
+git push
+git pull #updates from remote repo
+git checkout -b new-branch #creates new branch
+git checkout master #change to branch
+git merge new-branch #merge to current branch
+git branch -d new-branch #deletes branch
+git rm file #remove file
+git mv file file2 #rename file
+git checkout HEAD -- #discard modifications
+git reset HEAD #discard staged modifications
+git log #commits history and hashes
+git revert [hash] #undo commit's hash
+
+# capture key in bash and vim
+C-V
+
+# shell shortcuts
+C-K #cut to end of line
+C-U #cut to beginning of line
+C-Y #yank previous cut
+C-W #cut previous word
+A-backspace #cut previous word, no punctuation
+
+# combinaciones de teclas Super+ en gnome
+Q   cerrar
+W   completa
+E   ocultar
+R   mover
+T   redimensionar
+    #navegacion y ventanas
+A   subir
+Z   bajar
+S   mover a monitor izquierdo
+D   mover a monitor derecho
+X   division izquierda
+C   division derecha
+F   subir ventana
+V   bajar ventana
+    #sistema
+9   restaurar gnome
+0   cambiar devilspie
+-   bajar brillo
+=   aumentar brillo
+L   bloquear pantalla
+tab idioma del teclado
+Space cambiar aplicaciones
+    #aplicaciones
+1   firefox
+2   vscode
+3   spotify
+
+# copy to clipboard
+echo 42 | xclip -sel clip
+
+# hide mouse cursor
+sudo apt install unclutter
+nohup unclutter $>/dev/null $
+
+# join videos
+ffmpeg -i concat:"input1.mp4|input2.mp4" output.mp4
+
+# gnome screenshots folder
+gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/ed/Imágenes/capturas"
+
+# ASCII art font
+ANSI Shadow
+Roman
+
+# print vim help
+:h <key>
+
+# unzip file batch
+unzip '*.zip'
+
+# fzf bat file preview
+fzf --preview 'batcat --color=always --style=numbers --line-range=:500 {}'
+
+# command line typer
+ttyper
+cli-typer
+tt
+
+# language dictionaries
+/usr/share/dict
+sudo apt install wamerican
+
+# tmux scroll mode and exit
+ctrl-s [
+q
+
+
+
+# ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
+# ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
+# ██████╔╝███████║███████╗██████╔╝██████╔╝█████╗  ██████╔╝██████╔╝ ╚████╔╝
+# ██╔══██╗██╔══██║╚════██║██╔═══╝ ██╔══██╗██╔══╝  ██╔══██╗██╔══██╗  ╚██╔╝
+# ██║  ██║██║  ██║███████║██║     ██████╔╝███████╗██║  ██║██║  ██║   ██║
+# ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝     ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
+
+## installations
+sudo apt update && sudo apt upgrade
+sudo apt install python3-pip libatlas-base-dev 
+pip3 install numpy pandas fxcmpy schedule python-socketio==4.6.1
+sudo apt install tmux vim
+
+# (?)
+sudo apt-get install jstest-gtk
+
+# under voltage
+watch -n 1 /opt/vc/bin/vcgencmd get_throttled
+
+# ngrok ssh
+sudo wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
+unzip ngrok-stable-linux-arm.zip
+chmod +x ngrok
+ngrok authtoken <token>
+./ngrok tcp 22
+
+# tor ssh
+sudo apt install tor
+sudo systemctl enable tor
+sudo systemctl start tor
+sudo vim /etc/tor/torrc
+# Add lines:
+HiddenServiceDir /var/lib/tor/sshd/
+HiddenServicePort 22 127.0.0.1:22
+sudo systemctl restart tor
+sudo cat /var/lib/tor/sshd/hostname
+
+# hardening ssh
+/etc/ssh/sshd_config
+AllowUsers pi
+X11Forwarding no
+PasswordAuthentication no
+HostKey /etc/ssh/ssh_host_ed25519_key
+HostKey /etc/ssh/ssh_host_rsa_key
+KexAlgorithms curve25519-sha256@libssh.org
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com
+
+# reload ssh config
+sudo systemctl reload sshd
+
+# run command on startup
+sudo vim /etc/rc.local
+su -c /home/pi/.local/bin/midas -l pi
+
+# needrestart detects unused kernel
+/lib/modules/
+/boot/
+
+# login message of the day
+sudo vim /etc/motd
+/etc/update-motd.d/
+
+# ssh last login message
+sudo vim /etc/ssh/sshd_config
+PrintLastLog no
+
+# change time zone
+sudo dpkg-reconfigure tzdata
+
+# pip3 working packages versions
+sudo pip3 install fxcmpy==1.2.6
+sudo pip3 install python-engineio==3.13.0
+sudo pip3 install python-socketio==4.6.0
+
+
+
+# ████████╗███████╗██████╗ ███╗   ███╗██╗   ██╗██╗  ██╗
+# ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║   ██║╚██╗██╔╝
+#    ██║   █████╗  ██████╔╝██╔████╔██║██║   ██║ ╚███╔╝ 
+#    ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║██║   ██║ ██╔██╗ 
+#    ██║   ███████╗██║  ██║██║ ╚═╝ ██║╚██████╔╝██╔╝ ██╗
+#    ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝
+
+## ssh
+sshd
+pkill sshd
+
+# ssh
+pkg upgrade
+pkg install openssh
+passwd
+
+# qbox ssh client
+ssh -p 8022 mbox@192.168.100.66
+
+# pip
+pkg install python
+apt update && apt upgrade
+apt install clang fftw 
+pip install --upgrade pip
+pip install wheel
+pip install numpy
+pip install pandas
+pip install fxcmpy python-socketio
+
+# tor ssh client
+apk Orbot Proxy con Tor
+allow termux to use the Tor proxy
+enable the VPN Mode
+cat .ssh/id_ed25519.pub | ssh foobar@remote 'cat >> ~/.ssh/authorized_keys'
+ssh pi@iehaunae9Eex4Hio.onion
+
+# ssh agent
+eval $(ssh-agent)
+ssh-add
+
+# change ssh passphrase
+ssh-keygen -p 
+
+# Termux directorio
+cd /storage/emulated/0
+cd /sdcard
+
+
+
+# ██╗  ██╗ ██████╗ ██████╗  ██████╗ 
+# ██║ ██╔╝██╔═══██╗██╔══██╗██╔═══██╗
+# █████╔╝ ██║   ██║██████╔╝██║   ██║
+# ██╔═██╗ ██║   ██║██╔══██╗██║   ██║
+# ██║  ██╗╚██████╔╝██████╔╝╚██████╔╝
+# ╚═╝  ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝
+
+## Koreader
+save settings .add/koreader/settings.reader.lua
+KFMon content in root
+reboot
+koreader-kobo in .add
+settings.reader.lua in .add/koreader
+reboot
+
+
+
+# ███████╗██╗██╗     ███████╗███████╗
+# ██╔════╝██║██║     ██╔════╝██╔════╝
+# █████╗  ██║██║     █████╗  ███████╗
+# ██╔══╝  ██║██║     ██╔══╝  ╚════██║
+# ██║     ██║███████╗███████╗███████║
+# ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
+
+## ssh tor config
+~/.ssh/config
+Host tor
+  HostName iehaunae9Eex4Hio.onion
+  User pi
+  ProxyCommand /usr/bin/nc -xlocalhost:9050 -X5 %h %p
+
+# devilspie transparency
+/transparent.ds
+( if ( is ( application_name ) "org.gnome.Nautilus" )
+#( if ( contains ( window_class ) "Code" )	
+  ( begin
+    ( spawn_async (str "xprop -id " (window_xid) " -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY 0xf851eb84") )
+  )
+)
+
+/mc
+grep -l bash\.bashrc /etc/profile || (echo
+    echo 'test "$PS1" && test "$BASH" && . /etc/bash.bashrc') |
+    tee -a /etc/profile
+echo 'type -p -a mc >/dev/null &&
+    alias mc=". /usr/share/mc/bin/mc-wrapper.sh"' | tee -a /etc/bash.bashrc
+
+
+
+# ██████╗ ██╗    ███████╗██╗██╗     ███████╗███████╗
+# ██╔══██╗██║    ██╔════╝██║██║     ██╔════╝██╔════╝
+# ██████╔╝██║    █████╗  ██║██║     █████╗  ███████╗
+# ██╔═══╝ ██║    ██╔══╝  ██║██║     ██╔══╝  ╚════██║
+# ██║     ██║    ██║     ██║███████╗███████╗███████║
+# ╚═╝     ╚═╝    ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
+
+## load python code in new tmux session m
+~/.local/bin/midas
+#!/bin/bash
+tmux new-session -d -s m
+tmux send-keys 'cd /home/pi/fx' C-m
+tmux send-keys 'python3 /home/pi/fx/live_handler.py' C-m
+
+# unnecessary kernels
+/etc/kernel/postinst.d/remove-unnecessary
+#!/bin/sh
+version="$1"
+file="$2"
+if [ -n "$file" ] && [ "$file" != "/boot/kernel.img" ]; then
+  rm -f "$file"
+fi

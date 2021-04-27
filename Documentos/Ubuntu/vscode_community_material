@@ -1,0 +1,13 @@
+    "tab.unfocusedActiveForeground": "#607a86",
+    "statusBar.foreground": "#80CBC4",
+    "editorGroup.border": "#26323800",
+    "scrollbarSlider.background": "#26323800",
+    "scrollbarSlider.hoverBackground": "#546E7A50",
+    "scrollbarSlider.activeBackground": "#546E7A70",
+    "list.hoverForeground": "#EEFFFF",
+    "list.activeSelectionBackground": "#00000030",
+    "list.activeSelectionForeground": "#EEFFFF",
+    "list.inactiveSelectionBackground": "#263238",
+
+
+    
