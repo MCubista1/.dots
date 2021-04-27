@@ -534,6 +534,25 @@ sudo apt install wamerican
 ctrl-s [
 q
 
+# dotfiles git
+# Setup
+git init --bare $HOME/.dots
+alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
+# Configutation
+dots config status.showUntrackedFiles no
+dots remote add origin repo.git
+# Usage
+dots status
+dots add .gitconfig
+dots commit -m 'Add gitconfig'
+dots push
+# Replication
+git clone --separate-git-dir=$HOME/.dots repo.git dots-tmp
+rsync --recursive --verbose --exclude '.git' dots-tmp/ $HOME/
+rm --recursive dots-tmp
+
+
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
