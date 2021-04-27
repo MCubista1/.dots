@@ -291,7 +291,9 @@
         "workbench.explorer.fileView.focus",
         "workbench.view.extensions",
         "workbench.action.focusActiveEditorGroup",
-        "workbench.action.toggleSidebarVisibility"
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.focusNextGroup",
+        "workbench.action.focusPreviousGroup"
     ],
     "git-graph.openNewTabEditorGroup": "Beside",
     "gitHistory.alwaysPromptRepositoryPicker": true,

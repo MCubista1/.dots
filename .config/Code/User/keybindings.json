@@ -4,7 +4,7 @@
         "command": "python.execInTerminal"
     },
     {
-        "key": "ctrl+m",
+        "key": "alt+m",
         "command": "workbench.action.terminal.new"
     },
     {
@@ -18,7 +18,7 @@
         "when": "terminalFocus"
     },
     {
-        "key": "alt+m",
+        "key": "ctrl+m",
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus"
     },
