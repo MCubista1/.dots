@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=devilspie
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[es_MX]=DevilsPie
+Name=DevilsPie
+Comment[es_MX]=Ventanas transparentes
+Comment=Ventanas transparentes

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=unclutter
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[es_MX]=Uncluter
+Name=Uncluter
+Comment[es_MX]=Ocultar cursor
+Comment=Ocultar cursor
