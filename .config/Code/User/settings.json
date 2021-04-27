@@ -1,0 +1,351 @@
+{
+    "python.pythonPath": "/usr/bin/python3",
+    "workbench.colorCustomizations": {},
+    "python.linting.pylintEnabled": false,
+    "python.linting.pylintUseMinimalCheckers": false,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.lineNumbers": "relative",
+    "workbench.sideBar.location": "left",
+    "editor.largeFileOptimizations": false,
+    "files.autoSave": "off",
+    "errorLens.gutterIconSet": "circle",
+    "errorLens.statusBarMessageEnabled": true,
+    "errorLens.statusBarMessageType": "closestProblem",
+    "errorLens.fontStyleItalic": true,
+    "errorLens.margin": "6ch",
+    "breadcrumbs.enabled": false,
+    "editor.renderControlCharacters": false,
+    "terminal.integrated.showExitAlert": false,
+    "vim.vimrc.path": "$HOME/.0.vimrc",
+    "vim.vimrc.enable": true,
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.enableNeovim": true,
+    "vim.useSystemClipboard": true,
+    "textmarker.savedHighlights": [
+        {
+            "pattern": {
+                "type": "regex",
+                "expression": "(?<=.\\n)([A-Z]\\w+|[A-Z])",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "darkolivegreen"
+        },
+        {
+            "pattern": {
+                "type": "regex",
+                "expression": "(?<=\\n)Chapter.+\\.",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "darkmagenta"
+        },
+        {
+            "pattern": {
+                "type": "regex",
+                "expression": "PART.+\\.",
+                "ignoreCase": false,
+                "wholeMatch": false
+            },
+            "color": "darkgoldenrod"
+        }
+    ],
+    "textmarker.commandsOnContextMenu": {
+        "highlightUsingRegex": true,
+        "toggleHighlight": true,
+        "unhighlight": true,
+        "toggleCaseSensitivity": true,
+        "toggleWholeMatch": true,
+        "clearAllHighlight": true,
+        "saveAllHighlights": true,
+        "updateHighlight": true,
+        "goToNextHighlight": false,
+        "goToPreviousHighlight": false
+    },
+    "textmarker.hideStatusBarItems": true,
+    "editor.parameterHints.enabled": false,
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "vim.smartRelativeLine": true,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "underline",
+    "vim.cursorStylePerMode.visual": "line",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.visualblock": "line",
+    "vim.cursorStylePerMode.visualline": "line",
+    "editor.cursorSmoothCaretAnimation": true,
+    "vim.cursorStylePerMode.replace": "block-outline",
+    "files.associations": {
+        "Ubuntu*": "shellscript",
+        "*.xsh": "xonsh",
+        ".xonshrc": "xonsh",
+        "config": "shellscript"
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>",
+                "r"
+            ],
+            "commands": [
+                "rainbow-csv.Align"
+            ]
+        },
+        {
+            "before": [
+                "|"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        },
+        {
+            "before": [
+                "<Up>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Down>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Left>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Right>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<Up>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Down>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Left>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Right>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "|"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        },
+        {
+            "before": [
+                "<Up>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Down>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Left>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+        {
+            "before": [
+                "<Right>"
+            ],
+            "after": [
+                "<Nop>"
+            ]
+        },
+    ],
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "rainbow1",
+                "settings": {
+                    "foreground": "#546E7A"
+                }
+            },
+            {
+                "scope": "keyword.rainbow2",
+                "settings": {
+                    "foreground": "#C3E88D",
+                }
+            },
+            {
+                "scope": "entity.name.function.rainbow3",
+                "settings": {
+                    "foreground": "#82AAFF",
+                }
+            },
+            {
+                "scope": "comment.rainbow4",
+                "settings": {
+                    "foreground": "#FF5370",
+                }
+            },
+            {
+                "scope": "string.rainbow5",
+                "settings": {
+                    "foreground": "#B2CCD6"
+                }
+            },
+            {
+                "scope": "variable.parameter.rainbow6",
+                "settings": {
+                    "foreground": "#F78C6C",
+                }
+            },
+            {
+                "scope": "constant.numeric.rainbow7",
+                "settings": {
+                    "foreground": "#C792EA",
+                }
+            },
+            {
+                "scope": "entity.name.type.rainbow8",
+                "settings": {
+                    "foreground": "#F07178",
+                }
+            },
+            {
+                "scope": "markup.bold.rainbow9",
+                "settings": {
+                    "foreground": "#89DDFF",
+                    "fontStyle": "normal"
+                }
+            },
+            {
+                "scope": "invalid.rainbow10",
+                "settings": {
+                    "foreground": "#FFCB6B"
+                }
+            },
+        ]
+    },
+    "terminal.integrated.allowChords": false,
+    "terminal.integrated.rendererType": "canvas",
+    "terminal.integrated.shell.linux": "/usr/bin/xonsh",
+    "diffEditor.renderSideBySide": false,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.toggleZenMode",
+        "workbench.explorer.fileView.focus",
+        "workbench.view.extensions",
+        "workbench.action.focusActiveEditorGroup",
+        "workbench.action.toggleSidebarVisibility"
+    ],
+    "git-graph.openNewTabEditorGroup": "Beside",
+    "gitHistory.alwaysPromptRepositoryPicker": true,
+    "gitHistory.editorTitleButtonOpenRepo": true,
+    "git.enableStatusBarSync": false,
+    "git.terminalAuthentication": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "window.zoomLevel": -1,
+    "terminal.integrated.localEchoExcludePrograms": [
+        "vim",
+        "vi",
+        "nano",
+        "tmux",
+        "fzf",
+        "xonsh"
+    ],
+    "workbench.activityBar.visible": false,
+    "workbench.editor.closeOnFileDelete": true,
+    "color-highlight.markRuler": false,
+    "errorLens.statusBarColorsEnabled": true,
+    "material-icon-theme.hidesExplorerArrows": true,
+    "material-icon-theme.folders.color": "#80cbc4",
+    "workbench.colorTheme": "Community Material Theme",
+    "window.customMenuBarAltFocus": false,
+    "editor.wordWrap": "on",
+    "git.enableSmartCommit": true,
+    "jupyter.interactiveWindowMode": "perFile",
+    "editor.renderWhitespace": "trailing",
+    "workbench.editor.decorations.colors": false,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.untitled.labelFormat": "name",
+    "vim.changeWordIncludesWhitespace": true,
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.hlsearch": true,
+    "vim.showMarksInGutter": true,
+    "vim.sneak": true,
+    "vim.sneakReplacesF": true,
+    "vim.startofline": false,
+    "pyls.plugins.jedi_completion.enabled": false,
+    "pyls.plugins.preload.enabled": false,
+    "window.menuBarVisibility": "hidden",
+    "keyboard.dispatch": "keyCode",
+    "python.insidersChannel": "weekly",
+    "editor.formatOnSave": true,
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+    "editor.lightbulb.enabled": false,
+    "editor.minimap.enabled": false,
+    "terminal.integrated.enableBell": true,
+    "terminal.integrated.fontFamily": "'Liberation mono'",
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.enablePersistentSessions": false,
+    "terminal.integrated.drawBoldTextInBrightColors": false,
+    "debug.console.fontSize": 10,
+}
