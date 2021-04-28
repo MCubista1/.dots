@@ -2199,5 +2199,25 @@
     {
         "key": "ctrl+alt+j",
         "command": "workbench.action.increaseViewHeight"
+    },
+    {
+        "key": "alt+d",
+        "command": "workbench.action.terminal.scrollDownPage",
+        "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "shift+pagedown",
+        "command": "-workbench.action.terminal.scrollDownPage",
+        "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "alt+e",
+        "command": "workbench.action.terminal.scrollUpPage",
+        "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "shift+pageup",
+        "command": "-workbench.action.terminal.scrollUpPage",
+        "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
     }
 ]

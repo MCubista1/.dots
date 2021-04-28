@@ -427,9 +427,11 @@ sudo xboxdrv
 sudo xboxdrv --silent
 
 # github ssh key
-ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/git -C <github_user_mail>
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/github -C github_user_mail
 eval "$(ssh-agent -s)"
-ssh-add .ssh/git
+ssh-add .ssh/github
+cat .ssh/github.pub
+# add ssh key to github
 ssh -T git@github.com
 
 # git commads
@@ -450,7 +452,7 @@ git branch -u origin/master #set upstream
 git checkout -b new-branch #creates new branch
 git checkout master #change to branch
 git merge new-branch #merge to current branch
-git checkout branch_name file_1 file_2 file_3
+git checkout branch_name file_1 file_2 #merege file
 git branch -d new-branch #deletes branch
 git rm file #remove file
 git mv file file2 #rename file
