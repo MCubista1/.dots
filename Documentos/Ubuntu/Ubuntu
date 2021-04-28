@@ -446,9 +446,11 @@ git commit -am 'message' -m 'description' #no new files to add
 git push -u origin master #first time
 git push
 git pull #updates from remote repo
+git branch -u origin/master #set upstream
 git checkout -b new-branch #creates new branch
 git checkout master #change to branch
 git merge new-branch #merge to current branch
+git checkout branch_name file_1 file_2 file_3
 git branch -d new-branch #deletes branch
 git rm file #remove file
 git mv file file2 #rename file
