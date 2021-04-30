@@ -569,6 +569,9 @@ sudo apt install wamerican
 ctrl-s [
 q
 
+# sort file
+sort -u -o sorted_file file
+
 
 
 
