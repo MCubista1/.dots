@@ -164,5 +164,3 @@ def custom_keybindings(bindings, **kw):
     @bindings.add(Keys.ControlF)
     def say_hi(event):
         fcd(event)
-
-
