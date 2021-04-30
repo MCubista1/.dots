@@ -2040,7 +2040,7 @@
         "command": "workbench.action.toggleMaximizedPanel"
     },
     {
-        "key": "alt+z",
+        "key": "ctrl+q",
         "command": "workbench.action.terminal.kill"
     },
     {

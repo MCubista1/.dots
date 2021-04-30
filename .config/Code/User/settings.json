@@ -353,5 +353,6 @@
     "terminal.integrated.copyOnSelection": true,
     "[xonsh]": {
         "editor.formatOnSave": false
-    }
+    },
+    "workbench.panel.opensMaximized": "never"
 }

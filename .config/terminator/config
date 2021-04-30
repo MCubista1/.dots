@@ -23,7 +23,7 @@
   rotate_ccw = <Shift><Alt>r
   split_horiz = <Primary>n
   split_vert = <Primary>m
-  close_term = <Alt>q
+  close_term = <Primary>q
   toggle_scrollbar = <Primary>2
   page_up_half = <Alt>e
   page_down_half = <Alt>d

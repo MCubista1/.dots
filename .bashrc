@@ -145,14 +145,15 @@ export BEEP1=/usr/share/sounds/sound-icons/prompt.wav
 export BEEP2=/usr/share/sounds/Yaru/stereo/message-new-instant.oga
 export BEEP3=/usr/share/sounds/freedesktop/stereo/service-login.oga
 
-# fff auto cd on quit
-ff() {
-    fff "$@"
-    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
-}
 
 # fzf conf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# dotfiles git alias
-alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
+# ff status background color [0-9]
+export FFF_COL2=0
+# Selection color [0-9] (copied/moved files)
+export FFF_COL3=2
+# Cursor color [0-9]
+export FFF_COL4=6
+# Status foreground color [0-9]
+export FFF_COL5=2

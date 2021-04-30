@@ -49,4 +49,12 @@ alias xbox="sudo xboxdrv --silent"
 alias clip="xclip -sel clip"
 alias bat="batcat"
 
-alias t='tt -words ox5000 -n 100 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
+alias e='tt -words ox5000 -n 100 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
+
+# fff auto cd on quit
+f() {
+    fff "$@"
+    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
+}
+
+alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'

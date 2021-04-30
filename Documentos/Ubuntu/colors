@@ -20,6 +20,7 @@ Community Material VSCode
 #FFCC00
 #FFFFFF         fg
 
+
 Material Sublime Text 3
 Red 	    #FF5370 	#E53935
 Pink 	    #F07178 	#FF5370
@@ -34,6 +35,10 @@ Violet 	    #BB80B3 	#945EB8
 Brown 	    #AB7967 	#AB7967
 
 
+#ABB2BF         termianl fg
+
+
+Community Material VSCode
 #000000
 #00000030
 #00000050
@@ -96,7 +101,6 @@ Brown 	    #AB7967 	#AB7967
 #ffffff30
 
 
-
 #2F2F2F         bg greyscale
 
 
@@ -106,4 +110,20 @@ Brown 	    #AB7967 	#AB7967
 18%             Lightness
 
 
-#ABB2BF         termianl fg
+Community Material Terminal
+"terminal.ansiWhite": "#EEEFFF",
+"terminal.ansiBlack": "#263238",
+"terminal.ansiBlue": "#82AAFF",
+"terminal.ansiCyan": "#89DDFF",
+"terminal.ansiGreen": "#C3E88D",
+"terminal.ansiMagenta": "#C792EA",
+"terminal.ansiRed": "#FF5370",
+"terminal.ansiYellow": "#FFCB6B",
+"terminal.ansiBrightWhite": "#EEEFFF",
+"terminal.ansiBrightBlack": "#263238",
+"terminal.ansiBrightBlue": "#82AAFF",
+"terminal.ansiBrightCyan": "#89DDFF",
+"terminal.ansiBrightGreen": "#C3E88D",
+"terminal.ansiBrightMagenta": "#C792EA",
+"terminal.ansiBrightRed": "#FF5370",
+"terminal.ansiBrightYellow": "#FFCB6B",
