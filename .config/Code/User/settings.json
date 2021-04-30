@@ -351,4 +351,7 @@
     "terminal.integrated.drawBoldTextInBrightColors": false,
     "debug.console.fontSize": 10,
     "terminal.integrated.copyOnSelection": true,
+    "[xonsh]": {
+        "editor.formatOnSave": false
+    }
 }
