@@ -48,3 +48,5 @@ mkcd() {
 alias xbox="sudo xboxdrv --silent"
 alias clip="xclip -sel clip"
 alias bat="batcat"
+
+alias t='tt -words ox5000 -n 100 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
