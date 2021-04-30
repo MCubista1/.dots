@@ -488,7 +488,7 @@ ssh-add .ssh/github
 # Pull from master branch
 dots fetch origin master:master
 dots checkout master .0.vimrc
-dots log --branches --oneline
+dots log --branches --oneline -3
 dots commit -m 'vimrc: test pi'
 dots push
 
