@@ -462,7 +462,7 @@ git reset HEAD #discard staged modifications
 git log #commits history and hashes
 git revert [hash] #undo commit's hash
 
-# dotfiles git
+# Bare git dotfiles
 git init --bare $HOME/.dots
 alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 dots config status.showUntrackedFiles no
@@ -472,9 +472,7 @@ dots status
 dots commit -am 'mod ed'
 dots push
 
-# Replication dotfiles git
-eval "$(ssh-agent -s)"
-ssh-add .ssh/github
+# Dotfiles git deploy
 git clone --separate-git-dir=$HOME/.dots repo.git dots
 rm -r dots
 alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
@@ -484,7 +482,10 @@ dots checkout -b pi
 dots commit -am 'init pi'
 # dots push -u origin master
 dots push -u origin pi
-# pull from master branch
+# github authentication
+eval "$(ssh-agent -s)"
+ssh-add .ssh/github
+# Pull from master branch
 dots fetch origin master:master
 dots checkout master .0.vimrc
 dots log --branches --oneline
