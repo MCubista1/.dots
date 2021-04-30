@@ -469,7 +469,7 @@ dots config status.showUntrackedFiles no
 dots remote add origin repo.git
 # Usage
 dots status
-dots commit -am 'mod ed n'
+dots commit -am 'mod ed'
 dots push
 
 # Replication dotfiles git
@@ -484,8 +484,12 @@ dots checkout -b pi
 dots commit -am 'init pi'
 # dots push -u origin master
 dots push -u origin pi
-# Usage
-
+# pull from master branch
+dots fetch origin master:master
+dots checkout master .0.vimrc
+dots log --branches --oneline
+dots commit -m 'vimrc: test pi'
+dots push
 
 # capture key in bash and vim
 C-V
