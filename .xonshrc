@@ -91,7 +91,7 @@ aliases['bebop'] = 'paplay $BEEP3; paplay $BEEP2; paplay $BEEP1'
 aliases['clip'] = 'xclip -sel clip'
 aliases['xbox'] = 'sudo xboxdrv --silent'
 
-aliases['ttm'] = 'tt -words ox5000 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
+aliases['t'] = 'tt -words ox5000 -n 100 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
 
 # dotfiles git repository
 aliases['dots'] = '/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
@@ -113,7 +113,7 @@ def _fff(args):
     $[cd @($(cat ~/.cache/fff/.fff_d).split())]
 
 
-aliases['ff'] = '@(_fff)'
+aliases['f'] = '@(_fff)'
 
 # cd to directory Midnight Commander ended in.
 MC_TMP_DIR = '/tmp/mcdir'
