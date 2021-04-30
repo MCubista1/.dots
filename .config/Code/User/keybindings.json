@@ -2219,5 +2219,9 @@
         "key": "shift+pageup",
         "command": "-workbench.action.terminal.scrollUpPage",
         "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "alt+g",
+        "command": "workbench.action.terminal.scrollToTop"
     }
 ]

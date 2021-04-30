@@ -350,4 +350,5 @@
     "terminal.integrated.enablePersistentSessions": false,
     "terminal.integrated.drawBoldTextInBrightColors": false,
     "debug.console.fontSize": 10,
+    "terminal.integrated.copyOnSelection": true,
 }

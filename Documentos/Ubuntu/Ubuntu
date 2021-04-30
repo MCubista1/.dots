@@ -448,6 +448,7 @@ git commit -am 'message' -m 'description' #no new files to add
 git push -u origin master #first time
 git push
 git pull #updates from remote repo
+git fetch origin master:master #fetch to branch
 git branch -u origin/master #set upstream
 git checkout -b new-branch #creates new branch
 git checkout master #change to branch
@@ -460,6 +461,31 @@ git checkout HEAD -- #discard modifications
 git reset HEAD #discard staged modifications
 git log #commits history and hashes
 git revert [hash] #undo commit's hash
+
+# dotfiles git
+git init --bare $HOME/.dots
+alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
+dots config status.showUntrackedFiles no
+dots remote add origin repo.git
+# Usage
+dots status
+dots commit -am 'mod ed n'
+dots push
+
+# Replication dotfiles git
+eval "$(ssh-agent -s)"
+ssh-add .ssh/github
+git clone --separate-git-dir=$HOME/.dots repo.git dots
+rm -r dots
+alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
+dots config status.showUntrackedFiles no
+# new branch
+dots checkout -b pi
+dots commit -am 'init pi'
+# dots push -u origin master
+dots push -u origin pi
+# Usage
+
 
 # capture key in bash and vim
 C-V
@@ -537,23 +563,6 @@ sudo apt install wamerican
 # tmux scroll mode and exit
 ctrl-s [
 q
-
-# dotfiles git
-# Setup
-git init --bare $HOME/.dots
-alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
-# Configutation
-dots config status.showUntrackedFiles no
-dots remote add origin repo.git
-# Usage
-dots status
-dots add .gitconfig
-dots commit -m 'Add gitconfig'
-dots push
-# Replication
-git clone --separate-git-dir=$HOME/.dots repo.git dots-tmp
-rsync --recursive --verbose --exclude '.git' dots-tmp/ $HOME/
-rm --recursive dots-tmp
 
 
 
