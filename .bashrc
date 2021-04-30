@@ -17,7 +17,7 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
-HISTFILESIZE=10000
+HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -28,7 +28,7 @@ shopt -s checkwinsize
 #shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -43,27 +43,24 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-    # We have color support; assume it's compliant with Ecma-48
-    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-    # a case would tend to support setf rather than setaf.)
-    color_prompt=yes
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
     else
-    color_prompt=
+	color_prompt=
     fi
 fi
 
 if [ "$color_prompt" = yes ]; then
-        PS1='\[\e[0;1;38;5;178m\]\u\[\e[0;1;38;5;32m\]/\[\e[0;1;38;5;32m\]\W\[\e[m\] \[\e[0m\]$\[\e[m\] \[\e0'
+    PS1='\[\e[0;1;38;5;178m\]\u\[\e[0;1;38;5;32m\]/\[\e[0;1;38;5;32m\]\W\[\e[m\] \[\e[0m\]$\[\e[m\] \[\e0'
 else
-    PS1='\[\e[0;1m\]\u\[\e[0;1m\]/\[\e[0;1m\]\W\[\e[m\] \[\e[0m\]$\[\e[m\] \[\e0'
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-
-#export PS1="\[\033[34m\]\W > \$(tput sgr0)\]"
-
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -91,13 +88,9 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -119,31 +112,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Hook for desk activation
-[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
-
 # vi like motions when <Esc>, v to open line on editor
 set -o vi
 
-# add go bin to path
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-# add rust cargo bin to path
-export PATH=$PATH:$HOME/.cargo/bin
-
-# kernel outdate
+# outdated kernel
 [ -f /var/run/reboot-required ] && cat /var/run/reboot-required
 
-# edit with vim
+# sudoeditor vim
 SUDO_EDITOR=/usr/bin/vim
 export SUDO_EDITOR
 EDITOR=/usr/bin/vim
 export EDITOR
 
-# beep
-export BEEP1=/usr/share/sounds/sound-icons/prompt.wav
-export BEEP2=/usr/share/sounds/Yaru/stereo/message-new-instant.oga
-export BEEP3=/usr/share/sounds/freedesktop/stereo/service-login.oga
+sensors | grep 'temp'
+/opt/vc/bin/vcgencmd get_throttled
 
 # fff auto cd on quit
 ff() {
@@ -151,7 +133,6 @@ ff() {
     cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
 }
 
-# fzf conf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # dotfiles git alias
