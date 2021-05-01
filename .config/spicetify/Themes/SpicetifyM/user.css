@@ -145,8 +145,7 @@ font-family:Liberation Mono;
 }
 
 .view-player .player-controls-container .controls .button-play:before{
-	font-size:10px !important;
-
+	font-size:18px !important;
 	padding-left: 16px !important;
 	padding-top: 9px !important;
 }
@@ -294,7 +293,7 @@ Change text color in playlist
 .card-type-track .card-info-title,
 .card-type-collection-album .card-info-title,
 .card-type-episode .card-info-title {
-  	font-size: 10px;
+  	font-size: 15px;
   	font-weight: 900 !important;
 }
 
