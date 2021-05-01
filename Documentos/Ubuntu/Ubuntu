@@ -756,6 +756,10 @@ echo 'type -p -a mc >/dev/null &&
 @reboot sleep 600 && sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 20 11,19 * * * sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
+# crontab -e
+# lightweight charts serve
+@reboot sleep 300 && nohup npx serve /home/ed/Documentos/fx/midas/midas_data &>/dev/null &
+
 
 
 # ██████╗ ██╗    ███████╗██╗██╗     ███████╗███████╗
