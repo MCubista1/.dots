@@ -292,7 +292,8 @@
         "workbench.action.toggleSidebarVisibility",
         "workbench.action.focusNextGroup",
         "workbench.action.focusPreviousGroup",
-        "workbench.action.closeActiveEditor"
+        "workbench.action.closeActiveEditor",
+        "workbench.action.files.openFile"
     ],
     "git-graph.openNewTabEditorGroup": "Beside",
     "gitHistory.alwaysPromptRepositoryPicker": true,
