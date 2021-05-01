@@ -47,11 +47,12 @@
   [[default]]
     background_color = "#263238"
     cursor_shape = underline
-    cursor_color = "#aaaaaa"
+    cursor_color = "#ffcb6b"
+    cursor_color_fg = False
     font = Liberation Mono 10
     foreground_color = "#abb2bf"
     scrollbar_position = hidden
-    palette = "#263238:#ff5370:#c3e88d:#ffcb6b:#82aaff:#6182b8:#89ddff:#eeefff:#ab7967:#e53935:#91b859:#ffb62c:#6182b8:#7c4dff:#39adb5:#eeefff"
+    palette = "#263238:#ff5370:#c3e88d:#ffcb6b:#82aaff:#6182b8:#89ddff:#eeefff:#546e7a:#e53935:#91b859:#ffb62c:#6182b8:#7c4dff:#39adb5:#eeefff"
     use_system_font = False
     copy_on_selection = True
 [layouts]

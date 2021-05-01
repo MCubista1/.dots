@@ -70,8 +70,6 @@
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingQuotes": "never",
     "vim.smartRelativeLine": true,
-    "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.cursorStyle": "underline",
     "vim.cursorStylePerMode.visual": "line",
     "vim.cursorStylePerMode.insert": "line",
     "vim.cursorStylePerMode.visualblock": "line",
@@ -293,7 +291,8 @@
         "workbench.action.focusActiveEditorGroup",
         "workbench.action.toggleSidebarVisibility",
         "workbench.action.focusNextGroup",
-        "workbench.action.focusPreviousGroup"
+        "workbench.action.focusPreviousGroup",
+        "workbench.action.closeActiveEditor"
     ],
     "git-graph.openNewTabEditorGroup": "Beside",
     "gitHistory.alwaysPromptRepositoryPicker": true,
@@ -354,5 +353,7 @@
     "[xonsh]": {
         "editor.formatOnSave": false
     },
-    "workbench.panel.opensMaximized": "never"
+    "workbench.panel.opensMaximized": "never",
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.cursorBlinking": true
 }
