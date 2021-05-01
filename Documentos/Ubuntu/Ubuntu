@@ -575,7 +575,6 @@ sort -u -o sorted_file file
 
 
 
-
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
 # ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
 # ██████╔╝███████║███████╗██████╔╝██████╔╝█████╗  ██████╔╝██████╔╝ ╚████╔╝
@@ -748,6 +747,14 @@ grep -l bash\.bashrc /etc/profile || (echo
     tee -a /etc/profile
 echo 'type -p -a mc >/dev/null &&
     alias mc=". /usr/share/mc/bin/mc-wrapper.sh"' | tee -a /etc/bash.bashrc
+
+# sudo crontab -e
+# bright permision and default
+@reboot chown ed /sys/class/backlight/nv_backlight/brightness
+@reboot echo 50 > /sys/class/backlight/nv_backlight/brightness
+# updates
+@reboot sleep 600 && sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+20 11,19 * * * sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
 
 
