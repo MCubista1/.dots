@@ -134,6 +134,3 @@ ff() {
 }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# dotfiles git alias
-alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
