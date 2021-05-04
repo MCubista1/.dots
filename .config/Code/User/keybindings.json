@@ -2223,5 +2223,9 @@
     {
         "key": "alt+g",
         "command": "workbench.action.terminal.scrollToTop"
+    },
+    {
+        "key": "alt+z",
+        "command": "breadcrumbs.toggle"
     }
 ]

@@ -16,7 +16,6 @@
     "errorLens.statusBarMessageType": "closestProblem",
     "errorLens.fontStyleItalic": true,
     "errorLens.margin": "6ch",
-    "breadcrumbs.enabled": false,
     "editor.renderControlCharacters": false,
     "terminal.integrated.showExitAlert": false,
     "vim.vimrc.path": "$HOME/.0.vimrc",
@@ -357,5 +356,6 @@
     "terminal.integrated.cursorBlinking": true,
     "editor.minimap.enabled": false,
     "terminal.integrated.experimentalLinkProvider": false,
-    "terminal.integrated.rendererType": "canvas"
+    "terminal.integrated.rendererType": "canvas",
+    "breadcrumbs.enabled": false
 }
