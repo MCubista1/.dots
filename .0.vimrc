@@ -31,15 +31,6 @@ nnoremap Y y$
 " Next f or s match in operation mode
 onoremap <CR> ;
 
-" Scroll half screen
-nnoremap <C-e> <C-u>zz
-vnoremap <C-e> <C-u>zz
-nnoremap <C-d> <C-d>zz
-vnoremap <C-d> <C-d>zz
-nnoremap <C-u> <Nop>
-vnoremap <C-u> <Nop>
-
-
 " Save, quits and restore file
 noremap <Space>w :w<Enter>
 noremap <Space>q :wq<Enter>
@@ -51,6 +42,18 @@ nnoremap j jzz
 vnoremap j jzz
 nnoremap k kzz
 vnoremap k kzz
+
+" Scroll half screen
+nnoremap <C-e> <C-u>zz
+vnoremap <C-e> <C-u>zz
+nnoremap <C-d> <C-d>zz
+vnoremap <C-d> <C-d>zz
+nnoremap <C-u> <Nop>
+vnoremap <C-u> <Nop>
+
+" Center line on last line
+nnoremap G Gzz
+vnoremap G Gzz
 
 " Center line on seach
 nnoremap ; ;zz
