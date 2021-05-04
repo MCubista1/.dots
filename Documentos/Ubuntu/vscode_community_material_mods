@@ -1,3 +1,5 @@
+"tab.activeBorder": "#80CBC400",
+"tab.unfocusedActiveBorder": "#546E7A00",
 "tab.unfocusedActiveForeground": "#607a86",
 "statusBar.foreground": "#80CBC4",
 "editorGroup.border": "#26323800",
@@ -16,4 +18,4 @@
 "panel.border": "#26323800",
 "panelTitle.inactiveForeground": "#607a8670",
 "panelTitle.activeForeground": "#607A86",
-"panelTitle.activeBorder": "#546E7A",
+"panelTitle.activeBorder": "#546E7A00",
