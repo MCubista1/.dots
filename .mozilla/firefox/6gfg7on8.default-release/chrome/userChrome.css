@@ -1,0 +1,40 @@
+/*In order for userChrome.css to work, you need to open about:config and change
+toolkit.legacyUserProfileCustomizations.stylesheets to true*/
+
+tab {
+	color: #607A86 !important;
+}
+
+tab[selected] {
+	color: #EEEFFF !important;
+}
+
+.tab-background, #TabsToolbar .toolbar-items {
+	background: #263238 !important;
+}
+
+.tabbrowser-tab::after,
+.tabbrowser-tab::before {
+	border-color: transparent !important;
+	border-image: none !important;
+}
+
+.tab-close-button {
+	display: none; 
+}
+
+.tab-line {
+	display: none;
+}
+
+#urlbar-input-container {
+	background-color: #263238 !important;
+	border-color: #263238 !important;
+}
+
+
+#nav-bar {
+	background: #263238 !important;
+	box-shadow: none !important;
+	box-shadow : 0 1px 0 #263238 !important;
+}
