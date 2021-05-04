@@ -49,7 +49,7 @@ alias xbox="sudo xboxdrv --silent"
 alias clip="xclip -sel clip"
 alias bat="batcat"
 
-alias e='tt -words ox5000 -n 100 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
+alias s='tt -words ox5000 -n 100 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
 alias k='pkill -9 -f "/bin/sh"'
 
 # fff auto cd on quit

@@ -99,7 +99,7 @@ aliases['bebop'] = 'paplay $BEEP3; paplay $BEEP2; paplay $BEEP1'
 aliases['clip'] = 'xclip -sel clip'
 aliases['xbox'] = 'sudo xboxdrv --silent'
 
-aliases['e'] = 'tt -words ox5000 -n 100 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
+aliases['s'] = 'tt -words ox5000 -n 100 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
 aliases['k'] = 'pkill -9 -f "/bin/sh"'
 
 # dotfiles git repository
