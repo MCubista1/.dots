@@ -275,7 +275,6 @@
         ]
     },
     "terminal.integrated.allowChords": false,
-    "terminal.integrated.rendererType": "canvas",
     "terminal.integrated.shell.linux": "/usr/bin/xonsh",
     "diffEditor.renderSideBySide": false,
     "workbench.editorAssociations": [
@@ -356,5 +355,7 @@
     "workbench.panel.opensMaximized": "never",
     "terminal.integrated.cursorStyle": "underline",
     "terminal.integrated.cursorBlinking": true,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "terminal.integrated.experimentalLinkProvider": false,
+    "terminal.integrated.enableFileLinks": false
 }
