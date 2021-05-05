@@ -7,7 +7,7 @@ if os.path.exists('/var/run/reboot-required'):
 
 
 ## System Variables
-$PROMPT = '{BOLD_#FFCB6B}{user}{BOLD_#82AAFF}/{cwd_base} {BOLD_#546E7A}[{gitstatus}{BOLD_#546E7A}] {NO_COLOR}{prompt_end} '
+$PROMPT = '{BOLD_#FFCB6B}{user}{BOLD_#82AAFF}/{cwd_base} {BOLD_#546E7A}[{gitstatus}{BOLD_#546E7A}] {RESET}{prompt_end} '
 # $VI_MODE = True
 
 $SUDO_EDITOR = '/usr/bin/vim'
@@ -66,7 +66,7 @@ aliases['cmatrix'] = 'cmatrix -a'
 aliases['speed'] = 'speedtest-cli --simple'
 aliases['suspend'] = 'systemctl suspend'
 aliases['sensor'] = 'watch -n 1 -t sensors -A'
-aliases['t'] = 'tput reset & clear'
+aliases['t'] = '$[tput reset]; $[clear]'
 aliases['e'] = 'exit'
 
 aliases['p'] = 'ssh pi'
@@ -107,20 +107,18 @@ aliases['dots'] = '/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 
 
 ## Functions
-# create directoty and cd to it
-def mkcd(args):
-    if len(args) == 1:
-        # ?
-        mkdir - p @(args) & & cd @(args)
-
-
-# aliases["mkcd"] = mkcd
-
-
 # fff file explorer
 def _fff(args):
     $[fff "$@"]
-    $[cd @($(cat ~/.cache/fff/.fff_d).split())]
+    fff_flie_path = $(cat ~/.cache/fff/.fff_d).split()
+    if len(fff_flie_path) > 1:
+        # fff_flie_path = '\\ '.join(fff_flie_path)
+        fff_flie_path = '"' + ' '.join(fff_flie_path) + '/"'
+        fff_flie_path = str(fff_flie_path)
+        # $[cd @(fff_flie_path)]
+        # return 'cd ' + fff_flie_path
+    else:
+        $[cd @(fff_flie_path)]
 
 
 aliases['f'] = '@(_fff)'
