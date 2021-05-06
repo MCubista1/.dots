@@ -87,7 +87,7 @@ aliases['mgit'] = 'cd ~/Documentos/mgit'
 aliases['up'] = 'sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
 aliases['nr'] = 'sudo needrestart -q -r a'
 aliases['vx'] = 'vim /home/ed/.xonshrc'
-# reload xonshrc (?)
+aliases['rx'] = 'source /home/ed/.xonshrc'
 
 aliases['devil'] = 'bash -c "nohup devilspie &>/dev/null &"'
 aliases['kdevil'] = 'pkill devilspie'
