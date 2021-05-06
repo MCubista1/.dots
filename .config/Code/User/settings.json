@@ -356,6 +356,5 @@
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.experimentalLinkProvider": false,
     "terminal.integrated.rendererType": "canvas",
-    "breadcrumbs.enabled": false,
     "editor.minimap.enabled": false
 }

@@ -574,6 +574,10 @@ q
 # sort file
 sort -u -o sorted_file file
 
+# backup gnome settings
+dconf dump / > ~/.config/dconf/user.conf
+dconf load / < ~/.config/dconf/user.conf
+
 
 
 
