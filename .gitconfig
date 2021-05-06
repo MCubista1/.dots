@@ -11,12 +11,16 @@
 	p = push
 
 	# Pull file from master branch
-	fm = fetch origin master:master
-	cm = checkout master
-	lb = log --oneline --graph --branches -n 5
+	ftm = fetch origin master:master
+	chm = checkout master
+
+	# Pull file from pi branch
+	ftp = fetch origin pi:pi
+	chp = checkout pi
 
 	# Log
 	l = log --oneline
+	lb = log --oneline --graph --branches -n 5
 
 	# List tracked files
 	ls = ls-tree -r --name-only HEAD
