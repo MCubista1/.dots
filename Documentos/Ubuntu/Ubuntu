@@ -578,7 +578,8 @@ sort -u -o sorted_file file
 dconf dump / > ~/.config/dconf/user.conf
 dconf load / < ~/.config/dconf/user.conf
 
-
+# Run http server in the current directory
+python3 -m http.server
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
