@@ -1,13 +1,22 @@
 [include]
-	path = /home/ed/.user.gitconfig
+	path = ~/.user.gitconfig
 [alias]
+	# Basic git
 	s = status
+	d = diff
 	a = add
 	aa = add .
 	c = commit -m
 	ca = commit -am
-	d = diff
 	p = push
-	l = log --oneline
+
+	# Pull file from master branch
+	fm = fetch origin master:master
+	cm = checkout master
 	lb = log --oneline --graph --branches
+
+	# Log
+	l = log --oneline
+
+	# List tracked files
 	ls = ls-tree -r --name-only HEAD
