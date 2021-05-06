@@ -13,7 +13,7 @@
 	# Pull file from master branch
 	fm = fetch origin master:master
 	cm = checkout master
-	lb = log --oneline --graph --branches
+	lb = log --oneline --graph --branches -n 5
 
 	# Log
 	l = log --oneline
