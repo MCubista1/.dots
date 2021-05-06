@@ -19,8 +19,9 @@
 	chp = checkout pi
 
 	# Log
-	l = log --oneline
-	lb = log --oneline --graph --branches -n 5
+	l = log --oneline --graph
+	lb = log --oneline --graph --branches
+	lb5 = log --oneline --graph --branches -n 5
 
 	# List tracked files
 	ls = ls-tree -r --name-only HEAD
