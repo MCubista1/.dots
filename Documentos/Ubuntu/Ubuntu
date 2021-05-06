@@ -533,7 +533,7 @@ Space cambiar aplicaciones
 # copy to clipboard
 echo 42 | xclip -sel clip
 
-# hide mouse cursor
+# hidde mouse cursor
 sudo apt install unclutter
 nohup unclutter $>/dev/null $
 
