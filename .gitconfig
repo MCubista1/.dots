@@ -10,3 +10,4 @@
 	p = push
 	l = log --oneline
 	lb = log --oneline --graph --branches
+	ls = ls-tree -r --name-only HEAD
