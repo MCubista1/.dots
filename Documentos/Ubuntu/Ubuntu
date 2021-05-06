@@ -480,7 +480,9 @@ dots config status.showUntrackedFiles no
 # new branch
 dots checkout -b pi
 dots commit -am 'init pi'
-# dots push -u origin master
+# dots push origin pi:pi (?)
+# dots push origin pi:refs/heads/pi (?)
+# dots push -u origin master (?)
 dots push -u origin pi
 # github authentication
 eval "$(ssh-agent -s)"
