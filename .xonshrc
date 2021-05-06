@@ -122,13 +122,10 @@ def _fff(args):
         # return 'cd ' + fff_flie_path
     else:
         $[cd @(fff_flie_path)]
-
-
 aliases['f'] = '@(_fff)'
 
 # cd to directory Midnight Commander ended in.
 MC_TMP_DIR = '/tmp/mcdir'
-
 
 def _mc(args):
     if not os.path.exists(MC_TMP_DIR):
@@ -142,11 +139,14 @@ def _mc(args):
         directory = $(cat @(mc_filename)).strip()
         $[cd @(directory)]
         $[rm @(mc_filename)]
-
-
 aliases["mc"] = '@(_mc) -s -S otro ~'
 
-
+# man pages on bash
+def _man(args):
+    if args:
+        man_str = f'man {args[0]}'
+        $[bash -c @(man_str)]
+aliases['man'] = _man
 
 # cd to fzf folder
 def fcd(event):
@@ -166,6 +166,7 @@ def fcd(event):
         command = f'cd {choice}'
         event.current_buffer.insert_text(command.strip())
         $[xdotool key Return Return]
+
 
 
 ## Keyload Function
