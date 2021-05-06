@@ -58,7 +58,7 @@ aliases['la'] = 'ls -a'
 aliases['ll'] = 'ls -lhtr'
 aliases['lla'] = 'ls -alhtr'
 
-aliases['screen'] = 'screenfetch'
+aliases['screen'] = 'screenfetch -w -c ",7;2"'
 aliases['fortune'] = 'bash -c "fortune | figlet -f smblock | lolcat"'
 aliases['moon'] = 'pyphoon'
 aliases['cmatrix'] = 'cmatrix -a'
