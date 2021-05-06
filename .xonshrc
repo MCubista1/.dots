@@ -91,6 +91,7 @@ aliases['up'] = 'sudo apt update && sudo apt upgrade -y && sudo apt autoremove -
 aliases['nr'] = 'sudo needrestart -q -r a'
 aliases['vx'] = 'vim /home/ed/.xonshrc'
 aliases['rx'] = 'source /home/ed/.xonshrc'
+aliases['vg'] = 'vim /home/ed/.gitconfig'
 
 aliases['devil'] = 'bash -c "nohup devilspie &>/dev/null &"'
 aliases['kdevil'] = 'pkill devilspie'
