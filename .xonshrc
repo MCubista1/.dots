@@ -83,6 +83,9 @@ aliases['gitdir'] = 'cd ~/Documentos/git'
 aliases['usb'] = 'cd ~/media/ed'
 aliases['pi-ssh'] = 'cd ~/Documentos/fx/midas/pi_ssh'
 aliases['mgit'] = 'cd ~/Documentos/mgit'
+aliases['g'] = 'git'
+aliases['dots'] = '/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
+aliases['d'] = '/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 
 aliases['up'] = 'sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
 aliases['nr'] = 'sudo needrestart -q -r a'
@@ -103,7 +106,6 @@ aliases['xbox'] = 'sudo xboxdrv --silent'
 aliases['s'] = 'tt -words ox5000 -n 100 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
 aliases['k'] = 'pkill -9 -f "/bin/sh"'
 
-aliases['dots'] = '/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 
 
 ## Functions
