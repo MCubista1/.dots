@@ -106,7 +106,7 @@ aliases['xbox'] = 'sudo xboxdrv --silent'
 aliases['s'] = 'tt -words ox5000 -n 100 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
 aliases['k'] = 'pkill -9 -f "/bin/sh"'
 
-aliases['mkcd'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
+aliases['md'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
 
 
 ## Functions
