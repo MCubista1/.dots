@@ -359,5 +359,6 @@
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
     "terminal.integrated.scrollback": 3000,
-    "window.menuBarVisibility": "hidden"
+    "window.menuBarVisibility": "hidden",
+    "terminal.integrated.gpuAcceleration": "on"
 }
