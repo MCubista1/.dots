@@ -941,11 +941,6 @@
         "when": "terminalFocus && terminalProcessSupported"
     },
     {
-        "key": "shift+pagedown",
-        "command": "-workbench.action.terminal.scrollDownPage",
-        "when": "terminalFocus && terminalProcessSupported"
-    },
-    {
         "key": "shift+end",
         "command": "-workbench.action.terminal.scrollToBottom",
         "when": "terminalFocus && terminalProcessSupported"
@@ -958,11 +953,6 @@
     {
         "key": "ctrl+shift+up",
         "command": "-workbench.action.terminal.scrollUp",
-        "when": "terminalFocus && terminalProcessSupported"
-    },
-    {
-        "key": "shift+pageup",
-        "command": "-workbench.action.terminal.scrollUpPage",
         "when": "terminalFocus && terminalProcessSupported"
     },
     {
@@ -2052,10 +2042,6 @@
         "command": "workbench.action.focusPreviousGroup"
     },
     {
-        "key": "alt+e",
-        "command": "editor.action.marker.next"
-    },
-    {
         "key": "alt+s",
         "command": "explorer.newFolder"
     },
@@ -2201,8 +2187,42 @@
         "command": "workbench.action.increaseViewHeight"
     },
     {
-        "key": "alt+d",
-        "command": "workbench.action.terminal.scrollDownPage",
+        "key": "alt+z",
+        "command": "breadcrumbs.toggle"
+    },
+    {
+        "key": "shift+pagedown",
+        "command": "-workbench.action.terminal.scrolldownpage",
+        "when": "terminalfocus && terminalprocesssupported && !terminalaltbufferactive"
+    },
+    {
+        "key": "shift+pageup",
+        "command": "-workbench.action.terminal.scrolluppage",
+        "when": "terminalfocus && terminalprocesssupported && !terminalaltbufferactive"
+    },
+    {
+        "key": "shift+pageup",
+        "command": "-cursorColumnSelectPageUp",
+        "when": "editorColumnSelection && textInputFocus"
+    },
+    {
+        "key": "shift+pageup",
+        "command": "-cursorPageUpSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+pagedown",
+        "command": "-cursorColumnSelectPageDown",
+        "when": "editorColumnSelection && textInputFocus"
+    },
+    {
+        "key": "shift+pagedown",
+        "command": "-cursorPageDownSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+pageup",
+        "command": "-workbench.action.terminal.scrollUpPage",
         "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
     },
     {
@@ -2211,21 +2231,11 @@
         "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
     },
     {
+        "key": "alt+d",
+        "command": "workbench.action.terminal.scrollDownPage"
+    },
+    {
         "key": "alt+e",
-        "command": "workbench.action.terminal.scrollUpPage",
-        "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
-    },
-    {
-        "key": "shift+pageup",
-        "command": "-workbench.action.terminal.scrollUpPage",
-        "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
-    },
-    {
-        "key": "alt+g",
-        "command": "workbench.action.terminal.scrollToTop"
-    },
-    {
-        "key": "alt+z",
-        "command": "breadcrumbs.toggle"
+        "command": "workbench.action.terminal.scrollUpPage"
     }
 ]

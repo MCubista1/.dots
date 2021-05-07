@@ -291,7 +291,8 @@
         "workbench.action.focusNextGroup",
         "workbench.action.focusPreviousGroup",
         "workbench.action.closeActiveEditor",
-        "workbench.action.files.openFile"
+        "workbench.action.files.openFile",
+        "workbench.action.reloadWindow"
     ],
     "git-graph.openNewTabEditorGroup": "Beside",
     "gitHistory.alwaysPromptRepositoryPicker": true,
@@ -334,7 +335,6 @@
     "vim.startofline": false,
     "pyls.plugins.jedi_completion.enabled": false,
     "pyls.plugins.preload.enabled": false,
-    "window.menuBarVisibility": "hidden",
     "keyboard.dispatch": "keyCode",
     "python.insidersChannel": "weekly",
     "editor.formatOnSave": true,
@@ -356,5 +356,8 @@
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.experimentalLinkProvider": false,
     "terminal.integrated.rendererType": "canvas",
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "terminal.integrated.scrollback": 3000,
+    "window.menuBarVisibility": "hidden"
 }
