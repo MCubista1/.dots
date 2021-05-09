@@ -3,7 +3,7 @@
 "tab.unfocusedActiveForeground": "#607a86",
 "statusBar.foreground": "#80CBC4",
 "editorGroup.border": "#26323800",
-"editor.foreground": "#ABB2BF",
+"editor.foreground": "#E6E6E6",
 "scrollbarSlider.background": "#26323800",
 "scrollbarSlider.hoverBackground": "#546E7A50",
 "scrollbarSlider.activeBackground": "#546E7A70",
