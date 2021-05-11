@@ -103,17 +103,6 @@ Community Material VSCode
 #ffffff30
 
 
-#2F2F2F         bg greyscale
-
-
-                bg HSL
-200°            Hue
-19%             Saturation
-18%             Lightness
-
-171 178 191     termianl fg rgb
-
-
 Community Material Terminal
 "terminal.ansiWhite": "#EEEFFF",
 "terminal.ansiBlack": "#263238",
@@ -131,3 +120,15 @@ Community Material Terminal
 "terminal.ansiBrightMagenta": "#C792EA",
 "terminal.ansiBrightRed": "#FF5370",
 "terminal.ansiBrightYellow": "#FFCB6B",
+
+
+#2F2F2F         bg greyscale
+
+                bg HSL
+200°            Hue
+19%             Saturation
+18%             Lightness
+
+38 50 56        bg rgb
+26 35 39        selected row rgb
+171 178 191     termianl fg rgb

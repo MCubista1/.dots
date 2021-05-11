@@ -356,9 +356,12 @@
     "terminal.integrated.experimentalLinkProvider": false,
     "terminal.integrated.rendererType": "canvas",
     "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": false,
     "terminal.integrated.scrollback": 3000,
     "window.menuBarVisibility": "hidden",
     "terminal.integrated.gpuAcceleration": "on",
-    "terminal.integrated.cursorBlinking": true
+    "terminal.integrated.cursorBlinking": true,
+    "python.linting.enabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.autoUpdateLanguageServer": false,
+    "breadcrumbs.enabled": false,
 }
