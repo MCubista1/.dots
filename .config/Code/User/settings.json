@@ -345,7 +345,6 @@
     "terminal.integrated.fontFamily": "'Liberation mono'",
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.enablePersistentSessions": false,
-    "terminal.integrated.drawBoldTextInBrightColors": false,
     "debug.console.fontSize": 10,
     "terminal.integrated.copyOnSelection": true,
     "[xonsh]": {
@@ -364,4 +363,5 @@
     "python.linting.flake8Enabled": true,
     "python.autoUpdateLanguageServer": false,
     "breadcrumbs.enabled": false,
+    "terminal.integrated.drawBoldTextInBrightColors": false,
 }
