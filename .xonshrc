@@ -108,7 +108,7 @@ aliases['k'] = 'pkill -9 -f "/bin/sh"'
 
 aliases['md'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
 
-aliases['tetris'] = '/snap/bin/tetris-thefenriswolf.tetris'
+aliases['tetris'] = '/snap/bin/tetris-thefenriswolf.tetris -a'
 
 
 ## Functions
