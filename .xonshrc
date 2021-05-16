@@ -59,7 +59,6 @@ aliases['ll'] = lambda args: $[$LC_COLLATE='C' ls --group-directories-first -lAh
 
 aliases['screen'] = 'screenfetch -w -c ",7;2"'
 aliases['fortune'] = 'bash -c "fortune | figlet -f smblock | lolcat"'
-aliases['moon'] = 'pyphoon'
 aliases['cmatrix'] = 'cmatrix -a'
 
 aliases['speed'] = 'speedtest-cli --simple'
@@ -109,6 +108,9 @@ aliases['k'] = 'pkill -9 -f "/bin/sh"'
 aliases['md'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
 
 aliases['tetris'] = '/snap/bin/tetris-thefenriswolf.tetris -a'
+aliases['cols'] = 'watch -t -n1 "tput cols && tput lines"'
+aliases['void'] = 'watch -t -n60 echo'
+aliases['moon'] = 'watch -t -n1800 pyphoon -x -n 19'
 
 
 ## Functions
