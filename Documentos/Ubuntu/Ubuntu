@@ -581,6 +581,9 @@ dconf load / < ~/.config/dconf/user.conf
 # Run http server in the current directory
 python3 -m http.server
 
+# startup time
+systemd-analyze
+
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
 # ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
