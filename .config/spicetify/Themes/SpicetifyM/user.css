@@ -28,6 +28,10 @@ font-family:Liberation Mono;
 	display: none;
 }
 
+.tl-save .button {
+	display: none;
+}
+
 /*Exclude these elements from draggable property because it stops them from clickable*/
 .profile-items-container,
 .profile {
