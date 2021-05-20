@@ -28,8 +28,8 @@ font-family:Liberation Mono;
 	display: none;
 }
 
-.tl-save .button {
-	display: none;
+.tl-save {
+    display: none;
 }
 
 /*Exclude these elements from draggable property because it stops them from clickable*/
