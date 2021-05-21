@@ -1,4 +1,4 @@
-alias screen='screenfetch -w -c ",7;2"'
+alias fetch='screenfetch -w -c ",7;2"'
 alias fortune='fortune | figlet -f smblock | lolcat'
 alias moon='pyphoon'
 alias cmatrix='cmatrix -a'

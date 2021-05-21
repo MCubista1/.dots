@@ -57,7 +57,8 @@ $FFF_COL5=2
 aliases['ls'] = 'ls -a'
 aliases['ll'] = lambda args: $[$LC_COLLATE='C' ls --group-directories-first -lAh --color @(args)]
 
-aliases['screen'] = 'screenfetch -w -c ",7;2"'
+aliases['fetch'] = 'screenfetch -w -c ",7;2"'
+aliases['gfetch'] = 'onefetch'
 aliases['fortune'] = 'bash -c "fortune | figlet -f smblock | lolcat"'
 aliases['cmatrix'] = 'cmatrix -a'
 
