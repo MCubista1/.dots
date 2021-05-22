@@ -111,7 +111,7 @@ aliases['md'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0
 aliases['tetris'] = '/snap/bin/tetris-thefenriswolf.tetris -a'
 aliases['cols'] = 'watch -t -n1 "tput cols && tput lines"'
 aliases['void'] = 'watch -t -n60 echo'
-aliases['moon'] = 'watch -t -n1800 pyphoon -x -n 19'
+aliases['pmoon'] = 'watch -t -n1800 pyphoon -x -n 19'
 
 
 ## Functions
