@@ -24,13 +24,24 @@ font-family:Liberation Mono;
 	display: none !important;
 }
 
+/* mines */
 #view-navigation-bar > div > div.LeftSidebar__section {
 	display: none;
+}
+
+
+#view-navigation-bar > div > div > div > div.SidebarList {
+	display: none;
+}
+
+.LeftSidebar__section {
+    margin-bottom: 0px;
 }
 
 .tl-save {
     display: none;
 }
+/* end mines */
 
 /*Exclude these elements from draggable property because it stops them from clickable*/
 .profile-items-container,
