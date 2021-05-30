@@ -591,6 +591,9 @@ for file in *.JPG; do convert $file -rotate 90 rotated-$file; done
 convert file +sigmoidal-contrast 3.5x0 file2
 convert file -fuzz 6% -fill "#263238" -opaque "#000000" file2
 
+# list and change number of desktops
+wmctrl -d
+wmctrl -n number
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
