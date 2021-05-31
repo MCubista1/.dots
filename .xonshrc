@@ -7,7 +7,8 @@ if os.path.exists('/var/run/reboot-required'):
 
 
 ## System Variables
-$PROMPT = '{BOLD_#FFCB6B}{user}{BOLD_#82AAFF}/{cwd_base} {BOLD_#546E7A}[{gitstatus}{BOLD_#546E7A}] {RESET}{prompt_end} '
+# $PROMPT = '{BOLD_#FFCB6B}{user}{BOLD_#82AAFF}/{cwd_base} {BOLD_#546E7A}[{gitstatus}{BOLD_#546E7A}] {RESET}{prompt_end} '
+$PROMPT = '{BOLD_#FFCB6B}{user}{BOLD_#82AAFF}/{cwd_base} {BOLD_#546E7A}[{gitstatus}{BOLD_#546E7A}] {RESET}🐚 '
 # $VI_MODE = True
 
 $SUDO_EDITOR = '/usr/bin/vim'
