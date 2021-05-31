@@ -33,7 +33,7 @@ exclude_dirs = '-not -ipath "*/.git/*" -and -not -path "*/.cache/*"'
 exclude_dirs += ' -and -not -path "*/.npm/*" -and -not -path "*/session/*"'
 exclude_dirs += ' -and -not -path "*/node_modules/*"'
 $fzf_find_command = f'find "$(pwd)" -maxdepth 3 -type f {exclude_dirs}'
-$fzf_find_dirs_command = f'find "$(pwd)" "/home/ed/" -maxdepth 3 -type d {exclude_dirs} | sort -u'
+$fzf_find_dirs_command = f'find "$(pwd)" -maxdepth 3 -type d {exclude_dirs} | sort -u'
 
 # fzf defaults
 $FZF_DEFAULT_OPTS = '--bind "-:preview-half-page-down,=:preview-half-page-up,ctrl-d:cancel+first,[:down,]:up"'
