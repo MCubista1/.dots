@@ -595,6 +595,9 @@ convert file -fuzz 6% -fill "#263238" -opaque "#000000" file2
 wmctrl -d
 wmctrl -n number
 
+# compatibilidad android, iphone
+sudo apt install mtp-tools ipheth-utils ideviceinstaller ifuse
+
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
 # ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝

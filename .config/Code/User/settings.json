@@ -4,7 +4,6 @@
     "python.linting.pylintEnabled": false,
     "python.linting.pylintUseMinimalCheckers": false,
     "editor.formatOnPaste": true,
-    "editor.formatOnType": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "editor.lineNumbers": "relative",
@@ -364,4 +363,5 @@
     "python.autoUpdateLanguageServer": false,
     "breadcrumbs.enabled": false,
     "terminal.integrated.drawBoldTextInBrightColors": false,
+    "editor.formatOnType": true,
 }
