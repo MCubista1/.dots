@@ -2237,5 +2237,13 @@
     {
         "key": "alt+e",
         "command": "workbench.action.terminal.scrollUpPage"
+    },
+    {
+        "key": "alt+'",
+        "command": "editor.action.dirtydiff.previous"
+    },
+    {
+        "key": "alt+;",
+        "command": "editor.action.dirtydiff.next"
     }
 ]
