@@ -598,6 +598,9 @@ wmctrl -n number
 # compatibilidad android, iphone
 sudo apt install mtp-tools ipheth-utils ideviceinstaller ifuse
 
+# security status
+ubuntu-security-status
+
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
 # ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
