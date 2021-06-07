@@ -9,7 +9,6 @@
     "editor.lineNumbers": "relative",
     "workbench.sideBar.location": "left",
     "editor.largeFileOptimizations": false,
-    "files.autoSave": "off",
     "errorLens.gutterIconSet": "circle",
     "errorLens.statusBarMessageEnabled": true,
     "errorLens.statusBarMessageType": "closestProblem",
