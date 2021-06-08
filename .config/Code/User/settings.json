@@ -362,6 +362,5 @@
     "terminal.integrated.drawBoldTextInBrightColors": false,
     "editor.formatOnType": true,
     "workbench.editor.untitled.hint": "hidden",
-    "breadcrumbs.enabled": false,
     "editor.minimap.enabled": false,
 }
