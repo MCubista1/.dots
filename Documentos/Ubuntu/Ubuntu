@@ -604,6 +604,9 @@ ubuntu-security-status
 # ubuntu version
 cat /etc/lsb-release
 
+# press key sequence
+xdotool key super+alt+j shift+k
+
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
 # ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
