@@ -2245,5 +2245,18 @@
     {
         "key": "alt+;",
         "command": "editor.action.dirtydiff.next"
+    },
+    {
+        "key": "ctrl+shift+.",
+        "command": "-breadcrumbs.toggleToOn",
+        "when": "!config.breadcrumbs.enabled"
+    },
+    {
+        "key": "ctrl+shift+.",
+        "command": "breadcrumbs.focusAndSelect"
+    },
+    {
+        "key": "ctrl+shift+.",
+        "command": "breadcrumbs.toggleToOn"
     }
 ]

@@ -274,12 +274,9 @@
     "terminal.integrated.allowChords": false,
     "terminal.integrated.shell.linux": "/usr/bin/xonsh",
     "diffEditor.renderSideBySide": false,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
     "terminal.integrated.commandsToSkipShell": [
         "workbench.action.toggleZenMode",
         "workbench.explorer.fileView.focus",
