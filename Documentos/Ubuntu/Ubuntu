@@ -609,6 +609,11 @@ cat /etc/lsb-release
 # press key sequence
 xdotool key super+alt+j shift+k
 
+# bash block comment
+: <<'END'
+# block comment
+END
+
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
 # ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
