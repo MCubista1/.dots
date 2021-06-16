@@ -361,4 +361,5 @@
     "workbench.editor.untitled.hint": "hidden",
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
+    "terminal.integrated.tabs.enabled": false,
 }
