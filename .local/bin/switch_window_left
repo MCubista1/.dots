@@ -1,7 +1,0 @@
-#!/bin/bash
-
-xdotool key super+shift+l
-sleep .100
-xdotool key super+space
-sleep .100
-xdotool key super+shift+h
