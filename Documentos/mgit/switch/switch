@@ -1,0 +1,64 @@
+#!/bin/bash
+
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        -r|--right-focus) right_focus=1 ;;
+        *) echo "Unknown parameter passed: $1"; exit 1 ;;
+    esac
+    shift
+done
+
+current_desktop=$(wmctrl -d | grep '\*' | cut -d' ' -f1)
+current_windows=$(wmctrl -lG | tr -s ' ' | \
+grep "^\S* $current_desktop" | cut -d' ' -f1-4)
+# echo "$current_windows"
+windows_ids=$(echo "$current_windows" | cut -d' ' -f1)
+windows_eval=""
+for win_id in $windows_ids; do
+    # echo "$win_id"
+    win_eval=$(xprop -id "$win_id" | \
+    grep "_NET_WM_STATE(ATOM)" | \
+    grep _NET_WM_STATE_MAXIMIZED_HORZ | \
+    grep _NET_WM_STATE_MAXIMIZED_VERT | \
+    grep -v _NET_WM_STATE_HIDDEN)
+    if [ -n "$win_eval" ]; then
+        win_geometry=$(echo "$current_windows" | grep "$win_id")
+        # echo "$win_geometry"
+        if [ -z "$windows_eval" ]; then
+            windows_eval="$win_geometry"
+        else
+            windows_eval="$windows_eval
+$win_geometry"
+            # add new line
+        fi
+    fi
+done
+# echo "$windows_eval"
+windows_count=$(echo "$windows_eval" | grep -c '^')
+if [ "$windows_count" -eq 2 ]; then
+    win_1=$(echo "$windows_eval" | sed -n '1p')
+    win_2=$(echo "$windows_eval" | sed -n '2p')
+    win_1id=$(echo "$win_1" | cut -d' ' -f1)
+    win_1x=$(echo "$win_1" | cut -d' ' -f3)
+    win_1y=$(echo "$win_1" | cut -d' ' -f4)
+    win_2id=$(echo "$win_2" | cut -d' ' -f1)
+    win_2x=$(echo "$win_2" | cut -d' ' -f3)
+    win_2y=$(echo "$win_2" | cut -d' ' -f4)
+    if [ "$win_1y" -ne "$win_2y" ]; then
+        wmctrl -i -r "$win_1id" -e 0,"$win_2x","$win_2y",-1,-1
+        wmctrl -i -r "$win_2id" -e 0,"$win_1x","$win_1y",-1,-1
+        if [ "$win_1y" -gt "$win_2y" ]; then
+            if [ -n "$right_focus" ]; then
+                wmctrl -i -a "$win_1id"
+            else
+                wmctrl -i -a "$win_2id"
+            fi
+        else
+            if [ -n "$right_focus" ]; then
+                wmctrl -i -a "$win_2id"
+            else
+                wmctrl -i -a "$win_1id"
+            fi
+        fi
+    fi
+fi
