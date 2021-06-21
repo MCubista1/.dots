@@ -877,7 +877,7 @@
         "command": "-workbench.action.files.newUntitledFile"
     },
     {
-        "key": "alt+d",
+        "key": "alt+s",
         "command": "explorer.newFile"
     },
     {
@@ -2042,7 +2042,7 @@
         "command": "workbench.action.focusPreviousGroup"
     },
     {
-        "key": "alt+s",
+        "key": "alt+a",
         "command": "explorer.newFolder"
     },
     {
