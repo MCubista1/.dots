@@ -310,8 +310,7 @@
     "workbench.editor.closeOnFileDelete": true,
     "color-highlight.markRuler": false,
     "errorLens.statusBarColorsEnabled": true,
-    "material-icon-theme.hidesExplorerArrows": true,
-    "material-icon-theme.folders.color": "#80cbc4",
+    "material-icon-theme.folders.color": "#546e7a",
     "workbench.colorTheme": "Community Material Theme",
     "window.customMenuBarAltFocus": false,
     "editor.wordWrap": "on",
@@ -321,7 +320,6 @@
     "workbench.editor.decorations.colors": false,
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.editor.untitled.labelFormat": "name",
-    "vim.changeWordIncludesWhitespace": true,
     "vim.cursorStylePerMode.normal": "block",
     "vim.hlsearch": true,
     "vim.showMarksInGutter": true,
@@ -362,4 +360,5 @@
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
     "terminal.integrated.tabs.enabled": false,
+    "material-icon-theme.hidesExplorerArrows": true,
 }
