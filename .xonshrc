@@ -61,7 +61,7 @@ aliases['ll'] = lambda args: $[$LC_COLLATE='C' ls --group-directories-first -lAh
 aliases['fetch'] = 'screenfetch -w -c ",7;2"'
 aliases['gfetch'] = 'onefetch'
 aliases['fortune'] = 'bash -c "fortune | figlet -f smblock | lolcat"'
-aliases['cmatrix'] = 'cmatrix -a'
+aliases['cmatrix'] = 'cmatrix -ab'
 
 aliases['speed'] = 'speedtest-cli --simple'
 aliases['suspend'] = 'systemctl suspend'
