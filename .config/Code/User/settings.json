@@ -361,4 +361,5 @@
     "breadcrumbs.enabled": false,
     "terminal.integrated.tabs.enabled": false,
     "material-icon-theme.hidesExplorerArrows": true,
+    "security.workspace.trust.untrustedFiles": "open",
 }
