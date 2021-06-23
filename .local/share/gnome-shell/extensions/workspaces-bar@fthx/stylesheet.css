@@ -1,0 +1,27 @@
+.desktop-label-nonempty-active {
+  margin-left: 0px;
+  margin-right: 8px;
+  background-color:#546E7A; 
+  color:#CCCCCC;
+}
+
+.desktop-label-nonempty-inactive {
+  margin-left: 0px;
+  margin-right: 8px;
+  background-color:#3a4d55;
+  color:#8e8e8e;
+}
+
+.desktop-label-empty-active {
+  margin-left: 0px;
+  margin-right: 8px;
+  background-color:#546E7A; 
+  color:#CCCCCC;
+}
+
+.desktop-label-empty-inactive {
+  margin-left: 0px;
+  margin-right: 8px;
+  background-color:#3a4d55;
+  color:#8e8e8e;
+}
