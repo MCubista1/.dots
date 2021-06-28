@@ -614,6 +614,9 @@ xdotool key super+alt+j shift+k
 # block comment
 END
 
+# bash comparison operators
+man test
+
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
 # ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
