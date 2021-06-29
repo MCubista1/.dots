@@ -40,6 +40,10 @@ font-family:Liberation Mono;
 .tl-save {
     display: none;
 }
+
+.glue-page-header--sponsored .sponsored-logo {
+    display: none;
+}
 /* end mines */
 
 /*Exclude these elements from draggable property because it stops them from clickable*/
