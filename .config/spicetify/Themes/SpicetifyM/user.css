@@ -44,6 +44,9 @@ font-family:Liberation Mono;
 .glue-page-header--sponsored .sponsored-logo {
     display: none;
 }
+.glue-page-header__content .glue-page-header__label {
+    display: none;
+}
 /* end mines */
 
 /*Exclude these elements from draggable property because it stops them from clickable*/
