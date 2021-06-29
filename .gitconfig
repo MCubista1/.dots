@@ -3,6 +3,7 @@
 [alias]
 	# Basic git
 	s = status
+	sp = status --porcelain
 	d = diff
 	a = add
 	aa = add .
