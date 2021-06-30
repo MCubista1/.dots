@@ -47,6 +47,10 @@ font-family:Liberation Mono;
 .glue-page-header__content .glue-page-header__label {
     display: none;
 }
+
+.view-player .artist {
+    font-size: 14px;
+}
 /* end mines */
 
 /*Exclude these elements from draggable property because it stops them from clickable*/
