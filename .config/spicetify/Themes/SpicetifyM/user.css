@@ -51,6 +51,9 @@ font-family:Liberation Mono;
 .view-player .artist {
     font-size: 14px;
 }
+html .SidebarList__title {
+    display: none;
+}
 /* end mines */
 
 /*Exclude these elements from draggable property because it stops them from clickable*/
