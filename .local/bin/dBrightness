@@ -1,7 +1,0 @@
-#! /bin/bash
-brillo=$(cat /sys/class/backlight/nv_backlight/brightness)
-if [ "$brillo" -gt 10 ]
-then
-    brillo=$(expr $brillo - 10)
-    echo $brillo > /sys/class/backlight/nv_backlight/brightness
-fi
