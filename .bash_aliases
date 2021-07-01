@@ -1,6 +1,6 @@
 alias fetch='screenfetch -w -c ",7;2"'
 alias fortune='fortune | figlet -f smblock | lolcat'
-alias pmoon='pyphoon'
+alias pmoon='watch -t -n1800 pyphoon -x -n 19'
 alias cmatrix='cmatrix -ab'
 
 alias mc=". /usr/share/mc/bin/mc-wrapper.sh -s -S otro ~"
