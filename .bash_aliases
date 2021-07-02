@@ -27,6 +27,7 @@ alias usb="cd /media/ed"
 alias pi-ssh="cd ~/Documentos/fx/midas/pi_ssh"
 alias mgit="cd ~/Documentos/mgit"
 alias bindir="cd ~/.local/bin"
+alias ima="cd ~/Imágenes"
 
 alias up="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 alias nr="sudo needrestart -q -r a"
