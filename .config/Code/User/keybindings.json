@@ -306,7 +306,7 @@
         "command": "workbench.action.terminal.focusPrevious"
     },
     {
-        "key": "ctrl+shift+[",
+        "key": "ctrl+alt+[",
         "command": "workbench.action.terminal.resizePaneLeft",
         "when": "terminalFocus"
     },
@@ -316,7 +316,7 @@
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+shift+]",
+        "key": "ctrl+alt+]",
         "command": "workbench.action.terminal.resizePaneRight",
         "when": "terminalFocus"
     },
@@ -2065,11 +2065,11 @@
         "when": "textCompareEditorVisible"
     },
     {
-        "key": "ctrl+shift+-",
+        "key": "ctrl+alt+-",
         "command": "workbench.action.terminal.resizePaneDown"
     },
     {
-        "key": "ctrl+shift+=",
+        "key": "ctrl+alt+=",
         "command": "workbench.action.terminal.resizePaneUp"
     },
     {
@@ -2258,5 +2258,10 @@
     {
         "key": "ctrl+shift+.",
         "command": "breadcrumbs.toggleToOn"
+    },
+    {
+        "key": "ctrl+alt+-",
+        "command": "-workbench.action.quickInputBack",
+        "when": "inQuickOpen"
     }
 ]
