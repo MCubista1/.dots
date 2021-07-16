@@ -60,6 +60,7 @@ aliases['ll'] = lambda args: $[$LC_COLLATE='C' ls --group-directories-first -lAh
 
 aliases['fetch'] = 'screenfetch -w -c ",7;2"'
 aliases['gfetch'] = 'onefetch'
+aliases['nfetch'] = "neofetch"
 aliases['fortune'] = 'bash -c "fortune | figlet -f smblock | lolcat"'
 aliases['cmatrix'] = 'cmatrix -ab'
 

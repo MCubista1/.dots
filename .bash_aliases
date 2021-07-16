@@ -1,4 +1,6 @@
 alias fetch='screenfetch -w -c ",7;2"'
+alias gfetch='onefetch'
+alias nfetch='neofetch'
 alias fortune='fortune | figlet -f smblock | lolcat'
 alias pmoon='watch -t -n1800 pyphoon -x -n 19'
 alias cmatrix='cmatrix -ab'
