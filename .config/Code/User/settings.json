@@ -356,7 +356,6 @@
     "python.linting.enabled": false,
     "python.linting.flake8Enabled": true,
     "python.autoUpdateLanguageServer": false,
-    "terminal.integrated.drawBoldTextInBrightColors": false,
     "editor.formatOnType": true,
     "workbench.editor.untitled.hint": "hidden",
     "editor.minimap.enabled": false,
