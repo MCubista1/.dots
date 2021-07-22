@@ -38,3 +38,11 @@ tab[selected] {
 	box-shadow: none !important;
 	box-shadow : 0 1px 0 #263238 !important;
 }
+
+.tab-icon-image {
+	filter: saturate(17%) opacity(45%) !important;
+}
+
+.tab-icon-image[selected] {
+	filter: none !important;
+}
