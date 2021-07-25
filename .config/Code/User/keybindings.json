@@ -4,10 +4,6 @@
         "command": "python.execInTerminal"
     },
     {
-        "key": "alt+m",
-        "command": "workbench.action.terminal.new"
-    },
-    {
         "key": "alt+up",
         "command": "-workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
@@ -15,11 +11,6 @@
     {
         "key": "alt+down",
         "command": "-workbench.action.terminal.focusNextPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+m",
-        "command": "workbench.action.terminal.split",
         "when": "terminalFocus"
     },
     {
@@ -36,10 +27,6 @@
         "key": "alt+up",
         "command": "-editor.action.moveLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+-",
-        "command": "workbench.action.terminal.focusNext"
     },
     {
         "key": "ctrl+shift+up",
@@ -109,11 +96,6 @@
     {
         "key": "alt+left",
         "command": "-workbench.action.terminal.focusPreviousPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+]",
-        "command": "workbench.action.terminal.focusNextPane",
         "when": "terminalFocus"
     },
     {
@@ -302,10 +284,6 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+=",
-        "command": "workbench.action.terminal.focusPrevious"
-    },
-    {
         "key": "ctrl+alt+[",
         "command": "workbench.action.terminal.resizePaneLeft",
         "when": "terminalFocus"
@@ -455,10 +433,6 @@
         "key": "ctrl+space",
         "command": "-editor.action.triggerSuggest",
         "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+n",
-        "command": "workbench.action.terminal.toggleTerminal"
     },
     {
         "key": "ctrl+shift+e",
@@ -759,10 +733,6 @@
         "key": "ctrl+shift+right",
         "command": "-workbench.action.terminal.resizePaneRight",
         "when": "terminalFocus && terminalProcessSupported"
-    },
-    {
-        "key": "ctrl+[",
-        "command": "workbench.action.terminal.focusPreviousPane"
     },
     {
         "key": "ctrl+shift+n",
@@ -2061,10 +2031,6 @@
         "command": "workbench.action.terminal.resizePaneUp"
     },
     {
-        "key": "ctrl+n",
-        "command": "terminal.focus"
-    },
-    {
         "key": "alt+k",
         "command": "-keybindings.editor.recordSearchKeys",
         "when": "inKeybindings && inKeybindingsSearch"
@@ -2267,5 +2233,27 @@
     {
         "key": "shift+alt+p",
         "command": "-projectManager.listProjects"
+    },
+    {
+        "key": "alt+m",
+        "command": "workbench.action.createTerminalEditor"
+    },
+    {
+        "key": "alt+[",
+        "command": "workbench.action.openGlobalSettings"
+    },
+    {
+        "key": "alt+]",
+        "command": "workbench.action.openGlobalKeybindings"
+    },
+    {
+        "key": "alt+[",
+        "command": "-editor.action.inlineSuggest.showPrevious",
+        "when": "inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "alt+]",
+        "command": "-editor.action.inlineSuggest.showNext",
+        "when": "inlineSuggestionVisible && !editorReadonly"
     }
 ]
