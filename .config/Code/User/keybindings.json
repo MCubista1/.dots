@@ -424,14 +424,6 @@
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
     },
     {
-        "key": "alt+k",
-        "command": "workbench.action.nextEditor"
-    },
-    {
-        "key": "alt+j",
-        "command": "workbench.action.previousEditor"
-    },
-    {
         "key": "shift+f3",
         "command": "-workbench.action.terminal.findPrevious",
         "when": "terminalFindFocused || terminalFocus"
@@ -1095,10 +1087,6 @@
     {
         "key": "alt+\\",
         "command": "workbench.action.toggleEditorWidths"
-    },
-    {
-        "key": "alt+u",
-        "command": "workbench.action.toggleZenMode"
     },
     {
         "key": "ctrl+k z",
@@ -2263,5 +2251,21 @@
         "key": "ctrl+alt+-",
         "command": "-workbench.action.quickInputBack",
         "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.previousEditorInGroup"
+    },
+    {
+        "key": "alt+u",
+        "command": "projectManager.listProjects"
+    },
+    {
+        "key": "shift+alt+p",
+        "command": "-projectManager.listProjects"
     }
 ]
