@@ -289,7 +289,12 @@
         "workbench.action.files.openFile",
         "workbench.action.reloadWindow",
         "workbench.action.moveEditorLeftInGroup",
-        "workbench.action.moveEditorRightInGroup"
+        "workbench.action.moveEditorRightInGroup",
+        "workbench.action.increaseViewWidth",
+        "workbench.action.decreaseViewWidth",
+        "workbench.action.decreaseViewHeight",
+        "workbench.action.increaseViewHeight",
+        "projectManager.listProjects"
     ],
     "git-graph.openNewTabEditorGroup": "Beside",
     "gitHistory.alwaysPromptRepositoryPicker": true,
@@ -308,7 +313,6 @@
         "fzf",
         "xonsh"
     ],
-    "workbench.activityBar.visible": false,
     "workbench.editor.closeOnFileDelete": true,
     "color-highlight.markRuler": false,
     "errorLens.statusBarColorsEnabled": true,
@@ -378,4 +382,10 @@
         "python": true
     },
     "github.gitAuthentication": false,
+    "dashboard.projectData": null,
+    "projectManager.tags": [
+        "python",
+        "bash"
+    ],
+    "workbench.activityBar.visible": false,
 }
