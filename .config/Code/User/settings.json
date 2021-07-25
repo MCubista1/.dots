@@ -294,7 +294,13 @@
         "workbench.action.decreaseViewWidth",
         "workbench.action.decreaseViewHeight",
         "workbench.action.increaseViewHeight",
-        "projectManager.listProjects"
+        "projectManager.listProjects",
+        "workbench.action.createTerminalEditor",
+        "workbench.action.openGlobalSettings",
+        "workbench.action.openGlobalKeybindings",
+        "workbench.action.toggleEditorWidths",
+        "workbench.action.joinTwoGroups",
+        "workbench.action.splitEditor"
     ],
     "git-graph.openNewTabEditorGroup": "Beside",
     "gitHistory.alwaysPromptRepositoryPicker": true,
@@ -388,4 +394,5 @@
         "bash"
     ],
     "workbench.activityBar.visible": false,
+    "projectManager.sortList": "Recent",
 }
