@@ -3,7 +3,9 @@
 while [[ "$#" -gt 0 ]]; do
     case $1 in
         -s) switch_flag=1 ;;
+        -h) half_flag=1 ;;
         -d) desktops_flag=1 ;;
+        -z) resize_flag=1 ;;
         -g) geometry_flag=1 ;;
         -b) brightness_flag=1 ;;
         -r) right_flag=1 ;;
@@ -14,6 +16,7 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 if [ -n "$switch_flag" ]; then
+    # switch two windows between monitors
     current_desktop=$(wmctrl -d | grep '\*' | cut -d' ' -f1)
     current_windows=$(wmctrl -lG | tr -s ' ' | \
     grep "^\S* $current_desktop" | cut -d' ' -f1-4)
@@ -69,7 +72,71 @@ $win_geometry"
         fi
     fi
 
+elif [ -n "$half_flag" ]; then
+    # move window to half division
+    current_desktop=$(xdotool get_desktop)
+    # echo "$current_desktop"
+    current_windows=$(wmctrl -lG | tr -s ' ' | \
+    grep "^\S* $current_desktop" | cut -d' ' -f1-6)
+    # echo "$current_windows"
+    windows_ids=$(echo "$current_windows" | cut -d' ' -f1)
+    window_focused=""
+    for win_id in $windows_ids; do
+        # echo "$win_id"
+        win_eval=$(xprop -id "$win_id" | \
+        grep "_NET_WM_STATE(ATOM)" | \
+        grep _NET_WM_STATE_FOCUSED)
+        if [ -n "$win_eval" ]; then
+            window_focused=$(echo "$current_windows" | grep "$win_id")
+        fi
+    done
+    # echo "$window_focused"
+    if [ -n "$window_focused" ]; then
+        monitor1_x=$(xrandr | grep " connected" | \
+        grep primary | cut -d' ' -f4 | cut -d'+' -f1 | \
+        cut -d'x' -f1)
+        monitor2_x=$(xrandr | grep " connected" | \
+        grep -v primary | cut -d' ' -f3 | cut -d'x' -f1)
+        # echo "$monitor1_x"
+        # echo "$monitor2_x"
+        window_id=$(echo "$window_focused" | cut -d' ' -f1)
+        window_x=$(xdotool getwindowgeometry "$window_id" | grep Position | \
+        tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1)
+        echo "$window_x"
+        if [ "$window_x" -lt "$monitor1_x" ]; then
+            # echo monitor1
+            monitor1_half=$(echo "$monitor1_x"/2 | bc)
+            if [ -n "$right_flag" ]; then
+                wmctrl -i -r "$window_id" -b remove,maximized_horz
+                xdotool windowsize "$window_id" "$monitor1_half" -1
+                xdotool windowmove "$window_id" "$monitor1_half" 0
+                wmctrl -i -r "$window_id" -b add,maximized_vert
+            else
+                wmctrl -i -r "$window_id" -b remove,maximized_horz
+                xdotool windowsize "$window_id" "$monitor1_half" -1
+                xdotool windowmove "$window_id" 0 0
+                wmctrl -i -r "$window_id" -b add,maximized_vert
+            fi
+        elif [ -n "$monitor2_x" ]; then
+            # echo monitor2
+            monitor2_half=$(echo "$monitor2_x"/2 | bc)
+            monitor2_xhalf=$(echo "$monitor1_x"+"$monitor2_half" | bc)
+            if [ -n "$right_flag" ]; then
+                wmctrl -i -r "$window_id" -b remove,maximized_horz
+                xdotool windowsize "$window_id" "$monitor2_half" -1
+                xdotool windowmove "$window_id" "$monitor2_xhalf" 0
+                wmctrl -i -r "$window_id" -b add,maximized_vert
+            else
+                wmctrl -i -r "$window_id" -b remove,maximized_horz
+                xdotool windowsize "$window_id" "$monitor2_half" -1
+                xdotool windowmove "$window_id" "$monitor1_x" 0
+                wmctrl -i -r "$window_id" -b add,maximized_vert
+            fi
+        fi
+    fi
+
 elif [ -n "$desktops_flag" ]; then
+    # change number of virtual desktops
     desktops_count=$(wmctrl -d | grep -c '^')
     # echo "$desktops_count"
     if [ -n "$increase_flag" ]; then
@@ -80,7 +147,170 @@ elif [ -n "$desktops_flag" ]; then
     # echo "$desktops_ncount"
     wmctrl -n "$desktops_ncount"
 
+elif [ -n "$resize_flag" ]; then
+    # resize half windows
+    current_desktop=$(xdotool get_desktop)
+    current_ids=$(wmctrl -lG | tr -s ' ' | \
+    grep "^\S* $current_desktop" | cut -d' ' -f1)
+    # echo "$current_ids"
+    focused_id=""
+    for win_id in $current_ids; do
+        # echo "$win_id"
+        win_eval=$(xprop -id "$win_id" | \
+        grep "_NET_WM_STATE(ATOM)" | \
+        grep _NET_WM_STATE_MAXIMIZED_VERT | \
+        grep -v _NET_WM_STATE_MAXIMIZED_HORZ | \
+        grep _NET_WM_STATE_FOCUSED)
+        if [ -n "$win_eval" ]; then
+            focused_id="$win_id"
+            current_ids="$(echo "$current_ids" | grep -v "$win_id")"
+        fi
+    done
+    # echo "$focused_id"
+    # echo "$current_ids"
+    if [ -z "$focused_id" ]; then
+        exit 1
+    fi
+    half_ids=""
+    for win_id in $current_ids; do
+        # echo "$win_id"
+        win_eval=$(xprop -id "$win_id" | \
+        grep "_NET_WM_STATE(ATOM)" | \
+        grep _NET_WM_STATE_MAXIMIZED_VERT | \
+        grep -v _NET_WM_STATE_MAXIMIZED_HORZ | \
+        grep -v _NET_WM_STATE_HIDDEN)
+        # echo "$win_eval"
+        if [ -n "$win_eval" ]; then
+            if [ -z "$half_ids" ]; then
+                half_ids="$win_id"
+            else
+                half_ids="$half_ids
+$win_id"
+            fi
+        fi
+    done
+    # echo "$half_ids"
+    if [ -z "$half_ids" ]; then
+        exit 1
+    fi
+    monitor1_x=$(xrandr | grep " connected" | \
+    grep primary | cut -d' ' -f4 | cut -d'+' -f1 | \
+    cut -d'x' -f1)
+    monitor2_x=$(xrandr | grep " connected" | \
+    grep -v primary | cut -d' ' -f3 | cut -d'x' -f1)
+    window1_x=$(xdotool getwindowgeometry "$focused_id" | grep Position | \
+    tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1) 
+    # echo "$window1_x"
+    monitor_ids=""
+    for win_id in $half_ids; do
+        win_x=$(xdotool getwindowgeometry "$win_id" | grep Position | \
+        tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1) 
+        # echo "$win_x"
+        if [ "$win_x" -lt "$monitor1_x" ] && [ "$window1_x" -lt "$monitor1_x" ]; then
+            win_eval="$win_id"
+        elif [ "$win_x" -ge "$monitor1_x" ] && [ "$window1_x" -ge "$monitor1_x" ]; then
+            win_eval="$win_id"
+        else
+            win_eval=""
+        fi
+        if [ -n "$win_eval" ]; then
+            if [ -z "$monitor_ids" ]; then
+                monitor_ids="$win_eval"
+            else
+                monitor_ids="$monitor_ids
+$win_eval"
+                # add new line
+            fi
+        fi
+    done
+    # echo "$monitor_ids"
+    windows_count=$(echo "$monitor_ids" | grep -cv '^\s*$' )
+    # echo "$windows_count"
+    if [ "$windows_count" -ne 1 ]; then
+        exit 1
+    fi
+    # echo one
+    window2_x=$(xdotool getwindowgeometry "$monitor_ids" | grep Position | \
+    tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1)
+    # echo "$window2_x"
+    window1_w=$(xdotool getwindowgeometry "$focused_id" | grep Geometry | \
+    tr -s ' ' | cut -d' ' -f3 | cut -d'x' -f1)
+    window2_w=$(xdotool getwindowgeometry "$monitor_ids" | grep Geometry | \
+    tr -s ' ' | cut -d' ' -f3 | cut -d'x' -f1)
+    # echo "$window1_w"
+    # echo "$window2_w"
+    if [ "$window1_x" -lt "$monitor1_x" ]; then
+        step_x=$(echo "$monitor1_x*0.05" | bc)
+        monitor_x="$monitor1_x"
+    else
+        step_x=$(echo "$monitor2_x*0.05" | bc)
+        monitor_x="$monitor2_x"
+    fi
+    # echo "$step_x"
+    step_xhalf=$(echo "scale=3; $step_x/2.00" | bc)
+    # echo "$step_xhalf"
+    if [ "$window1_x" -lt "$window2_x" ]; then
+        center_x="$window1_w"
+    else
+        center_x="$window2_w"
+    fi
+    for i_x in {1..19}; do
+        # echo "$i"
+        grid_x=$(echo "$i_x*$step_x" | bc)
+        diff_x=$(echo "$grid_x-$center_x" | bc | tr -d -)
+        # echo "$diff_x"
+        comp_x=$(echo "$diff_x < $step_xhalf" | bc)
+        # echo "$comp_x"
+        if [ "$comp_x" -eq 1 ]; then
+            break
+        fi
+    done
+    # echo "$i_x"
+    if [ -n "$increase_flag" ]; then
+        i_x=$(echo "$i_x+1" | bc)
+    else
+        i_x=$(echo "$i_x-1" | bc)
+    fi
+    # echo "$i_x"
+    if [ "$i_x" -gt 0 ] && [ "$i_x" -lt 20 ]; then
+        grid_x=$(echo "($i_x*$step_x+0.5)/1" | bc)
+        first_x="$grid_x"
+        second_x=$(echo "$monitor_x-$grid_x" | bc)
+        # echo "$grid_x"
+        # echo "$first_x"
+        # echo "$second_x"
+    else
+        exit 1
+    fi
+    if [ "$window1_x" -ge "$monitor1_x" ]; then
+        grid_x=$(echo "$monitor1_x+$grid_x" | bc)
+    fi
+    # echo "$grid_x"
+    if [ "$window1_x" -lt "$window2_x" ]; then
+        if [ -n "$increase_flag" ]; then
+            xdotool windowsize "$monitor_ids" "$second_x" 0
+            xdotool windowmove "$monitor_ids" "$grid_x" 0
+            xdotool windowsize "$focused_id" "$first_x" 0
+
+        else
+            xdotool windowsize "$focused_id" "$first_x" 0
+            xdotool windowmove "$monitor_ids" "$grid_x" 0
+            xdotool windowsize "$monitor_ids" "$second_x" 0
+        fi
+    else
+        if [ -n "$increase_flag" ]; then
+            xdotool windowsize "$focused_id" "$second_x" 0
+            xdotool windowmove "$focused_id" "$grid_x" 0
+            xdotool windowsize "$monitor_ids" "$first_x" 0
+        else
+            xdotool windowsize "$monitor_ids" "$first_x" 0
+            xdotool windowmove "$focused_id" "$grid_x" 0
+            xdotool windowsize "$focused_id" "$second_x" 0
+        fi
+    fi
+
 elif [ -n "$brightness_flag" ]; then
+    # change brightness of integrated monitor
     brillo=$(cat /sys/class/backlight/nv_backlight/brightness)
     if [ -n "$increase_flag" ]; then
         brillo=$(expr $brillo + 10)
@@ -94,6 +324,7 @@ elif [ -n "$brightness_flag" ]; then
     fi
 
 elif [ -n "$geometry_flag" ]; then
+    # return geometry of currtent window
     current_desktop=$(wmctrl -d | grep '\*' | cut -d' ' -f1)
     current_windows=$(wmctrl -lG | tr -s ' ' | \
     grep "^\S* $current_desktop" | cut -d' ' -f1-6)
