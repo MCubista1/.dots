@@ -21,6 +21,7 @@
 
 	# Log
 	l = log --oneline --graph
+	l5 = log --oneline --graph -n 5
 	lb = log --oneline --graph --branches
 	lb5 = log --oneline --graph --branches -n 5
 
