@@ -2255,5 +2255,13 @@
         "key": "alt+]",
         "command": "-editor.action.inlineSuggest.showNext",
         "when": "inlineSuggestionVisible && !editorReadonly"
+    },
+    {
+        "key": "shift+j",
+        "command": "workbench.action.quickOpenSelectNext"
+    },
+    {
+        "key": "shift+k",
+        "command": "workbench.action.quickOpenSelectPrevious"
     }
 ]
