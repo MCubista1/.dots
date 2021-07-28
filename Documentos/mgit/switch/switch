@@ -17,58 +17,230 @@ done
 
 if [ -n "$switch_flag" ]; then
     # switch two windows between monitors
-    current_desktop=$(wmctrl -d | grep '\*' | cut -d' ' -f1)
-    current_windows=$(wmctrl -lG | tr -s ' ' | \
-    grep "^\S* $current_desktop" | cut -d' ' -f1-4)
-    # echo "$current_windows"
-    windows_ids=$(echo "$current_windows" | cut -d' ' -f1)
-    windows_eval=""
+    current_desktop=$(xdotool get_desktop)
+    windows_ids=$(wmctrl -lG | tr -s ' ' | \
+    grep "^\S* $current_desktop" | cut -d' ' -f1)
+    windows_full=""
+    windows_half=""
+    windows_sum=""
     for win_id in $windows_ids; do
         # echo "$win_id"
         win_eval=$(xprop -id "$win_id" | \
         grep "_NET_WM_STATE(ATOM)" | \
-        grep _NET_WM_STATE_MAXIMIZED_HORZ | \
         grep _NET_WM_STATE_MAXIMIZED_VERT | \
         grep -v _NET_WM_STATE_HIDDEN)
         if [ -n "$win_eval" ]; then
-            win_geometry=$(echo "$current_windows" | grep "$win_id")
-            # echo "$win_geometry"
-            if [ -z "$windows_eval" ]; then
-                windows_eval="$win_geometry"
+            win_eval=$(echo "$win_eval" | grep _NET_WM_STATE_MAXIMIZED_HORZ )
+            if [ -n "$win_eval" ]; then
+                if [ -n "$windows_full" ]; then
+                    windows_full="$windows_full
+$win_id"
+                    # add new line
+                else
+                    windows_full="$win_id"
+                fi
+                windows_sum=$(echo "0$windows_sum+2" | bc)
             else
-                windows_eval="$windows_eval
-$win_geometry"
-                # add new line
+                if [ -n "$windows_half" ]; then
+                    windows_half="$windows_half
+$win_id"
+                    # add new line
+                else
+                    windows_half="$win_id"
+                fi
+                windows_sum=$(echo "0$windows_sum+1" | bc)
             fi
         fi
     done
-    # echo "$windows_eval"
-    windows_count=$(echo "$windows_eval" | grep -c '^')
+    # echo "$windows_full"
+    # echo "$windows_half"
+    # echo "$windows_sum"
+    if [ "$windows_sum" -ne 4 ]; then
+        exit 1
+    fi
+    windows_count=$(echo "$windows_full" | grep -vc '^[[:space:]]*$')
+    # echo "$windows_count"
     if [ "$windows_count" -eq 2 ]; then
-        win_1=$(echo "$windows_eval" | sed -n '1p')
-        win_2=$(echo "$windows_eval" | sed -n '2p')
-        win_1id=$(echo "$win_1" | cut -d' ' -f1)
-        win_1x=$(echo "$win_1" | cut -d' ' -f3)
-        win_1y=$(echo "$win_1" | cut -d' ' -f4)
-        win_2id=$(echo "$win_2" | cut -d' ' -f1)
-        win_2x=$(echo "$win_2" | cut -d' ' -f3)
-        win_2y=$(echo "$win_2" | cut -d' ' -f4)
-        if [ "$win_1y" -ne "$win_2y" ]; then
-            wmctrl -i -r "$win_1id" -e 0,"$win_2x","$win_2y",-1,-1
-            wmctrl -i -r "$win_2id" -e 0,"$win_1x","$win_1y",-1,-1
-            if [ "$win_1y" -gt "$win_2y" ]; then
-                if [ -n "$right_flag" ]; then
-                    wmctrl -i -a "$win_1id"
-                else
-                    wmctrl -i -a "$win_2id"
-                fi
+        win_1=$(echo "$windows_full" | sed -n '1p')
+        win_2=$(echo "$windows_full" | sed -n '2p')
+        win1_x=$(xdotool getwindowgeometry "$win_1" | grep Position | \
+        tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1)
+        win2_x=$(xdotool getwindowgeometry "$win_2" | grep Position | \
+        tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1)
+        xdotool windowmove "$win_1" "$win2_x" 0
+        xdotool windowmove "$win_2" "$win1_x" 0
+        if [ "$win1_x" -lt "$win2_x" ]; then
+            if [ -n "$right_flag" ]; then
+                xdotool windowfocus "$win_1"
             else
-                if [ -n "$right_flag" ]; then
-                    wmctrl -i -a "$win_2id"
-                else
-                    wmctrl -i -a "$win_1id"
-                fi
+                xdotool windowfocus "$win_2"
             fi
+        else
+            if [ -n "$right_flag" ]; then
+                xdotool windowfocus "$win_2"
+            else
+                xdotool windowfocus "$win_1"
+            fi
+        fi
+    elif [ "$windows_count" -eq 1 ]; then
+        windows_sort=""
+        for win_id in $windows_half; do
+            # echo "$win_id"
+            win_x=$(xdotool getwindowgeometry "$win_id" | grep Position | \
+            tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1)
+            if [ -n "$windows_sort" ]; then
+                windows_sort="$windows_sort
+$win_x $win_id"
+                # add new line
+            else
+                windows_sort="$win_x $win_id"
+            fi
+        done
+        windows_sort=$(echo "$windows_sort" | sort -V)
+        # echo "$windows_sort"
+        winf_id=$(echo "$windows_full")
+        win1_id=$(echo "$windows_sort" | sed -n '1p' | cut -d' ' -f2)
+        win2_id=$(echo "$windows_sort" | sed -n '2p' | cut -d' ' -f2)
+        winf_x=$(xdotool getwindowgeometry "$winf_id" | grep Position | \
+        tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1)
+        win1_x=$(xdotool getwindowgeometry "$win1_id" | grep Position | \
+        tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1)
+        win1_w=$(xdotool getwindowgeometry "$win1_id" | grep Geometry | \
+        tr -s ' ' | cut -d' ' -f3 | cut -d'x' -f1)
+        # echo "$win1_w"
+        mon1_x=$(xrandr | grep " connected" |  grep primary | \
+        cut -d' ' -f4 | cut -d'+' -f1 | cut -d'x' -f1)
+        mon2_x=$(xrandr | grep " connected" | \
+        grep -v primary | cut -d' ' -f3 | cut -d'x' -f1)
+        if [ "$win1_x" -lt "$mon1_x" ]; then
+            step_x=$(echo "$mon1_x*0.05" | bc)
+            stepF_x=$(echo "$mon2_x*0.05" | bc)
+            monF_x="$mon2_x"
+        else
+            step_x=$(echo "$mon2_x*0.05" | bc)
+            stepF_x=$(echo "$mon1_x*0.05" | bc)
+            monF_x="$mon1_x"
+        fi
+        step_half=$(echo "scale=3; $step_x/2.00" | bc)
+        for i_x in {1..19}; do
+            grid_x=$(echo "$i_x*$step_x" | bc)
+            diff_x=$(echo "$grid_x-$win1_w" | bc | tr -d -)
+            # echo "$diff_x"
+            comp_x=$(echo "$diff_x < $step_half" | bc)
+            # echo "$comp_x"
+            if [ "$comp_x" -eq 1 ]; then
+                break
+            fi
+        done
+    # echo "$i_x"
+    grid_x=$(echo "($i_x*$stepF_x+0.5)/1" | bc)
+    first_w="$grid_x"
+    second_w=$(echo "$monF_x-$grid_x" | bc)
+    origin_x=0
+    # echo "$grid_x"
+    # echo "$first_w"
+    # echo "$second_w"
+    if [ "$win1_x" -lt "$mon1_x" ]; then
+        grid_x=$(echo "$mon1_x+$grid_x" | bc)
+        origin_x="$mon1_x"
+    fi
+    if [ "$win1_x" -lt "$winf_x" ]; then
+        win_1="$winf_id"
+        win_2="$win1_id"
+    else
+        win_1="$win1_id"
+        win_2="$winf_id"
+    fi
+    xdotool windowsize "$win1_id" "$first_w" 0
+    xdotool windowsize "$win2_id" "$second_w" 0
+    xdotool windowmove "$win1_id" "$origin_x" 0
+    xdotool windowmove "$win2_id" "$grid_x" 0
+    xdotool windowmove "$winf_id" "$win1_x" 0
+    if [ -n "$right_flag" ]; then
+        xdotool windowfocus "$win_2"
+    else
+        xdotool windowfocus "$win_1"
+    fi
+    elif [ "$windows_count" -eq 0 ]; then
+        for win_id in $windows_half; do
+            # echo "$win_id"
+            win_x=$(xdotool getwindowgeometry "$win_id" | grep Position | \
+            tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1)
+            if [ -n "$windows_sort" ]; then
+                windows_sort="$windows_sort
+$win_x $win_id"
+                # add new line
+            else
+                windows_sort="$win_x $win_id"
+            fi
+        done
+        windows_sort=$(echo "$windows_sort" | sort -V)
+        # echo "$windows_sort"
+        win1_id=$(echo "$windows_sort" | sed -n '1p' | cut -d' ' -f2)
+        win2_id=$(echo "$windows_sort" | sed -n '2p' | cut -d' ' -f2)
+        win3_id=$(echo "$windows_sort" | sed -n '3p' | cut -d' ' -f2)
+        win4_id=$(echo "$windows_sort" | sed -n '4p' | cut -d' ' -f2)
+        win1_w=$(xdotool getwindowgeometry "$win1_id" | grep Geometry | \
+        tr -s ' ' | cut -d' ' -f3 | cut -d'x' -f1)
+        win3_w=$(xdotool getwindowgeometry "$win3_id" | grep Geometry | \
+        tr -s ' ' | cut -d' ' -f3 | cut -d'x' -f1)
+        mon1_x=$(xrandr | grep " connected" |  grep primary | \
+        cut -d' ' -f4 | cut -d'+' -f1 | cut -d'x' -f1)
+        mon2_x=$(xrandr | grep " connected" | \
+        grep -v primary | cut -d' ' -f3 | cut -d'x' -f1)
+        step1_x=$(echo "$mon1_x*0.05" | bc)
+        step2_x=$(echo "$mon2_x*0.05" | bc)
+        # echo "$step1_x"
+        # echo "$step2_x"
+        step1_half=$(echo "scale=3; $step1_x/2.00" | bc)
+        step2_half=$(echo "scale=3; $step2_x/2.00" | bc)
+        for i1_x in {1..19}; do
+            grid_x=$(echo "$i1_x*$step1_x" | bc)
+            diff_x=$(echo "$grid_x-$win1_w" | bc | tr -d -)
+            # echo "$diff_x"
+            comp_x=$(echo "$diff_x < $step1_half" | bc)
+            # echo "$comp_x"
+            if [ "$comp_x" -eq 1 ]; then
+                break
+            fi
+        done
+        for i2_x in {1..19}; do
+            grid_x=$(echo "$i2_x*$step2_x" | bc)
+            diff_x=$(echo "$grid_x-$win3_w" | bc | tr -d -)
+            # echo "$diff_x"
+            comp_x=$(echo "$diff_x < $step2_half" | bc)
+            # echo "$comp_x"
+            if [ "$comp_x" -eq 1 ]; then
+                break
+            fi
+        done
+        # echo "$i1_x"
+        # echo "$i2_x"
+        grid1_x=$(echo "($i2_x*$step1_x+0.5)/1" | bc)
+        grid2_x=$(echo "($i1_x*$step2_x+0.5)/1" | bc)
+        fst_w="$grid1_x"
+        snd_w=$(echo "$mon1_x-$grid1_x" | bc)
+        trd_w="$grid2_x"
+        frd_w=$(echo "$mon2_x-$grid2_x" | bc)
+        # echo "$fst_w"
+        # echo "$snd_w"
+        # echo "$trd_w"
+        # echo "$frd_w"
+        grid2_x=$(echo "$mon1_x+$grid2_x" | bc)
+        # echo "$grid1_x"
+        # echo "$grid2_x"
+        xdotool windowsize "$win1_id" "$trd_w" 0
+        xdotool windowsize "$win2_id" "$frd_w" 0
+        xdotool windowsize "$win3_id" "$fst_w" 0
+        xdotool windowsize "$win4_id" "$snd_w" 0
+        xdotool windowmove "$win1_id" "$mon1_x" 0
+        xdotool windowmove "$win2_id" "$grid2_x" 0
+        xdotool windowmove "$win3_id" 0 0
+        xdotool windowmove "$win4_id" "$grid1_x" 0
+        if [ -n "$right_flag" ]; then
+            xdotool windowfocus "$win1_id"
+        else
+            xdotool windowfocus "$win3_id"
         fi
     fi
 
@@ -199,7 +371,7 @@ $win_id"
     monitor2_x=$(xrandr | grep " connected" | \
     grep -v primary | cut -d' ' -f3 | cut -d'x' -f1)
     window1_x=$(xdotool getwindowgeometry "$focused_id" | grep Position | \
-    tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1) 
+    tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1)
     # echo "$window1_x"
     monitor_ids=""
     for win_id in $half_ids; do
