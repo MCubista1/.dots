@@ -10,6 +10,7 @@ while [[ "$#" -gt 0 ]]; do
         -b) brightness_flag=1 ;;
         -r) right_flag=1 ;;
         -i) increase_flag=1 ;;
+        -u) up_flag=1 ;;
         *) echo "Unknown parameter passed: $1"; exit 1 ;;
     esac
     shift
@@ -18,7 +19,7 @@ done
 if [ -n "$switch_flag" ]; then
     # switch two windows between monitors
     current_desktop=$(xdotool get_desktop)
-    windows_ids=$(wmctrl -lG | tr -s ' ' | \
+    windows_ids=$(wmctrl -l | tr -s ' ' | \
     grep "^\S* $current_desktop" | cut -d' ' -f1)
     windows_full=""
     windows_half=""
@@ -309,15 +310,49 @@ elif [ -n "$half_flag" ]; then
 
 elif [ -n "$desktops_flag" ]; then
     # change number of virtual desktops
-    desktops_count=$(wmctrl -d | grep -c '^')
-    # echo "$desktops_count"
+    desktops_n=$(xdotool get_num_desktops)
+    desktops_n1=$(echo "$desktops_n-1" | bc)
+    desktop_c=$(xdotool get_desktop)
+    # echo "$desktops_n"
+    # echo "$desktop_c"
+    windows_all=$(wmctrl -l | tr -s ' ' | cut -d' ' -f1-2)
+    # echo "$windows_all"
     if [ -n "$increase_flag" ]; then
-        desktops_ncount=$(echo "$desktops_count"+1 | bc)
+        desktops_n=$(echo "$desktops_n"+1 | bc)
+        wmctrl -n "$desktops_n"
+        if [ -z "$up_flag" ]; then
+            desktop_c=$(echo "$desktop_c+1" | bc)
+        fi
+        for i_d in $(seq $desktop_c $desktops_n1); do
+            # echo "$i_d"
+            ip_d=$(echo "$i_d+1" | bc)
+            wins_d=$(echo "$windows_all" | grep "^\S* $i_d" )
+            # echo "$wins_d"
+            if [ -n "$wins_d" ]; then
+                for w_id in $wins_d; do
+                    wmctrl -i -r "$w_id" -t "$ip_d"
+                done
+            fi
+        done
     else
-        desktops_ncount=$(echo "$desktops_count"-1 | bc)
+        desktop_c=$(echo "$desktop_c+1" | bc)
+        if [ -z "$up_flag" ]; then
+            desktop_c=$(echo "$desktop_c+1" | bc)
+        fi
+        for i_d in $(seq $desktop_c $desktops_n1); do
+            # echo "$i_d"
+            im_d=$(echo "$i_d-1" | bc)
+            wins_d=$(echo "$windows_all" | grep "^\S* $i_d" )
+            # echo "$wins_d"
+            if [ -n "$wins_d" ]; then
+                for w_id in $wins_d; do
+                    wmctrl -i -r "$w_id" -t "$im_d"
+                done
+            fi
+        done
+        desktops_n=$(echo "$desktops_n"-1 | bc)
+        wmctrl -n "$desktops_n"
     fi
-    # echo "$desktops_ncount"
-    wmctrl -n "$desktops_ncount"
 
 elif [ -n "$resize_flag" ]; then
     # resize half windows
