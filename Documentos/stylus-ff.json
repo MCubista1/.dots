@@ -1,0 +1,124 @@
+[
+  {
+    "settings": {
+      "openEditInWindow": true,
+      "openEditInWindow.popup": false,
+      "windowPosition": {},
+      "show-badge": true,
+      "disableAll": false,
+      "exposeIframes": false,
+      "newStyleAsUsercss": false,
+      "styleViaXhr": false,
+      "patchCsp": false,
+      "config.autosave": true,
+      "popup.breadcrumbs": true,
+      "popup.breadcrumbs.usePath": false,
+      "popup.enabledFirst": true,
+      "popup.stylesFirst": true,
+      "popup.autoResort": false,
+      "popup.borders": false,
+      "popup.findStylesInline": true,
+      "popup.findSort": "u",
+      "manage.onlyEnabled": false,
+      "manage.onlyLocal": false,
+      "manage.onlyUsercss": false,
+      "manage.onlyEnabled.invert": false,
+      "manage.onlyLocal.invert": false,
+      "manage.onlyUsercss.invert": false,
+      "manage.actions.expanded": true,
+      "manage.backup.expanded": true,
+      "manage.filters.expanded": true,
+      "manage.newUI": true,
+      "manage.newUI.favicons": false,
+      "manage.newUI.faviconsGray": true,
+      "manage.newUI.targets": 3,
+      "manage.newUI.sort": "title,asc",
+      "editor.options": {},
+      "editor.toc.expanded": false,
+      "editor.options.expanded": true,
+      "editor.lint.expanded": true,
+      "editor.lineWrapping": true,
+      "editor.smartIndent": true,
+      "editor.indentWithTabs": false,
+      "editor.tabSize": 4,
+      "editor.keyMap": "default",
+      "editor.theme": "material",
+      "editor.beautify": {
+        "selector_separator_newline": true,
+        "newline_before_open_brace": false,
+        "newline_after_open_brace": true,
+        "newline_between_properties": true,
+        "newline_before_close_brace": true,
+        "newline_between_rules": false,
+        "preserve_newlines": true,
+        "end_with_newline": false,
+        "indent_conditional": true
+      },
+      "editor.beautify.hotkey": "",
+      "editor.lintDelay": 300,
+      "editor.linter": "csslint",
+      "editor.lintReportDelay": 500,
+      "editor.matchHighlight": "token",
+      "editor.autoCloseBrackets": true,
+      "editor.autocompleteOnTyping": false,
+      "editor.contextDelete": null,
+      "editor.selectByTokens": true,
+      "editor.appliesToLineWidget": true,
+      "editor.livePreview": true,
+      "editor.colorpicker": true,
+      "editor.colorpicker.hexUppercase": false,
+      "editor.colorpicker.hotkey": "",
+      "editor.colorpicker.color": "",
+      "editor.colorpicker.maxHeight": 300,
+      "hotkey._execute_browser_action": "",
+      "hotkey.openManage": "",
+      "hotkey.styleDisableAll": "",
+      "sync.enabled": "none",
+      "iconset": 0,
+      "badgeDisabled": "#8B0000",
+      "badgeNormal": "#006666",
+      "popupWidth": 246,
+      "updateInterval": 24
+    }
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1627535154128,
+    "name": "youtube.com",
+    "sections": [
+      {
+        "code": "html:not(.style-scope)[dark], :not(.style-scope)[dark] {\n    --ytd-searchbox-legacy-button-color: #263238;\n    --ytd-searchbox-legacy-button-hover-color: #263238;\n    --ytd-searchbox-background: #263238;\n}\nhtml:not(.style-scope)[dark], :not(.style-scope)[dark] {\n    --yt-spec-brand-background-solid: #263238;\n    --yt-spec-brand-background-primary: #263238;\n    --yt-spec-general-background-a: #263238;\n    --yt-spec-general-background-b: #263238;\n    --yt-spec-badge-chip-background: #263238;\n    \n    --yt-spec-text-primary: #ABB2BF;\n    --yt-spec-text-secondary: #ABB2BF;\n    --yt-spec-icon-active-other: #ABB2BF;\n    --yt-spec-brand-icon-inactive: #ABB2BF;\n    \n    --yt-spec-brand-icon-active: #cccccc;\n}",
+        "domains": [
+          "youtube.com"
+        ]
+      }
+    ],
+    "updateDate": 1627537231258,
+    "_id": "86afbe1a-56e3-4092-8a20-c42e8665f808",
+    "_rev": 1627537231258,
+    "id": 1,
+    "_usw": {}
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1627537852964,
+    "name": "github.com",
+    "sections": [
+      {
+        "code": "[data-color-mode=\"dark\"][data-dark-theme*=\"dark\"], [data-color-mode=\"light\"][data-light-theme*=\"dark\"] {\n    --color-bg-primary: #263238;\n    --color-bg-canvas: #263238;\n    --color-bg-canvas-inset: #263238;\n    --color-bg-secondary: #263238;\n    --color-header-bg: #263238;\n    \n    --color-text-primary: #ABB2BF;\n    --color-text-secondary: #ABB2BF;\n}",
+        "domains": [
+          "github.com"
+        ]
+      }
+    ],
+    "updateDate": 1627541198718,
+    "_id": "bf8569f5-b428-4494-8a7f-aeee4fa0fb94",
+    "_rev": 1627541198718,
+    "id": 2,
+    "_usw": {}
+  }
+]
