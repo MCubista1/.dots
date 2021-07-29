@@ -396,4 +396,5 @@
     ],
     "workbench.activityBar.visible": false,
     "projectManager.sortList": "Recent",
+    "terminal.integrated.defaultLocation": "editor",
 }
