@@ -1,7 +1,8 @@
 [
     {
         "key": "shift+enter",
-        "command": "python.execInTerminal"
+        "command": "python.execInTerminal",
+        "when": "resourceExtname == .py"
     },
     {
         "key": "alt+up",
