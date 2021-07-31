@@ -64,7 +64,7 @@
   [[no-title]]
     background_color = "#263238"
     cursor_shape = underline
-    cursor_color = "#ffcb6b"
+    cursor_color = "#546e7a"
     cursor_color_fg = False
     font = Liberation Mono 10
     foreground_color = "#abb2bf"
