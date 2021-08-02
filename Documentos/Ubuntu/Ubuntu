@@ -297,7 +297,7 @@ sudo apt-mark showhold
 npx serve </dev/null &>/dev/null &
 
 # rice
-convert -crop 1360 09-21.png rr.png
+convert -crop 1360 in.png out.png
 convert -append rr-0.png rr-1.png fn.pn
 
 # vscode vim
