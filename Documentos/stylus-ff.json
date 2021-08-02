@@ -1,7 +1,7 @@
 [
   {
     "settings": {
-      "openEditInWindow": true,
+      "openEditInWindow": false,
       "openEditInWindow.popup": false,
       "windowPosition": {},
       "show-badge": true,
@@ -109,15 +109,15 @@
     "name": "github.com",
     "sections": [
       {
-        "code": "[data-color-mode=\"dark\"][data-dark-theme*=\"dark\"], [data-color-mode=\"light\"][data-light-theme*=\"dark\"] {\n    --color-bg-primary: #263238;\n    --color-bg-canvas: #263238;\n    --color-bg-canvas-inset: #263238;\n    --color-bg-secondary: #263238;\n    --color-header-bg: #263238;\n    \n    --color-text-primary: #ABB2BF;\n    --color-text-secondary: #ABB2BF;\n}",
+        "code": "[data-color-mode=\"dark\"][data-dark-theme*=\"dark\"], [data-color-mode=\"light\"][data-light-theme*=\"dark\"] {\n    --color-bg-primary: #263238;\n    --color-bg-canvas: #263238;\n    --color-bg-canvas-inset: #263238;\n    --color-bg-secondary: #263238;\n    --color-header-bg: #263238;\n    --color-header-search-bg: #263238;\n    --color-social-count-bg: #263238;\n    \n    --color-text-primary: #ABB2BF;\n    --color-text-secondary: #ABB2BF;\n    --color-header-logo: #ABB2BF;\n    \n    --color-fg-muted: #546E7A;\n    \n}",
         "domains": [
           "github.com"
         ]
       }
     ],
-    "updateDate": 1627541198718,
+    "updateDate": 1627943720580,
     "_id": "bf8569f5-b428-4494-8a7f-aeee4fa0fb94",
-    "_rev": 1627541198718,
+    "_rev": 1627943720580,
     "id": 2,
     "_usw": {}
   }
