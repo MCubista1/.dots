@@ -129,15 +129,15 @@
     "name": "marketmilk.babypips.com",
     "sections": [
       {
-        "code": "body {\n      background-color: #263238;\n}\n\n#loader {\n      background: #263238;\n}",
+        "code": "body {\n      background-color: #263238;\n}\n\n#loader {\n      background: #263238;\n}\n\ndiv.internalVimiumHintMarker span {\n    color: #ABB2BF;\n    font-family: Helvetica, Arial, sans-serif;\n    font-weight: bold;\n    font-size: 11px;\n}",
         "domains": [
           "marketmilk.babypips.com"
         ]
       }
     ],
-    "updateDate": 1628028270522,
+    "updateDate": 1628105373139,
     "_id": "7c8ca92a-bea3-4361-9887-caf25f8aa47e",
-    "_rev": 1628028270522,
+    "_rev": 1628105373139,
     "id": 3,
     "_usw": {}
   },
