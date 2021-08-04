@@ -4,7 +4,7 @@
       "openEditInWindow": false,
       "openEditInWindow.popup": false,
       "windowPosition": {},
-      "show-badge": true,
+      "show-badge": false,
       "disableAll": false,
       "exposeIframes": false,
       "newStyleAsUsercss": false,
@@ -74,9 +74,9 @@
       "hotkey.openManage": "",
       "hotkey.styleDisableAll": "",
       "sync.enabled": "none",
-      "iconset": 0,
-      "badgeDisabled": "#8B0000",
-      "badgeNormal": "#006666",
+      "iconset": 1,
+      "badgeDisabled": "#546e7a",
+      "badgeNormal": "#263238",
       "popupWidth": 246,
       "updateInterval": 24
     }
@@ -109,16 +109,72 @@
     "name": "github.com",
     "sections": [
       {
-        "code": "[data-color-mode=\"dark\"][data-dark-theme*=\"dark\"], [data-color-mode=\"light\"][data-light-theme*=\"dark\"] {\n    --color-bg-primary: #263238;\n    --color-bg-canvas: #263238;\n    --color-bg-canvas-inset: #263238;\n    --color-bg-secondary: #263238;\n    --color-header-bg: #263238;\n    --color-header-search-bg: #263238;\n    --color-social-count-bg: #263238;\n    \n    --color-text-primary: #ABB2BF;\n    --color-text-secondary: #ABB2BF;\n    --color-header-logo: #ABB2BF;\n    \n    --color-fg-muted: #546E7A;\n    \n}",
+        "code": "[data-color-mode=\"dark\"][data-dark-theme*=\"dark\"], [data-color-mode=\"light\"][data-light-theme*=\"dark\"] {\n    --color-bg-canvas: #263238;\n    --color-bg-primary: #263238;\n    --color-bg-canvas-inset: #263238;\n    --color-bg-secondary: #263238;\n    --color-header-bg: #263238;\n    --color-header-search-bg: #263238;\n    --color-social-count-bg: #263238;\n    \n    --color-text-primary: #ABB2BF;\n    --color-text-secondary: #ABB2BF;\n    --color-header-logo: #ABB2BF;\n    \n    --color-fg-muted: #546E7A;\n}",
         "domains": [
           "github.com"
         ]
       }
     ],
-    "updateDate": 1627943720580,
+    "updateDate": 1628051638352,
     "_id": "bf8569f5-b428-4494-8a7f-aeee4fa0fb94",
-    "_rev": 1627943720580,
+    "_rev": 1628051638352,
     "id": 2,
     "_usw": {}
+  },
+  {
+    "enabled": true,
+    "updateUrl": null,
+    "url": null,
+    "installDate": 1627960195138,
+    "name": "marketmilk.babypips.com",
+    "sections": [
+      {
+        "code": "body {\n      background-color: #263238;\n}\n\n#loader {\n      background: #263238;\n}",
+        "domains": [
+          "marketmilk.babypips.com"
+        ]
+      }
+    ],
+    "updateDate": 1628028270522,
+    "_id": "7c8ca92a-bea3-4361-9887-caf25f8aa47e",
+    "_rev": 1628028270522,
+    "id": 3,
+    "_usw": {}
+  },
+  {
+    "enabled": true,
+    "updateUrl": "https://cdn.jsdelivr.net/gh/33kk/uso-archive@flomaster/data/usercss/153739.user.css",
+    "url": null,
+    "installDate": 1628051879521,
+    "sections": [
+      {
+        "code": "/*! Stylus-Dark v1.3 (2018-09-14)\n      Repository: https://github.com/overdodactyl/Stylus-Dark\n      License:    https://creativecommons.org/licenses/by-sa/4.0/\n\n      Code Mirror based on Firefox\n*/\n  #options {\n    background: #263238;\n  }\n  #options-title {\n    background-color: #263238;\n  }\n  #notes,\n  body {\n    background: #263238!important;\n    color: #b1b1b3!important\n  }\n  #header {\n    color: silver!important;\n    background: #263238!important;\n    border-style: none!important\n  }\n  #stylus-popup {\n    background: #4a4a4f!important;\n    color: silver!important\n  }\n  #hotkey-info[data-active] {\n    border-left: 2px solid #2a2a2e!important\n  }\n  #hotkey-info div {\n    border-top: 1px solid #2a2a2e!important;\n    background-color: #2a2a2e!important\n  }\n  #help-popup,\n  #sections,\n  .newUI .target {\n    color: #b1b1b3!important\n  }\n  #help-popup,\n  #message-box > div,\n  #message-box-buttons,\n  #message-box-title,\n  body {\n    background: #263238!important\n  }\n  .search-result {\n    background: #4a4a4f!important;\n    border-color: #737373!important\n  }\n  .search-result:hover {\n    border-color: #b1b1b3!important\n  }\n  .search-result-meta {\n    background-color: #4a4a4f!important;\n    color: #b1b1b3!important\n  }\n  button,\n  input:not([type]),\n  select {\n    font-family: arial,sans-serif!important\n  }\n  input[type=checkbox]:not(.slider) {\n    background: #38383d!important\n  }\n  .applies-to li,\n  .firefox select,\n  input {\n    background-color: #263238!important;\n    color: silver!important;\n    border: 1px solid #4a4a4f!important\n  }\n  .filter-selection select {\n    background-color: transparent!important;\n    border: none!important\n  }\n  #filters .filter-selection:hover {\n    background-color: transparent!important\n  }\n  button {\n    background: #2a2a2e!important;\n    border: 1px solid #484848!important;\n    color: silver!important;\n    border-radius: 3px!important\n  }\n  .svg-icon.checked {\n    fill: #45a1ff!important\n  }\n  button:hover {\n    color: #45a1ff!important\n  }\n  a,\n  a:visited {\n    color: #e1e1e1!important\n  }\n  #save-button:after {\n    content: 'd'!important\n  }\n  body.dirty #save-button:after {\n    content: '?'!important\n  }\n  .newUI .entry:hover .svg-icon:hover,\n  .svg-icon:hover {\n    fill: #45a1ff!important\n  }\n  #message-box.danger #message-box-title {\n    background-color: #b22222!important\n  }\n  .newUI .can-update .update,\n  .newUI .no-update:not(.update-problem):not(.update-done) .up-to-date {\n    color: #000!important\n  }\n  .svg-icon {\n    fill: #b1b1b3!important\n  }\n  #url {\n    filter: invert(65%)!important\n  }\n  .CodeMirror-gutters {\n    color: #b1b1b3!important\n  }\n  .newUI .entry {\n    background: #263238!important\n  }\n  .newUI .entry:hover {\n    background: #2a2a2e!important\n  }\n  .disabled h2::after {\n    border: 1px solid #444!important\n  }\n  .svg-icon.select-arrow {\n    fill: silver!important\n  }\n  .newUI .entry .style-name:hover::before {\n    background: 0 0!important\n  }\n  body.all-styles-hidden-by-filters::after,\n  body.all-styles-hidden-by-filters::before {\n    color: #45a1ff!important\n  }\n  .active #filters-stats {\n    background-color: #45a1ff!important;\n    border-color: #45a1ff!important\n  }\n  #reset-filters {\n    fill: #45a1ff!important\n  }\n  .CodeMirror {\n    border: 1px solid #4a4a4f;\n    border-radius: 4px!important\n  }\n  .Codemirror-hints {\n    background: #353b48!important;\n    border-color: #737373!important\n  }\n  .Codemirror-hint {\n    color: #d7d7db!important\n  }\n  .CodeMirror {\n    background: #263238!important;\n    color: #b1b1b3!important\n  }\n  div.CodeMirror-selected {\n    background: #353b48!important\n  }\n  .CodeMirror-line > span > span::selection,\n  .CodeMirror-line > span::selection,\n  .CodeMirror-line::selection {\n    background: #353b48!important\n  }\n  .CodeMirror-line > span > span::-moz-selection,\n  .CodeMirror-line > span::-moz-selection,\n  .CodeMirror-line::-moz-selection {\n    background: #353b48!important\n  }\n  .CodeMirror-gutters {\n    background: #263238!important;\n    border-right: 0 solid #4a4a4f!important\n  }\n  .CodeMirror-guttermarker,\n  .CodeMirror-guttermarker-subtle {\n    color: #555!important\n  }\n  .CodeMirror-linenumber {\n    color: #939393!important\n  }\n  .CodeMirror-cursor {\n    border-left: 1px solid #fff!important\n  }\n  span.cm-comment {\n    color: #939393!important\n  }\n  span.cm-atom,\n  span.cm-attribute,\n  span.cm-builtin,\n  span.cm-error,\n  span.cm-keyword,\n  span.cm-quote {\n    color: #ff7de9!important\n  }\n  span.cm-number,\n  span.cm-string,\n  span.cm-string-2 {\n    color: #6b89ff!important\n  }\n  span.cm-hr,\n  span.cm-meta {\n    color: #939393!important\n  }\n  span.cm-header,\n  span.cm-qualifier,\n  span.cm-variable-2 {\n    color: #75bfff!important\n  }\n  span.cm-property {\n    color: #86de74!important\n  }\n  span.cm-bracket,\n  span.cm-def,\n  span.cm-link:visited,\n  span.cm-tag {\n    color: #75bfff!important\n  }\n  span.cm-variable {\n    color: #b98eff!important\n  }\n  span.cm-variable-3 {\n    color: #d7d7db!important\n  }\n  span.cm-link {\n    color: #737373!important\n  }\n  span.cm-operator {\n    color: #b1b1b3!important\n  }\n  span.cm-special {\n    color: #d7d7db!important\n  }\n  .CodeMirror-activeline-background {\n    background: #1A2327!important\n  }\n  .CodeMirror-matchingbracket {\n    outline: rgba(255,255,255,.25) solid 1px!important;\n    color: #fff!important\n  }\n  select {\n    color: silver;\n  }\n  option, optgroup {\n    background-color: #263238\n  }",
+        "start": 706,
+        "regexps": [
+          "chrome-extension://.*",
+          "moz-extension://.*"
+        ]
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           Stylus Dark - ShadowFox\n@namespace      USO Archive\n@author         overdodactyl\n@description    `This theme is specifically designed to match the dark mode used by Firefox's inspector and browser toolbox (background colors, text colors in the editor, fonts etc.).  Additionally, it is meant to compliment [ShadowFox](https://github.com/overdodactyl/ShadowFox) - a universal dark theme for Firefox.   Hosted on GitHub (please submit any issues there): https://github.com/overdodactyl/Stylus-Dark`\n@version        20180914.23.40\n@license        CC-BY-SA-4.0\n@preprocessor   uso\n==/UserStyle== */\n@-moz-document regexp(\"chrome-extension://.*\"),\nregexp(\"moz-extension://.*\") {\n  /*! Stylus-Dark v1.3 (2018-09-14)\n      Repository: https://github.com/overdodactyl/Stylus-Dark\n      License:    https://creativecommons.org/licenses/by-sa/4.0/\n\n      Code Mirror based on Firefox\n*/\n  #options {\n    background: #263238;\n  }\n  #options-title {\n    background-color: #263238;\n  }\n  #notes,\n  body {\n    background: #263238!important;\n    color: #b1b1b3!important\n  }\n  #header {\n    color: silver!important;\n    background: #263238!important;\n    border-style: none!important\n  }\n  #stylus-popup {\n    background: #4a4a4f!important;\n    color: silver!important\n  }\n  #hotkey-info[data-active] {\n    border-left: 2px solid #2a2a2e!important\n  }\n  #hotkey-info div {\n    border-top: 1px solid #2a2a2e!important;\n    background-color: #2a2a2e!important\n  }\n  #help-popup,\n  #sections,\n  .newUI .target {\n    color: #b1b1b3!important\n  }\n  #help-popup,\n  #message-box > div,\n  #message-box-buttons,\n  #message-box-title,\n  body {\n    background: #263238!important\n  }\n  .search-result {\n    background: #4a4a4f!important;\n    border-color: #737373!important\n  }\n  .search-result:hover {\n    border-color: #b1b1b3!important\n  }\n  .search-result-meta {\n    background-color: #4a4a4f!important;\n    color: #b1b1b3!important\n  }\n  button,\n  input:not([type]),\n  select {\n    font-family: arial,sans-serif!important\n  }\n  input[type=checkbox]:not(.slider) {\n    background: #38383d!important\n  }\n  .applies-to li,\n  .firefox select,\n  input {\n    background-color: #263238!important;\n    color: silver!important;\n    border: 1px solid #4a4a4f!important\n  }\n  .filter-selection select {\n    background-color: transparent!important;\n    border: none!important\n  }\n  #filters .filter-selection:hover {\n    background-color: transparent!important\n  }\n  button {\n    background: #2a2a2e!important;\n    border: 1px solid #484848!important;\n    color: silver!important;\n    border-radius: 3px!important\n  }\n  .svg-icon.checked {\n    fill: #45a1ff!important\n  }\n  button:hover {\n    color: #45a1ff!important\n  }\n  a,\n  a:visited {\n    color: #e1e1e1!important\n  }\n  #save-button:after {\n    content: 'd'!important\n  }\n  body.dirty #save-button:after {\n    content: '?'!important\n  }\n  .newUI .entry:hover .svg-icon:hover,\n  .svg-icon:hover {\n    fill: #45a1ff!important\n  }\n  #message-box.danger #message-box-title {\n    background-color: #b22222!important\n  }\n  .newUI .can-update .update,\n  .newUI .no-update:not(.update-problem):not(.update-done) .up-to-date {\n    color: #000!important\n  }\n  .svg-icon {\n    fill: #b1b1b3!important\n  }\n  #url {\n    filter: invert(65%)!important\n  }\n  .CodeMirror-gutters {\n    color: #b1b1b3!important\n  }\n  .newUI .entry {\n    background: #263238!important\n  }\n  .newUI .entry:hover {\n    background: #2a2a2e!important\n  }\n  .disabled h2::after {\n    border: 1px solid #444!important\n  }\n  .svg-icon.select-arrow {\n    fill: silver!important\n  }\n  .newUI .entry .style-name:hover::before {\n    background: 0 0!important\n  }\n  body.all-styles-hidden-by-filters::after,\n  body.all-styles-hidden-by-filters::before {\n    color: #45a1ff!important\n  }\n  .active #filters-stats {\n    background-color: #45a1ff!important;\n    border-color: #45a1ff!important\n  }\n  #reset-filters {\n    fill: #45a1ff!important\n  }\n  .CodeMirror {\n    border: 1px solid #4a4a4f;\n    border-radius: 4px!important\n  }\n  .Codemirror-hints {\n    background: #353b48!important;\n    border-color: #737373!important\n  }\n  .Codemirror-hint {\n    color: #d7d7db!important\n  }\n  .CodeMirror {\n    background: #263238!important;\n    color: #b1b1b3!important\n  }\n  div.CodeMirror-selected {\n    background: #353b48!important\n  }\n  .CodeMirror-line > span > span::selection,\n  .CodeMirror-line > span::selection,\n  .CodeMirror-line::selection {\n    background: #353b48!important\n  }\n  .CodeMirror-line > span > span::-moz-selection,\n  .CodeMirror-line > span::-moz-selection,\n  .CodeMirror-line::-moz-selection {\n    background: #353b48!important\n  }\n  .CodeMirror-gutters {\n    background: #263238!important;\n    border-right: 0 solid #4a4a4f!important\n  }\n  .CodeMirror-guttermarker,\n  .CodeMirror-guttermarker-subtle {\n    color: #555!important\n  }\n  .CodeMirror-linenumber {\n    color: #939393!important\n  }\n  .CodeMirror-cursor {\n    border-left: 1px solid #fff!important\n  }\n  span.cm-comment {\n    color: #939393!important\n  }\n  span.cm-atom,\n  span.cm-attribute,\n  span.cm-builtin,\n  span.cm-error,\n  span.cm-keyword,\n  span.cm-quote {\n    color: #ff7de9!important\n  }\n  span.cm-number,\n  span.cm-string,\n  span.cm-string-2 {\n    color: #6b89ff!important\n  }\n  span.cm-hr,\n  span.cm-meta {\n    color: #939393!important\n  }\n  span.cm-header,\n  span.cm-qualifier,\n  span.cm-variable-2 {\n    color: #75bfff!important\n  }\n  span.cm-property {\n    color: #86de74!important\n  }\n  span.cm-bracket,\n  span.cm-def,\n  span.cm-link:visited,\n  span.cm-tag {\n    color: #75bfff!important\n  }\n  span.cm-variable {\n    color: #b98eff!important\n  }\n  span.cm-variable-3 {\n    color: #d7d7db!important\n  }\n  span.cm-link {\n    color: #737373!important\n  }\n  span.cm-operator {\n    color: #b1b1b3!important\n  }\n  span.cm-special {\n    color: #d7d7db!important\n  }\n  .CodeMirror-activeline-background {\n    background: #1A2327!important\n  }\n  .CodeMirror-matchingbracket {\n    outline: rgba(255,255,255,.25) solid 1px!important;\n    color: #fff!important\n  }\n  select {\n    color: silver;\n  }\n  option, optgroup {\n    background-color: #263238\n  }\n}",
+    "usercssData": {
+      "name": "Stylus Dark - ShadowFox",
+      "namespace": "USO Archive",
+      "author": "overdodactyl",
+      "description": "This theme is specifically designed to match the dark mode used by Firefox's inspector and browser toolbox (background colors, text colors in the editor, fonts etc.).  Additionally, it is meant to compliment [ShadowFox](https://github.com/overdodactyl/ShadowFox) - a universal dark theme for Firefox.   Hosted on GitHub (please submit any issues there): https://github.com/overdodactyl/Stylus-Dark",
+      "version": "20180914.23.40",
+      "license": "CC-BY-SA-4.0",
+      "preprocessor": "uso"
+    },
+    "author": "overdodactyl",
+    "description": "This theme is specifically designed to match the dark mode used by Firefox's inspector and browser toolbox (background colors, text colors in the editor, fonts etc.).  Additionally, it is meant to compliment [ShadowFox](https://github.com/overdodactyl/ShadowFox) - a universal dark theme for Firefox.   Hosted on GitHub (please submit any issues there): https://github.com/overdodactyl/Stylus-Dark",
+    "name": "Stylus Dark - ShadowFox",
+    "originalDigest": "ebbe6645bdaac4dfe92c48409825522c920b44a6",
+    "_id": "b8212b39-6635-4c6c-af90-828da46bb9a9",
+    "_rev": 1628054799748,
+    "id": 4,
+    "updateDate": 1628054799748,
+    "_usw": {},
+    "customName": "Stylus Extension"
   }
 ]
