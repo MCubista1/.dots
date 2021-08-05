@@ -1985,10 +1985,6 @@
         "when": "emptyWorkspaceSupport"
     },
     {
-        "key": "alt+l",
-        "command": "workbench.action.toggleMaximizedPanel"
-    },
-    {
         "key": "ctrl+q",
         "command": "workbench.action.terminal.kill"
     },
