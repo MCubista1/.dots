@@ -184,5 +184,25 @@ def fcd(event):
 def custom_keybindings(bindings, **kw):
     # fzf dir to cd C-F bind
     @bindings.add(Keys.ControlF)
-    def say_hi(event):
+    def fzf_cd(event):
         fcd(event)
+    @bindings.add('K')
+    # command history up
+    def shift_j(event):
+        event.current_buffer.history_backward()
+    # command history down
+    @bindings.add('J')
+    def shift_k(event):
+        event.current_buffer.history_forward()
+    # buffer left
+    @bindings.add('H')
+    def shift_k(event):
+        c_r = event.current_buffer.document.cursor_position_row
+        c_c = event.current_buffer.document.cursor_position_col - 1
+        event.current_buffer.cursor_position = event.current_buffer.document.translate_row_col_to_index(c_r, c_c)
+    # buffer right
+    @bindings.add('L')
+    def shift_k(event):
+        c_r = event.current_buffer.document.cursor_position_row
+        c_c = event.current_buffer.document.cursor_position_col + 1
+        event.current_buffer.cursor_position = event.current_buffer.document.translate_row_col_to_index(c_r, c_c)
