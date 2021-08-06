@@ -1,4 +1,5 @@
 import os
+import re
 from prompt_toolkit.keys import Keys
 
 # restart required on prompt
@@ -188,21 +189,43 @@ def custom_keybindings(bindings, **kw):
         fcd(event)
     @bindings.add('K')
     # command history up
-    def shift_j(event):
+    def shift_k(event):
         event.current_buffer.history_backward()
     # command history down
     @bindings.add('J')
-    def shift_k(event):
+    def shift_j(event):
         event.current_buffer.history_forward()
     # buffer left
     @bindings.add('H')
-    def shift_k(event):
+    def shift_h(event):
         c_r = event.current_buffer.document.cursor_position_row
         c_c = event.current_buffer.document.cursor_position_col - 1
         event.current_buffer.cursor_position = event.current_buffer.document.translate_row_col_to_index(c_r, c_c)
     # buffer right
     @bindings.add('L')
-    def shift_k(event):
+    def shift_l(event):
         c_r = event.current_buffer.document.cursor_position_row
         c_c = event.current_buffer.document.cursor_position_col + 1
+        event.current_buffer.cursor_position = event.current_buffer.document.translate_row_col_to_index(c_r, c_c)
+    # buffer previous word
+    @bindings.add('I')
+    def shift_i(event):
+        c_t = event.current_buffer.document.text_before_cursor[::-1]
+        try:
+            c_w, _ = re.search(r'([\s]+)', c_t).span()
+        except:
+            c_w = len(c_t) - 1
+        c_r = event.current_buffer.document.cursor_position_row
+        c_c = event.current_buffer.document.cursor_position_col - c_w - 1
+        event.current_buffer.cursor_position = event.current_buffer.document.translate_row_col_to_index(c_r, c_c)
+    # buffer next word
+    @bindings.add('O')
+    def shift_o(event):
+        c_t = event.current_buffer.document.text_after_cursor[1:]
+        try:
+            _, c_w = re.search(r'([\s]+)', c_t).span()
+        except:
+            c_w = len(c_t) + 1
+        c_r = event.current_buffer.document.cursor_position_row
+        c_c = event.current_buffer.document.cursor_position_col + c_w
         event.current_buffer.cursor_position = event.current_buffer.document.translate_row_col_to_index(c_r, c_c)
