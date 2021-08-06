@@ -229,3 +229,19 @@ def custom_keybindings(bindings, **kw):
         c_r = event.current_buffer.document.cursor_position_row
         c_c = event.current_buffer.document.cursor_position_col + c_w
         event.current_buffer.cursor_position = event.current_buffer.document.translate_row_col_to_index(c_r, c_c)
+    # buffer delete before cursor
+    @bindings.add('Y')
+    def shift_y(event):
+        c_t = event.current_buffer.document.text_before_cursor[:-1] + event.current_buffer.document.text_after_cursor
+        # event.current_buffer.insert_text(f'{c_t}')
+        event.current_buffer.text = c_t
+        c_r = event.current_buffer.document.cursor_position_row
+        c_c = event.current_buffer.document.cursor_position_col
+        if c_c != len(c_t):
+            c_c -= 1
+        event.current_buffer.cursor_position = event.current_buffer.document.translate_row_col_to_index(c_r, c_c)
+    # buffer delete after cursor
+    @bindings.add('O')
+    def shift_o(event):
+        c_t = event.current_buffer.document.text_before_cursor + event.current_buffer.document.text_after_cursor[1:]
+        event.current_buffer.text = c_t
