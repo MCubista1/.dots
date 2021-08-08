@@ -87,6 +87,6 @@ theme[download_mid]=""
 theme[download_end]="#82AAFF"
 
 # Upload graph colors
-theme[upload_start]="#AC624B"
+theme[upload_start]="#7c8e95"
 theme[upload_mid]=""
-theme[upload_end]="#F78C6C"
+theme[upload_end]="#B2CCD6"
