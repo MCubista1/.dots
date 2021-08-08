@@ -19,7 +19,7 @@ theme[main_fg]="#ABB2BF"
 theme[title]="#546E7A"
 
 # Higlight color for keyboard shortcuts
-theme[hi_fg]="#B28E4A"
+theme[hi_fg]="#E5B660"
 
 # Background color of selected items
 theme[selected_bg]="#1A2327"
@@ -52,12 +52,12 @@ theme[proc_box]="#37474F"
 theme[div_line]="#37474F"
 
 # Temperature graph colors
-theme[temp_start]="#B23A4E"
+theme[temp_start]="#E54A64"
 theme[temp_mid]=""
 theme[temp_end]="#FF5370"
 
 # CPU graph colors
-theme[cpu_start]="#88A262"
+theme[cpu_start]="#AFD07E"
 theme[cpu_mid]=""
 theme[cpu_end]="#C3E88D"
 
@@ -82,11 +82,11 @@ theme[used_mid]=""
 theme[used_end]="#FF5370"
 
 # Download graph colors
-theme[download_start]="#5B76B2"
+theme[download_start]="#7599e5"
 theme[download_mid]=""
 theme[download_end]="#82AAFF"
 
 # Upload graph colors
-theme[upload_start]="#7c8e95"
+theme[upload_start]="#a0b7c0"
 theme[upload_mid]=""
 theme[upload_end]="#B2CCD6"
