@@ -581,7 +581,7 @@ dconf load / < ~/.config/dconf/user.conf
 # Run http server in the current directory
 python3 -m http.server
 # detach from bash
-nohup python3 -m http.server --directory /home/ed/Documentos/fx /midas/midas_data &>/dev/null &
+nohup python3 -m http.server --directory /home/ed/Documentos/fx/midas/midas_data &>/dev/null &
 
 # startup time
 systemd-analyze
