@@ -2273,4 +2273,28 @@
         "command": "selectPrevSuggestion",
         "when": "suggestWidgetVisible"
     },
+    {
+        "key": "alt+9",
+        "command": "-workbench.action.openEditorAtIndex9"
+    },
+    {
+        "key": "alt+0",
+        "command": "extension.liveServer.goOnline",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+l alt+o",
+        "command": "-extension.liveServer.goOnline",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+9",
+        "command": "extension.liveServer.goOffline",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+l alt+c",
+        "command": "-extension.liveServer.goOffline",
+        "when": "editorTextFocus"
+    },
 ]
