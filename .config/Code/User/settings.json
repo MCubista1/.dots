@@ -342,7 +342,6 @@
     "pyls.plugins.jedi_completion.enabled": false,
     "pyls.plugins.preload.enabled": false,
     "keyboard.dispatch": "keyCode",
-    "python.insidersChannel": "weekly",
     "editor.formatOnSave": true,
     "editor.gotoLocation.multipleDefinitions": "goto",
     "editor.gotoLocation.multipleTypeDefinitions": "goto",
@@ -397,4 +396,13 @@
     "workbench.activityBar.visible": false,
     "projectManager.sortList": "Recent",
     "terminal.integrated.defaultLocation": "editor",
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.ignoreFiles": [
+        ".vscode/**",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.ts"
+    ],
+    "liveServer.settings.showOnStatusbar": false,
 }
