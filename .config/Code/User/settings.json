@@ -402,7 +402,7 @@
         ".vscode/**",
         "**/*.scss",
         "**/*.sass",
-        "**/*.ts"
+        "**/*.ts",
+        "**"
     ],
-    "liveServer.settings.showOnStatusbar": false,
 }
