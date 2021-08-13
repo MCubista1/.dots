@@ -37,7 +37,7 @@
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "map e scrollPageUp\nunmap u\nmapkey ; <c-[>\nunmap <<\nunmap >>\nmap < moveTabLeft\nmap > moveTabRight\nunmap f\nunmap F\nmap F LinkHints.activateMode\nmap f LinkHints.activateModeToOpenInNewTab\nunmap o\nunmap O\nmap O Vomnibar.activate\nmap o Vomnibar.activateInNewTab\nunmap b\nunmap B\nmap B Vomnibar.activateBookmarks\nmap b Vomnibar.activateBookmarksInNewTab\nunmap p\nunmap P\nmap P openCopiedUrlInCurrentTab\nmap p openCopiedUrlInNewTab",
+  "keyMappings": "# Scroll\nunmap u\nmap e scrollPageUp\nmap E scrollFullPageUp\nmap D scrollFullPageDown\n\n# Escape\n# mapkey ; <c-[>\n\n# Tabs\nunmap J\nunmap K\nunmap <<\nunmap >>\nmap <c-j> previousTab\nmap <c-k> nextTab\nmap <c-J> moveTabLeft\nmap <c-K> moveTabRight\n\n# hints\nunmap f\nunmap F\nunmap o\nunmap O\nmap F LinkHints.activateMode\nmap f LinkHints.activateModeToOpenInNewTab\nmap O Vomnibar.activate\nmap o Vomnibar.activateInNewTab\n\n# Bookmarks\nunmap b\nunmap B\nmap B Vomnibar.activateBookmarks\nmap b Vomnibar.activateBookmarksInNewTab\n\n# Open url\nunmap p\nunmap P\nmap P openCopiedUrlInCurrentTab\nmap p openCopiedUrlInNewTab",
   "linkHintCharacters": "asdfjklweruio",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",
