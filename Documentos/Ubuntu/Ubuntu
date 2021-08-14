@@ -577,6 +577,7 @@ sort -u -o sorted_file file
 # backup gnome settings
 dconf dump / > ~/.config/dconf/user.conf
 dconf load / < ~/.config/dconf/user.conf
+cat .conf | dconf load /
 
 # Run http server in the current directory
 python3 -m http.server
