@@ -1989,11 +1989,11 @@
         "command": "workbench.action.terminal.kill"
     },
     {
-        "key": "ctrl+k",
+        "key": "ctrl+j",
         "command": "workbench.action.focusNextGroup"
     },
     {
-        "key": "ctrl+j",
+        "key": "ctrl+k",
         "command": "workbench.action.focusPreviousGroup"
     },
     {
