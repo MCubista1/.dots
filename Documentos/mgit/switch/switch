@@ -8,6 +8,7 @@ while [[ "$#" -gt 0 ]]; do
         -z) resize_flag=1 ;;
         -g) geometry_flag=1 ;;
         -b) brightness_flag=1 ;;
+        -m) mouse_flag=1 ;;
         -r) right_flag=1 ;;
         -i) increase_flag=1 ;;
         -u) up_flag=1 ;;
@@ -548,4 +549,7 @@ elif [ -n "$geometry_flag" ]; then
         fi
     done
     echo "$window_eval"
+
+elif [ -n "$mouse_flag" ]; then
+    xdotool mousemove 0 0
 fi
