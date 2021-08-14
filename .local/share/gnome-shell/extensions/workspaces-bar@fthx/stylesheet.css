@@ -1,31 +1,33 @@
 .desktop-label-nonempty-active {
   margin-left: 0px;
-  margin-right: 8px;
-  font-size: 11px;
-  background-color:#546E7A;
+  margin-right: 0px;
+  font-size: 14px;
+  background-color:#263238;
   color:#CCCCCC;
-}
-
-.desktop-label-nonempty-inactive {
-  margin-left: 0px;
-  margin-right: 8px;
-  font-size: 11px;
-  background-color:#3a4d55;
-  color:#8e8e8e;
 }
 
 .desktop-label-empty-active {
   margin-left: 0px;
-  margin-right: 8px;
-  font-size: 11px;
-  background-color:#546E7A;
+  margin-right: 0px;
+  font-size: 14px;
+  background-color:#263238;
   color:#CCCCCC;
 }
 
+.desktop-label-nonempty-inactive {
+  margin-left: 3px;
+  margin-right: 3px;
+  font-size: 8px;
+  padding: 3px;
+  background-color:#263238;
+  color:#8e8e8e;
+}
+
 .desktop-label-empty-inactive {
-  margin-left: 0px;
-  margin-right: 8px;
-  font-size: 11px;
-  background-color:#3a4d55;
+  margin-left: 3px;
+  margin-right: 3px;
+  font-size: 8px;
+  padding: 3px;
+  background-color:#263238;
   color:#8e8e8e;
 }
