@@ -349,7 +349,6 @@
     "terminal.integrated.enableBell": true,
     "terminal.integrated.fontFamily": "'Liberation mono'",
     "terminal.integrated.fontSize": 15,
-    "terminal.integrated.enablePersistentSessions": false,
     "debug.console.fontSize": 10,
     "terminal.integrated.copyOnSelection": true,
     "[xonsh]": {
