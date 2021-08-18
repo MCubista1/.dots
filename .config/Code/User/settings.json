@@ -404,4 +404,5 @@
         "**/*.ts",
         "**"
     ],
+    "python.terminal.executeInFileDir": true,
 }
