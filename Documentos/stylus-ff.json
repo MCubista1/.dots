@@ -90,15 +90,15 @@
     "name": "youtube.com",
     "sections": [
       {
-        "code": "html:not(.style-scope)[dark], :not(.style-scope)[dark] {\n    --ytd-searchbox-legacy-button-color: #263238;\n    --ytd-searchbox-legacy-button-hover-color: #263238;\n    --ytd-searchbox-background: #263238;\n}\n\nhtml:not(.style-scope)[dark], :not(.style-scope)[dark] {\n    --yt-spec-brand-background-solid: #263238;\n    --yt-spec-brand-background-primary: #263238;\n    --yt-spec-general-background-a: #263238;\n    --yt-spec-general-background-b: #263238;\n    --yt-spec-badge-chip-background: #263238;\n    \n    --yt-spec-text-primary: #ABB2BF;\n    --yt-spec-text-secondary: #ABB2BF;\n    --yt-spec-icon-active-other: #ABB2BF;\n    --yt-spec-brand-icon-inactive: #ABB2BF;\n    \n    --yt-spec-brand-icon-active: #cccccc;\n}\n\nhtml:not(.style-scope)[system-icons]:not(.style-scope)[dark], html:not(.style-scope)[system-icons] :not(.style-scope)[dark] {\n    --yt-spec-brand-icon-inactive: #ABB2BF;\n}\n",
+        "code": "html:not(.style-scope)[dark], :not(.style-scope)[dark] {\n    --ytd-searchbox-legacy-button-color: #263238;\n    --ytd-searchbox-legacy-button-hover-color: #263238;\n    --ytd-searchbox-background: #263238;\n}\n\nhtml:not(.style-scope)[dark], :not(.style-scope)[dark] {\n    --yt-spec-brand-background-solid: #263238;\n    --yt-spec-brand-background-primary: #263238;\n    --yt-spec-general-background-a: #263238;\n    --yt-spec-general-background-b: #263238;\n    --yt-spec-badge-chip-background: #263238;\n    \n    --yt-spec-text-primary: #ABB2BF;\n    --yt-spec-text-secondary: #ABB2BF;\n    --yt-spec-icon-active-other: #ABB2BF;\n    --yt-spec-brand-icon-inactive: #ABB2BF;\n    \n    --yt-spec-brand-icon-active: #cccccc;\n}\n\nhtml:not(.style-scope)[system-icons]:not(.style-scope)[dark], html:not(.style-scope)[system-icons] :not(.style-scope)[dark] {\n    --yt-spec-icon-inactive: #ABB2BF;\n    --yt-spec-brand-icon-inactive: #ABB2BF;\n}\n",
         "domains": [
           "youtube.com"
         ]
       }
     ],
-    "updateDate": 1629429438819,
+    "updateDate": 1629429874838,
     "_id": "86afbe1a-56e3-4092-8a20-c42e8665f808",
-    "_rev": 1629429438819,
+    "_rev": 1629429874838,
     "id": 1,
     "_usw": {}
   },
