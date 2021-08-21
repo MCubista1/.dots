@@ -51,10 +51,10 @@ tab[selected] {
 .tab-content::before {
 	content: counter(tab-counter) "";
 	position: absolute;
-	left: 0;
-	top: 0;
+	top: 13px;
+	right: 0px;
 	padding: 0px 0px;
-	color: #607A86;
+	color: #5F7B86;
 	background: transparent;
 	font-size: 60%;
 }
