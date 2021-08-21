@@ -3,6 +3,7 @@ toolkit.legacyUserProfileCustomizations.stylesheets to true*/
 
 tab {
 	color: #607A86 !important;
+	counter-increment: tab-counter;
 }
 
 tab[selected] {
@@ -45,4 +46,15 @@ tab[selected] {
 
 .tab-icon-image[selected] {
 	filter: none !important;
+}
+
+.tab-content::before {
+	content: counter(tab-counter) "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 0px 0px;
+	color: #607A86;
+	background: transparent;
+	font-size: 60%;
 }
