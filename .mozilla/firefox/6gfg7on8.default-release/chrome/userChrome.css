@@ -70,7 +70,7 @@ tab[selected] {
 	max-width: 140px !important;
 }
 
-/* URLBAR: color */
+/* NAVBAR: color */
 #urlbar-input-container {
 	background-color: #263238 !important;
 	border-color: #263238 !important;
@@ -81,10 +81,17 @@ tab[selected] {
 	box-shadow : 0 1px 0 #263238 !important;
 }
 
-/* URLBAR: height */
+/* NAVBAR: height */
 #urlbar-container {
 	--urlbar-container-height: 24px !important;
 }
 #urlbar {
 	margin-bottom: -12px !important;
+}
+
+/* NAVBAR: icons */
+#star-button, #star-button-box, 
+#reader-mode-button-icon, 
+.toolbarbutton-1 {
+	fill: #ABB2BF !important;
 }
