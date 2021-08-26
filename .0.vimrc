@@ -28,6 +28,9 @@ nnoremap <BS> i<BS><Right><Esc>
 " Y as it should be
 nnoremap Y y$
 
+" Previous end of word
+nnoremap E ge
+
 " Next f or s match in operation mode
 onoremap <CR> ;
 
