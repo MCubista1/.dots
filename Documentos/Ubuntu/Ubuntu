@@ -624,6 +624,9 @@ code --disable-extensions
 # open command in editor
 ctrl-x ctrl-e
 
+# size of files and folders in directory
+du -h -a -d 1 | sort -h
+
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
 # ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
