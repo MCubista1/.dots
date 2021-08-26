@@ -56,7 +56,7 @@ $FFF_COL4=6
 $FFF_COL5=2
 
 ## Aliases
-aliases['ls'] = 'ls -a'
+aliases['ls'] = 'ls -a --color'
 aliases['ll'] = lambda args: $[$LC_COLLATE='C' ls --group-directories-first -lAh --color @(args)]
 
 aliases['fetch'] = 'screenfetch -w -c ",7;2"'
