@@ -405,4 +405,8 @@
         "**"
     ],
     "python.terminal.executeInFileDir": true,
+    "warmUp.changeCount": "240",
+    "warmUp.switchProgrammingLanguage": "python",
+    "warmUp.toggleColorBlindMode": "true",
+    "warmUp.changeTypingMode": "words (against the clock)",
 }
