@@ -28,12 +28,9 @@ nnoremap <BS> i<BS><Right><Esc>
 " Y as it should be
 nnoremap Y y$
 
-" Previous end of word
-nnoremap E ge
-vnoremap E ge
-
-" Next f or s match in operation mode
-onoremap <CR> ;
+" Join lines
+nnoremap M J
+vnoremap M J
 
 " Save, quits and restore file
 noremap <Space>w :w<Enter>
@@ -69,32 +66,24 @@ nnoremap # #zz
 cnoremap <CR> <CR>zz
 
 " First non-blank chatacter
-nnoremap [ ^
-vnoremap [ ^
-onoremap [ ^
+nnoremap H ^
+vnoremap H ^
+onoremap H ^
 
 " End of line
-nnoremap ] $
-vnoremap ] $<Left>
-onoremap ] $
+nnoremap L $
+vnoremap L $<Left>
+onoremap L $
 
 " Next Parragraph
-nnoremap - }}{jzz
-vnoremap - }zz
-onoremap - }
+nnoremap J }}{jzz
+vnoremap J }zz
+onoremap J }
 
 " Previous Parragraph
-nnoremap = k{jzz
-vnoremap = {zz
-onoremap = {
-
-" to High of window
-nnoremap H Hzz
-vnoremap H Hzz
-
-" to low of window
-nnoremap L Lzz
-vnoremap L Lzz
+nnoremap K k{jzz
+vnoremap K {zz
+onoremap K {
 
 " Toggle caps
 nnoremap ` ~
