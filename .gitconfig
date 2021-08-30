@@ -24,4 +24,4 @@
 	# eval "$(ssh-agent -s)"
 	# ssh-add .ssh/github
 	ftm = fetch origin master:master
-	chm = checkout master file
+	chm = checkout master
