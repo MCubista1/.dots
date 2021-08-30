@@ -11,14 +11,6 @@
 	ca = commit -am
 	p = push
 
-	# Pull file from master branch
-	ftm = fetch origin master:master
-	chm = checkout master
-
-	# Pull file from pi branch
-	ftp = fetch origin pi:pi
-	chp = checkout pi
-
 	# Log
 	l = log --oneline --graph
 	l5 = log --oneline --graph -n 5
@@ -27,3 +19,9 @@
 
 	# List tracked files
 	ls = ls-tree -r --name-only HEAD
+
+	# Fetch master file from pi brach
+	# eval "$(ssh-agent -s)"
+	# ssh-add .ssh/github
+	ftm = fetch origin master:master
+	chm = checkout master file
