@@ -326,7 +326,6 @@
     "material-icon-theme.folders.color": "#546e7a",
     "workbench.colorTheme": "Community Material Theme",
     "window.customMenuBarAltFocus": false,
-    "editor.wordWrap": "on",
     "git.enableSmartCommit": true,
     "jupyter.interactiveWindowMode": "perFile",
     "editor.renderWhitespace": "trailing",
@@ -409,4 +408,5 @@
     "warmUp.switchProgrammingLanguage": "python",
     "warmUp.toggleColorBlindMode": "true",
     "warmUp.changeTypingMode": "words (against the clock)",
+    "editor.wordWrap": "wordWrapColumn",
 }
