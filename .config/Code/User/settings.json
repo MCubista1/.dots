@@ -272,7 +272,6 @@
         ]
     },
     "terminal.integrated.allowChords": false,
-    "terminal.integrated.shell.linux": "/usr/bin/xonsh",
     "diffEditor.renderSideBySide": false,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
@@ -409,4 +408,28 @@
     "warmUp.toggleColorBlindMode": "true",
     "warmUp.changeTypingMode": "words (against the clock)",
     "editor.wordWrap": "wordWrapColumn",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        },
+        "xonsh": {
+            "path": "/usr/bin/xonsh"
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "xonsh",
 }
