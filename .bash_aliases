@@ -11,6 +11,7 @@ alias suspend="systemctl suspend"
 alias sensor="watch -n 1 -t sensors -A"
 alias t="tput reset && clear"
 alias e="exit"
+alias x="xonsh"
 
 alias p="ssh pi"
 alias sshfs_pi="sshfs pi:./fx ~/Documentos/fx/midas/pi_ssh"
