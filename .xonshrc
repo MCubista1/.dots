@@ -87,6 +87,7 @@ aliases['pi-ssh'] = 'cd ~/Documentos/fx/midas/pi_ssh'
 aliases['mgit'] = 'cd ~/Documentos/mgit'
 aliases['bindir'] = 'cd ~/.local/bin'
 aliases['ima'] = 'cd ~/Imágenes'
+aliases['media'] = 'cd /media/ed'
 
 aliases['g'] = 'git'
 aliases['dots'] = '/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
