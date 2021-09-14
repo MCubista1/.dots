@@ -110,15 +110,15 @@
     "name": "github.com",
     "sections": [
       {
-        "code": "[data-color-mode=\"dark\"][data-dark-theme*=\"dark\"], [data-color-mode=\"light\"][data-light-theme*=\"dark\"] {\n    --color-bg-canvas: #263238;\n    --color-bg-primary: #263238;\n    --color-bg-canvas-inset: #263238;\n    --color-bg-secondary: #263238;\n    --color-header-bg: #263238;\n    --color-header-search-bg: #263238;\n    --color-social-count-bg: #263238;\n    \n    --color-text-primary: #ABB2BF;\n    --color-text-secondary: #ABB2BF;\n    --color-header-logo: #ABB2BF;\n    \n    --color-fg-muted: #546E7A;\n}",
+        "code": "[data-color-mode=\"dark\"][data-dark-theme*=\"dark\"], [data-color-mode=\"light\"][data-light-theme*=\"dark\"] {\n    --color-bg-canvas: #263238;\n    --color-bg-primary: #263238;\n    --color-bg-canvas-inset: #263238;\n    --color-bg-secondary: #263238;\n    --color-header-bg: #263238;\n    --color-header-search-bg: #263238;\n    --color-social-count-bg: #263238;\n    --color-canvas-default: #263238;\n    \n    --color-text-primary: #ABB2BF;\n    --color-text-secondary: #ABB2BF;\n    --color-header-logo: #ABB2BF;\n    \n    --color-fg-muted: #546E7A;    \n}\n",
         "domains": [
           "github.com"
         ]
       }
     ],
-    "updateDate": 1628051638352,
+    "updateDate": 1631591260735,
     "_id": "bf8569f5-b428-4494-8a7f-aeee4fa0fb94",
-    "_rev": 1628051638352,
+    "_rev": 1631591260735,
     "id": 2,
     "_usw": {}
   },
@@ -172,7 +172,7 @@
     "name": "Stylus Dark - ShadowFox",
     "originalDigest": "ebbe6645bdaac4dfe92c48409825522c920b44a6",
     "_id": "b8212b39-6635-4c6c-af90-828da46bb9a9",
-    "_rev": 1628871723738,
+    "_rev": 1630346051488,
     "id": 4,
     "updateDate": 1628054799748,
     "_usw": {},
