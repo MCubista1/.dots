@@ -627,6 +627,12 @@ ctrl-x ctrl-e
 # size of files and folders in directory
 du -h -a -d 1 | sort -h
 
+# clone corrupted HDD to HDD
+sudo add-apt-repository universe
+sudo apt install gddrescue
+sudo ddrescue -d -r3 /dev/sdx_1 /deb/sdx_2 /path/to/rescue.log
+
+
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
 # ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
