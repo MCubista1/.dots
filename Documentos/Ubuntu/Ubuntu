@@ -632,6 +632,11 @@ sudo add-apt-repository universe
 sudo apt install gddrescue
 sudo ddrescue -d -r3 /dev/sdx_1 /deb/sdx_2 /path/to/rescue.log
 
+# add font
+~/.fonts
+~/.local/share/fonts
+fc-cache -fv
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
