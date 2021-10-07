@@ -75,8 +75,8 @@
     "vim.cursorStylePerMode.replace": "block-outline",
     "files.associations": {
         "Ubuntu*": "shellscript",
-        "*.xsh": "xonsh",
-        ".xonshrc": "xonsh",
+        "*.xsh": "shellscript",
+        ".xonshrc": "shellscript",
         "config": "shellscript"
     },
     "vim.normalModeKeyBindingsNonRecursive": [
