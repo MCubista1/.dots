@@ -642,6 +642,11 @@ snap list package_name --all
 sudo snap revert package_name (previous version)
 sudo snap revert package_name --revision rev_n
 
+# freeze snap package
+snap install package_name
+snap list package_name
+snap refresh --devmode --channel channel/stable package_name
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
