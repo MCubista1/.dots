@@ -432,4 +432,7 @@
         }
     },
     "terminal.integrated.defaultProfile.linux": "xonsh",
+    "textmarker.enableTelemetry": false,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
 }
