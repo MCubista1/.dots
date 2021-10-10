@@ -300,7 +300,9 @@
         "workbench.action.toggleEditorWidths",
         "workbench.action.joinTwoGroups",
         "workbench.action.splitEditor",
-        "workbench.action.reopenClosedEditor"
+        "workbench.action.reopenClosedEditor",
+        "news-hack-top-stories.focus",
+        "news-hack.refresh-stories"
     ],
     "git-graph.openNewTabEditorGroup": "Beside",
     "gitHistory.alwaysPromptRepositoryPicker": true,

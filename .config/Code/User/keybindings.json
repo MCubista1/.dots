@@ -2301,4 +2301,8 @@
         "key": "ctrl+n",
         "command": "news-hack-top-stories.focus"
     },
+    {
+        "key": "alt+n",
+        "command": "news-hack.refresh-stories"
+    },
 ]
