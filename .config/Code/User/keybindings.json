@@ -2297,4 +2297,8 @@
         "command": "-extension.liveServer.goOffline",
         "when": "editorTextFocus"
     },
+    {
+        "key": "ctrl+n",
+        "command": "news-hack-top-stories.focus"
+    },
 ]
