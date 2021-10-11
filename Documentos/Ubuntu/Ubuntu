@@ -647,6 +647,9 @@ snap install package_name
 snap list package_name
 snap refresh --devmode --channel channel/stable package_name
 
+# download snap package
+snap download package_name --basename snap_revision
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
