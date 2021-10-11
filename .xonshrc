@@ -23,6 +23,8 @@ $BEEP3 = '/usr/share/sounds/freedesktop/stereo/service-login.oga'
 $PATH.append('/home/ed/.fzf/bin/')
 # Load rust cargo bin
 $PATH.append('/home/ed/.cargo/bin/')
+# Add spicetify to PATH
+$PATH.append('/home/ed/spicetify-cli')
 
 xontrib load fzf-widgets
 # xonsh fzf bindings
