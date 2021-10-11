@@ -2055,7 +2055,7 @@
         "command": "terminal.toggleVisibility"
     },
     {
-        "key": "alt+v",
+        "key": "alt+b",
         "command": "git.viewFileHistory"
     },
     {
@@ -2304,5 +2304,9 @@
     {
         "key": "alt+n",
         "command": "news-hack.refresh-stories"
+    },
+    {
+        "key": "alt+v",
+        "command": "rainbow-csv.Align"
     },
 ]
