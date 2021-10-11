@@ -130,6 +130,8 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 # add rust cargo bin to path
 export PATH=$PATH:$HOME/.cargo/bin
+# add spicetify to path
+export PATH=$PATH:$HOME/spicetify-cli
 
 # kernel outdate
 [ -f /var/run/reboot-required ] && cat /var/run/reboot-required
