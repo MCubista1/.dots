@@ -351,9 +351,6 @@
     "terminal.integrated.fontSize": 15,
     "debug.console.fontSize": 10,
     "terminal.integrated.copyOnSelection": true,
-    "[xonsh]": {
-        "editor.formatOnSave": false
-    },
     "workbench.panel.opensMaximized": "never",
     "terminal.integrated.cursorStyle": "underline",
     "terminal.integrated.experimentalLinkProvider": false,
@@ -436,4 +433,10 @@
     "terminal.integrated.defaultProfile.linux": "xonsh",
     "textmarker.enableTelemetry": false,
     "telemetry.telemetryLevel": "off",
+    "[tsv]": {
+        "editor.wordWrap": "off",
+    },
+    "[csv]": {
+        "editor.wordWrap": "off",
+    },
 }
