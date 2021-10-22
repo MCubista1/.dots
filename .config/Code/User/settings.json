@@ -302,7 +302,8 @@
         "workbench.action.splitEditor",
         "workbench.action.reopenClosedEditor",
         "news-hack-top-stories.focus",
-        "news-hack.refresh-stories"
+        "news-hack.refresh-stories",
+        "workbench.action.addRootFolder"
     ],
     "git-graph.openNewTabEditorGroup": "Beside",
     "gitHistory.alwaysPromptRepositoryPicker": true,
