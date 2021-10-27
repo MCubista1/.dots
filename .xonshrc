@@ -91,6 +91,7 @@ aliases['des'] = 'cd ~/Descargas'
 aliases['vid'] = 'cd ~/Vídeos'
 aliases['ima'] = 'cd ~/Imágenes'
 aliases['mus'] = 'cd ~/Música'
+aliases['lib'] = 'cd ~/Documentos/libros'
 aliases['media'] = 'cd /media/ed'
 
 aliases['g'] = 'git'
