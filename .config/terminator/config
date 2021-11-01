@@ -82,4 +82,49 @@
       type = Terminal
       parent = window0
       profile = default
+  [[moon]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:24
+      maximised = False
+      fullscreen = False
+      size = 408, 744
+      title = genius | ed@ed: ~ | xonsh
+      last_active_term = 96a620e0-4641-498a-be73-07cc50d63fb9
+      last_active_window = False
+    [[[child1]]]
+      type = VPaned
+      parent = child0
+      order = 0
+      position = 552
+      ratio = 0.7469553450608931
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = no-title
+      uuid = 96a620e0-4641-498a-be73-07cc50d63fb9
+      command = genius
+    [[[child3]]]
+      type = HPaned
+      parent = child1
+      order = 1
+      position = 121
+      ratio = 0.3002481389578164
+    [[[terminal4]]]
+      type = Terminal
+      parent = child3
+      order = 0
+      profile = no-title
+      uuid = 627ec6d6-4410-4c2f-83ec-f7d923612637
+      command = void
+    [[[terminal5]]]
+      type = Terminal
+      parent = child3
+      order = 1
+      profile = no-title
+      uuid = 7b7d4368-b8f5-4d72-8d19-6507eb705107
+      command = moon
 [plugins]
