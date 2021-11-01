@@ -659,6 +659,33 @@ sudo snap stop anbox && adb kill-server && adb start-server && sudo snap start a
 $EGL_PLATFORM='x11' anbox.appmgr
 sudo snap refresh --edge --devmode anbox && anbox.appmgr
 
+# xmonad
+sudo apt install xmonad libghc-xmonad-contrib-dev xmobar xterm dmenu
+sudo apt install nitrogen compton
+xmonad config archive ( download darcs template xmonad.hs)
+~/.xmonad/xmonad.hs
+import XMonad.Until.SpawnOnce
+import XMonad.Until.Run
+import XMonad.Hooks.ManageDocks
+myModMask = mod4Mask
+myStartupHook = do
+        spawnOnce "nitrogen --restore &"
+        spawnOnce "compton &"
+myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
+main = do
+        xmproc <- spawnPipe "xmobar -x 1 /home/ed/.config/xmobar/xmobar.config"
+        xmonad  $ docks defaults
+xrandr
+xrander -s (?)
+sudo find / -iname xmobar
+cd usr/share/doc/xmobar/examples
+cp xmobar.config ~/.config/xmobar/xmobar.config
+font = "xft:Ubuntu Mono:pixelsize=16:antialias=true:hinting=true"
+killall xmobar
+
+#primary external monitor
+xrandr --output VGA-1 --primary
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
