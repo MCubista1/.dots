@@ -17,6 +17,7 @@
     normal-foreground:           #ABB2BF;
     alternate-normal-foreground: #ABB2BF;
     selected-normal-foreground:  #ABB2BF;
+    highlight:        		 none #ABB2BF;
 
     lightfg:                     #1A2327;
     selected-active-background:  #1A2327;
