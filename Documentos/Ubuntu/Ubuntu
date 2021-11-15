@@ -686,6 +686,8 @@ killall xmobar
 #primary external monitor
 xrandr --output VGA-1 --primary
 
+# covert webp files to png
+find ./ -name "*.webp" -exec dwebp {} -o {}.png \;
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
