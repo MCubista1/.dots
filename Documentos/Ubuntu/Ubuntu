@@ -689,6 +689,11 @@ xrandr --output VGA-1 --primary
 # covert webp files to png
 find ./ -name "*.webp" -exec dwebp {} -o {}.png \;
 
+# eneble/disable gnome super key
+gsettings set org.gnome.mutter overlay-key 'super'
+gsettings set org.gnome.mutter overlay-key ''
+
+
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
 # ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
