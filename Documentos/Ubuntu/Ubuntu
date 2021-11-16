@@ -693,6 +693,12 @@ find ./ -name "*.webp" -exec dwebp {} -o {}.png \;
 gsettings set org.gnome.mutter overlay-key 'super'
 gsettings set org.gnome.mutter overlay-key ''
 
+# crop image (Width, Height, Left/Top margin)
+convert -crop WxH+L+T input.jpg output.jpg
+
+# resize image
+convert -resize WxH [n%] input.jpg output.jpg
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
