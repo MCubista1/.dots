@@ -110,15 +110,15 @@
     "name": "github.com",
     "sections": [
       {
-        "code": "[data-color-mode=\"dark\"][data-dark-theme*=\"dark\"], [data-color-mode=\"light\"][data-light-theme*=\"dark\"] {\n    --color-bg-canvas: #263238;\n    --color-bg-primary: #263238;\n    --color-bg-canvas-inset: #263238;\n    --color-bg-secondary: #263238;\n    --color-header-bg: #263238;\n    --color-header-search-bg: #263238;\n    --color-social-count-bg: #263238;\n    --color-canvas-default: #263238;\n    --color-canvas-inset: #263238;\n    --color-avatar-border: #263238;\n    --color-border-default: #263238;\n    \n    --color-text-primary: #ABB2BF;\n    --color-text-secondary: #ABB2BF;\n    --color-header-logo: #ABB2BF;\n    \n    --color-fg-muted: #546E7A;\n    \n    --color-border-muted: #37474F;\n}\n",
+        "code": "[data-color-mode=\"dark\"][data-dark-theme*=\"dark\"], [data-color-mode=\"light\"][data-light-theme*=\"dark\"] {\n    --color-bg-canvas: #263238;\n    --color-bg-primary: #263238;\n    --color-bg-canvas-inset: #263238;\n    --color-bg-secondary: #263238;\n    --color-header-bg: #263238;\n    --color-header-search-bg: #263238;\n    --color-social-count-bg: #263238;\n    --color-canvas-default: #263238;\n    --color-canvas-inset: #263238;\n    --color-avatar-border: #263238;\n    --color-border-default: #263238;\n    \n    --color-text-primary: #ABB2BF;\n    --color-text-secondary: #ABB2BF;\n    --color-header-logo: #ABB2BF;\n    \n    --color-fg-muted: #546E7A;\n    \n    --color-border-muted: #37474F;\n}\n\n.user-status-circle-badge {\n    background-color: #26323800;\n    border: none;\n}",
         "domains": [
           "github.com"
         ]
       }
     ],
-    "updateDate": 1637048899835,
+    "updateDate": 1637096937012,
     "_id": "bf8569f5-b428-4494-8a7f-aeee4fa0fb94",
-    "_rev": 1637048899835,
+    "_rev": 1637096937012,
     "id": 2,
     "_usw": {}
   },
