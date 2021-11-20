@@ -127,6 +127,9 @@ vnoremap > >gv
 "## Numbers and relative numbers
 set nu rnu
 
+"tab size
+set tabstop=4
+
 " disable ex
 map Q <Nop>
 
