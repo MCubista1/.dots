@@ -129,6 +129,7 @@ set nu rnu
 
 "tab size
 set tabstop=4
+set shiftwidth=4
 
 " disable ex
 map Q <Nop>
