@@ -680,7 +680,7 @@ killall xmobar
 xrandr --output VGA-1 --primary
 
 # covert webp files to png
-find ./ -name "*.webp" -exec dwebp {} -o {}.png \;
+find -name "*.webp" -exec dwebp {} -o {}.png \;
 
 # eneble/disable gnome super key
 gsettings set org.gnome.mutter overlay-key 'super'
@@ -691,6 +691,15 @@ convert -crop WxH+L+T input.jpg output.jpg
 
 # resize image
 convert -resize WxH [n%] input.jpg output.jpg
+
+# file type mime asociation
+xdg-mime query filetype testimg.png
+# mime default program
+xdg-mime query default image/png
+# mime program support
+find /usr/ /snap/ /var/ /etc/ -iname "*.desktop" -type f -exec grep -il image/png '{}' ';' 2> /dev/null
+# set mime default program
+xdg-mime default pinta.desktop image/png
 
 
 
