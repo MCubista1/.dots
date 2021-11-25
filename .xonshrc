@@ -58,78 +58,7 @@ $FFF_COL4=6
 $FFF_COL5=2
 
 ## Aliases
-aliases['ls'] = 'ls -a --color'
-aliases['ll'] = lambda args: $[$LC_COLLATE='C' ls --group-directories-first -lAh --color @(args)]
-
-aliases['fetch'] = '$[tput reset]; $[clear]; screenfetch -w -c ",7;2"'
-aliases['gfetch'] = '$[tput reset]; $[clear]; onefetch'
-aliases['nfetch'] = '$[tput reset]; $[clear]; neofetch'
-aliases['fortune'] = 'bash -c "fortune | figlet -f smblock | lolcat"'
-aliases['cmatrix'] = 'cmatrix -ab'
-
-aliases['speed'] = 'speedtest-cli --simple'
-aliases['suspend'] = 'systemctl suspend'
-aliases['sensor'] = 'watch -n 1 -t sensors -A'
-aliases['t'] = '$[tput reset]; $[clear]'
-aliases['e'] = 'exit'
-
-aliases['p'] = 'ssh pi'
-aliases['sshfs_pi'] = 'sshfs pi:./fx ~/Documentos/fx/midas/pi_ssh'
-aliases['umount_pi'] = 'umount ~/Documentos/fx/midas/pi_ssh'
-
-aliases['serve'] = 'bash -c "nohup npx serve /home/ed/Documentos/fx/midas/midas_data &>/dev/null &"'
-aliases['spicetify'] = '/home/ed/spicetify-cli/spicetify'
-aliases['flush'] = 'sudo systemd-resolve --flush-caches'
-
-aliases['h'] = 'cd ~'
-aliases['gitdir'] = 'cd ~/Documentos/git'
-aliases['pi-ssh'] = 'cd ~/Documentos/fx/midas/pi_ssh'
-aliases['mgit'] = 'cd ~/Documentos/mgit'
-aliases['bindir'] = 'cd ~/.local/bin'
-aliases['doc'] = 'cd ~/Documentos'
-aliases['des'] = 'cd ~/Descargas'
-aliases['vid'] = 'cd ~/Vídeos'
-aliases['ima'] = 'cd ~/Imágenes'
-aliases['mus'] = 'cd ~/Música'
-aliases['lib'] = 'cd ~/Documentos/libros'
-aliases['ubu'] = 'cd ~/Documentos/Ubuntu'
-aliases['media'] = 'cd /media/ed'
-
-aliases['vx'] = 'vim /home/ed/.xonshrc'
-aliases['rx'] = 'source /home/ed/.xonshrc'
-aliases['vg'] = 'vim /home/ed/.gitconfig'
-aliases['vu'] = 'vim /home/ed/Documentos/Ubuntu/Ubuntu'
-aliases['vc'] = 'vim /home/ed/Documentos/Ubuntu/colors'
-
-aliases['g'] = 'git'
-aliases['dots'] = '/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
-aliases['d'] = '/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
-
-aliases['up'] = 'sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
-aliases['nr'] = 'sudo needrestart -q -r a'
-
-aliases['devil'] = 'bash -c "nohup devilspie &>/dev/null &"'
-aliases['kdevil'] = 'pkill devilspie'
-
-aliases['beep'] = 'paplay $BEEP1'
-aliases['bee'] = 'paplay $BEEP2'
-aliases['be'] = 'paplay $BEEP3'
-aliases['bebop'] = 'paplay $BEEP3; paplay $BEEP2; paplay $BEEP1'
-
-aliases['clip'] = 'xclip -sel clip'
-aliases['xbox'] = 'sudo xboxdrv --silent'
-aliases['cx'] = 'chmod +x'
-
-# 25 words * 5 min = -n 125
-aliases['s'] = 'tt -words ox5000 -n 125 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
-aliases['k'] = 'pkill -9 -f "/bin/sh"'
-
-aliases['md'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
-aliases['mkcd'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
-
-aliases['tetris'] = '/snap/bin/tetris-thefenriswolf.tetris -a'
-aliases['pmoon'] = 'watch -t -n1800 pyphoon -x -n 19'
-
+source ~/.xonsh_aliases
 
 ## Functions
 # fff file explorer
