@@ -515,6 +515,8 @@ mark() {
 clip_copy() {
     marked_files=("${@:1:$#-1}")
 	echo -n "${marked_files[@]##*/}" | xclip -sel clip
+	setup_terminal
+	key q
 }
 
 trash() {
