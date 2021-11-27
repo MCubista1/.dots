@@ -496,6 +496,10 @@ mark() {
         ${FFF_KEY_LINK:=s}|${FFF_KEY_LINK_ALL:=S}) file_program=(ln -s)  ;;
 
         # These are 'fff' functions.
+        ${FFF_KEY_COPY:=w}|${FFF_KEY_COPY_ALL:=W}) 
+			file_program=(clip_copy)
+		;;
+
         ${FFF_KEY_TRASH:=d}|${FFF_KEY_TRASH_ALL:=D})
             file_program=(trash)
         ;;
@@ -506,6 +510,11 @@ mark() {
     esac
 
     status_line
+}
+
+clip_copy() {
+    marked_files=("${@:1:$#-1}")
+	echo -n "${marked_files[@]##*/}" | xclip -sel clip
 }
 
 trash() {
@@ -879,6 +888,7 @@ key() {
         # Mark files for operation.
         ${FFF_KEY_YANK:=y}|\
         ${FFF_KEY_MOVE:=m}|\
+        ${FFF_KEY_COPY:=w}|\
         ${FFF_KEY_TRASH:=d}|\
         ${FFF_KEY_LINK:=s}|\
         ${FFF_KEY_BULK_RENAME:=b})
@@ -888,6 +898,7 @@ key() {
         # Mark all files for operation.
         ${FFF_KEY_YANK_ALL:=Y}|\
         ${FFF_KEY_MOVE_ALL:=M}|\
+        ${FFF_KEY_COPY_ALL:=W}|\
         ${FFF_KEY_TRASH_ALL:=D}|\
         ${FFF_KEY_LINK_ALL:=S}|\
         ${FFF_KEY_BULK_RENAME_ALL:=B})
