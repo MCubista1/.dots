@@ -137,10 +137,8 @@ export PATH=$PATH:$HOME/spicetify-cli
 [ -f /var/run/reboot-required ] && cat /var/run/reboot-required
 
 # edit with vim
-SUDO_EDITOR=/usr/bin/vim
-export SUDO_EDITOR
-EDITOR=/usr/bin/vim
-export EDITOR
+export SUDO_EDITOR=/usr/bin/vim
+export EDITOR=/usr/bin/vim
 
 # beep
 export BEEP1=/usr/share/sounds/sound-icons/prompt.wav
