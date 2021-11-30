@@ -301,8 +301,12 @@ setGeometry() {
 	fi
 	cols="$(printf '%s' "$geometry" | cut -d ',' -f1)"	# width; X
 	rows="$(printf '%s' "$geometry" | cut -d ',' -f2)"	# height; Y
-
-	rows=$((rows - baseHeight)) 	# so we don't grow a tree on top of the base
+	
+	if ((live)); then
+		rows=$((rows - baseHeight)) 	# so we don't grow a tree on top of the base
+	else
+		rows=$((rows - baseHeight - 1))
+	fi
 }
 
 init() {
