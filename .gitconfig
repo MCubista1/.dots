@@ -10,6 +10,7 @@
 	c = commit -m
 	ca = commit -am
 	p = push
+	cd1 = clone --depth 1
 
 	# Log
 	l = log --oneline --graph
