@@ -366,7 +366,7 @@ init() {
 	if ((! nfetch)); then
 		((screensaver)) && stty intr 32		# remap CTRL+C (SIGINT) to space key
 		stty -echo 				# don't echo stdin
-		printf '%b' '\e[?25l\e[?7l\e[2J' 	# hide cursor, disable line wrapping, clear screen and move to 0,0
+		#printf '%b' '\e[?25l\e[?7l\e[2J' 	# hide cursor, disable line wrapping, clear screen and move to 0,0
 	fi
 
 	# setup temp file for caching times of each growth
