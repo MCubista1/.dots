@@ -60,6 +60,7 @@
     use_custom_command = True
     custom_command = /usr/bin/xonsh
     use_system_font = False
+    bold_is_bright = True
     copy_on_selection = True
   [[no-title]]
     background_color = "#263238"
