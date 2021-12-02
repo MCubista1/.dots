@@ -9,6 +9,7 @@
 	aa = add .
 	c = commit -m
 	ca = commit -am
+	cam = commit --amend
 	p = push
 	cd1 = clone --depth 1
 
