@@ -25,30 +25,87 @@ initializeANSI()
   reset="${esc}[0m"
 }
 
-# note in this first use that switching colors doesn't require a reset
-# first - the new color overrides the old one.
+term_cols=$(tput cols)
+pnspace=$(echo "($term_cols-11)/2" | bc)
+pspace=$(head -c "$pnspace" /dev/zero | tr '\0' ' ' )
+if [ "$term_cols" -lt 77 ]; then
+	inspace=$(echo "($term_cols-37)/2" | bc)
+	ispace=$(head -c "$inspace" /dev/zero | tr '\0' ' ' )
+	jspace=$(head -c "$inspace" /dev/zero | tr '\0' ' ' )
+else
+	inspace=$(echo "($term_cols-77)/2" | bc)
+	ispace=$(head -c "$inspace" /dev/zero | tr '\0' ' ' )
+	jspace="   "
+fi
 
 initializeANSI
 
+r11="${ispace}${redf}  ▀▄   ▄▀     ${greenf} ▄▄▄████▄▄▄    ${yellowf}  ▄██▄  "
+r21="${ispace}${redf} ▄█▀███▀█▄    ${greenf}███▀▀██▀▀███   ${yellowf}▄█▀██▀█▄"
+r31="${ispace}${redf}█▀███████▀█   ${greenf}▀▀▀██▀▀██▀▀▀   ${yellowf}▀▀█▀▀█▀▀"
+r41="${ispace}${redf}▀ ▀▄▄ ▄▄▀ ▀   ${greenf}▄▄▀▀ ▀▀ ▀▀▄▄   ${yellowf}▄▀▄▀▀▄▀▄"
+
+r12="${jspace}${bluef}  ▀▄   ▄▀     ${purplef} ▄▄▄████▄▄▄    ${cyanf}  ▄██▄  "
+r22="${jspace}${bluef} ▄█▀███▀█▄    ${purplef}███▀▀██▀▀███   ${cyanf}▄█▀██▀█▄"
+r32="${jspace}${bluef}█▀███████▀█   ${purplef}▀▀▀██▀▀██▀▀▀   ${cyanf}▀▀█▀▀█▀▀"
+r42="${jspace}${bluef}▀ ▀▄▄ ▄▄▀ ▀   ${purplef}▄▄▀▀ ▀▀ ▀▀▄▄   ${cyanf}▄▀▄▀▀▄▀▄"
+	
+p1="${pspace}${whitef}       ▌"
+p2="${pspace}${whitef}     ▌"
+p3="${pspace}${whitef}    ▄█▄"
+p4="${pspace}${whitef}▄█████████▄"
+p5="${pspace}${whitef}▀▀▀▀▀▀▀▀▀▀▀"
+
+if [ "$term_cols" -lt 77 ]; then
+inv_str="\
+${r11}
+${r21}
+${r31}
+${r41}
+
+${r12}
+${r22}
+${r32}
+${r42}
+
+
+${p1}
+
+${p2}
+
+${p3}
+${p4}
+${p5}${reset}"
+
+else
+inv_str="\
+${r11}${r12}
+${r21}${r22}
+${r31}${r32}
+${r41}${r42}${reset}
+${boldon}
+${r11}${r12}
+${r21}${r22}
+${r31}${r32}
+${r41}${r42}${reset}
+
+
+${p1}
+
+${p2}
+
+${p3}
+${p4}
+${p5}${reset}"
+
+fi
+
+# note in this first use that switching colors doesn't require a reset
+# first - the new color overrides the old one.
+
 cat << EOF
- 
-   ${redf}▀▄   ▄▀  ${reset}    ${greenf}▄▄▄████▄▄▄ ${reset}   ${yellowf}  ▄██▄  ${reset}     ${bluef}▀▄   ▄▀  ${reset}    ${purplef}▄▄▄████▄▄▄ ${reset}   ${cyanf}  ▄██▄  ${reset}
-  ${redf}▄█▀███▀█▄ ${reset}   ${greenf}███▀▀██▀▀███${reset}   ${yellowf}▄█▀██▀█▄${reset}    ${bluef}▄█▀███▀█▄ ${reset}   ${purplef}███▀▀██▀▀███${reset}   ${cyanf}▄█▀██▀█▄${reset}
- ${redf}█▀███████▀█${reset}   ${greenf}▀▀▀██▀▀██▀▀▀${reset}   ${yellowf}▀▀█▀▀█▀▀${reset}   ${bluef}█▀███████▀█${reset}   ${purplef}▀▀▀██▀▀██▀▀▀${reset}   ${cyanf}▀▀█▀▀█▀▀${reset}
- ${redf}▀ ▀▄▄ ▄▄▀ ▀${reset}   ${greenf}▄▄▀▀ ▀▀ ▀▀▄▄${reset}   ${yellowf}▄▀▄▀▀▄▀▄${reset}   ${bluef}▀ ▀▄▄ ▄▄▀ ▀${reset}   ${purplef}▄▄▀▀ ▀▀ ▀▀▄▄${reset}   ${cyanf}▄▀▄▀▀▄▀▄${reset}
- 
-   ${boldon}${redf}▀▄   ▄▀  ${reset}    ${boldon}${greenf}▄▄▄████▄▄▄ ${reset}   ${boldon}${yellowf}  ▄██▄  ${reset}     ${boldon}${bluef}▀▄   ▄▀  ${reset}    ${boldon}${purplef}▄▄▄████▄▄▄ ${reset}   ${boldon}${cyanf}  ▄██▄  ${reset}
-  ${boldon}${redf}▄█▀███▀█▄ ${reset}   ${boldon}${greenf}███▀▀██▀▀███${reset}   ${boldon}${yellowf}▄█▀██▀█▄${reset}    ${boldon}${bluef}▄█▀███▀█▄ ${reset}   ${boldon}${purplef}███▀▀██▀▀███${reset}   ${boldon}${cyanf}▄█▀██▀█▄${reset}
- ${boldon}${redf}█▀███████▀█${reset}   ${boldon}${greenf}▀▀▀██▀▀██▀▀▀${reset}   ${boldon}${yellowf}▀▀█▀▀█▀▀${reset}   ${boldon}${bluef}█▀███████▀█${reset}   ${boldon}${purplef}▀▀▀██▀▀██▀▀▀${reset}   ${boldon}${cyanf}▀▀█▀▀█▀▀${reset}
- ${boldon}${redf}▀ ▀▄▄ ▄▄▀ ▀${reset}   ${boldon}${greenf}▄▄▀▀ ▀▀ ▀▀▄▄${reset}   ${boldon}${yellowf}▄▀▄▀▀▄▀▄${reset}   ${boldon}${bluef}▀ ▀▄▄ ▄▄▀ ▀${reset}   ${boldon}${purplef}▄▄▀▀ ▀▀ ▀▀▄▄${reset}   ${boldon}${cyanf}▄▀▄▀▀▄▀▄${reset}
 
-
-                                     ${whitef}▌${reset}
+${inv_str} 
  
-                                   ${whitef}▌${reset}
-                                   ${whitef}${reset}
-                                  ${whitef}▄█▄${reset}
-                              ${whitef}▄█████████▄${reset}
-                              ${whitef}▀▀▀▀▀▀▀▀▀▀▀${reset}
-
 EOF
+
