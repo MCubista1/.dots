@@ -71,4 +71,5 @@ aliases['mkcd'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args
 aliases['tetris'] = '/snap/bin/tetris-thefenriswolf.tetris -a'
 aliases['pmoon'] = 'watch -t -n1800 pyphoon -x -n 19'
 aliases['sai'] = 't && bonsai -L 30 -c 🍂'
+aliases['inv'] = 't && invaders'
 
