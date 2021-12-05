@@ -41,6 +41,7 @@ aliases['rx'] = 'source /home/ed/.xonshrc'
 aliases['vg'] = 'vim /home/ed/.gitconfig'
 aliases['vu'] = 'vim /home/ed/Documentos/Ubuntu/Ubuntu'
 aliases['vc'] = 'vim /home/ed/Documentos/Ubuntu/colors'
+aliases['vv'] = 'vim /home/ed/.0.vimrc'
 
 aliases['g'] = 'git'
 aliases['dots'] = '/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
