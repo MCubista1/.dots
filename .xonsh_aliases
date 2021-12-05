@@ -60,6 +60,7 @@ aliases['bebop'] = 'paplay $BEEP3; paplay $BEEP2; paplay $BEEP1'
 aliases['clip'] = 'xclip -sel clip'
 aliases['xbox'] = 'sudo xboxdrv --silent'
 aliases['cx'] = 'chmod +x'
+aliases['lls'] = 'du -ah -d 1 | sort -hr'
 
 # 25 words * 5 min = -n 125
 aliases['s'] = 'tt -words ox5000 -n 125 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
