@@ -701,6 +701,11 @@ find /usr/ /snap/ /var/ /etc/ -iname "*.desktop" -type f -exec grep -il image/pn
 # set mime default program
 xdg-mime default pinta.desktop image/png
 
+# vim set buffer syntax
+:set syn=sh
+# vim get buffer syntax
+:setlocal syntax?
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
