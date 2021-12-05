@@ -618,7 +618,7 @@ code --disable-extensions
 ctrl-x ctrl-e
 
 # size of files and folders in directory
-du -h -a -d 1 | sort -h
+du -ah -d 1 | sort -hr
 
 # clone corrupted HDD to HDD
 sudo add-apt-repository universe
