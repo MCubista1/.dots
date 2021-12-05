@@ -139,3 +139,7 @@ set termguicolors
 syntax enable
 set background=dark
 colorscheme material-theme
+
+" set default syntax if there is none
+au BufNewFile,BufRead * if &syntax == '' | set syntax=sh | endif
+
