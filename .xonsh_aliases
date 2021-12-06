@@ -34,6 +34,8 @@ aliases['mus'] = 'cd ~/Música'
 aliases['lib'] = 'cd ~/Documentos/libros'
 aliases['ubu'] = 'cd ~/Documentos/Ubuntu'
 aliases['media'] = 'cd /media/ed'
+aliases['midas'] = 'cd ~/Documentos/fx/midas/midas_data'
+aliases['fxcm'] = 'python3 ~/Documentos/fx/midas/pi_ssh/test_fxcm.py'
 
 aliases['vx'] = 'vim /home/ed/.xonshrc'
 aliases['va'] = 'vim /home/ed/.xonsh_aliases'
