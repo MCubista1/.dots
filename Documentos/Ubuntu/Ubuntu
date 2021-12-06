@@ -706,6 +706,10 @@ xdg-mime default pinta.desktop image/png
 # vim get buffer syntax
 :setlocal syntax?
 
+# PPA list path
+/etc/apt/sources.list
+/etc/apt/sources.list.d/
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
