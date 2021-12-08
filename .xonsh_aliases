@@ -68,7 +68,7 @@ aliases['lls'] = 'du -ah -d 1 | sort -hr'
 # 25 words * 5 min = -n 125
 aliases['s'] = 'tt -words ox5000 -n 125 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
 aliases['k'] = 'pkill -9 -f "/bin/sh"'
-aliases['ene'] = 'echo -n ñ | xclip -sel clip'
+aliases['ene'] = 'echo -n ñ | xclip -sel clip && exit'
 
 aliases['md'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
 aliases['mkcd'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
