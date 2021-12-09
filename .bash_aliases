@@ -57,7 +57,7 @@ alias cx="chmod +x"
 
 alias s='tt -words ox5000 -n 100 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
 alias k='pkill -9 -f "/bin/sh"'
-alias ene='echo -n ñ | xclip -sel clip && exit'
+alias ene='echo -n ñ | xclip -sel clip'
 
 # fff auto cd on quit
 f() {
