@@ -57,6 +57,9 @@ $FFF_COL4=6
 # Status foreground color [0-9]
 $FFF_COL5=2
 
+# vi mode
+$VI_MODE = True
+
 ## Aliases
 source ~/.xonsh_aliases
 
