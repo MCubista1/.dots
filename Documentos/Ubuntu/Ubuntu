@@ -541,6 +541,7 @@ gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/ed/Im
 # ASCII art font
 ANSI Shadow
 Roman
+Big Money-ne
 
 # print vim help
 :h <key>
