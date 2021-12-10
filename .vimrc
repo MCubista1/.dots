@@ -10,8 +10,3 @@ imap <Up> <Nop>
 imap <Down> <Nop>
 imap <Left> <Nop>
 imap <Right> <Nop>
-
-" Mouse wheel scrolling
-set mouse=a
-noremap <ScrollWheelUp> <C-Y>
-noremap <ScrollWheelDown> <C-E>
