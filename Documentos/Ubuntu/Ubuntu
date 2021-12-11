@@ -711,6 +711,9 @@ xdg-mime default pinta.desktop image/png
 /etc/apt/sources.list
 /etc/apt/sources.list.d/
 
+# extract .tar.gz
+tar -xvzf file.tar.gz
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
