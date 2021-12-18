@@ -726,24 +726,33 @@ ssh-add
 # ██║  ██║██║  ██║███████║██║     ██████╔╝███████╗██║  ██║██║  ██║   ██║
 # ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝     ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
 
-## installations
-sudo apt update && sudo apt upgrade
-sudo apt install python3-pip libatlas-base-dev 
-pip3 install numpy pandas fxcmpy schedule python-socketio==4.6.1
-sudo apt install tmux vim
+## headless enable ssh
+cd /media/ed/boot
+touch ssh
 
-# (?)
-sudo apt-get install jstest-gtk
+# change password
+passwd
+
+# installations
+sudo apt update 
+sudo apt install tmux vim
+sudo apt upgrade
+sudo apt install python3-pip libatlas-base-dev 
+pip3 install numpy schedule
+sudo apt install python3-pandas
+pip3 install fxcmpy==1.2.6
+pip3 install python-engineio==3.13.0
+pip3 install python-socketio==4.6.0
 
 # under voltage
 watch -n 1 /opt/vc/bin/vcgencmd get_throttled
 
-# ngrok ssh
-sudo wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
-unzip ngrok-stable-linux-arm.zip
-chmod +x ngrok
-ngrok authtoken <token>
-./ngrok tcp 22
+# reload ssh config
+sudo systemctl reload sshd
+
+# run command on startup
+sudo vim /etc/rc.local
+su -c /home/pi/.local/bin/midas -l pi
 
 # tor ssh
 sudo apt install tor
@@ -767,12 +776,12 @@ KexAlgorithms curve25519-sha256@libssh.org
 Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
 MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com
 
-# reload ssh config
-sudo systemctl reload sshd
-
-# run command on startup
-sudo vim /etc/rc.local
-su -c /home/pi/.local/bin/midas -l pi
+# ngrok ssh
+sudo wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
+unzip ngrok-stable-linux-arm.zip
+chmod +x ngrok
+ngrok authtoken <token>
+./ngrok tcp 22
 
 # needrestart detects unused kernel
 /lib/modules/
@@ -788,11 +797,6 @@ PrintLastLog no
 
 # change time zone
 sudo dpkg-reconfigure tzdata
-
-# pip3 working packages versions
-sudo pip3 install fxcmpy==1.2.6
-sudo pip3 install python-engineio==3.13.0
-sudo pip3 install python-socketio==4.6.0
 
 
 
