@@ -1,5 +1,63 @@
 /* Version 14/10/21 */
 
+/* mines */
+/**/
+* {
+font-family:Liberation Mono;
+}
+
+/* main navegation bar */
+
+/* spaces */
+.main-navBar-navBar {
+  padding-top: 0px;
+}
+
+.spotify__container--is-desktop:not(.fullscreen) .main-navBar-entryPoints {
+    padding-top: 0px;
+}
+
+.main-navBar-navBarItem {
+  padding: 0 0px; 
+}
+
+.main-rootlist-rootlistPlaylistsScrollNode {
+    padding: 0px 0;
+}
+
+/* inicio, buscar, biblioteca */
+.main-navBar-navBarLink {
+    height: 30px;
+}
+
+/* crear playlist*/
+#spicetify-sticky-list > div.GlueDropTarget.GlueDropTarget--albums.GlueDropTarget--tracks.GlueDropTarget--local-tracks.GlueDropTarget--episodes {
+  display: none;
+}
+
+/* liked songs */
+#spicetify-sticky-list > div:nth-child(5) {
+  display: none;
+}
+
+/* your episodes */
+#spicetify-sticky-list > div:nth-child(6) {
+  display: none;
+}
+
+/* divider */
+#main > div > div.Root__top-container > nav > div.main-navBar-navBar > div.main-rootlist-rootlist > div > div.main-rootlist-rootlistDividerContainer{
+  display: none;
+}
+
+/* playlist */
+.main-rootlist-rootlist {
+  --left-sidebar-item-height: 28px;
+  --left-sidebar-padding-left: 18px;
+  --left-sidebar-padding-right: 18px;
+}
+
+/* end mines */
 
 /* TOPBAR */
 
