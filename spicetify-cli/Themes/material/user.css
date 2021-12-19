@@ -35,12 +35,22 @@ a {
   padding: 0px 0;
 }
 
-/* inicio, buscar, biblioteca */
+/* home, search, library */
 .main-navBar-navBarLink {
   height: 30px;
 }
 
-/* crear playlist*/
+/* hide home */
+#spicetify-sticky-list > li:nth-child(1) {
+  display: none;
+}
+
+/* hide library */
+#spicetify-sticky-list > li:nth-child(3) {
+  display: none;
+}
+
+/* create playlist*/
 #spicetify-sticky-list > div.GlueDropTarget.GlueDropTarget--albums.GlueDropTarget--tracks.GlueDropTarget--local-tracks.GlueDropTarget--episodes {
   display: none;
 }
@@ -55,9 +65,14 @@ a {
   display: none;
 }
 
-/* divider */
+/* divider color*/
 .main-rootlist-rootlistDivider-{
   background-color: none;
+}
+
+/* divider height */
+#main > div > div.Root__top-container > nav > div.main-navBar-navBar > div.main-rootlist-rootlist > div > div.main-rootlist-rootlistDividerContainer > hr {
+  margin: 2px 0 0 0;
 }
 
 /* playlist */
