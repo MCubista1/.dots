@@ -6,6 +6,16 @@
 font-family:Liberation Mono;
 }
 
+a {
+  color: var(--spice-subtext);
+}
+
+.main-type-finale {
+  font-size: 14px;
+  margin-top: 4px;
+  /*line-height: 26px;*/
+}
+
 /* main navegation bar */
 
 /* spaces */
@@ -233,16 +243,16 @@ ul.main-navBar-entryPoints > div.GlueDropTarget >*.active {
 .playback-bar__progress-time-elapsed.main-type-finale {
   opacity: 0;
   position: absolute;
-  bottom: 13px;
-  left: 0;
+  bottom: -18px;
+  left: 47.5%;
   transition-duration: 0.15s;
 }
 
 .main-playbackBarRemainingTime-container {
   opacity: 0;
   position: absolute;
-  bottom: 13px;
-  right: 0;
+  bottom: -18px;
+  right: 18px;
   transition-duration: 0.15s;
 }
 
