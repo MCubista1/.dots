@@ -14,7 +14,7 @@ font-family:Liberation Mono;
 }
 
 .spotify__container--is-desktop:not(.fullscreen) .main-navBar-entryPoints {
-    padding-top: 0px;
+  padding-top: 0px;
 }
 
 .main-navBar-navBarItem {
@@ -22,12 +22,12 @@ font-family:Liberation Mono;
 }
 
 .main-rootlist-rootlistPlaylistsScrollNode {
-    padding: 0px 0;
+  padding: 0px 0;
 }
 
 /* inicio, buscar, biblioteca */
 .main-navBar-navBarLink {
-    height: 30px;
+  height: 30px;
 }
 
 /* crear playlist*/
@@ -46,8 +46,8 @@ font-family:Liberation Mono;
 }
 
 /* divider */
-#main > div > div.Root__top-container > nav > div.main-navBar-navBar > div.main-rootlist-rootlist > div > div.main-rootlist-rootlistDividerContainer{
-  display: none;
+.main-rootlist-rootlistDivider-{
+  background-color: none;
 }
 
 /* playlist */
@@ -55,6 +55,25 @@ font-family:Liberation Mono;
   --left-sidebar-item-height: 28px;
   --left-sidebar-padding-left: 18px;
   --left-sidebar-padding-right: 18px;
+}
+
+/* Main View */
+
+/* header border */
+.main-trackList-trackListHeaderRow {
+    border-bottom: none;
+}
+
+.main-trackList-trackListHeaderStuck.main-trackList-trackListHeader {
+    border-bottom: none;
+}
+
+/* Now Playing Bar */
+
+/* progress bar */
+.progress-bar {
+  --bg-color: none;
+  --progress-bar-height: 5px;
 }
 
 /* end mines */
@@ -140,11 +159,6 @@ ul.main-navBar-entryPoints > div.GlueDropTarget >*.active {
 /* remove divider gradient */
 .main-rootlist-rootlistDividerGradient {
   display: none;
-}
-
-/* change color of divider */
-.main-rootlist-rootlistDivider {
-  background-color: rgba(var(--spice-rgb-button-disabled), 0.8);
 }
 
 /* add gradient to navbar */
@@ -386,11 +400,6 @@ input {
   > .os-scrollbar-vertical
   > .os-scrollbar-track {
   width: 6px;
-}
-
-/* add border under header row */
-.main-trackList-trackListHeaderRow {
-  border-bottom: 1px solid rgba(var(--spice-rgb-button-disabled), 0.8);
 }
 
 /* change appearance of main/topbar play-button */
