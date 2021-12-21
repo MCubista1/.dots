@@ -24,3 +24,10 @@ alias github='eval "$(ssh-agent -s)" && ssh-add .ssh/github'
 alias ls='ls -a --color'
 alias cx='chmod +x'
 alias lls='du -ah -d 1 | sort -hr'
+
+# fff auto cd on quit
+f() {
+    fff "$@"
+    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
+}
+
