@@ -119,12 +119,10 @@ set -o vi
 [ -f /var/run/reboot-required ] && cat /var/run/reboot-required
 
 # sudoeditor vim
-SUDO_EDITOR=/usr/bin/vim
-export SUDO_EDITOR
-EDITOR=/usr/bin/vim
-export EDITOR
+export SUDO_EDITOR=/usr/bin/vim
+export EDITOR=/usr/bin/vim
 
-sensors | grep 'temp'
+#sensors | grep 'temp'
 /opt/vc/bin/vcgencmd get_throttled
 
 # fff auto cd on quit
