@@ -127,6 +127,10 @@ vnoremap > >gv
 "## Numbers and relative numbers
 set nu rnu
 
+"tab size
+set tabstop=4
+set shiftwidth=4
+
 " disable ex
 map Q <Nop>
 
@@ -135,3 +139,7 @@ set termguicolors
 syntax enable
 set background=dark
 colorscheme material-theme
+
+" set default syntax if there is none
+au BufNewFile,BufRead * if (&syntax == '' || &syntax == 'text') | set syntax=sh | endif
+
