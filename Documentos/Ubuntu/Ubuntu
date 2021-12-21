@@ -419,14 +419,6 @@ sudo xboxdrv
 # run xbox 360 controll driver
 sudo xboxdrv --silent
 
-# github ssh key
-ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/github -C github_user_mail
-eval "$(ssh-agent -s)"
-ssh-add .ssh/github
-cat .ssh/github.pub
-# add ssh key to github
-ssh -T git@github.com
-
 # git commads
 git config --global user.name "Tu Nombre"
 git config --global user.email "you@example.com"
@@ -455,35 +447,50 @@ git reset HEAD #discard staged modifications
 git log #commits history and hashes
 git revert [hash] #undo commit's hash
 
-# Bare git dotfiles
+# bare git dotfiles
 git init --bare $HOME/.dots
 alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 dots config status.showUntrackedFiles no
 dots remote add origin repo.git
-# Usage
+# usage
 dots status
 dots commit -am 'mod ed'
+dots push -u origin master
 dots push
+# fetch from pi
+dots fetch
+dots checkout origin/pi -- .0.vimrc
+dots commit -m 'commit message'
 
-# Dotfiles git deploy
-git clone --separate-git-dir=$HOME/.dots repo.git dots
+# github ssh key
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/github -C github_user_mail
+eval "$(ssh-agent -s)"
+ssh-add .ssh/github
+cat .ssh/github.pub
+# add ssh key to github
+ssh -T git@github.com
+
+# dotfiles git deploy
+git clone -b pi --separate-git-dir=$HOME/.dots repo.git dots
 rm -r dots
 alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 dots config status.showUntrackedFiles no
-# new branch
-dots checkout -b pi
-dots commit -am 'init pi'
-# dots push origin pi:pi (?)
-# dots push origin pi:refs/heads/pi (?)
-# dots push -u origin master (?)
-dots push -u origin pi
+# restore files
+# git < 2.23
+dots checkout .
+# git >= 2.23
+dots restore .
 # github authentication
 eval "$(ssh-agent -s)"
 ssh-add .ssh/github
-# Pull from master branch
-dots fetch origin master:master
-dots checkout master .0.vimrc
-dots log --branches --oneline -3
+# usage
+dots status
+dots commit -am 'commit message'
+dots push -u origin pi
+dots push 
+# fetch from master
+dots fetch
+dots checkout origin/master -- .0.vimrc
 dots commit -m 'vimrc: test pi'
 dots push
 
@@ -735,7 +742,7 @@ passwd
 
 # installations
 sudo apt update 
-sudo apt install tmux vim
+sudo apt install tmux vim git
 sudo apt upgrade
 sudo apt install python3-pip libatlas-base-dev 
 pip3 install numpy schedule
@@ -744,8 +751,14 @@ pip3 install fxcmpy==1.2.6
 pip3 install python-engineio==3.13.0
 pip3 install python-socketio==4.6.0
 
-# under voltage
-watch -n 1 /opt/vc/bin/vcgencmd get_throttled
+# login message of the day
+sudo -e /etc/motd
+# uname messag
+sudo -e /etc/update-motd.d/10-uname
+#uname -snrvm
+# ssh last login message
+sudo -e /etc/ssh/sshd_config
+PrintLastLog no
 
 # reload ssh config
 sudo systemctl reload sshd
@@ -753,6 +766,9 @@ sudo systemctl reload sshd
 # run command on startup
 sudo vim /etc/rc.local
 su -c /home/pi/.local/bin/midas -l pi
+
+# under voltage
+watch -n 1 /opt/vc/bin/vcgencmd get_throttled
 
 # tor ssh
 sudo apt install tor
@@ -786,14 +802,6 @@ ngrok authtoken <token>
 # needrestart detects unused kernel
 /lib/modules/
 /boot/
-
-# login message of the day
-sudo vim /etc/motd
-/etc/update-motd.d/
-
-# ssh last login message
-sudo vim /etc/ssh/sshd_config
-PrintLastLog no
 
 # change time zone
 sudo dpkg-reconfigure tzdata
