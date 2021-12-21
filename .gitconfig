@@ -25,6 +25,3 @@
 	# ssh-add .ssh/github
 	ftm = fetch origin master:master
 	chm = checkout master
-[user]
-	email = edis2393.239332@gmail.com
-	name = pi
