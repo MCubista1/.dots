@@ -143,3 +143,4 @@ colorscheme material-theme
 " set default syntax if there is none
 au BufNewFile,BufRead * if (&syntax == '' || &syntax == 'text') | set syntax=sh | endif
 
+"asdf
