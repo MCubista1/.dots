@@ -1,0 +1,134 @@
+Community Material VSCode
+#263238         bg
+#303C41
+#37474F
+#546E7A         #
+#607a86
+#65737E
+#80CBC4
+#82AAFF         blue
+#89DDFF         cyan
+#B2CCD6         pale blue
+#C17E70
+#C3E88D         green
+#C792EA         purple
+#EEFFFF
+#F07178         pink
+#F78C6C         orange
+#FF5370         red
+#FFCB6B         yellow
+#FFCC00         cursor
+#FFFFFF         fg
+
+
+Material Sublime Text 3
+Red 	    #FF5370 	#E53935
+Pink 	    #F07178 	#FF5370
+Orange 	    #F78C6C 	#F76D47
+Yellow 	    #FFCB6B 	#FFB62C
+Green 	    #C3E88D 	#91B859
+PaleBlue 	#B2CCD6 	#8796B0
+Cyan 	    #89DDFF 	#39ADB5
+Blue 	    #82AAFF 	#6182B8
+Purple 	    #C792EA 	#7C4DFF
+Violet 	    #BB80B3 	#945EB8
+Brown 	    #AB7967 	#AB7967
+
+
+#ABB2BF         termianl fg
+#1A2327         selected row
+#CCCCCC         editor fg
+#E6E6E6         editor fg script
+
+Community Material VSCode
+#000000
+#00000030
+#00000050
+#263238         bg
+#26323800
+#26323860
+#303C41
+#37474F
+#37474F70
+#546E7A         #
+#546E7A20
+#607a86
+#607a8670
+#607a8690
+#65737E
+#80CBC4
+#80CBC420
+#82AAFF         blue
+#82AAFF40
+#82AAFF50
+#82AAFF60
+#82AAFF70
+#82AAFF90
+#89DDFF         cyan
+#B2CCD6         pale blue
+#C17E70
+#C3E88D         green
+#C3E88D15
+#C3E88D60
+#C3E88D90
+#C792EA         purple
+#EEFFFF
+#EEFFFF05
+#EEFFFF10
+#EEFFFF20
+#EEFFFF30
+#EEFFFF40
+#EEFFFF60
+#EEFFFF90
+#F07178         pink
+#F78C6C         orange
+#FF5370         red
+#FF537020
+#FF537040
+#FF537050
+#FF537060
+#FF537070
+#FF537090
+#FFCB6B         yellow
+#FFCB6B40
+#FFCB6B50
+#FFCB6B70
+#FFCB6B90
+#FFCC00
+#FFCC0020
+#FFCC0050
+#FFFFFF         fg
+#FFFFFF00
+#FFFFFF10
+#ffffff30
+
+
+Community Material Terminal
+"terminal.ansiWhite": "#EEEFFF",
+"terminal.ansiBlack": "#263238",
+"terminal.ansiBlue": "#82AAFF",
+"terminal.ansiCyan": "#89DDFF",
+"terminal.ansiGreen": "#C3E88D",
+"terminal.ansiMagenta": "#C792EA",
+"terminal.ansiRed": "#FF5370",
+"terminal.ansiYellow": "#FFCB6B",
+"terminal.ansiBrightWhite": "#EEEFFF",
+"terminal.ansiBrightBlack": "#263238",
+"terminal.ansiBrightBlue": "#82AAFF",
+"terminal.ansiBrightCyan": "#89DDFF",
+"terminal.ansiBrightGreen": "#C3E88D",
+"terminal.ansiBrightMagenta": "#C792EA",
+"terminal.ansiBrightRed": "#FF5370",
+"terminal.ansiBrightYellow": "#FFCB6B",
+
+
+#2F2F2F         bg greyscale
+
+                bg HSL
+200°            Hue
+19%             Saturation
+18%             Lightness
+
+38 50 56        bg rgb
+26 35 39        selected row rgb
+171 178 191     termianl fg rgb
