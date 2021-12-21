@@ -25,6 +25,11 @@ alias ls='ls -a --color'
 alias cx='chmod +x'
 alias lls='du -ah -d 1 | sort -hr'
 
+# create and move to directory
+mkcd() {
+    mkdir -p "$1" && cd "$1";
+}
+
 # fff auto cd on quit
 f() {
     fff "$@"
