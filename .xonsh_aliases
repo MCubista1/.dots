@@ -16,6 +16,7 @@ aliases['e'] = 'exit'
 aliases['p'] = 'ssh pi'
 aliases['sshfs_pi'] = 'sshfs pi:./fx ~/Documentos/fx/midas/pi_ssh'
 aliases['umount_pi'] = 'umount ~/Documentos/fx/midas/pi_ssh'
+aliases['ssh'] = 'ssh -q'
 
 aliases['serve'] = 'bash -c "nohup npx serve /home/ed/Documentos/fx/midas/midas_data &>/dev/null &"'
 aliases['spicetify'] = '/home/ed/spicetify-cli/spicetify'
