@@ -651,14 +651,18 @@ snap refresh --devmode --channel channel/stable package_name
 # download snap package
 snap download package_name --basename snap_revision
 
-# anbox files
-adb push <files> '/sdcard/Download'
-adb pull '/sdcard/Pictures' /home/ed/Imágenes
-
 # restart anbox
 sudo snap stop anbox && adb kill-server && adb start-server && sudo snap start anbox 
 $EGL_PLATFORM='x11' anbox.appmgr
+# ...
 sudo snap refresh --edge --devmode anbox && anbox.appmgr
+
+# anbox install apk
+adb install apt.apk
+
+# anbox files
+adb push <files> '/sdcard/Download'
+adb pull '/sdcard/Pictures' /home/ed/Imágenes
 
 # xmonad
 sudo apt install xmonad libghc-xmonad-contrib-dev xmobar xterm dmenu
@@ -763,6 +767,17 @@ PrintLastLog no
 # reload ssh config
 sudo systemctl reload sshd
 
+# tor ssh
+sudo apt install tor
+sudo systemctl enable tor
+sudo systemctl start tor
+sudo -e /etc/tor/torrc
+# Add lines:
+HiddenServiceDir /var/lib/tor/sshd/
+HiddenServicePort 22 127.0.0.1:22
+sudo systemctl restart tor
+sudo cat /var/lib/tor/sshd/hostname
+
 # run command on startup
 sudo vim /etc/rc.local
 su -c /home/pi/.local/bin/midas -l pi
@@ -770,22 +785,11 @@ su -c /home/pi/.local/bin/midas -l pi
 # under voltage
 watch -n 1 /opt/vc/bin/vcgencmd get_throttled
 
-# tor ssh
-sudo apt install tor
-sudo systemctl enable tor
-sudo systemctl start tor
-sudo vim /etc/tor/torrc
-# Add lines:
-HiddenServiceDir /var/lib/tor/sshd/
-HiddenServicePort 22 127.0.0.1:22
-sudo systemctl restart tor
-sudo cat /var/lib/tor/sshd/hostname
-
 # hardening ssh
-/etc/ssh/sshd_config
+sudo -e /etc/ssh/sshd_config
+PasswordAuthentication no
 AllowUsers pi
 X11Forwarding no
-PasswordAuthentication no
 HostKey /etc/ssh/ssh_host_ed25519_key
 HostKey /etc/ssh/ssh_host_rsa_key
 KexAlgorithms curve25519-sha256@libssh.org
