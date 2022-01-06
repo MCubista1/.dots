@@ -205,7 +205,7 @@ subl
 # htop rc
 ~/.config/htop/htoprc
 
- -delete pdf text
+# delete pdf text
 pdftk file_1.pdf output file_unc.pdf uncompress
 sed 's/oldstring/newstring/g' < file_unc.pdf > file_mod.pdf
 pdftk file_mod.pdf output file_2.pdf compress
