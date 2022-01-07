@@ -34,4 +34,5 @@ set selection-clipboard clipboard
 map i recolor
 map l navigate next
 map h navigate previous
-
+unmap =
+map = zoom in
