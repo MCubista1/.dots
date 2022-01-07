@@ -31,8 +31,13 @@ set window-title-home-tilde true
 set statusbar-basename true
 set selection-clipboard clipboard
 
+set window-height 744
+set window-width 683
+
 map i recolor
 map l navigate next
 map h navigate previous
 unmap =
 map = zoom in
+unmap <C-j>
+unmap <C-k>
