@@ -1,10 +1,37 @@
-set default-bg "#263238"
-set default-fg "#ABB2BF"
-set statusbar-fg "#ABB2BF"
-set statusbar-bg "#263238"
-set index-fg "#ABB2BF"
-set index-bg "#263238"
-set recolor   
+set completion-bg "#263238"
+set completion-fg "#ABB2BF"
+set completion-group-bg "#263238"
+set completion-group-fg "#FF5370"
+set completion-highlight-bg "#ABB2BF"
+set completion-highlight-fg "#263238"
+
+set recolor "true"
 set recolor-lightcolor "#263238"
 set recolor-darkcolor "#ABB2BF"
+set default-bg "#263238"
+
+set inputbar-bg "#263238"
+set inputbar-fg "#ABB2BF"
+set notification-bg "#263238"
+set notification-fg "#ABB2BF"
+set notification-error-bg "#C3E88D"
+set notification-error-fg "#ABB2BF"
+set notification-warning-bg "#C3E88D"
+set notification-warning-fg "#ABB2BF"
+set statusbar-bg "#263238"
+set statusbar-fg "#ABB2BF"
+set index-bg "#263238"
+set index-fg "#ABB2BF"
+set index-active-bg "#ABB2BF"
+set index-active-fg "#263238"
+set render-loading-bg "#263238"
+set render-loading-fg "#ABB2BF"
+
+set window-title-home-tilde true
+set statusbar-basename true
+set selection-clipboard clipboard
+
+map i recolor
+map l navigate next
+map h navigate previous
 
