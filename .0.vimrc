@@ -108,8 +108,8 @@ inoremap xx <Delete>
 
 " Easy indentation
 " In insert mode ctrl-t and ctrl-d
-nnoremap > >>
-nnoremap < <<
+" nnoremap > >>
+" nnoremap < <<
 
 " Visual identaton keeps selection
 vnoremap < <gv
