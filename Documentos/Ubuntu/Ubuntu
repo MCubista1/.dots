@@ -728,6 +728,9 @@ tar -xvf file.tar[.gz.bz2.xz]
 # ssh sign_and_send_pubkey: signing failed
 ssh-add
 
+# set zathura as defaul pdf reader
+xdg-mime default org.pwmt.zathura.desktop application/pdf
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
