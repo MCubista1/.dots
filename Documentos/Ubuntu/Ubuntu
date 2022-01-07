@@ -722,8 +722,8 @@ xdg-mime default pinta.desktop image/png
 /etc/apt/sources.list
 /etc/apt/sources.list.d/
 
-# extract .tar.gz
-tar -xvzf file.tar.gz
+# extract .tar[.gz.bz2.xz]
+tar -xvf file.tar[.gz.bz2.xz]
 
 # ssh sign_and_send_pubkey: signing failed
 ssh-add
