@@ -731,6 +731,9 @@ ssh-add
 # set zathura as defaul pdf reader
 xdg-mime default org.pwmt.zathura.desktop application/pdf
 
+# create a symlink
+ln -s /source/location /symlink/location
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
