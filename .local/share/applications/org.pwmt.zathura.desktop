@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Zathura
+Comment=A minimalistic document viewer
+#Exec=zathura %U
+#Exec=tabbed -c zathura %U -e
+#Exec=bash -c "tab %U;bash"
+Exec=tab %U
+Icon=/home/ed/.local/share/applications/text-rdf.svg
+Terminal=false
+#Terminal=true
+Categories=Office;Viewer;
+Keywords=PDF;PS;PostScript;DjVU;document;presentation;viewer;
