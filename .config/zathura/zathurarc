@@ -34,10 +34,17 @@ set selection-clipboard clipboard
 set window-height 744
 set window-width 683
 
-map i recolor
-map l navigate next
-map h navigate previous
-unmap =
+map d scroll half-down
+map e scroll half-up
+map D scroll full-down
+map E scroll full-up
+
 map = zoom in
+map z zoom default
+map x toggle_page_mode
+
+map i recolor
+map <C-o> exec "terminator -e term_fff" 
+
 unmap <C-j>
 unmap <C-k>
