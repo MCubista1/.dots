@@ -10,14 +10,14 @@
 let mapleader = "\\" 
 
 " Semicolon = esc
-inoremap ; <Esc>
-cnoremap ; <Esc>
-vnoremap ; <Esc>
-onoremap ; <Esc>
+" inoremap ; <Esc>
+" cnoremap ; <Esc>
+" vnoremap ; <Esc>
+" onoremap ; <Esc>
 
 " Insert and command modes semicolon
-inoremap <leader>; ;
-cnoremap <leader>; ;
+" inoremap <leader>; ;
+" cnoremap <leader>; ;
 
 " Enter = new line
 nnoremap <CR> o<Esc>
