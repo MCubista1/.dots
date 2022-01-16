@@ -1,0 +1,89 @@
+#!/bin/bash
+
+function cvs_file {
+	# create cvs file
+	name="$gp1"-"$gp2"-"$gp3".csv
+	l1="INDEX,NAME,DURATION(SEC),COLOR(0-8),SPRINT,RESISTANCE,SPM,INCLINE"
+	l2="0,Precalentarse,240,0,false,2,80,0"
+	echo "$l1" > "$name"
+	echo "$l2" >> "$name"
+	n=1
+	for i in $lstrand; do
+		ln="$n",Adelante,80,"$i",false,"$i",120,0
+		echo $ln >> "$name"
+		n=$(echo $n+1 | bc)
+	done
+	l3="$rend,Enfriarse,240,0,false,2,80,0"
+	echo $l3 >> "$name"
+}
+
+function print_chart {
+	#echo $lstrand
+	max_n=$(echo "$lstrand" | sort | tail -n 1)	
+	for i in $(seq $max_n); do
+		declare row_$i=$(head -c $lstn < /dev/zero | tr '\0' '.')
+	done
+	n=1
+	for r in $lstrand; do
+		for i in $(seq $r); do
+			row_i=row_$i
+			row_tmp=$(echo ${!row_i})
+			declare row_$i=$(echo $row_tmp | sed s/./█/$n)
+		done	
+		n=$(echo $n+1 | bc)
+	done	
+	for i in $(seq $max_n -1 1); do
+		row_i=row_$i
+		row_p=$(echo ${!row_i} | tr '.' ' ')
+		if [ "$i" -eq 1 ]; then
+			echo "$row_p" $gp1 $gp2 $gp3 
+		else
+			echo "$row_p"
+		fi
+	done	
+}
+
+n=0; ip=0; r=0
+read_list=$(grep . list | tr ' ' '\n')
+lstrand=$(echo "$read_list" | shuf)
+while [ "$r" -eq 0 ]; do	
+	for i in $lstrand; do
+		if [ "$n" -gt 0 ]; then
+			if [ "$ip" -eq "$i" ]; then
+				r=0
+				n=0
+				lstrand=$(echo "$lstrand" | shuf)
+				break
+			fi
+			r=1
+		else
+			n=1
+		fi
+		ip="$i"
+	done
+done
+
+# list n
+lstn=$(echo "$read_list" | wc -l | cut -d' ' -f1)
+# split in groups
+grpn=$(echo $lstn/3 | bc)
+grpmi=$(echo $grpn+1 | bc)
+grpm=$(echo $grpn*2 | bc)
+grpfi=$(echo $grpm+1 | bc)
+# group limits
+grp1=1-$grpn
+grp2=$grpmi-$grpm
+grp3=$grpfi-$lstn
+# last row
+rend=$(echo $lstn+1 | bc)
+
+# groups average
+g1=$(echo $lstrand | xargs | cut -d' ' -f$grp1 | tr " " "+" | bc)
+g2=$(echo $lstrand | xargs | cut -d' ' -f$grp2 | tr " " "+" | bc)
+g3=$(echo $lstrand | xargs | cut -d' ' -f$grp3 | tr " " "+" | bc)
+gp1=$(echo $g1*10/$grpn | bc)
+gp2=$(echo $g2*10/$grpn | bc)
+gp3=$(echo $g3*10/$grpn | bc)
+
+print_chart
+cvs_file
