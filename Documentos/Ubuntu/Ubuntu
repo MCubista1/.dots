@@ -652,7 +652,7 @@ snap refresh --devmode --channel channel/stable package_name
 snap download package_name --basename snap_revision
 
 # restart anbox
-sudo snap stop anbox && adb kill-server && adb start-server && sudo snap start anbox 
+sudo snap stop anbox && adb kill-server && adb start-server && sudo snap start anbox
 $EGL_PLATFORM='x11' anbox.appmgr
 # ...
 sudo snap refresh --edge --devmode anbox && anbox.appmgr
