@@ -737,6 +737,24 @@ ln -s /source/location /symlink/location
 # pdf to jpg
 mkdir -p images && pdftoppm -jpeg -r 300 mypdf.pdf images/pg
 
+# enable hibernation
+sudo swapon -s
+sudo -e /etc/fstab
+ /swapfile   none    swap     sw      0       0
+sudo swapoff -a
+sudo fallocate -l 11G /swapfile*
+sudo mkswap /swapfile
+sudo chmod 0600 /swapfile
+sudo swapon /swapfile
+sudo reboot
+# get UUID from root and offset
+sudo blkid
+sudo filefrag -v /swapfile |grep " 0:"| awk '{print $4}'
+sudo -e /etc/default/grub
+ GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX resume_offset=XXXXX"
+sudo update-grub
+sudo systemctl hibernate
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
