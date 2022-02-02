@@ -9,6 +9,7 @@ aliases['cmatrix'] = 'cmatrix -ab'
 
 aliases['speed'] = 'speedtest-cli --simple'
 aliases['suspend'] = 'systemctl suspend'
+aliases['hibernate'] = 'sudo systemctl hibernate'
 aliases['sensor'] = 'watch -n 1 -t sensors -A'
 aliases['t'] = '$[tput reset]; $[clear]'
 aliases['e'] = 'exit'
