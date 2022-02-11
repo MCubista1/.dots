@@ -755,6 +755,9 @@ sudo -e /etc/default/grub
 sudo update-grub
 sudo systemctl hibernate
 
+# 32, 64 bit
+getconf LONG_BIT
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
