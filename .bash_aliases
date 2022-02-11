@@ -24,6 +24,7 @@ alias github='eval "$(ssh-agent -s)" && ssh-add .ssh/github'
 alias ls='ls -a --color'
 alias cx='chmod +x'
 alias lls='du -ah -d 1 | sort -hr'
+alias fxcm='python3 ~/test.py'
 
 # create and move to directory
 mkcd() {
