@@ -15,6 +15,7 @@ function cvs_file {
 	done
 	l3="$rend,Enfriarse,240,0,false,2,80,0"
 	echo $l3 >> "$name"
+	echo -n "$name" 
 }
 
 function print_chart {
@@ -35,10 +36,11 @@ function print_chart {
 	for i in $(seq $max_n -1 1); do
 		row_i=row_$i
 		row_p=$(echo ${!row_i} | tr '.' ' ')
+		#echo "$row_p" >&2
 		if [ "$i" -eq 1 ]; then
-			echo "$row_p" $gp1-$gp2-$gp3-$gp4 
+			echo "$row_p" $gp1-$gp2-$gp3-$gp4 >&2
 		else
-			echo "$row_p"
+			echo "$row_p" >&2
 		fi
 	done	
 }
