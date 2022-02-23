@@ -25,9 +25,9 @@ $win_id"
 		xdotool windowraise "$win_id"
 	else
 		nohup tabbed -u "#263238" -t "#263238" -U "#546E7A" -T "#ABB2BF" \
-		-g 683x744 -p -1 -c zathura "$1" -e >/dev/null &
+		-p -1 -c zathura "$1" -e >/dev/null &
 	fi
 else
 	nohup tabbed -u "#263238" -t "#263238" -U "#546E7A" -T "#ABB2BF" \
-	-g 683x744 -p -1 -c zathura "$1" -e >/dev/null &
+	-p -1 -c zathura "$1" -e >/dev/null &
 fi
