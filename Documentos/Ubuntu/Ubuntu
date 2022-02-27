@@ -758,6 +758,19 @@ sudo systemctl hibernate
 # 32, 64 bit
 getconf LONG_BIT
 
+# disable gui
+sudo systemctl set-default multi-user
+/etc/default/grub
+ GRUB_CMDLINE_LINUX_DEFAULT=""
+update-grub
+
+# setup ssh
+sudo apt install openssh-server
+sudo systemctl enable ssh
+sudo systemctl start ssh
+
+# add to path
+PATH=$PATH:~/opt/bin
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
