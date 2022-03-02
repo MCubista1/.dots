@@ -26,16 +26,21 @@ initializeANSI()
 }
 
 term_cols=$(tput cols)
-pnspace=$(echo "($term_cols-11)/2" | bc)
-pspace=$(head -c "$pnspace" /dev/zero | tr '\0' ' ' )
+#pnspace=$(echo "($term_cols-11)/2" | bc)
+#pspace=$(head -c "$pnspace" /dev/zero | tr '\0' ' ' )
 if [ "$term_cols" -lt 77 ]; then
-	inspace=$(echo "($term_cols-37)/2" | bc)
-	ispace=$(head -c "$inspace" /dev/zero | tr '\0' ' ' )
-	jspace=$(head -c "$inspace" /dev/zero | tr '\0' ' ' )
+	#inspace=$(echo "($term_cols-37)/2" | bc)
+	#ispace=$(head -c "$inspace" /dev/zero | tr '\0' ' ' )
+	#jspace=$(head -c "$inspace" /dev/zero | tr '\0' ' ' )
+	ispace=" "
+	jspace=" "
+	pspace=$(head -c 14 /dev/zero | tr '\0' ' ' )
 else
-	inspace=$(echo "($term_cols-77)/2" | bc)
-	ispace=$(head -c "$inspace" /dev/zero | tr '\0' ' ' )
+	#inspace=$(echo "($term_cols-77)/2" | bc)
+	#ispace=$(head -c "$inspace" /dev/zero | tr '\0' ' ' )
+	ispace=" "
 	jspace="   "
+	pspace=$(head -c 34 /dev/zero | tr '\0' ' ' )
 fi
 
 initializeANSI
