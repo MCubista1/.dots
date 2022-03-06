@@ -476,9 +476,9 @@ rm -r dots
 alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 dots config status.showUntrackedFiles no
 # restore files
-# git < 2.23
+# git --version < 2.23
 dots checkout .
-# git >= 2.23
+# git --version >= 2.23
 dots restore .
 # github authentication
 eval "$(ssh-agent -s)"
@@ -762,7 +762,7 @@ getconf LONG_BIT
 sudo systemctl set-default multi-user
 /etc/default/grub
  GRUB_CMDLINE_LINUX_DEFAULT=""
-update-grub
+sudo update-grub
 
 # setup ssh
 sudo apt install openssh-server
@@ -771,6 +771,14 @@ sudo systemctl start ssh
 
 # add to path
 PATH=$PATH:~/opt/bin
+
+# sed delete characters after / of file lines
+sed -i 's/\/.*//' file
+
+# ssh login message
+ls /etc/update-motd.d
+sudo chmod -x *
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
