@@ -13,6 +13,7 @@
 	ch = checkout
 	p = push
 	cd1 = clone --depth 1
+	r = restore
 
 	# Log
 	l = log --oneline --graph
