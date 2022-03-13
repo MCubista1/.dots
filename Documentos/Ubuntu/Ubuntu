@@ -424,7 +424,7 @@ git config --global user.name "Tu Nombre"
 git config --global user.email "you@example.com"
 git clone repo.git #download from remote
 git init #creates git files in current folder for working repo
-git init --bare #create git files for source repo
+git init --bare #create git files for source repo on folder.git
 git remote add origin repo.git #connect to remote repo
 git remote -v #show connected repos
 git add .
