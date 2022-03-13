@@ -788,6 +788,9 @@ sudo visudo
 select-editor
 sudo select-editor
 
+# set UTC timezone
+sudo timedatectl set-timezone UTC
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
