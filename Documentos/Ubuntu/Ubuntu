@@ -779,6 +779,9 @@ sed -i 's/\/.*//' file
 ls /etc/update-motd.d
 sudo chmod -x *
 
+# select visudo editor
+sudo update-alternatives --config editor
+
 # reboot, poweroff without sudo
 sudo visudo
  ed ALL=NOPASSWD:/usr/sbin/reboot
