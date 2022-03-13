@@ -779,6 +779,11 @@ sed -i 's/\/.*//' file
 ls /etc/update-motd.d
 sudo chmod -x *
 
+# reboot, poweroff without sudo
+sudo visudo
+ ed ALL=NOPASSWD:/usr/sbin/reboot
+ ed ALL=NOPASSWD:/usr/sbin/poweroff
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
