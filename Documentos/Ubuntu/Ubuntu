@@ -784,6 +784,10 @@ sudo visudo
  ed ALL=NOPASSWD:/usr/sbin/reboot
  ed ALL=NOPASSWD:/usr/sbin/poweroff
 
+# select crontab editor
+select-editor
+sudo select-editor
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
