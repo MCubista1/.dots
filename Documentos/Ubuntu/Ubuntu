@@ -794,6 +794,9 @@ sudo select-editor
 # set UTC timezone
 sudo timedatectl set-timezone UTC
 
+# remove anbox files
+adb shell rm sdcard/Download/*
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
