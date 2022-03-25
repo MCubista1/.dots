@@ -40,6 +40,7 @@ aliases['media'] = 'cd /media/ed'
 aliases['midas'] = 'cd ~/Documentos/fx/midas/midas_data'
 aliases['fxcm'] = 'cd ~/Documentos/fx/midas/pi_ssh && python3 ~/Documentos/fx/midas/pi_ssh/test_fxcm.py'
 aliases['rnddir'] = 'cd ~/Documentos/mgit/rnd'
+aliases['tp'] = 'cd ~/Documentos/tp'
 
 aliases['vx'] = 'vim /home/ed/.xonshrc'
 aliases['va'] = 'vim /home/ed/.xonsh_aliases'
