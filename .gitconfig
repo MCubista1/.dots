@@ -27,5 +27,5 @@
 	# Fetch master file from pi brach
 	# eval "$(ssh-agent -s)"
 	# ssh-add .ssh/github
-	ftm = fetch origin master:master
-	chm = checkout master
+	f = fetch
+	ffm = checkout origin/master --
