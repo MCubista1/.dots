@@ -1,7 +1,0 @@
-( if ( is ( application_name ) "Transmission" )
-
-	( begin
-		( spawn_async (str "xprop -id " (window_xid) " -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY 0xf851eb84") )
- 	)
-	
-)
