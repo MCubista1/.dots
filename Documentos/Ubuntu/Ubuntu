@@ -482,7 +482,7 @@ dots checkout .
 dots restore .
 # github authentication
 eval "$(ssh-agent -s)"
-ssh-add .ssh/github
+ssh-add ~/.ssh/github
 # usage
 dots status
 dots commit -am 'commit message'
