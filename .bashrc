@@ -16,7 +16,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
+HISTSIZE=10000
 HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
@@ -75,35 +75,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -125,26 +96,12 @@ fi
 # vi like motions when <Esc>, v to open line on editor
 set -o vi
 
-# add go bin to path
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-# add rust cargo bin to path
-export PATH=$PATH:$HOME/.cargo/bin
-# add spicetify to path
-export PATH=$PATH:$HOME/spicetify-cli
-
 # kernel outdate
 [ -f /var/run/reboot-required ] && cat /var/run/reboot-required
 
 # edit with vim
 export SUDO_EDITOR=/usr/bin/vim
 export EDITOR=/usr/bin/vim
-
-# beep
-export BEEP1=/usr/share/sounds/sound-icons/prompt.wav
-export BEEP2=/usr/share/sounds/Yaru/stereo/message-new-instant.oga
-export BEEP3=/usr/share/sounds/freedesktop/stereo/service-login.oga
-
 
 # fzf conf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -157,25 +114,3 @@ export FFF_COL3=2
 export FFF_COL4=6
 # Status foreground color [0-9]
 export FFF_COL5=2
-
-if [ "$TERM" = "linux" ]; then
-	printf %b '\e[40m' '\e[8]' # set default background to color 0 'dracula-bg'
-	printf %b '\e[37m' '\e[8]' # set default foreground to color 7 'dracula-fg'
-	printf %b '\e]P0282a36'    # redefine 'black'          as 'dracula-bg'
-	printf %b '\e]P86272a4'    # redefine 'bright-black'   as 'dracula-comment'
-	printf %b '\e]P1ff5555'    # redefine 'red'            as 'dracula-red'
-	printf %b '\e]P9ff7777'    # redefine 'bright-red'     as '#ff7777'
-	printf %b '\e]P250fa7b'    # redefine 'green'          as 'dracula-green'
-	printf %b '\e]PA70fa9b'    # redefine 'bright-green'   as '#70fa9b'
-	printf %b '\e]P3f1fa8c'    # redefine 'brown'          as 'dracula-yellow'
-	printf %b '\e]PBffb86c'    # redefine 'bright-brown'   as 'dracula-orange'
-	printf %b '\e]P4bd93f9'    # redefine 'blue'           as 'dracula-purple'
-	printf %b '\e]PCcfa9ff'    # redefine 'bright-blue'    as '#cfa9ff'
-	printf %b '\e]P5ff79c6'    # redefine 'magenta'        as 'dracula-pink'
-	printf %b '\e]PDff88e8'    # redefine 'bright-magenta' as '#ff88e8'
-	printf %b '\e]P68be9fd'    # redefine 'cyan'           as 'dracula-cyan'
-	printf %b '\e]PE97e2ff'    # redefine 'bright-cyan'    as '#97e2ff'
-	printf %b '\e]P7f8f8f2'    # redefine 'white'          as 'dracula-fg'
-	printf %b '\e]PFffffff'    # redefine 'bright-white'   as '#ffffff'
-	clear
-fi
