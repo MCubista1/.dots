@@ -424,7 +424,7 @@ git config --global user.name "Tu Nombre"
 git config --global user.email "you@example.com"
 git clone repo.git #download from remote
 git init #creates git files in current folder for working repo
-git init --bare #create git files for source repo
+git init --bare #create git files for source repo on folder.git
 git remote add origin repo.git #connect to remote repo
 git remote -v #show connected repos
 git add .
@@ -476,13 +476,13 @@ rm -r dots
 alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 dots config status.showUntrackedFiles no
 # restore files
-# git < 2.23
+# git --version < 2.23
 dots checkout .
-# git >= 2.23
+# git --version >= 2.23
 dots restore .
 # github authentication
 eval "$(ssh-agent -s)"
-ssh-add .ssh/github
+ssh-add ~/.ssh/github
 # usage
 dots status
 dots commit -am 'commit message'
@@ -762,7 +762,7 @@ getconf LONG_BIT
 sudo systemctl set-default multi-user
 /etc/default/grub
  GRUB_CMDLINE_LINUX_DEFAULT=""
-update-grub
+sudo update-grub
 
 # setup ssh
 sudo apt install openssh-server
@@ -771,6 +771,32 @@ sudo systemctl start ssh
 
 # add to path
 PATH=$PATH:~/opt/bin
+
+# sed delete characters after / of file lines
+sed -i 's/\/.*//' file
+
+# ssh login message
+ls /etc/update-motd.d
+sudo chmod -x *
+
+# select visudo editor
+sudo update-alternatives --config editor
+
+# reboot, poweroff without sudo
+sudo visudo
+ ed ALL=NOPASSWD:/usr/sbin/reboot
+ ed ALL=NOPASSWD:/usr/sbin/poweroff
+
+# select crontab editor
+select-editor
+sudo select-editor
+
+# set UTC timezone
+sudo timedatectl set-timezone UTC
+
+# remove anbox files
+adb shell rm sdcard/Download/*
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
