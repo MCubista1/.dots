@@ -130,6 +130,9 @@ set nu rnu
 " insensitive case search
 set ignorecase
 
+" highlight search
+set hlsearch
+
 "tab size
 set tabstop=4
 set shiftwidth=4
