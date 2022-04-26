@@ -127,6 +127,9 @@ vnoremap > >gv
 "## Numbers and relative numbers
 set nu rnu
 
+" insensitive case search
+set ignorecase
+
 "tab size
 set tabstop=4
 set shiftwidth=4
