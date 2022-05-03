@@ -65,6 +65,14 @@ nnoremap * *zz
 nnoremap # #zz 
 cnoremap <CR> <CR>zz
 
+" Return to the previous cursor position
+nnoremap '' ``zz
+vnoremap '' ``zz
+
+" Return to previous change position
+nnoremap '. `.zz
+vnoremap '. `.zz
+
 " First non-blank chatacter
 nnoremap H ^
 vnoremap H ^
