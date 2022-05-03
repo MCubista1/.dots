@@ -149,3 +149,5 @@ colorscheme material-theme
 " set default syntax if there is none
 au BufNewFile,BufRead * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
 
+" center line at start
+au BufEnter * :normal! zz
