@@ -2,6 +2,7 @@ alias fetch='screenfetch -w -c ",7;2"'
 alias gfetch='onefetch'
 alias nfetch='neofetch'
 alias cmatrix='cmatrix -ab'
+alias fxcm='python3 test_fxcm.py'
 
 alias ls="ls -A --color"
 alias ll="ls -lAh --color"
