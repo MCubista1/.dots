@@ -147,6 +147,5 @@ set background=dark
 colorscheme material-theme
 
 " set default syntax if there is none
-" au BufNewFile,BufRead * if (&syntax == '' || &syntax == 'text') | set syntax=sh | endif
-autocmd BufNewFile,BufRead * if expand('%:t') !~ '.\.' | set syntax=perl | endif
+au BufNewFile,BufRead * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
 
