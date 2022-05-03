@@ -36,7 +36,7 @@ vnoremap M J
 noremap <Space>w :w<Enter>
 noremap <Space>q :wq<Enter>
 noremap <Space>Q :q!<Enter>
-noremap <Space>E :e!<Enter>
+noremap <Space>E :e!<Enter>zz
 
 " Center line in window
 nnoremap j jzz
