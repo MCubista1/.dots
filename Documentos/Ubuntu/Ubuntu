@@ -160,6 +160,12 @@ ffmpeg -i in.mov -vf "transpose=1" out.mov
 # reiniciar terminal
 tput reset
 
+# imprimir archivo a impresora determinada
+lp -d -P 1,3-6,16 path/to/filename
+# impresoras disponibles
+lpstat -p
+
+
 
 
 # ██╗   ██╗██████╗ ██╗   ██╗███╗   ██╗████████╗██╗   ██╗    ██████╗
@@ -796,6 +802,9 @@ sudo timedatectl set-timezone UTC
 
 # remove anbox files
 adb shell rm sdcard/Download/*
+
+# motherboard model
+sudo dmidecode -t 2
 
 
 
