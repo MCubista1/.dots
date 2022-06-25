@@ -803,6 +803,9 @@ sudo timedatectl set-timezone UTC
 # remove anbox files
 adb shell rm sdcard/Download/*
 
+# motherboard model
+sudo dmidecode -t 2
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
