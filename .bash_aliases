@@ -16,6 +16,7 @@ alias cx="chmod +x"
 alias h="cd ~"
 alias bindir="cd ~/.local/bin"
 alias media="cd /media/usb"
+alias acs="cd ~/acs"
 
 alias va="vim ~/.bash_aliases"
 alias vb="vim ~/.bashrc"
