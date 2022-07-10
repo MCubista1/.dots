@@ -518,17 +518,33 @@ $win_eval"
     fi
 
 elif [ -n "$brightness_flag" ]; then
-    # change brightness of integrated monitor
-    brillo=$(cat /sys/class/backlight/nv_backlight/brightness)
     if [ -n "$increase_flag" ]; then
-        brillo=$(expr $brillo + 10)
-        echo $brillo > /sys/class/backlight/nv_backlight/brightness
+		for i_b in {1..10}; do
+			brillo=$(cat /sys/class/backlight/nv_backlight/brightness)
+			brillo=$(expr $brillo + 1)
+			echo $brillo> /sys/class/backlight/nv_backlight/brightness
+			sleep 0.02
+			# round to decimal
+			if [ "$i_b" -eq 10 ]; then
+				brillo=$(( (($brillo+5)/10)*10 ))
+				echo $brillo> /sys/class/backlight/nv_backlight/brightness
+			fi
+		done
     else
         echo
-        if [ "$brillo" -gt 10 ]; then
-            brillo=$(expr $brillo - 10)
-            echo $brillo > /sys/class/backlight/nv_backlight/brightness
-        fi
+		for i_b in {1..10}; do
+			brillo=$(cat /sys/class/backlight/nv_backlight/brightness)
+			brillo=$(expr $brillo - 1)
+			if [ "$brillo" -ge 10 ]; then
+				echo $brillo > /sys/class/backlight/nv_backlight/brightness
+				sleep 0.02
+			fi
+			# round to decimal
+			if [ "$i_b" -eq 10 ]; then
+				brillo=$(( (($brillo+5)/10)*10 ))
+				echo $brillo> /sys/class/backlight/nv_backlight/brightness
+			fi
+		done	
     fi
 
 elif [ -n "$geometry_flag" ]; then
