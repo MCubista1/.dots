@@ -806,6 +806,11 @@ adb shell rm sdcard/Download/*
 # motherboard model
 sudo dmidecode -t 2
 
+# list of ip in network
+ifconfig
+sudo arp-scan --interface=wlp2s0 --localnet
+nmap -sn 192.168.100.0/24
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
