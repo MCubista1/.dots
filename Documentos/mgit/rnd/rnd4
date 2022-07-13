@@ -19,8 +19,7 @@ function cvs_file {
 }
 
 function print_chart {
-	#echo $lstrand
-	max_n=$(echo "$lstrand" | sort | tail -n 1)	
+	max_n=$(echo "$lstrand" | sort -n | tail -n 1)
 	for i in $(seq $max_n); do
 		declare row_$i=$(head -c $lstn < /dev/zero | tr '\0' '.')
 	done
