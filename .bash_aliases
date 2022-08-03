@@ -7,6 +7,7 @@ alias fxcm='python3 ~/tst_fxcm.py'
 alias ls="ls -A --color"
 alias ll="ls -lAh --color"
 alias lls="du -ah -d 1 | sort -hr"
+alias week="date +%U"
 
 alias t="tput reset && clear"
 alias e="exit"
