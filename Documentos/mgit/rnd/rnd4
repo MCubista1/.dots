@@ -15,7 +15,7 @@ function cvs_file {
 	done
 	l3="$rend,Enfriarse,240,0,false,2,80,0"
 	echo $l3 >> "$name"
-	echo -n "adb push $name '/sdcard/Download'"
+	echo -n "adb shell rm '/sdcard/Download/*' && adb push $name '/sdcard/Download'"
 }
 
 function print_chart {
