@@ -813,6 +813,7 @@ nmap -sn 192.168.100.0/24
 
 # windows installation media
 git clone https://github.com/WoeUSB/WoeUSB.git
+sudo apt install wimtools
 sudo ./woeusb --tgt-fs NTFS -d ~/Descargas/Win10x64.iso /dev/sdb
 
 
