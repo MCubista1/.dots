@@ -816,6 +816,9 @@ git clone https://github.com/WoeUSB/WoeUSB.git
 sudo apt install wimtools
 sudo ./woeusb --tgt-fs NTFS -d ~/Descargas/Win10x64.iso /dev/sdb
 
+# sort in place
+sort file -o file
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
