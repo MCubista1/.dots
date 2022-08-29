@@ -45,7 +45,7 @@ function print_chart {
 }
 
 n=0; ip=0; r=0
-read_list=$(grep . list4 | tr ' ' '\n')
+read_list=$(grep -v '^\s*$\|^\s*\#' list4 | tr ' ' '\n')
 lstrand=$(echo "$read_list" | shuf)
 while [ "$r" -eq 0 ]; do	
 	for i in $lstrand; do
