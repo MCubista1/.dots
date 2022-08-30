@@ -819,6 +819,11 @@ sudo ./woeusb --tgt-fs NTFS -d ~/Descargas/Win10x64.iso /dev/sdb
 # sort in place
 sort file -o file
 
+# vim retab file
+:set tabstop=4
+:set noexpandtab
+:%retab!
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
