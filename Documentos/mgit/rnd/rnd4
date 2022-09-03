@@ -2,7 +2,7 @@
 
 function cvs_file {
 	# create cvs file
-	name="$gp1"-"$gp2"-"$gp3"-"$gp4".csv
+	name="$gp1"-"$gp2"-"$gp3"-"$gp4"__"$avr".csv
 	l1="INDEX,NAME,DURATION(SEC),COLOR(0-8),SPRINT,RESISTANCE,SPM,INCLINE"
 	l2="0,Precalentarse,240,0,false,2,80,0"
 	echo "$l1" > "$name"
@@ -37,7 +37,7 @@ function print_chart {
 		row_p=$(echo ${!row_i} | tr '.' ' ')
 		#echo "$row_p" >&2
 		if [ "$i" -eq 1 ]; then
-			echo "$row_p" $gp1-$gp2-$gp3-$gp4 >&2
+			echo "$row_p" $gp1-$gp2-$gp3-$gp4  $avr>&2
 		else
 			echo "$row_p" >&2
 		fi
@@ -90,6 +90,10 @@ gp1=$(echo $g1*10/$grpn | bc)
 gp2=$(echo $g2*10/$grpn | bc)
 gp3=$(echo $g3*10/$grpn | bc)
 gp4=$(echo $g4*10/$grpn | bc)
+sum=$(echo $lstrand | xargs | tr " " "+" | bc)
+avr=$(echo $sum*100/$lstn | bc)
+
+
 
 print_chart
 cvs_file
