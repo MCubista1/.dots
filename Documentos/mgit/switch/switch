@@ -499,7 +499,6 @@ $win_eval"
             xdotool windowsize "$monitor_ids" "$second_x" 0
             xdotool windowmove "$monitor_ids" "$grid_x" 0
             xdotool windowsize "$focused_id" "$first_x" 0
-
         else
             xdotool windowsize "$focused_id" "$first_x" 0
             xdotool windowmove "$monitor_ids" "$grid_x" 0
