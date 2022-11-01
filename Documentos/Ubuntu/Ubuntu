@@ -824,6 +824,9 @@ sort file -o file
 :set noexpandtab
 :%retab!
 
+# week number
+date +%U
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
