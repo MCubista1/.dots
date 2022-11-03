@@ -30,12 +30,12 @@ alias vv="vim ~/.0.vimrc"
 alias g="git"
 alias dots="git --git-dir=$HOME/.dots/ --work-tree=$HOME"
 alias d="git --git-dir=$HOME/.dots/ --work-tree=$HOME"
-alias github="eval "$(ssh-agent -s)" && ssh-add ~/.ssh/github"
+alias github='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/github'
 
 alias up="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 
 #alias poweroff="sudo poweroff"
-alias poweroff="echo rebooting && sudo reboot"
+alias poweroff="echo rebooting... && sudo reboot"
 alias reboot="sudo reboot"
 
 alias vint="vim ~/.local/bin/internet_status"
