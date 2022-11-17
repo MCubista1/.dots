@@ -23,6 +23,9 @@ $BEEP3 = '/usr/share/sounds/freedesktop/stereo/service-login.oga'
 $PATH.append('/home/ed/.fzf/bin/')
 # Load rust cargo bin
 $PATH.append('/home/ed/.cargo/bin/')
+# Load go bin
+$PATH.append('/home/ed/go/bin')
+$GOBIN = '/home/ed/go/bin'
 
 xontrib load fzf-widgets
 # xonsh fzf bindings
