@@ -160,3 +160,6 @@ au BufNewFile,BufRead * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh
 
 " center line at start
 au BufEnter * :normal! zz
+
+" incremental search
+set incsearch
