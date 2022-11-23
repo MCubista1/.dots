@@ -142,6 +142,9 @@ set ignorecase
 " highlight search
 set hlsearch
 
+" incremental search
+set incsearch
+
 "tab size
 set tabstop=4
 set shiftwidth=4
@@ -160,6 +163,3 @@ au BufNewFile,BufRead * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh
 
 " center line at start
 au BufEnter * :normal! zz
-
-" incremental search
-set incsearch
