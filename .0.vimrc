@@ -20,7 +20,8 @@ let mapleader = "\\"
 " cnoremap <leader>; ;
 
 " Enter = new line
-nnoremap <CR> o<Esc>
+" nnoremap <CR> o<Esc>
+nnoremap <CR> <CR>zz
 
 " Backspace = delete left character
 nnoremap <BS> i<BS><Right><Esc>
