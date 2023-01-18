@@ -48,6 +48,7 @@ aliases['tp'] = 'cd ~/Documentos/tp'
 aliases['acs'] = 'cd /home/ed/Documentos/fx/midas/atomsk/acs'
 aliases['pa'] = 'cd /home/ed/Documentos/pa'
 aliases['steamdir'] = 'cd /home/ed/.steam/debian-installation/steamapps/common'
+aliases['icel'] = 'cd /home/ed/Documentos/icel'
 
 aliases['vx'] = 'vim /home/ed/.xonshrc'
 aliases['va'] = 'vim /home/ed/.xonsh_aliases'
