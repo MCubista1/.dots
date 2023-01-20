@@ -836,6 +836,9 @@ ctrl-t dmenu
 ctrl-o open new file
 q close tab
 
+# vimtes is installed
+:VimtexInfo
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
