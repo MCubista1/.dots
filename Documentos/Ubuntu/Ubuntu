@@ -827,6 +827,15 @@ sort file -o file
 # week number
 date +%U
 
+# tabbed
+ctrl-shift-h previous tab
+ctrl-shift-l next tab
+ctrl-shift-j move tab to the left
+ctrl-shift-k move tab to the right
+ctrl-t dmenu
+ctrl-o open new file
+q close tab
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
@@ -967,7 +976,7 @@ cd /sdcard
 # ██║  ██╗╚██████╔╝██████╔╝╚██████╔╝
 # ╚═╝  ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝
 
-## Koreader
+# Koreader
 save settings .add/koreader/settings.reader.lua
 KFMon content in root
 reboot

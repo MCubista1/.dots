@@ -163,3 +163,11 @@ au BufNewFile,BufRead * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh
 
 " center line at start
 au BufEnter * :normal! zz
+
+" vim-plug
+call plug#begin('~/.vim/plugged')
+
+" vim-plug
+Plug 'lervag/vimtex'
+
+call plug#end()
