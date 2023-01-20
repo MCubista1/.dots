@@ -839,6 +839,9 @@ q close tab
 # vimtes is installed
 :VimtexInfo
 
+# vim jump to
+ctrl-]
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
