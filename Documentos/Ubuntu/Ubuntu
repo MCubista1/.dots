@@ -861,8 +861,8 @@ ctrl+j highlight next item
 ctrl+k highlight next item 
 ctrl+h next modi
 ctrl+l select item
-esc exit
 shift+delete terminate program
+esc exit
 
 
 
