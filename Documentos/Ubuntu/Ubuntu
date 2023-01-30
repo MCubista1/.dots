@@ -839,8 +839,10 @@ q close tab
 # zathura keybindings
 a adjusts window to fit height
 s adjusts window to fit width
-e page up
-d page down
+e half page up
+d half page down
+E page up
+D page down
 z zoom to original size
 x double page view
 r rotate 90 degrees
