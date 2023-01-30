@@ -837,11 +837,15 @@ ctrl-o open new file
 q close tab
 
 # zathura keybindings
-A adjusts window to fit height
-S adjusts window to fit width
-E page up
-D page down
-R rotate 90 degrees
+a adjusts window to fit height
+s adjusts window to fit width
+e page up
+d page down
+z zoom to original size
+x double page view
+r rotate 90 degrees
+ctrl+n toggle status bar
+tab show index
 
 
 # vimtes is installed
@@ -849,6 +853,15 @@ R rotate 90 degrees
 
 # vim jump to
 ctrl-]
+
+# rofi keybindings
+win+n drun modi
+win+m window modi
+ctrl+j highlight next item 
+ctrl+k highlight next item 
+ctrl+h next modi
+ctrl+l select item
+esc exit
 
 
 
