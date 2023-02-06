@@ -15,9 +15,6 @@ aliases['sensor'] = 'watch -n 1 -t sensors -A'
 aliases['t'] = '$[tput reset]; $[clear]'
 aliases['e'] = 'exit'
 
-aliases['p'] = 'ssh pi'
-aliases['sshfs_pi'] = 'sshfs pi:./fx ~/Documentos/fx/midas/pi_ssh'
-aliases['umount_pi'] = 'umount ~/Documentos/fx/midas/pi_ssh'
 aliases['ssh'] = 'ssh -q'
 aliases['nm'] = 'nmap -sn 192.168.100.0/24'
 
