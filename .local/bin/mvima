@@ -1,4 +1,5 @@
 #!/bin/bash
 
 mv /home/ed/Imágenes/*.png . 2>/dev/null
+mv /home/ed/Imágenes/*.jpg . 2>/dev/null
 
