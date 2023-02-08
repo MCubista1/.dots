@@ -109,6 +109,10 @@ inoremap { {}<Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
 
+" Latex math mode
+inoremap $ $$<Esc>i
+inoremap \[ \[\]<Left><Esc>i<CR><Esc>O
+
 " Continue in insert mode outside current brackets
 inoremap ,, <Esc><Right>a
 
