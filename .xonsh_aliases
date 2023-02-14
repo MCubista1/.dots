@@ -16,7 +16,9 @@ aliases['t'] = '$[tput reset]; $[clear]'
 aliases['e'] = 'exit'
 
 aliases['ssh'] = 'ssh -q'
-aliases['nm'] = 'nmap -sn 192.168.100.0/24'
+aliases['nm'] = 'sudo nmap -sn 192.168.100.0/24'
+#aliases['as'] = 'sudo arp-scan --interface=wlp2s0 --localnet'
+aliases['as'] = 'sudo arp-scan 192.168.100.0/24'
 
 aliases['serve'] = 'bash -c "nohup npx serve /home/ed/Documentos/fx/midas/midas_data &>/dev/null &"'
 aliases['spicetify'] = '/home/ed/spicetify-cli/spicetify'
