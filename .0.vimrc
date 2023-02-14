@@ -20,7 +20,8 @@ let mapleader = "\\"
 " cnoremap <leader>; ;
 
 " Enter = new line
-nnoremap <CR> o<Esc>
+" nnoremap <CR> o<Esc>
+" nnoremap <CR> <CR>zz
 
 " Backspace = delete left character
 nnoremap <BS> i<BS><Right><Esc>
@@ -108,6 +109,10 @@ inoremap { {}<Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
 
+" Latex math mode
+inoremap $ $$<Esc>i
+inoremap \[ \[\]<Left><Esc>i<CR><Esc>O
+
 " Continue in insert mode outside current brackets
 inoremap ,, <Esc><Right>a
 
@@ -141,6 +146,9 @@ set ignorecase
 " highlight search
 set hlsearch
 
+" incremental search
+set incsearch
+
 "tab size
 set tabstop=4
 set shiftwidth=4
@@ -159,3 +167,11 @@ au BufNewFile,BufRead * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh
 
 " center line at start
 au BufEnter * :normal! zz
+
+" vim-plug
+call plug#begin('~/.vim/plugged')
+
+" vim-plug
+Plug 'lervag/vimtex'
+
+call plug#end()
