@@ -149,10 +149,14 @@ set hlsearch
 " incremental search
 set incsearch
 
-"tab size
+" tab size
+set noexpandtab
 set tabstop=4
 set shiftwidth=4
-set noexpandtab
+set softtabstop=0
+
+" visible spaces and tabs
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " disable ex
 map Q <Nop>
