@@ -152,6 +152,7 @@ set incsearch
 "tab size
 set tabstop=4
 set shiftwidth=4
+set noexpandtab
 
 " disable ex
 map Q <Nop>
