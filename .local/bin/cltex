@@ -6,3 +6,7 @@ rm *.fls 2>/dev/null
 rm *.log 2>/dev/null
 rm *.gz 2>/dev/null
 rm *.toc 2>/dev/null
+rm *.bbl 2>/dev/null
+rm *.blg 2>/dev/null
+rm *.bcf 2>/dev/null
+rm *.run.* 2>/dev/null
