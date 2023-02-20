@@ -29,11 +29,11 @@ noremap <Space>q :wq<Enter>
 noremap <Space>Q :q!<Enter>
 noremap <Space>E :e!<Enter>zz
 
-" Center line in window
-nnoremap j gjzz
-vnoremap j gjzz
-nnoremap k gkzz
-vnoremap k gkzz
+" Center line in window, j/k line on screen
+nnoremap <expr> j v:count ? 'jzz' : 'gjzz'
+vnoremap <expr> j v:count ? 'jzz' : 'gjzz'
+nnoremap <expr> k v:count ? 'kzz' : 'gkzz'
+vnoremap <expr> k v:count ? 'kzz' : 'gkzz'
 
 " Scroll half screen
 nnoremap <C-e> <C-u>zz
