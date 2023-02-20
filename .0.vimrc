@@ -9,16 +9,6 @@
 "## leader
 let mapleader = "\\" 
 
-" Semicolon = esc
-" inoremap ; <Esc>
-" cnoremap ; <Esc>
-" vnoremap ; <Esc>
-" onoremap ; <Esc>
-
-" Insert and command modes semicolon
-" inoremap <leader>; ;
-" cnoremap <leader>; ;
-
 " Enter = new line
 " nnoremap <CR> o<Esc>
 " nnoremap <CR> <CR>zz
@@ -40,10 +30,10 @@ noremap <Space>Q :q!<Enter>
 noremap <Space>E :e!<Enter>zz
 
 " Center line in window
-nnoremap j jzz
-vnoremap j jzz
-nnoremap k kzz
-vnoremap k kzz
+nnoremap j gjzz
+vnoremap j gjzz
+nnoremap k gkzz
+vnoremap k gkzz
 
 " Scroll half screen
 nnoremap <C-e> <C-u>zz
@@ -75,14 +65,14 @@ nnoremap '. `.zz
 vnoremap '. `.zz
 
 " First non-blank chatacter
-nnoremap H ^
-vnoremap H ^
-onoremap H ^
+nnoremap H g^
+vnoremap H g^
+onoremap H g^
 
 " End of line
-nnoremap L $
-vnoremap L $<Left>
-onoremap L $
+nnoremap L g$
+vnoremap L g$<Left>
+onoremap L g$
 
 " Next Parragraph
 nnoremap J }}{jzz
