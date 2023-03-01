@@ -168,11 +168,3 @@ colorscheme material-theme
 
 " set default syntax if there is none
 au BufNewFile,BufRead * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
-
-" vim-plug
-call plug#begin('~/.vim/plugged')
-
-" vim-plug
-Plug 'lervag/vimtex'
-
-call plug#end()

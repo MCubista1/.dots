@@ -22,3 +22,13 @@ aug python
     " ftype/python.vim overwrites this
     au FileType python setlocal ts=4 sw=4 sts=0 noexpandtab
 aug end
+
+" vim-plug call
+call plug#begin('~/.vim/plugged')
+
+" vimtex
+Plug 'lervag/vimtex'
+
+" vim-plug end call
+call plug#end()
+
