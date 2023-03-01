@@ -3,6 +3,8 @@ alias gfetch="onefetch"
 alias nfetch="neofetch"
 alias cmatrix="cmatrix -ab"
 alias fxcm="python3 ~/tst_fxcm.py"
+alias plot="python3 ~/acs/plot.py | grep '|*.|' | cut -d '|' -f2"
+alias logs="vim ~/acs/.log_acs"
 
 alias ls="ls -A --color"
 alias ll="ls -lAh --color"
