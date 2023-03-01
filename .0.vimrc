@@ -157,9 +157,6 @@ au BufEnter * :normal! zz
 " wrap break line at space
 set linebreak
 
-" spell language
-set spell spelllang=es 
-
 " Material Theme
 set termguicolors
 syntax enable

@@ -11,6 +11,9 @@ imap <Down> <Nop>
 imap <Left> <Nop>
 imap <Right> <Nop>
 
+" spell language
+set spell spelllang=es
+
 " cursor on same line as when exit
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
