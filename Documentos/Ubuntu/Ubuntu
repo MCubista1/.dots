@@ -1029,6 +1029,7 @@ Host tor
   HostName iehaunae9Eex4Hio.onion
   User pi
   ProxyCommand /usr/bin/nc -xlocalhost:9050 -X5 %h %p
+  IdentityFile ~/.ssh/atomsk
 
 # devilspie transparency
 /transparent.ds
