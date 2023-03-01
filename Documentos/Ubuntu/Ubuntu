@@ -866,6 +866,12 @@ ctrl+l select item
 shift+delete terminate program
 esc exit
 
+# latex
+sudo apt install latexmk
+sudo apt install texlive-xetex
+sudo apt install texlive-bibtex-extra
+sudo apt install biber
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
