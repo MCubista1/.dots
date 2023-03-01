@@ -9,16 +9,6 @@
 "## leader
 let mapleader = "\\" 
 
-" Semicolon = esc
-" inoremap ; <Esc>
-" cnoremap ; <Esc>
-" vnoremap ; <Esc>
-" onoremap ; <Esc>
-
-" Insert and command modes semicolon
-" inoremap <leader>; ;
-" cnoremap <leader>; ;
-
 " Enter = new line
 " nnoremap <CR> o<Esc>
 " nnoremap <CR> <CR>zz
@@ -39,11 +29,11 @@ noremap <Space>q :wq<Enter>
 noremap <Space>Q :q!<Enter>
 noremap <Space>E :e!<Enter>zz
 
-" Center line in window
-nnoremap j jzz
-vnoremap j jzz
-nnoremap k kzz
-vnoremap k kzz
+" Center line in window, j/k line on screen
+nnoremap <expr> j v:count ? 'jzz' : 'gjzz'
+vnoremap <expr> j v:count ? 'jzz' : 'gjzz'
+nnoremap <expr> k v:count ? 'kzz' : 'gkzz'
+vnoremap <expr> k v:count ? 'kzz' : 'gkzz'
 
 " Scroll half screen
 nnoremap <C-e> <C-u>zz
@@ -75,14 +65,14 @@ nnoremap '. `.zz
 vnoremap '. `.zz
 
 " First non-blank chatacter
-nnoremap H ^
-vnoremap H ^
-onoremap H ^
+nnoremap H g^
+vnoremap H g^
+onoremap H g^
 
 " End of line
-nnoremap L $
-vnoremap L $<Left>
-onoremap L $
+nnoremap L g$
+vnoremap L g$<Left>
+onoremap L g$
 
 " Next Parragraph
 nnoremap J }}{jzz
@@ -149,12 +139,23 @@ set hlsearch
 " incremental search
 set incsearch
 
-"tab size
+" tab size
+set noexpandtab
 set tabstop=4
 set shiftwidth=4
+set softtabstop=0
+
+" visible spaces and tabs
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " disable ex
 map Q <Nop>
+
+" center line at start
+au BufEnter * :normal! zz
+
+" wrap break line at space
+set linebreak
 
 " Material Theme
 set termguicolors
@@ -164,14 +165,3 @@ colorscheme material-theme
 
 " set default syntax if there is none
 au BufNewFile,BufRead * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
-
-" center line at start
-au BufEnter * :normal! zz
-
-" vim-plug
-call plug#begin('~/.vim/plugged')
-
-" vim-plug
-Plug 'lervag/vimtex'
-
-call plug#end()
