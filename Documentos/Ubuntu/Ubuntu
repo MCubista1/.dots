@@ -872,6 +872,25 @@ sudo apt install texlive-xetex
 sudo apt install texlive-bibtex-extra
 sudo apt install biber
 
+# vim spell
+set spell spelllang=es
+set spell
+]s siguente palabra erronea
+[s anterior palabra erronea
+z= lista de palabras sugeridas
+1z= cambiar por la primera sugerida
+spellr[epall] cambia todas las palabras iguales a la correccion anterior
+zg agrega palabra erronea como correcta al diccionario
+zug deshace adicion anterior
+zw agrega palabra correcta como erronea al diccionario
+zuw deshace adicion anterior
+
+# vim windows
+ctrl+w v divide la pantalla vertical
+ctrl+w s divide la pantalla horizontal
+ctrl+w h/j/k/l seleccion entre pantallas
+ctrl+w q cierra pantalla
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
