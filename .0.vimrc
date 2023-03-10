@@ -118,6 +118,9 @@ inoremap xx <Delete>
 vnoremap < <gv
 vnoremap > >gv
 
+" spell
+nnoremap ]s ]szz
+nnoremap [s [szz
 
 " oooooo     oooo  o8o
 "  `888.     .8'   `"'
