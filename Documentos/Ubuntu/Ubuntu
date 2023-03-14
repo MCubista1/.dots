@@ -167,7 +167,6 @@ lpstat -p
 
 
 
-
 # ██╗   ██╗██████╗ ██╗   ██╗███╗   ██╗████████╗██╗   ██╗    ██████╗
 # ██║   ██║██╔══██╗██║   ██║████╗  ██║╚══██╔══╝██║   ██║    ╚════██╗
 # ██║   ██║██████╔╝██║   ██║██╔██╗ ██║   ██║   ██║   ██║     █████╔╝
@@ -1031,13 +1030,19 @@ cd /sdcard
 # ██║  ██╗╚██████╔╝██████╔╝╚██████╔╝
 # ╚═╝  ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝
 
-# Koreader
+## Koreader
 save settings .add/koreader/settings.reader.lua
 KFMon content in root
 reboot
 koreader-kobo in .add
 settings.reader.lua in .add/koreader
 reboot
+
+# hide files
+apend to file .kobo/Kobo/Kobo eReader.conf
+[FeatureSettings]
+ExcludeSyncFolders=(\\.(?!kobo|adobe).+|([^.][^/]*/)+\\..+)
+eject device
 
 
 
