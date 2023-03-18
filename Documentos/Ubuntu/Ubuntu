@@ -1130,25 +1130,48 @@ sudo apt install biber
 \usepackage{titlesec}
 \titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Large}
 
-# define absolute value function
-\providecommand{\norm}[1]{\lVert#1\rVert}
-\norm{x}
-
 # rename index
 \renewcommand\contentsname{Índice}
-
-# rename figure
-\renewcommand{\figurename}{Figura}
-
-# declare bibliography and file
-\usepackage[style=apa]{biblatex}
-\addbibresource{referencias.bib}
 
 # index section
 \tableofcontents
 
-# references
+# declare figure package
+\usepackage{graphicx}
+
+# rename figure
+\renewcommand{\figurename}{Figura}
+
+# insert figure
+\begin{figure}
+	\centering
+	\includegraphics[width=0.75\textwidth]{file}
+	\caption{loerm ipsum}
+	\label{fig:ref_name}
+\end{figure}
+
+# reference figure
+\ref{fig:ref_name}
+
+# declare bibliography package and file
+\usepackage[style=apa]{biblatex}
+\addbibresource{referencias.bib}
+
+# reference
 \cite[p. n]{ref}
+
+# bibliography section
+\printbibliography[heading=bibintoc,title={Referencias}]
+
+# section and subsection in report document class
+\documentclass{report}
+\chapter{section name}
+\subsection{sub name}
+
+
+# math absolute value function 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\norm{x}
 
 # align math mode
 \usepackage{amsmath}
@@ -1164,26 +1187,5 @@ A &= x \\
  &= y
 \end{split} \]
 
-
-# split math mode
-\usepackage{amsmath}
-
-# overline
+# overline math
 \overline{x}
-
-# declare figure package
-\usepackage{graphicx}
-
-# insert figure
-\begin{figure}
-	\centering
-	\includegraphics[width=0.75\textwidth]{file}
-	\caption{loerm ipsum}
-	\label{fig:ref_name}
-\end{figure}
-
-# reference figure
-\ref{fig:ref_name}
-
-# print bibliogrphy section
-\printbibliography[heading=bibintoc,title={Referencias}]
