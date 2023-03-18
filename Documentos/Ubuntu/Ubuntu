@@ -550,7 +550,7 @@ ffmpeg -i concat:"input1.mp4|input2.mp4" output.mp4
 # gnome screenshots folder
 gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/ed/Imágenes/capturas"
 
-# ASCII art font
+# Text to ASCII Art Generator TAAG
 ANSI Shadow
 Roman
 Big Money-ne
@@ -865,12 +865,6 @@ ctrl+l select item
 shift+delete terminate program
 esc exit
 
-# latex
-sudo apt install latexmk
-sudo apt install texlive-xetex
-sudo apt install texlive-bibtex-extra
-sudo apt install biber
-
 # vim spell
 set spell spelllang=es
 set spell
@@ -1113,3 +1107,83 @@ file="$2"
 if [ -n "$file" ] && [ "$file" != "/boot/kernel.img" ]; then
   rm -f "$file"
 fi
+
+
+
+# ██╗      █████╗ ████████╗███████╗██╗  ██╗
+# ██║     ██╔══██╗╚══██╔══╝██╔════╝╚██╗██╔╝
+# ██║     ███████║   ██║   █████╗   ╚███╔╝
+# ██║     ██╔══██║   ██║   ██╔══╝   ██╔██╗
+# ███████╗██║  ██║   ██║   ███████╗██╔╝ ██╗
+# ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
+                                         
+## installation
+sudo apt install latexmk
+sudo apt install texlive-xetex
+sudo apt install texlive-bibtex-extra
+sudo apt install biber
+
+# disable page numbers
+\pagenumbering{gobble}
+
+# disable chapter label
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Large}
+
+# define absolute value function
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\norm{x}
+
+# rename index
+\renewcommand\contentsname{Índice}
+
+# rename figure
+\renewcommand{\figurename}{Figura}
+
+# declare bibliography and file
+\usepackage[style=apa]{biblatex}
+\addbibresource{referencias.bib}
+
+# index section
+\tableofcontents
+
+# references
+\cite[p. n]{ref}
+
+# align math mode
+\usepackage{amsmath}
+\begin{align*}
+	a &= b & c &= d \\
+	x &= z
+\end{align*}
+
+# split math mode
+\usepackage{amsmath}
+\[ \begin{split}
+A &= x \\
+ &= y
+\end{split} \]
+
+
+# split math mode
+\usepackage{amsmath}
+
+# overline
+\overline{x}
+
+# declare figure package
+\usepackage{graphicx}
+
+# insert figure
+\begin{figure}
+	\centering
+	\includegraphics[width=0.75\textwidth]{file}
+	\caption{loerm ipsum}
+	\label{fig:ref_name}
+\end{figure}
+
+# reference figure
+\ref{fig:ref_name}
+
+# print bibliogrphy section
+\printbibliography[heading=bibintoc,title={Referencias}]
