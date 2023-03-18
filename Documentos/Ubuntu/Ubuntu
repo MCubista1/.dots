@@ -1165,7 +1165,8 @@ sudo apt install biber
 
 # section and subsection in report document class
 \documentclass{report}
-\chapter{section name}
+\chapter{chapter name}
+\section{section name}
 \subsection{sub name}
 
 
