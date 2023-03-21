@@ -14,6 +14,22 @@ imap <Right> <Nop>
 " spell language
 set spell spelllang=es
 
+" spell correct all
+map za <Nop>
+nnoremap za 1z=:spellrepall<cr>
+
+" spell repeat to all words
+map zr <Nop>
+nnoremap zr :spellrepall<cr>
+
+" spell options
+map zo <Nop>
+nnoremap zo z=
+
+" spell next word
+map zn <Nop>
+nnoremap zn ]szz
+
 " cursor on same line as when exit
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")

@@ -109,11 +109,6 @@ inoremap ,, <Esc><Right>a
 " Delete right character
 inoremap xx <Delete>
 
-" Easy indentation
-" In insert mode ctrl-t and ctrl-d
-" nnoremap > >>
-" nnoremap < <<
-
 " Visual identaton keeps selection
 vnoremap < <gv
 vnoremap > >gv
@@ -121,6 +116,7 @@ vnoremap > >gv
 " spell
 nnoremap ]s ]szz
 nnoremap [s [szz
+
 
 " oooooo     oooo  o8o
 "  `888.     .8'   `"'
