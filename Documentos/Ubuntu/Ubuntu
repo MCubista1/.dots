@@ -1136,6 +1136,12 @@ sudo apt install biber
 # index section
 \tableofcontents
 
+# rename list of figures
+\renewcommand\listfigurename{Índice de imágenes}
+
+# list of figures section
+\listoffigures
+
 # declare figure package
 \usepackage{graphicx}
 
@@ -1145,7 +1151,7 @@ sudo apt install biber
 # insert figure
 \begin{figure}
 	\centering
-	\includegraphics[width=0.75\textwidth]{file}
+	\includegraphics[width=0.75\textwidth]{i01}
 	\caption{loerm ipsum}
 	\label{fig:ref_name}
 \end{figure}
@@ -1169,10 +1175,13 @@ sudo apt install biber
 \section{section name}
 \subsection{sub name}
 
-
 # math absolute value function 
 \providecommand{\norm}[1]{\lVert#1\rVert}
 \norm{x}
+
+# big brackets
+\providecommand{\evab}[1]{\biggl[\, #1 \,\biggr]}
+\evab{x}
 
 # align math mode
 \usepackage{amsmath}

@@ -113,9 +113,9 @@ inoremap xx <Delete>
 vnoremap < <gv
 vnoremap > >gv
 
-" spell
-nnoremap ]s ]szz
-nnoremap [s [szz
+" jump last next
+nnoremap <C-o> <C-o>zz
+nnoremap <C-i> <C-i>zz
 
 
 " oooooo     oooo  o8o
