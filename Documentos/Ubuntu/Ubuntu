@@ -1136,6 +1136,9 @@ sudo apt install biber
 # index section
 \tableofcontents
 
+# erro hbox
+\emergencystretch=1em
+
 # rename list of figures
 \renewcommand\listfigurename{Índice de imágenes}
 
