@@ -893,6 +893,12 @@ sudo apt install sox
 sudo apt install libsox-fmt-all
 play audio_file.mp3
 
+# record mic in
+arecord -vv -fdat audio_file.wav
+
+# set device volume
+amixer sset 'Master' 50%
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
