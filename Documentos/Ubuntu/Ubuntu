@@ -888,6 +888,11 @@ ctrl+w q cierra pantalla
 dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
 arecord -f dat | ssh -C user@host aplay -f dat
 
+# play audio on bash
+sudo apt install sox
+sudo apt install libsox-fmt-all
+play audio_file.mp3
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
