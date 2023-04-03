@@ -884,6 +884,10 @@ ctrl+w s divide la pantalla horizontal
 ctrl+w h/j/k/l seleccion entre pantallas
 ctrl+w q cierra pantalla
 
+# output microphone to remote computer's speaker
+dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
+arecord -f dat | ssh -C user@host aplay -f dat
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
