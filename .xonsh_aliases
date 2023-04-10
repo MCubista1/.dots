@@ -78,9 +78,9 @@ aliases['xbox'] = 'sudo xboxdrv --silent'
 aliases['cx'] = 'chmod +x'
 aliases['week'] = 'date +%U'
 aliases['auth'] = 'cat /home/ed/Documentos/authtp | xargs auth2f'
-aliases['cy'] = 'ncal -b -M -w -y'
-aliases['ct'] = 'ncal -b -M -w -A2'
-aliases['cm'] = 'ncal -b -M -w'
+aliases['cal'] = 'ncal -b -M -w -A2'
+aliases['calm'] = 'ncal -b -M -w'
+aliases['caly'] = 'ncal -b -M -w -y'
 
 # 25 words * 5 min = -n 125
 aliases['s'] = 'tt -words ox5000 -n 125 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
