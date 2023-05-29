@@ -8,6 +8,8 @@ aliases['nfetch'] = '$[tput reset]; $[clear]; neofetch'
 aliases['fortune'] = 'bash -c "fortune | figlet -f smblock | lolcat"'
 aliases['cmatrix'] = 'cmatrix -ab'
 aliases['cols'] = 'watch -t -n 1 "tput cols && tput lines"'
+aliases['time'] = 'peaclock'
+aliases['sw'] = 'peaclock -u ~/.peaclock/sw'
 
 aliases['speed'] = 'speedtest-cli --simple'
 aliases['suspend'] = 'systemctl suspend'
