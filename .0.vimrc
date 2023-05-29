@@ -117,6 +117,11 @@ vnoremap > >gv
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
 
+" center line in insert mode
+inoremap <Esc> <Esc>zz
+inoremap <Enter> <Enter><Esc>zzi
+nnoremap O O<Esc>zzi
+
 
 " oooooo     oooo  o8o
 "  `888.     .8'   `"'
