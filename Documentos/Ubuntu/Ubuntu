@@ -899,6 +899,9 @@ arecord -vv -fdat audio_file.wav
 # set device volume
 amixer sset 'Master' 50%
 
+# delete repeated spaces
+ | tr -s ' '
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
