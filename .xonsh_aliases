@@ -10,6 +10,8 @@ aliases['cmatrix'] = 'cmatrix -ab'
 aliases['cols'] = 'watch -t -n 1 "tput cols && tput lines"'
 aliases['time'] = 'peaclock'
 aliases['sw'] = 'peaclock -u ~/.peaclock/sw'
+aliases['rnd'] = "tput cuu1 && rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f miniwi "
+aliases['rnb'] = "tput cuu1 && rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f maxiwi "
 
 aliases['speed'] = 'speedtest-cli --simple'
 aliases['suspend'] = 'systemctl suspend'
