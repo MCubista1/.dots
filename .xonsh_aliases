@@ -10,8 +10,9 @@ aliases['cmatrix'] = 'cmatrix -ab'
 aliases['cols'] = 'watch -t -n 1 "tput cols && tput lines"'
 aliases['time'] = 'peaclock'
 aliases['sw'] = 'peaclock -u ~/.peaclock/sw'
-aliases['rnd'] = "tput cuu1 && rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f miniwi "
-aliases['rnb'] = "tput cuu1 && rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f maxiwi "
+aliases['rss'] = "tput cuu1 && rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f miniwi "
+aliases['rdd'] = "tput cuu1 && rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f maxiwi "
+aliases['rnd'] = 'tput cuu1 ; rnd_max() ; sleep 1 ; rnd_min() ; sleep 1 ; rnd_min()'
 
 aliases['speed'] = 'speedtest-cli --simple'
 aliases['suspend'] = 'systemctl suspend'
@@ -100,3 +101,7 @@ aliases['sai'] = 't && bonsai -L 30 -c 🍂'
 aliases['inv'] = 't && invaders'
 aliases['dwarf'] = 'xdg-open /home/ed/Documentos/libros/dwarf-fortress/Getting_Started_with_Dwarf_Fortress.pdf'
 
+def rnd_min():
+	rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f miniwi 
+def rnd_max():
+	rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f maxiwi 
