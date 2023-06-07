@@ -12,7 +12,7 @@ aliases['time'] = 'peaclock'
 aliases['sw'] = 'peaclock -u ~/.peaclock/sw'
 aliases['rss'] = "tput cuu1 && rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f miniwi "
 aliases['rdd'] = "tput cuu1 && rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f maxiwi "
-aliases['rnd'] = 'tput cuu1 ; rnd_max() ; sleep 1 ; rnd_min() ; sleep 1 ; rnd_min()'
+aliases['rnd'] = 'tput cuu1 ; rnd_min() ; sleep 0.75 ; rnd_min() ; sleep 0.75 ; rnd_min() ; sleep 0.75 ; rnd_min()'
 
 aliases['speed'] = 'speedtest-cli --simple'
 aliases['suspend'] = 'systemctl suspend'
