@@ -222,7 +222,7 @@ k2pdfopt -h 1430p -w 1080p file.pdf -mode def -ocr-
 pdfcrop in.pdf out.pdf
 
 # trim pdf
-./crop -t "nleft ntop nright nbottom" in.pdf out.pdf 
+./crop -t "nleft ntop nright nbottom" in.pdf out.pcktest.gitdf 
 
 # extraer paginas pdf
 pdftk in.pdf cat n1-n2 output out.pdf
@@ -901,6 +901,25 @@ amixer sset 'Master' 50%
 
 # delete repeated spaces
  | tr -s ' '
+
+
+
+#  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
+# ██╔══██╗╚══██╔══╝██╔═══██╗████╗ ████║██╔════╝██║ ██╔╝
+# ███████║   ██║   ██║   ██║██╔████╔██║███████╗█████╔╝
+# ██╔══██║   ██║   ██║   ██║██║╚██╔╝██║╚════██║██╔═██╗
+# ██║  ██║   ██║   ╚██████╔╝██║ ╚═╝ ██║███████║██║  ██╗
+# ╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝
+                                                        
+## init remote origin
+local: touch file; git init; git add file; git commit 
+remote: git init --bare project.git
+local: git push --set-upstream origin master
+remote: git clone project.git project; cd project; git pull
+remote: cd project.git/hooks; vim post-receive
+#!/bin/bash
+GIT_WORK_TREE=/home/atomsk/project GIT_DIR=/home/atomsk/project/.git git pull
+remote: chmod +x post-receive
 
 
 
