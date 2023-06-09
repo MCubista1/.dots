@@ -47,6 +47,7 @@ call plug#begin('~/.vim/plugged')
 
 " vimtex
 Plug 'lervag/vimtex'
+Plug 'tpope/vim-fugitive'
 
 " vim-plug end call
 call plug#end()

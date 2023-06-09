@@ -902,6 +902,12 @@ amixer sset 'Master' 50%
 # delete repeated spaces
  | tr -s ' '
 
+# install plug with vim-plug
+vim .vimrc
+Plug 'user/plug-name'
+vim
+:PlugInstall
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
