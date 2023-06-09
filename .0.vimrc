@@ -161,6 +161,10 @@ au BufEnter * :normal! zz
 " wrap break line at space
 set linebreak
 
+" split panes to the right and below
+set splitright
+set splitbelow
+
 " Material Theme
 set termguicolors
 syntax enable
