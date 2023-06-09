@@ -848,7 +848,6 @@ r rotate 90 degrees
 ctrl+n toggle status bar
 tab show index
 
-
 # vimtes is installed
 :VimtexInfo
 
