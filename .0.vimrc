@@ -54,7 +54,7 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
 nnoremap # #zz 
-cnoremap <silent> <expr> <enter> CenterSearch()
+cnoremap <silent><expr> <enter> index(['/', '?'], getcmdtype()) >= 0 ? '<enter>zz' : '<enter>'
 
 " older/newer cursor position in jump list
 nnoremap '' <C-o>zz
@@ -67,6 +67,10 @@ vnoremap '" `.zz
 " jump to the previous cursor position
 nnoremap <C-o> ``zz
 vnoremap <C-o> ``zz
+
+" jump to newer/older change list
+nnoremap g; g;zz
+nnoremap g, g,zz
 
 " First non-blank chatacter
 nnoremap H g^
@@ -121,14 +125,6 @@ vnoremap > >gv
 inoremap <Esc> <Esc>zz
 inoremap <Enter> <Enter><Esc>zzi
 nnoremap O O<Esc>zzi
-
-function! CenterSearch()
-  let cmdtype = getcmdtype()
-  if cmdtype == '/' || cmdtype == '?'
-    return "\<enter>zz"
-  endif
-  return "\<enter>"
-endfunction
 
 
 " oooooo     oooo  o8o
