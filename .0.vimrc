@@ -54,15 +54,19 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
 nnoremap # #zz 
-cnoremap <CR> <CR>zz
+cnoremap <silent> <expr> <enter> CenterSearch()
 
-" Return to the previous cursor position
-nnoremap '' ``zz
-vnoremap '' ``zz
+" older/newer cursor position in jump list
+nnoremap '' <C-o>zz
+nnoremap '" <C-i>zz
 
-" Return to previous change position
-nnoremap '. `.zz
-vnoremap '. `.zz
+" Return to last change position
+nnoremap '; `.zz
+vnoremap '; `.zz
+
+" jump to the previous cursor position
+nnoremap <C-o> ``zz
+vnoremap <C-o> ``zz
 
 " First non-blank chatacter
 nnoremap H g^
@@ -113,14 +117,18 @@ inoremap xx <Delete>
 vnoremap < <gv
 vnoremap > >gv
 
-" jump last next
-nnoremap <C-o> <C-o>zz
-nnoremap <C-i> <C-i>zz
-
 " center line in insert mode
 inoremap <Esc> <Esc>zz
 inoremap <Enter> <Enter><Esc>zzi
 nnoremap O O<Esc>zzi
+
+function! CenterSearch()
+  let cmdtype = getcmdtype()
+  if cmdtype == '/' || cmdtype == '?'
+    return "\<enter>zz"
+  endif
+  return "\<enter>"
+endfunction
 
 
 " oooooo     oooo  o8o
