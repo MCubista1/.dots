@@ -61,6 +61,7 @@ aliases['vg'] = 'vim /home/ed/.gitconfig'
 aliases['vu'] = 'vim /home/ed/Documentos/Ubuntu/Ubuntu'
 aliases['vc'] = 'vim /home/ed/Documentos/Ubuntu/colors'
 aliases['vv'] = 'vim /home/ed/.0.vimrc'
+aliases['vvrc'] = 'vim /home/ed/.vimrc'
 aliases['vs'] = 'vim /home/ed/.ssh/config'
 
 aliases['g'] = 'git'
