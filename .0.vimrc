@@ -58,11 +58,11 @@ cnoremap <silent> <expr> <enter> CenterSearch()
 
 " older/newer cursor position in jump list
 nnoremap '' <C-o>zz
-nnoremap '" <C-i>zz
+nnoremap "" <C-i>zz
 
 " Return to last change position
-nnoremap '; `.zz
-vnoremap '; `.zz
+nnoremap '" `.zz
+vnoremap '" `.zz
 
 " jump to the previous cursor position
 nnoremap <C-o> ``zz
