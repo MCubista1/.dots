@@ -53,10 +53,20 @@ Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " fugitive git aliases
-command Gs :Git status -b --porcelain 
+command Gs :Git status -b --porcelain
 command Gd :Git diff
 command Ga :Git add %
 command -bar Gc :silent Git add % | :silent Git commit
 command -bar Gca :silent Git add . | :silent Git commit
 command Gp :Git push
 command -bar Gr :Gread | :w
+
+set laststatus=2
+
+augroup gitstatusline
+    au!
+    autocmd BufEnter,FocusGained,BufWritePost,SafeState *
+        \ let b:git_status = substitute(system("git status --branch --porcelain 2>/dev/null | sed 's/^MM/●+/' | sed 's/^M /●/' | sed 's/^ M/+/' | tr '\n' ' ' | cut -d ' ' -f3- | sed 's/ahead /↑·/'"), "\n", " ", "g")
+augroup end
+
+let &statusline = '%{get(b:, "git_status", "")}'
