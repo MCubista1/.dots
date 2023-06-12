@@ -60,6 +60,7 @@ command -bar Gc :silent Git add % | :silent Git commit
 command -bar Gca :silent Git add . | :silent Git commit
 command Gp :Git push
 command -bar Gr :Gread | :w
+command Gu :Git restore --staged -- %
 
 set laststatus=2
 
