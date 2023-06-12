@@ -53,6 +53,10 @@ Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " fugitive git aliases
+command Gs :Git status -b --porcelain 
+command Gd :Git diff
+command Ga :Git add %
 command -bar Gc :silent Git add % | :silent Git commit
 command -bar Gca :silent Git add . | :silent Git commit
 command Gp :Git push
+command -bar Gr :Gread | :w
