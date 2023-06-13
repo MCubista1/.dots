@@ -55,19 +55,25 @@ call plug#end()
 " fugitive git aliases
 command Gs :Git status -b --porcelain
 command Gd :Git diff
-command Ga :Git add %
-command -bar Gc :silent Git add % | :silent Git commit
-command -bar Gca :silent Git add . | :silent Git commit
-command Gp :Git push
-command -bar Gr :Gread | :w
-command Gu :Git restore --staged -- %
+command -bar Ga :Git add % | :Updstl
+command -bar -nargs=1 Gc :silent Git add % | :silent Git commit -m <q-args> | :Updstl
+command -bar -nargs=1 Gca :silent Git add . | :silent Git commit -m <q-args> | :Updstl
+command -bar Gp :Git push | :Updstl
+command -bar Gr :Gread | :w | :Updstl
+command -bar Gu :Git restore --staged -- % | :Updstl
 
+" statusline always visible
 set laststatus=2
 
-augroup gitstatusline
+" autoupdate status line with git status
+augroup GitStatusLine
     au!
-    autocmd BufEnter,FocusGained,BufWritePost,SafeState *
-        \ let b:git_status = substitute(system("git status --branch --porcelain 2>/dev/null | sed 's/^MM/●+/' | sed 's/^M /●/' | sed 's/^ M/+/' | tr '\n' ' ' | cut -d ' ' -f3- | sed 's/ahead /↑·/'"), "\n", " ", "g")
+	autocmd BufEnter,FocusGained,BufWritePost *
+        \ Windo let b:GitStatus = substitute(system("git status --branch --porcelain 2>/dev/null | sed 's/^MM/●+/' | sed 's/^M /●/' | sed 's/^ M/+/' | tr '\n' ' ' | cut -d ' ' -f3- | sed 's/ahead /↑·/'"), "\n", " ", "g")
 augroup end
+let &statusline = '%{get(b:, "GitStatus", "")}'
 
-let &statusline = '%{get(b:, "git_status", "")}'
+" update status line with git status
+command Updstl Windo let b:GitStatus = substitute(system("git status --branch --porcelain 2>/dev/null | sed 's/^MM/●+/' | sed 's/^M /●/' | sed 's/^ M/+/' | tr '\n' ' ' | cut -d ' ' -f3- | sed 's/ahead /↑·/'"), "\n", " ", "g")
+
+
