@@ -76,4 +76,11 @@ let &statusline = '%{get(b:, "GitStatus", "")}'
 " update status line with git status
 command Updstl Windo let b:GitStatus = substitute(system("git status --branch --porcelain 2>/dev/null | sed 's/^MM/●+/' | sed 's/^M /●/' | sed 's/^ M/+/' | tr '\n' ' ' | cut -d ' ' -f3- | sed 's/ahead /↑·/'"), "\n", " ", "g")
 
+" windo command focus the current window
+function! WinDo(command)
+  let currwin=winnr()
+  execute 'windo ' . a:command
+  execute currwin . 'wincmd w'
+endfunction
+command! -nargs=+ -complete=command Windo call WinDo(<q-args>)
 
