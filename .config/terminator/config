@@ -53,6 +53,10 @@
     use_system_font = False
     bold_is_bright = True
     copy_on_selection = True
+    title_transmit_fg_color = "#abb2bf"
+    title_transmit_bg_color = "#263238"
+    title_inactive_fg_color = "#263238"
+    title_inactive_bg_color = "#263238"
   [[no-title]]
     background_color = "#263238"
     cursor_shape = underline
