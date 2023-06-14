@@ -165,15 +165,6 @@ lp -d -P 1,3-6,16 path/to/filename
 # impresoras disponibles
 lpstat -p
 
-
-
-# ██╗   ██╗██████╗ ██╗   ██╗███╗   ██╗████████╗██╗   ██╗    ██████╗
-# ██║   ██║██╔══██╗██║   ██║████╗  ██║╚══██╔══╝██║   ██║    ╚════██╗
-# ██║   ██║██████╔╝██║   ██║██╔██╗ ██║   ██║   ██║   ██║     █████╔╝
-# ██║   ██║██╔══██╗██║   ██║██║╚██╗██║   ██║   ██║   ██║     ╚═══██╗
-# ╚██████╔╝██████╔╝╚██████╔╝██║ ╚████║   ██║   ╚██████╔╝    ██████╔╝
-#  ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝    ╚═════╝     ╚═════╝
-
 ## NVIDIA driver, black screen
 sudo apt-get purge nvidia*
 ubuntu-drivers devices
@@ -907,6 +898,10 @@ Plug 'user/plug-name'
 vim
 :PlugInstall
 
+# uninstall plug
+vim
+:PlugClean
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
@@ -919,12 +914,13 @@ vim
 ## init remote origin
 local: touch file; git init; git add file; git commit 
 remote: git init --bare project.git
+local: git remote add origin atom:~/project.git
 local: git push --set-upstream origin master
-remote: git clone project.git project; cd project; git pull
 remote: cd project.git/hooks; vim post-receive
 #!/bin/bash
 GIT_WORK_TREE=/home/atomsk/project GIT_DIR=/home/atomsk/project/.git git pull
 remote: chmod +x post-receive
+remote: git clone project.git project; cd project; git pull
 
 
 
