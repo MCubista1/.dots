@@ -69,8 +69,21 @@ $win_id"
         tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1)
         win2_x=$(xdotool getwindowgeometry "$win_2" | grep Position | \
         tr -s ' ' | cut -d' ' -f3 | cut -d',' -f1)
-        xdotool windowmove "$win_1" "$win2_x" 0
-        xdotool windowmove "$win_2" "$win1_x" 0
+		echo "$win1_x $win2_x"
+		if [ "$(echo $win1_x/100 | bc)" -eq "$(echo $win2_x/100 | bc)" ]; then
+			echo "win1 eq win2"
+			if [ "$(echo $win1_x/100 | bc)" -eq 0 ]; then
+				win2_x=$(xdotool getwindowgeometry "$win_1" |  \
+					grep Geometry | tr -s ' ' | cut -d ' ' -f3 | \
+				   	cut -d 'x' -f1) 
+			else
+				win2_x="0"
+			fi
+			xdotool windowmove "$win_1" "$win2_x" 0
+		else
+			xdotool windowmove "$win_1" "$win2_x" 0
+			xdotool windowmove "$win_2" "$win1_x" 0	
+		fi
         if [ "$win1_x" -lt "$win2_x" ]; then
             if [ -n "$right_flag" ]; then
                 xdotool windowfocus "$win_1"
