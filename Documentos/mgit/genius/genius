@@ -4,7 +4,7 @@ genius_url="https://api.genius.com"
 user_token="$( cat ~/.genius_token )"
 
 media_player_metadata () {
-    playing=$(dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata)
+    playing=$(dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata 2>/dev/null)
 
     song=$(echo "$playing" | sed -n '/title/{n;p}' | cut -d '"' -f 2 | sed -e 's/(.*$//' -e 's/ -.*$//')
     artist=$(echo "$playing" | sed -n '/artist/{n;n;p}' | cut -d '"' -f 2)
