@@ -165,7 +165,7 @@ lp -d -P 1,3-6,16 path/to/filename
 # impresoras disponibles
 lpstat -p
 
-## NVIDIA driver, black screen
+# NVIDIA driver, black screen
 sudo apt-get purge nvidia*
 ubuntu-drivers devices
 
@@ -901,6 +901,10 @@ vim
 # uninstall plug
 vim
 :PlugClean
+
+# bash next/previous command
+bind '"K": previous-history'
+bind '"J": next-history'
 
 
 
