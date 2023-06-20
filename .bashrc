@@ -114,3 +114,7 @@ export FFF_COL3=2
 export FFF_COL4=6
 # Status foreground color [0-9]
 export FFF_COL5=2
+
+# next/previous command in history
+bind '"K": previous-history'
+bind '"J": next-history'
