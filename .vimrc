@@ -88,7 +88,7 @@ command! -nargs=+ -complete=command Windo call WinDo(<q-args>)
 function! GitCommit()
 	execute "silent Git add % "
 	execute "silent Git commit -m <q-args>"
-	execute "echo ''"
+	execute "echon ''"
 	execute "Updstl"
 endfunction
 command! -complete=command Gitcommit call GitCommit()
@@ -97,7 +97,7 @@ command! -complete=command Gitcommit call GitCommit()
 function! GitCommitAll()
 	execute "silent Git add ."
 	execute "silent Git commit -m <q-args>"
-	execute "echo ''"
+	execute "echon ''"
 	execute "Updstl"
 endfunction
 command! -complete=command Gitcommitall call GitCommitAll()
