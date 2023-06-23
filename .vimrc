@@ -56,8 +56,8 @@ call plug#end()
 command Gs :Git status -b --porcelain
 command Gd :Git diff
 command -bar Ga :Git add % | :Updstl
-command -bar -nargs=1 Gc :silent Git add % | :silent Git commit -m <q-args> | :Updstl
-command -bar -nargs=1 Gca :silent Git add . | :silent Git commit -m <q-args> | :Updstl
+command -nargs=1 Gc :Gitcommit
+command -nargs=1 Gca :Gitcommitall
 command -bar Gp :Git push | :Updstl
 command -bar Gr :Gread | :w | :Updstl
 command -bar Gu :Git restore --staged -- % | :Updstl
@@ -78,9 +78,26 @@ command Updstl Windo let b:GitStatus = substitute(system("git status --branch --
 
 " windo command focus the current window
 function! WinDo(command)
-  let currwin=winnr()
-  execute 'windo ' . a:command
-  execute currwin . 'wincmd w'
+	let currwin=winnr()
+	execute 'windo ' . a:command
+	execute currwin . 'wincmd w'
 endfunction
 command! -nargs=+ -complete=command Windo call WinDo(<q-args>)
 
+" commit changes and clear command line
+function! GitCommit()
+	execute "silent Git add % "
+	execute "silent Git commit -m <q-args>"
+	execute "echo ''"
+	execute "Updstl"
+endfunction
+command! -complete=command Gitcommit call GitCommit()
+
+" commit all changes and clear command line
+function! GitCommitAll()
+	execute "silent Git add ."
+	execute "silent Git commit -m <q-args>"
+	execute "echo ''"
+	execute "Updstl"
+endfunction
+command! -complete=command Gitcommitall call GitCommitAll()
