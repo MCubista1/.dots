@@ -31,7 +31,7 @@ aliases['flush'] = 'sudo systemd-resolve --flush-caches'
 
 aliases['h'] = 'cd ~'
 aliases['cu'] = 'cd ..'
-aliseses['cp'] = 'cd -'
+aliases['cp'] = 'cd -'
 aliases['gitdir'] = 'cd ~/Documentos/git'
 aliases['pi-ssh'] = 'cd ~/Documentos/fx/midas/pi_ssh'
 aliases['mgit'] = 'cd ~/Documentos/mgit'
