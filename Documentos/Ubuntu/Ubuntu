@@ -852,7 +852,7 @@ ctrl+j highlight next item
 ctrl+k highlight next item 
 ctrl+h next modi
 ctrl+l select item
-shift+delete terminate program
+shift+delete close/terminate program
 esc exit
 
 # vim spell
