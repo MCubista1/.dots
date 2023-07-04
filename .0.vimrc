@@ -29,6 +29,14 @@ noremap <Space>q :wq<Enter>
 noremap <Space>Q :q!<Enter>
 noremap <Space>E :e!<Enter>zz
 
+" paste from clipboard
+noremap <Space>p "+p
+
+" copy to clipboard
+noremap <Space>yy "+yy
+noremap <Space>Y "+Y
+noremap <Space>y "+y
+
 " Center line in window, j/k line on screen
 nnoremap <expr> j v:count ? 'jzz' : 'gjzz'
 vnoremap <expr> j v:count ? 'jzz' : 'gjzz'
