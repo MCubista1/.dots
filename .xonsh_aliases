@@ -28,6 +28,7 @@ aliases['as'] = 'sudo arp-scan 192.168.100.0/24'
 aliases['serve'] = 'bash -c "nohup npx serve /home/ed/Documentos/fx/midas/midas_data &>/dev/null &"'
 aliases['spicetify'] = '/home/ed/spicetify-cli/spicetify'
 aliases['flush'] = 'sudo systemd-resolve --flush-caches'
+aliases['ventoy'] = 'sudo /home/ed/Documentos/ventoy/VentoyWeb.sh'
 
 aliases['h'] = 'cd ~'
 aliases['cu'] = 'cd ..'
