@@ -906,6 +906,19 @@ vim
 bind '"K": previous-history'
 bind '"J": next-history'
 
+# linux/windows bootable usb with ventoy
+formant drive as exFAT or FAT
+github.com/ventoy/Ventoy
+download ventoy-1.0.93-linux.tar.gz
+tar -xvf ventoy-1.0.93-linux.tar.gz
+cd ventoy-1.0.93-linux
+sudo ./VentoyWeb.sh
+browse http://127.0.0.1:24680
+option > partition style > GPT
+> partition configuration > preserve space at the end > 100 GB
+Install
+paste iso on Ventoy partition
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
