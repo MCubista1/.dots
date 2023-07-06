@@ -12,6 +12,7 @@ let mapleader = "\\"
 " Enter = new line
 " nnoremap <CR> o<Esc>
 " nnoremap <CR> <CR>zz
+inoremap oo <CR>
 
 " Backspace = delete left character
 nnoremap <BS> i<BS><Right><Esc>
