@@ -243,9 +243,6 @@ ssh-copy-id -i .ssh/id_ed25519.pub pi@192.168.100.99
 # python install
 python3 setup.py install
 
-# install .deb
-sudo apt install ./name.deb
-
 # webp to png
 dwebp file.webp -o file.png
 
@@ -918,6 +915,10 @@ option > partition style > GPT
 > partition configuration > preserve space at the end > 100 GB
 Install
 paste iso on Ventoy partition
+
+# install deb package
+sudo dpkg -i name.deb
+sudo apt install ./name.deb
 
 
 
