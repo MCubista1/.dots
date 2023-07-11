@@ -32,6 +32,7 @@ noremap <Space>E :e!<Enter>zz
 
 " paste from clipboard
 noremap <Space>p "+p
+noremap <Space>P  a<Space><Esc>"+p
 
 " copy to clipboard
 noremap <Space>yy "+yy
