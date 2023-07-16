@@ -39,8 +39,8 @@ noremap <Space>yy "+yy
 noremap <Space>Y "+Y
 noremap <Space>y "+y
 
-" replace spaces with underscores
-nnoremap <Space>- :s/ /_/g<CR>
+" replace spaces with underscores, lowercase
+nnoremap <Space>- :s/ /_/g<CR>Vgu
 
 " Center line in window, j/k line on screen
 nnoremap <expr> j v:count ? 'jzz' : 'gjzz'
