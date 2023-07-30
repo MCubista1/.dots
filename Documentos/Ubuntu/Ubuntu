@@ -854,8 +854,9 @@ esc exit
 
 # my vim spells
 zn jump to next word
-zo display spell options
+zo display options
 zf change to first sugestion
+zr repeat to all same words
 za change to first sugestion and correct all
 
 # vim spell
