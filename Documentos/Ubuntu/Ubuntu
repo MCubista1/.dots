@@ -852,6 +852,12 @@ ctrl+l select item
 shift+delete close/terminate program
 esc exit
 
+# my vim spells
+zn jump to next word
+zo display spell options
+zf change to first sugestion
+za change to first sugestion and correct all
+
 # vim spell
 set spell spelllang=es
 set spell
