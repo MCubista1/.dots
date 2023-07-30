@@ -927,6 +927,10 @@ paste iso on Ventoy partition
 sudo dpkg -i name.deb
 sudo apt install ./name.deb
 
+# reload vimrc
+:so $MYVIMRC
+:so[urce] %
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
