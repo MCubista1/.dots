@@ -30,6 +30,10 @@ nnoremap zo z=
 map zn <Nop>
 nnoremap zn ]szz
 
+" spell change to first sugestion
+map zf <Nop>
+nnoremap zf 1z=
+
 " cursor on same line as when exit
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
