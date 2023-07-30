@@ -14,25 +14,25 @@ imap <Right> <Nop>
 " spell language
 set spell spelllang=es
 
-" spell correct all
-map za <Nop>
-nnoremap za 1z=:spellrepall<cr>
-
-" spell repeat to all words
-map zr <Nop>
-nnoremap zr :spellrepall<cr>
+" spell jump to next word
+map zn <Nop>
+nnoremap zn ]szz
 
 " spell options
 map zo <Nop>
 nnoremap zo z=
 
-" spell next word
-map zn <Nop>
-nnoremap zn ]szz
-
 " spell change to first sugestion
 map zf <Nop>
 nnoremap zf 1z=
+
+" spell repeat to all words
+map zr <Nop>
+nnoremap zr :spellrepall<cr>
+
+" spell correct all with first sugestion
+map za <Nop>
+nnoremap za 1z=:spellrepall<cr>
 
 " cursor on same line as when exit
 if has("autocmd")
