@@ -1264,3 +1264,6 @@ A &= x \\
 
 # overline math
 \overline{x}
+
+# text inside math mode
+\text{}
