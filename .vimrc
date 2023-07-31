@@ -34,6 +34,14 @@ nnoremap zr :spellrepall<cr>
 map za <Nop>
 nnoremap za 1z=:spellrepall<cr>
 
+" graphic accent
+inoremap ;a á
+inoremap ;e é
+inoremap ;i í
+inoremap ;o ó
+inoremap ;u ú
+inoremap ;; ñ
+
 " cursor on same line as when exit
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
