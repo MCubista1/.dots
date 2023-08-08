@@ -931,6 +931,12 @@ sudo apt install ./name.deb
 :so $MYVIMRC
 :so[urce] %
 
+# picture to pdf
+convert page*.png doc.pdf
+# attempt to perform an operation not allowed by the security policy `PDF'
+sudo mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml.off
+sudo mv /etc/ImageMagick-6/policy.xml.off /etc/ImageMagick-6/policy.xml
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
