@@ -60,6 +60,7 @@ aliases['steamdir'] = 'cd /home/ed/.steam/debian-installation/steamapps/common'
 aliases['icel'] = 'cd /home/ed/Documentos/icel'
 aliases['gada'] = 'cd /home/ed/Documentos/gada'
 aliases['uni'] = 'cd /home/ed/Documentos/unitec'
+aliases['opo'] = 'cd /home/ed/Documentos/oportun'
 
 aliases['vx'] = 'vim /home/ed/.xonshrc'
 aliases['va'] = 'vim /home/ed/.xonsh_aliases'
