@@ -936,6 +936,10 @@ convert page*.png doc.pdf
 # attempt to perform an operation not allowed by the security policy `PDF'
 sudo mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml.off
 sudo mv /etc/ImageMagick-6/policy.xml.off /etc/ImageMagick-6/policy.xml
+# permanent solution comment line
+<policy domain="coder" rights="none" pattern="{PDF}" />
+# or add line
+<policy domain="coder" rights="read | write" pattern="PDF" />
 
 
 
