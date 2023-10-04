@@ -1115,6 +1115,14 @@ apend to file .kobo/Kobo/Kobo eReader.conf
 ExcludeSyncFolders=(\\.(?!kobo|adobe).+|([^.][^/]*/)+\\..+)
 eject device
 
+# factory mode bypass account setup
+sudo apt install sqlite3
+cd /Volumes/KOBOeReader/.kobo/
+sqlite3 KoboReader.sqlite
+INSERT INTO user(UserID,UserKey) VALUES('1','');
+.exit or ctrl-D
+eject kobo and unplug
+
 
 
 # ███████╗██╗██╗     ███████╗███████╗
