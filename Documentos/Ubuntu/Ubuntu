@@ -941,6 +941,9 @@ sudo mv /etc/ImageMagick-6/policy.xml.off /etc/ImageMagick-6/policy.xml
 # or add line
 <policy domain="coder" rights="read | write" pattern="PDF" />
 
+# poweroff now
+sudo shutdown -P +0  #-poweroff +0 min
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
