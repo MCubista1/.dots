@@ -944,6 +944,13 @@ sudo mv /etc/ImageMagick-6/policy.xml.off /etc/ImageMagick-6/policy.xml
 # poweroff now
 sudo shutdown -P +0  #-poweroff +0 min
 
+# quizlet deck to anki desktop
+Tools > Add-ons > Get add-ons
+1362209126
+if error: dissable Download audio, enabel skip errors
+Add reverse: this will double the number of cards being imported, creates
+reverse cards that have the answer side show up first
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
