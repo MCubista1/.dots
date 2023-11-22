@@ -62,6 +62,7 @@ aliases['gada'] = 'cd /home/ed/Documentos/gada'
 aliases['uni'] = 'cd /home/ed/Documentos/unitec'
 aliases['opo'] = 'cd /home/ed/Documentos/oportun'
 aliases['eng'] = 'cd /home/ed/Documentos/eng'
+aliases['kelly'] = 'cd /home/ed/Documentos/kelly'
 
 aliases['vx'] = 'vim /home/ed/.xonshrc'
 aliases['va'] = 'vim /home/ed/.xonsh_aliases'
