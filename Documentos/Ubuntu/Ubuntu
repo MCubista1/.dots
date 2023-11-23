@@ -951,6 +951,9 @@ if error: dissable Download audio, enabel skip errors
 Add reverse: this will double the number of cards being imported, creates
 reverse cards that have the answer side show up first
 
+# remove pdf restrictions
+qpdf --decrypt restricted-input.pdf unrestricted-output.pdf
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
