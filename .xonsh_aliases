@@ -64,6 +64,7 @@ aliases['opo'] = 'cd /home/ed/Documentos/oportun'
 aliases['eng'] = 'cd /home/ed/Documentos/eng'
 aliases['kelly'] = 'cd /home/ed/Documentos/kelly'
 
+aliases['v'] = 'vim'
 aliases['vx'] = 'vim /home/ed/.xonshrc'
 aliases['va'] = 'vim /home/ed/.xonsh_aliases'
 aliases['rx'] = 'source /home/ed/.xonshrc'
