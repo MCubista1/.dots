@@ -954,6 +954,11 @@ reverse cards that have the answer side show up first
 # remove pdf restrictions
 qpdf --decrypt restricted-input.pdf unrestricted-output.pdf
 
+# text to speach
+sudo apt install festival festvox-ellpc11k festvox-us1
+echo "hello" | festival --tts --language americanenglish
+echo "hola" | iconv -f utf-8 -t iso-8859-1 | festival --tts --language
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
