@@ -1,6 +1,7 @@
-audio.play_bitrate_non_metered_migrated=true
 audio.sync_bitrate_enumeration=3
+audio.play_bitrate_non_metered_migrated=true
 audio.play_bitrate_enumeration=0
 ui.track_notifications_enabled=false
 audio.play_bitrate_non_metered_enumeration=0
 app.browser.zoom-level=-25
+app.player.volume=68811
