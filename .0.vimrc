@@ -119,6 +119,7 @@ inoremap [ []<Esc>i
 inoremap { {}<Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
+inoremap ` ’
 
 " Latex math mode
 inoremap $ $$<Esc>i
