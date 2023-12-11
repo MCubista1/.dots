@@ -30,6 +30,9 @@ noremap <Space>q :wq<Enter>
 noremap <Space>Q :q!<Enter>
 noremap <Space>E :e!<Enter>zz
 
+" Reload vimrc file
+noremap <Space>r :so $MYVIMRC<Enter>
+
 " paste from clipboard
 noremap <Space>p "+p
 noremap <Space>P  a<Space><Esc>"+p
