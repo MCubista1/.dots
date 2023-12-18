@@ -959,6 +959,12 @@ sudo apt install festival festvox-ellpc11k festvox-us1
 echo "hello" | festival --tts --language americanenglish
 echo "hola" | iconv -f utf-8 -t iso-8859-1 | festival --tts --language
 
+# search for text in pdf
+pdfgrep -Rin --cache 'text to search' .
+-R to search on all files
+-i ignore uper lowe_r case distinction
+-n prin page number
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
