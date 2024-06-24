@@ -499,10 +499,10 @@ A-backspace #cut previous word, no punctuation
 
 # combinaciones de teclas Super+ en gnome
 Q   cerrar
-W   completa
-E   ocultar
-R   mover
-T   redimensionar
+W   mover
+E   redimensionar
+S   completa
+D   ocultar
     #navegacion y ventanas
 A   subir
 Z   bajar
