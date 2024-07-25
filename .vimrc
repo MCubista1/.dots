@@ -67,12 +67,12 @@ call plug#end()
 " fugitive git aliases
 command Gs :Git status -b --porcelain
 command Gd :Git diff
-command -bar Ga :Git add % | :Updstl
-command -nargs=1 Gc :Gitcommit
-command -nargs=1 Gca :Gitcommitall
+command -bar Ga :Git add % | :Updstl " stage file
+command -nargs=1 Gc :Gitcommit " stage file and commit staged files
+command -nargs=1 Gca :Gitcommitall " stage and commite all files
 command -bar Gp :Git push | :Updstl
-command -bar Gr :Gread | :w | :Updstl
-command -bar Gu :Git restore --staged -- % | :Updstl
+command -bar Gr :Gread | :w | :Updstl " restore file
+command -bar Gu :Git restore --staged -- % | :Updstl " unstage file
 
 " statusline always visible
 set laststatus=2
