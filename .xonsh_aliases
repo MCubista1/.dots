@@ -57,7 +57,7 @@ aliases['acsb'] = 'cd ~/Documentos/fx/midas/atomsk/acs_backtest'
 aliases['atomb'] = 'cd ~/Documentos/fx/midas/atomsk/acs_backtest'
 aliases['fxcm'] = 'cd ~/Documentos/fx/midas/pi_ssh && python3 ~/Documentos/fx/midas/pi_ssh/test_fxcm.py'
 aliases['ubt'] = 'cd /home/ed/Documentos/fx/midas/atomsk/universal_backtest'
-aliases['data'] 'cd /home/ed/Documentos/fx/midas/midas_data/data/H1'
+aliases['data'] = 'cd /home/ed/Documentos/fx/midas/midas_data/data/H1'
 
 
 aliases['rnddir'] = 'cd ~/Documentos/mgit/rnd'
