@@ -141,6 +141,11 @@ inoremap <Esc> <Esc>zz
 inoremap <Enter> <Enter><Esc>zzi
 nnoremap O O<Esc>zzi
 
+" change between windows h,j,k,l
+nnoremap <tab> <c-w>
+nnoremap <tab><tab> <c-w><c-w>
+
+
 
 " oooooo     oooo  o8o
 "  `888.     .8'   `"'
