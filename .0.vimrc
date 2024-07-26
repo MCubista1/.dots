@@ -145,6 +145,10 @@ nnoremap O O<Esc>zzi
 nnoremap <tab> <c-w>
 nnoremap <tab><tab> <c-w><c-w>
 
+" set tab size
+nnoremap <Space>4 :set tabstop=4<Enter>
+nnoremap <Space>8 :set tabstop=8<Enter>
+
 
 
 " oooooo     oooo  o8o
