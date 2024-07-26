@@ -3,6 +3,7 @@ aliases['ll'] = lambda args: $[$LC_COLLATE='C' ls --group-directories-first -lAh
 aliases['lls'] = 'du -ah -d 1 | sort -hr'
 aliases['gp'] = 'grep -RIin'
 aliases['py'] = 'python3'
+aliases['pip'] = 'python3 -m pip'
 
 aliases['fetch'] = '$[tput reset]; $[clear]; screenfetch -w -c ",7;2"'
 aliases['gfetch'] = '$[tput reset]; $[clear]; onefetch'
