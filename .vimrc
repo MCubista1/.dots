@@ -67,15 +67,40 @@ call plug#end()
 " fugitive git aliases
 command Gs :Git status -b --porcelain
 command Gd :Git diff
-command -bar Ga :Git add % | :Updstl " stage file
-command -nargs=1 Gc :Gitcommit " stage file and commit staged files
-command -nargs=1 Gca :Gitcommitall " stage and commite all files
+" stage file
+command -bar Ga :Git add % | :Updstl 
+" stage file and commit staged files
+"command -nargs=1 Gc :Gitcommit
+command -bar Gc :silent execute 'Git add % ' | :silent execute 'Git commit -m "'.input('Gc: ').'"' | :Updstl
+" commite all changes in the working directory 
+"command -nargs=1 Gca :Gitcommitall
+command! -bar Gca :silent execute 'Git add .' | :silent execute 'Git commit -m "'.input('Gca: ').'"' | :Updstl
 command -bar Gp :Git push | :Updstl
-command -bar Gr :Gread | :w | :Updstl " restore file
-command -bar Gu :Git restore --staged -- % | :Updstl " unstage file
+" restore file
+command -bar Gr :Gread | :w | :Updstl
+" unstage file
+command -bar Gu :Git restore --staged -- % | :Updstl
 
 " statusline always visible
 set laststatus=2
+
+" commit changes and clear command line
+function! GitCommit()
+	execute "silent Git add % "
+	execute "silent Git commit -m <q-args>"
+	execute "echon ''"
+	execute "Updstl"
+endfunction
+command! -complete=command Gitcommit call GitCommit()
+
+" commit all changes and clear command line
+function! GitCommitAll()
+	execute "silent Git add ."
+	execute "silent Git commit -m <q-args>"
+	execute "echon ''"
+	execute "Updstl"
+endfunction
+command! -complete=command Gitcommitall call GitCommitAll()
 
 " autoupdate status line with git status
 augroup GitStatusLine
@@ -95,21 +120,3 @@ function! WinDo(command)
 	execute currwin . 'wincmd w'
 endfunction
 command! -nargs=+ -complete=command Windo call WinDo(<q-args>)
-
-" commit changes and clear command line
-function! GitCommit()
-	execute "silent Git add % "
-	execute "silent Git commit -m <q-args>"
-	execute "echon ''"
-	execute "Updstl"
-endfunction
-command! -complete=command Gitcommit call GitCommit()
-
-" commit all changes and clear command line
-function! GitCommitAll()
-	execute "silent Git add ."
-	execute "silent Git commit -m <q-args>"
-	execute "echon ''"
-	execute "Updstl"
-endfunction
-command! -complete=command Gitcommitall call GitCommitAll()
