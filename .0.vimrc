@@ -24,6 +24,10 @@ nnoremap Y y$
 nnoremap M J
 vnoremap M J
 
+" increment/decrement number
+noremap <C-z> <C-x>
+noremap <C-x> <C-a>
+
 " Save, quits and restore file
 noremap <Space>w :w<Enter>
 noremap <Space>q :wq<Enter>
@@ -182,12 +186,6 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " disable ex
 map Q <Nop>
-
-" disable suspend
-map <C-z> <Nop>
-
-" increment number
-map <C-z> <C-a>
 
 " center line at start
 au BufEnter * :normal! zz
