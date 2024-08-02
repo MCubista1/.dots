@@ -183,6 +183,12 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " disable ex
 map Q <Nop>
 
+" disable suspend
+map <C-z> <Nop>
+
+" increment number
+map <C-z> <C-a>
+
 " center line at start
 au BufEnter * :normal! zz
 
