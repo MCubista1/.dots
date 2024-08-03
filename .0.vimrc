@@ -114,8 +114,8 @@ vnoremap K {zz
 onoremap K {
 
 " cursor on the top of the screen on paragraph motion
-nnoremap <Leader>j :nnoremap K k{jzt<CR>:nnoremap J }}{jzt<CR>
-nnoremap <Leader>k :nnoremap K k{jzz<CR>:nnoremap J }}{jzz<CR>
+nnoremap <Space>j :nnoremap K k{jzt<CR>:nnoremap J }}{jzt<CR>
+nnoremap <Space>k :nnoremap K k{jzz<CR>:nnoremap J }}{jzz<CR>
 
 " Toggle caps
 nnoremap ` ~
@@ -161,7 +161,7 @@ nnoremap <Space>4 :set tabstop=4<Enter>
 nnoremap <Space>8 :set tabstop=8<Enter>
 
 " display column on status bar
-nnoremap <Leader>c :set statusline+=col:\ %c <CR>
+nnoremap <Space>c :set statusline+=col:\ %c <CR>
 
 
 
