@@ -14,6 +14,9 @@ nnoremap <CR> o<Esc>zz
 " nnoremap <CR> <CR>zz
 " inoremap oo <CR>
 
+" Normal CR
+nnoremap <Leader><CR> <CR>
+
 " Backspace = delete left character
 nnoremap <BS> i<BS><Right><Esc>zz
 
@@ -114,7 +117,6 @@ onoremap K {
 nnoremap <Leader>j :nnoremap K k{jzt<CR>:nnoremap J }}{jzt<CR>
 nnoremap <Leader>k :nnoremap K k{jzz<CR>:nnoremap J }}{jzz<CR>
 
-
 " Toggle caps
 nnoremap ` ~
 vnoremap ` ~
@@ -157,6 +159,10 @@ nnoremap <tab><tab> <c-w><c-w>
 " set tab size
 nnoremap <Space>4 :set tabstop=4<Enter>
 nnoremap <Space>8 :set tabstop=8<Enter>
+
+" display column on status bar
+nnoremap <Leader>c :set statusline+=col:\ %c <CR>
+
 
 
 
