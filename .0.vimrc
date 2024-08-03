@@ -110,6 +110,11 @@ nnoremap K k{jzz
 vnoremap K {zz
 onoremap K {
 
+" cursor on the top of the screen on paragraph motion
+nnoremap <Leader>j :nnoremap K k{jzt<CR>:nnoremap J }}{jzt<CR>
+nnoremap <Leader>k :nnoremap K k{jzz<CR>:nnoremap J }}{jzz<CR>
+
+
 " Toggle caps
 nnoremap ` ~
 vnoremap ` ~
