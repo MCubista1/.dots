@@ -11,6 +11,9 @@ imap <Down> <Nop>
 imap <Left> <Nop>
 imap <Right> <Nop>
 
+" command histoty
+set history=1000
+
 " spell language
 set spell spelllang=es
 
@@ -54,6 +57,9 @@ aug python
     au FileType python setlocal ts=4 sw=4 sts=0 noexpandtab
 aug end
 
+" statusline always visible
+set laststatus=2
+
 " vim-plug call
 call plug#begin('~/.vim/plugged')
 
@@ -67,22 +73,24 @@ call plug#end()
 " fugitive git aliases
 command Gs :Git status -b --porcelain
 command Gd :Git diff
+
 " stage file
 command -bar Ga :Git add % | :Updstl 
+
 " stage file and commit staged files
 "command -nargs=1 Gc :Gitcommit
 command -bar Gc :silent execute 'Git add % ' | :silent execute 'Git commit -m "'.input('Gc: ').'"' | :Updstl
+
 " commite all changes in the working directory 
 "command -nargs=1 Gca :Gitcommitall
 command! -bar Gca :silent execute 'Git add .' | :silent execute 'Git commit -m "'.input('Gca: ').'"' | :Updstl
 command -bar Gp :Git push | :Updstl
+
 " restore file
 command -bar Gr :Gread | :w | :Updstl
+
 " unstage file
 command -bar Gu :Git restore --staged -- % | :Updstl
-
-" statusline always visible
-set laststatus=2
 
 " commit changes and clear command line
 function! GitCommit()
