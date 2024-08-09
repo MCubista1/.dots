@@ -968,6 +968,9 @@ pdfgrep -Rin --cache 'text to search' .
 # extract txz
 tar -Jxvf calibre.txz
 
+# laucher for applications
+~/.local/share/applications/app.desktop
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
