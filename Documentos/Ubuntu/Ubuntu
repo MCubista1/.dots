@@ -229,6 +229,9 @@ pdftk 2.pdf update_info bookmarks.txt output 2_b.pdf
 # pdf images
 pdfimages -png file_path save_path
 
+# invert color
+convert input.png -negate output.png
+
 # flip and invert color
 convert -flop -negate *.png 
 (-flip)
