@@ -965,6 +965,9 @@ pdfgrep -Rin --cache 'text to search' .
 -i ignore uper lowe_r case distinction
 -n prin page number
 
+# extract txz
+tar -Jxvf calibre.txz
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
