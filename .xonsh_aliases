@@ -1,126 +1,128 @@
+# files
 aliases['ls'] = 'ls -A --color'
 aliases['ll'] = lambda args: $[$LC_COLLATE='C' ls --group-directories-first -lAh --color @(args)]
 aliases['lls'] = 'du -ah -d 1 | sort -hr'
-aliases['re'] = 'grep -RIin'
-aliases['py'] = 'python3'
-aliases['pip'] = 'python3 -m pip'
-
-aliases['fetch'] = '$[tput reset]; $[clear]; screenfetch -w -c ",7;2"'
-aliases['gfetch'] = '$[tput reset]; $[clear]; onefetch'
-aliases['nfetch'] = '$[tput reset]; $[clear]; neofetch'
-aliases['fortune'] = 'bash -c "fortune | figlet -f smblock | lolcat"'
-aliases['matrix'] = 'cmatrix -ab'
-aliases['cols'] = 'watch -t -n 1 "tput cols && tput lines"'
-aliases['time'] = 'peaclock'
-aliases['sw'] = 'peaclock -u ~/.peaclock/sw'
-aliases['rss'] = "tput cuu1 && rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f miniwi "
-aliases['rdd'] = "tput cuu1 && rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f maxiwi "
-aliases['rnd'] = 'tput cuu1 ; rnd_min() ; sleep 0.75 ; rnd_min() ; sleep 0.75 ; rnd_min() ; sleep 0.75 ; rnd_min()'
-
-aliases['speed'] = 'speedtest-cli --simple'
-aliases['suspend'] = 'systemctl suspend'
-aliases['hibernate'] = 'sudo systemctl hibernate'
-aliases['sensor'] = 'watch -n 1 -t sensors -A'
-aliases['t'] = '$[tput reset]; $[clear]'
-aliases['e'] = 'exit'
-
-aliases['ssh'] = 'ssh -q'
-aliases['nm'] = 'sudo nmap -sn 192.168.100.0/24'
-aliases['as'] = 'sudo arp-scan 192.168.100.0/24'
-
-aliases['serve'] = 'bash -c "nohup npx serve /home/ed/Documentos/fx/midas/midas_data &>/dev/null &"'
-aliases['spicetify'] = '/home/ed/spicetify-cli/spicetify'
-aliases['flush'] = 'sudo systemd-resolve --flush-caches'
-aliases['ventoy'] = 'sudo /home/ed/Documentos/ventoy/VentoyWeb.sh'
-
 aliases['h'] = 'cd ~'
 aliases['cu'] = 'cd ..'
 aliases['cp'] = 'cd -'
+aliases['mc'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
+aliases['cx'] = 'chmod +x'
+aliases['re'] = 'grep -RIin'
+
+# system
+aliases['up'] = 'sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+aliases['suspend'] = 'systemctl suspend'
+aliases['hibernate'] = 'sudo systemctl hibernate'
+aliases['sensor'] = 'watch -n 1 -t sensors -A'
+aliases['flush'] = 'sudo systemd-resolve --flush-caches'
+aliases['clip'] = 'xclip -sel clip'
+aliases['k'] = 'pkill -9 -f "/bin/sh"'
+
+# terminal
+aliases['t'] = '$[tput reset]; $[clear]'
+aliases['e'] = 'exit'
+
+# network
+aliases['ssh'] = 'ssh -q'
+aliases['nm'] = 'sudo nmap -sn 192.168.100.0/24'
+aliases['as'] = 'sudo arp-scan 192.168.100.0/24'
+aliases['serve'] = 'bash -c "nohup npx serve ~/Documentos/fx/midas/midas_data &>/dev/null &"'
+aliases['ventoy'] = 'sudo ~/Documentos/ventoy/VentoyWeb.sh'
+aliases['auth'] = 'cat ~/Documentos/authtp | xargs auth2f'
+
+# directories
 aliases['gitdir'] = 'cd ~/Documentos/git'
-aliases['pi-ssh'] = 'cd ~/Documentos/fx/midas/pi_ssh'
 aliases['mgit'] = 'cd ~/Documentos/mgit'
+aliases['midas'] = 'cd ~/Documentos/fx/midas/midas_data'
+aliases['data'] = 'cd ~/Documentos/fx/midas/midas_data/data/H1'
+aliases['atom'] = 'cd ~/Documentos/fx/midas/atomsk/acs'
+aliases['ubt'] = 'cd ~/Documentos/fx/midas/atomsk/universal_backtest'
+aliases['indis'] = 'cd ~/Documentos/mgit/python-packages/indis'
+aliases['nnfx'] = 'cd ~/Documentos/fx/nnfx'
+
+# user directories
+aliases['conf'] = 'cd ~/.config'
 aliases['bindir'] = 'cd ~/.local/bin'
 aliases['godir'] = 'cd ~/go/bin'
+aliases['pypkg'] = 'cd ~/.local/lib/python3.8/site-packages'
+
+# media directories
 aliases['doc'] = 'cd ~/Documentos'
 aliases['des'] = 'cd ~/Descargas'
-aliases['vid'] = 'cd ~/Vídeos'
 aliases['ima'] = 'cd ~/Imágenes'
 aliases['mus'] = 'cd ~/Música'
-aliases['docs'] = 'cd ~/Documentos/docs'
+aliases['vid'] = 'cd ~/Vídeos'
 aliases['lib'] = 'cd ~/Documentos/libros'
-aliases['ubu'] = 'cd ~/Documentos/Ubuntu'
-aliases['conf'] = 'cd ~/.config'
+aliases['docs'] = 'cd ~/Documentos/docs'
+aliases['pa'] = 'cd ~/Documentos/pa'
 aliases['media'] = 'cd /media/ed'
-aliases['midas'] = 'cd ~/Documentos/fx/midas/midas_data'
-aliases['acs'] = 'cd ~/Documentos/fx/midas/atomsk/acs'
-aliases['atom'] = 'cd ~/Documentos/fx/midas/atomsk/acs'
-aliases['acsb'] = 'cd ~/Documentos/fx/midas/atomsk/acs_backtest'
-aliases['atomb'] = 'cd ~/Documentos/fx/midas/atomsk/acs_backtest'
-aliases['fxcm'] = 'cd ~/Documentos/fx/midas/pi_ssh && python3 ~/Documentos/fx/midas/pi_ssh/test_fxcm.py'
-aliases['ubt'] = 'cd /home/ed/Documentos/fx/midas/atomsk/universal_backtest'
-aliases['data'] = 'cd /home/ed/Documentos/fx/midas/midas_data/data/H1'
 
-
-aliases['rnddir'] = 'cd ~/Documentos/mgit/rnd'
-aliases['pa'] = 'cd /home/ed/Documentos/pa'
-aliases['steamdir'] = 'cd /home/ed/.steam/debian-installation/steamapps/common'
-aliases['icel'] = 'cd /home/ed/Documentos/icel'
-aliases['gada'] = 'cd /home/ed/Documentos/gada'
-aliases['uni'] = 'cd /home/ed/Documentos/unitec'
-aliases['opo'] = 'cd /home/ed/Documentos/oportun'
-aliases['eng'] = 'cd /home/ed/Documentos/eng'
-aliases['am'] = 'cd ~/Documentos/am'
+# awfk directories
+aliases['gada'] = 'cd ~/Documentos/gada'
+aliases['uni'] = 'cd ~/Documentos/unitec'
+aliases['eng'] = 'cd ~/Documentos/eng'
 aliases['com'] = 'cd ~/Documentos/comcast'
-aliases['kelly'] = 'cd /home/ed/Documentos/kelly'
 
+# misc directories
+aliases['rnddir'] = 'cd ~/Documentos/mgit/rnd'
+aliases['steamdir'] = 'cd ~/.steam/debian-installation/steamapps/common'
+
+# vim
 aliases['v'] = 'vim'
-aliases['vx'] = 'vim /home/ed/.xonshrc'
-aliases['va'] = 'vim /home/ed/.xonsh_aliases'
-aliases['rx'] = 'source /home/ed/.xonshrc'
-aliases['vg'] = 'vim /home/ed/.gitconfig'
-aliases['vu'] = 'vim /home/ed/Documentos/Ubuntu/Ubuntu'
-aliases['vc'] = 'vim /home/ed/Documentos/Ubuntu/colors'
-aliases['vv'] = 'vim /home/ed/.0.vimrc'
-aliases['vvrc'] = 'vim /home/ed/.vimrc'
-aliases['vs'] = 'vim /home/ed/.ssh/config'
+aliases['vx'] = 'vim ~/.xonshrc'
+aliases['va'] = 'vim ~/.xonsh_aliases'
+aliases['rx'] = 'source ~/.xonshrc'
+aliases['vg'] = 'vim ~/.gitconfig'
+aliases['vu'] = 'vim ~/Documentos/Ubuntu/Ubuntu'
+aliases['vc'] = 'vim ~/Documentos/Ubuntu/colors'
+aliases['vv'] = 'vim ~/.0.vimrc'
+aliases['vvrc'] = 'vim ~/.vimrc'
+aliases['vs'] = 'vim ~/.ssh/config'
 
+# python
+aliases['py'] = 'python3'
+aliases['pip'] = 'python3 -m pip'
+
+# git
 aliases['g'] = 'git'
-aliases['dots'] = '/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 aliases['d'] = '/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 
-aliases['up'] = 'sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
-aliases['nr'] = 'sudo needrestart -q -r a'
+# fetch
+aliases['fetch'] = '$[tput reset]; $[clear]; screenfetch -w -c ",7;2"'
+aliases['gfetch'] = '$[tput reset]; $[clear]; onefetch'
+aliases['nfetch'] = '$[tput reset]; $[clear]; neofetch'
+aliases['matrix'] = 'cmatrix -ab'
+aliases['fortune'] = 'bash -c "fortune | figlet -f smblock | lolcat"'
+aliases['sai'] = 't && bonsai -L 30 -c 🍂'
+aliases['inv'] = 't && invaders'
 
-aliases['devil'] = 'bash -c "nohup devilspie &>/dev/null &"'
-aliases['kdevil'] = 'pkill devilspie'
-
+# notification
 aliases['beep'] = 'paplay $BEEP1'
 aliases['bee'] = 'paplay $BEEP2'
 aliases['be'] = 'paplay $BEEP3'
 aliases['bebop'] = 'paplay $BEEP3; paplay $BEEP2; paplay $BEEP1'
 
-aliases['clip'] = 'xclip -sel clip'
-aliases['xbox'] = 'sudo xboxdrv --silent'
-aliases['cx'] = 'chmod +x'
-aliases['week'] = 'date +%U'
-aliases['auth'] = 'cat /home/ed/Documentos/authtp | xargs auth2f'
+# misc
+aliases['cols'] = 'watch -t -n 1 "tput cols && tput lines"'
+aliases['time'] = 'peaclock'
 aliases['cal'] = 'ncal -b -M -w -A2'
 aliases['calm'] = 'ncal -b -M -w'
 aliases['caly'] = 'ncal -b -M -w -y'
-
-# 25 words * 5 min = -n 125
-aliases['s'] = 'tt -words ox5000 -n 125 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
-aliases['k'] = 'pkill -9 -f "/bin/sh"'
+aliases['week'] = 'date +%U'
 aliases['ene'] = 'echo -n ñ | xclip -sel clip'
-
-aliases['mc'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
-aliases['mkcd'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
-
+aliases['spicetify'] = '~/spicetify-cli/spicetify'
 aliases['tetris'] = '/snap/bin/tetris-thefenriswolf.tetris -a'
 aliases['pmoon'] = 'watch -t -n1800 pyphoon -x -n 19'
-aliases['sai'] = 't && bonsai -L 30 -c 🍂'
-aliases['inv'] = 't && invaders'
-aliases['dwarf'] = 'xdg-open /home/ed/Documentos/libros/dwarf-fortress/Getting_Started_with_Dwarf_Fortress.pdf'
+# 25 words * 5 min = -n 125
+aliases['s'] = 'tt -words ox5000 -n 125 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
+aliases['dwarf'] = 'xdg-open ~/Documentos/libros/dwarf-fortress/Getting_Started_with_Dwarf_Fortress.pdf'
+aliases['xbox'] = 'sudo xboxdrv --silent'
+
+# rubik
+aliases['sw'] = 'peaclock -u ~/.peaclock/sw'
+aliases['rss'] = "tput cuu1 && rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f miniwi "
+aliases['rdd'] = "tput cuu1 && rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f maxiwi "
+aliases['rnd'] = 'tput cuu1 ; rnd_min() ; sleep 0.75 ; rnd_min() ; sleep 0.75 ; rnd_min() ; sleep 0.75 ; rnd_min()'
 
 def rnd_min():
 	rubiks-scramble -I -O -u -M -n 21 | tr -s ' ' | figlet -t -c -f miniwi 
