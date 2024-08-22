@@ -157,11 +157,14 @@ nnoremap <tab> <c-w>
 nnoremap <tab><tab> <c-w><c-w>
 
 " set tab size
-nnoremap <Space>4 :set tabstop=4<Enter>
-nnoremap <Space>8 :set tabstop=8<Enter>
+nnoremap <Space>4 :set tabstop=4<CR>
+nnoremap <Space>8 :set tabstop=8<CR>
 
 " display column on status bar
 nnoremap <Space>c :set statusline+=col:\ %c <CR>
+
+" toogle line wrap
+nnoremap <Space>1 :set wrap!<CR>
 
 
 
