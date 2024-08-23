@@ -159,6 +159,7 @@ nnoremap <tab><tab> <c-w><c-w>
 " set tab size
 nnoremap <Space>4 :set tabstop=4<CR>
 nnoremap <Space>8 :set tabstop=8<CR>
+nnoremap <Space>9 :set tabstop=12<CR>
 
 " display column on status bar
 nnoremap <Space>c :set statusline+=col:\ %c <CR>
