@@ -8,6 +8,7 @@ aliases['cp'] = 'cd -'
 aliases['mc'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
 aliases['cx'] = 'chmod +x'
 aliases['re'] = 'grep -RIin'
+aliases['sed'] = 'sed -i -e'
 
 # system
 aliases['up'] = 'sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
@@ -36,7 +37,7 @@ aliases['mgit'] = 'cd ~/Documentos/mgit'
 aliases['midas'] = 'cd ~/Documentos/fx/midas/midas_data'
 aliases['data'] = 'cd ~/Documentos/fx/midas/midas_data/data/H1'
 aliases['atom'] = 'cd ~/Documentos/fx/midas/atomsk/acs'
-aliases['ubt'] = 'cd ~/Documentos/fx/midas/atomsk/universal_backtest'
+aliases['ubt'] = 'cd ~/Documentos/fx/midas/atomsk/ubtst'
 aliases['indis'] = 'cd ~/Documentos/mgit/python-packages/indis'
 aliases['nnfx'] = 'cd ~/Documentos/fx/nnfx'
 
