@@ -220,7 +220,7 @@ colorscheme material-theme
 
 " set default syntax if there is none
 au BufNewFile,BufRead,SourcePre * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
-au BufRead,BufNewFile *mq4 set filetype=sh
+au BufRead,BufNewFile *mq4,*.mq5 set filetype=sh
 
 " Reload vimrc file
 noremap <Space>r :so $MYVIMRC<Enter>
