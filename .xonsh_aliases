@@ -8,7 +8,7 @@ aliases['cp'] = 'cd -'
 aliases['mc'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
 aliases['cx'] = 'chmod +x'
 aliases['re'] = 'grep -RIin'
-aliases['sed'] = 'sed -i -e'
+aliases['se'] = 'sed -i -e'
 
 # system
 aliases['up'] = 'sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
