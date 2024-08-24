@@ -974,6 +974,9 @@ tar -Jxvf calibre.txz
 # laucher for applications
 ~/.local/share/applications/app.desktop
 
+# difference between to files, full context
+git diff --no-index -U100 file1 file2
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
