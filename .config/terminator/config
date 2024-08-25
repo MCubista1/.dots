@@ -29,6 +29,7 @@
   resize_right = <Primary><Alt>l
   move_tab_right = <Primary><Shift>l
   move_tab_left = <Primary><Shift>h
+  toggle_zoom = <Alt>x
   scaled_zoom = <Alt>backslash
   next_tab = <Primary>l
   prev_tab = <Primary>h
