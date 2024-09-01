@@ -935,14 +935,18 @@ sudo apt install ./name.deb
 :so[urce] %
 
 # picture to pdf
-convert page*.png doc.pdf
+convert page*.png doc.pdf#
 # attempt to perform an operation not allowed by the security policy `PDF'
 sudo mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml.off
 sudo mv /etc/ImageMagick-6/policy.xml.off /etc/ImageMagick-6/policy.xml
 # permanent solution comment line
 <policy domain="coder" rights="none" pattern="{PDF}" />
 # or add line
-<policy domain="coder" rights="read | write" pattern="PDF" />
+<policy domain="coder" rights="read | write" pattern="PDF" />#
+# cache resources exhausted error
+sudoedit /etc/ImageMagick-6/policy.xml
+# change 
+<policy domain="resource" name="disk" value="8GiB"/>
 
 # poweroff now
 sudo shutdown -P +0  #-poweroff +0 min
