@@ -39,7 +39,7 @@ alias github='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/github'
 alias up="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 
 #alias poweroff="sudo poweroff"
-alias poweroff="echo rebooting... && sudo reboot"
+#alias poweroff="echo rebooting... && sudo reboot"
 alias reboot="sudo reboot"
 
 alias vint="vim ~/.local/bin/internet_status"
