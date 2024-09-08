@@ -10,11 +10,15 @@
 let mapleader = "\\" 
 
 " Enter = new line
-" nnoremap <CR> o<Esc>
+nnoremap <CR> o<Esc>zz
 " nnoremap <CR> <CR>zz
+" inoremap oo <CR>
+
+" Normal CR
+nnoremap <Leader><CR> <CR>
 
 " Backspace = delete left character
-nnoremap <BS> i<BS><Right><Esc>
+nnoremap <BS> i<BS><Right><Esc>zz
 
 " Y as it should be
 nnoremap Y y$
@@ -23,11 +27,28 @@ nnoremap Y y$
 nnoremap M J
 vnoremap M J
 
+" increment/decrement number
+noremap <C-z> <C-x>
+noremap <C-x> <C-a>
+
 " Save, quits and restore file
 noremap <Space>w :w<Enter>
 noremap <Space>q :wq<Enter>
 noremap <Space>Q :q!<Enter>
 noremap <Space>E :e!<Enter>zz
+
+" paste from clipboard
+noremap <Space>p "+p
+"noremap <Space>P  a<Space><Esc>"+p
+noremap <Space>P  "+P
+
+" copy to clipboard
+noremap <Space>yy "+yy
+noremap <Space>Y "+Y
+noremap <Space>y "+y
+
+" replace spaces with underscores, lowercase
+nnoremap <Space>- Vgu:s/ /_/g<CR>
 
 " Center line in window, j/k line on screen
 nnoremap <expr> j v:count ? 'jzz' : 'gjzz'
@@ -54,15 +75,23 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
 nnoremap # #zz 
-cnoremap <CR> <CR>zz
+cnoremap <silent><expr> <enter> index(['/', '?'], getcmdtype()) >= 0 ? '<enter>zz' : '<enter>'
 
-" Return to the previous cursor position
-nnoremap '' ``zz
-vnoremap '' ``zz
+" older/newer cursor position in jump list
+nnoremap '' <C-o>zz
+nnoremap "" <C-i>zz
 
-" Return to previous change position
-nnoremap '. `.zz
-vnoremap '. `.zz
+" Return to last change position
+nnoremap '" `.zz
+vnoremap '" `.zz
+
+" jump to the previous cursor position
+nnoremap <C-o> ``zz
+vnoremap <C-o> ``zz
+
+" jump to newer/older change list
+nnoremap g; g;zz
+nnoremap g, g,zz
 
 " First non-blank chatacter
 nnoremap H g^
@@ -84,6 +113,10 @@ nnoremap K k{jzz
 vnoremap K {zz
 onoremap K {
 
+" cursor on the top of the screen on paragraph motion
+nnoremap <Space>j :nnoremap K k{jzt<CR>:nnoremap J }}{jzt<CR>
+nnoremap <Space>k :nnoremap K k{jzz<CR>:nnoremap J }}{jzz<CR>
+
 " Toggle caps
 nnoremap ` ~
 vnoremap ` ~
@@ -98,6 +131,7 @@ inoremap [ []<Esc>i
 inoremap { {}<Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
+inoremap ` ’
 
 " Latex math mode
 inoremap $ $$<Esc>i
@@ -109,14 +143,31 @@ inoremap ,, <Esc><Right>a
 " Delete right character
 inoremap xx <Delete>
 
-" Easy indentation
-" In insert mode ctrl-t and ctrl-d
-" nnoremap > >>
-" nnoremap < <<
-
 " Visual identaton keeps selection
 vnoremap < <gv
 vnoremap > >gv
+
+" center line in insert mode
+inoremap <Esc> <Esc>zz
+inoremap <Enter> <Enter><Esc>zzi
+nnoremap O O<Esc>zzi
+
+" change between windows h,j,k,l
+nnoremap <tab> <c-w>
+nnoremap <tab><tab> <c-w><c-w>
+
+" set tab size
+nnoremap <Space>4 :set tabstop=4<CR>
+nnoremap <Space>8 :set tabstop=8<CR>
+nnoremap <Space>9 :set tabstop=12<CR>
+
+" display column on status bar
+nnoremap <Space>c :set statusline+=col:\ %c <CR>
+
+" toogle line wrap
+nnoremap <Space>1 :set wrap!<CR>
+
+
 
 
 " oooooo     oooo  o8o
@@ -157,6 +208,10 @@ au BufEnter * :normal! zz
 " wrap break line at space
 set linebreak
 
+" split panes to the right and below
+set splitright
+set splitbelow
+
 " Material Theme
 set termguicolors
 syntax enable
@@ -164,4 +219,8 @@ set background=dark
 colorscheme material-theme
 
 " set default syntax if there is none
-au BufNewFile,BufRead * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
+au BufNewFile,BufRead,SourcePre * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
+au BufRead,BufNewFile *mq4,*.mq5 set filetype=sh
+
+" Reload vimrc file
+noremap <Space>r :so $MYVIMRC<Enter>
