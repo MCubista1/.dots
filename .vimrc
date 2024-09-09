@@ -17,7 +17,7 @@ set history=1000
 " set tabs on pyhon files
 aug python
     " ftype/python.vim overwrites this
-    au FileType python setlocal ts=4 sw=4 sts=0 noexpandtaba
+    au FileType python setlocal ts=4 sw=4 sts=0 noexpandtab
 aug end
 
 if has("autocmd")
