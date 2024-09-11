@@ -47,9 +47,6 @@ noremap <Space>yy "+yy
 noremap <Space>Y "+Y
 noremap <Space>y "+y
 
-" replace spaces with underscores, lowercase
-nnoremap <Space>- Vgu:s/ /_/g<CR>
-
 " Center line in window, j/k line on screen
 nnoremap <expr> j v:count ? 'jzz' : 'gjzz'
 vnoremap <expr> j v:count ? 'jzz' : 'gjzz'
@@ -113,10 +110,6 @@ nnoremap K k{jzz
 vnoremap K {zz
 onoremap K {
 
-" cursor on the top of the screen on paragraph motion
-nnoremap <Space>j :nnoremap K k{jzt<CR>:nnoremap J }}{jzt<CR>
-nnoremap <Space>k :nnoremap K k{jzz<CR>:nnoremap J }}{jzz<CR>
-
 " Toggle caps
 nnoremap ` ~
 vnoremap ` ~
@@ -156,6 +149,10 @@ nnoremap O O<Esc>zzi
 nnoremap <tab> <c-w>
 nnoremap <tab><tab> <c-w><c-w>
 
+" cursor on the top of the screen on paragraph motion
+nnoremap <Space>j :nnoremap K k{jzt<CR>:nnoremap J }}{jzt<CR>
+nnoremap <Space>k :nnoremap K k{jzz<CR>:nnoremap J }}{jzz<CR>
+
 " set tab size
 nnoremap <Space>4 :set tabstop=4<CR>
 nnoremap <Space>8 :set tabstop=8<CR>
@@ -167,6 +164,11 @@ nnoremap <Space>c :set statusline+=col:\ %c <CR>
 " toogle line wrap
 nnoremap <Space>1 :set wrap!<CR>
 
+" replace spaces with underscores, lowercase
+nnoremap <Space>- Vgu:s/ /_/g<CR>
+
+" replace one space for one tab
+nnoremap <Space><tab> :s/ /\t/g<CR>
 
 
 
