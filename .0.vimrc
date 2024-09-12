@@ -37,16 +37,6 @@ noremap <Space>q :wq<Enter>
 noremap <Space>Q :q!<Enter>
 noremap <Space>E :e!<Enter>zz
 
-" paste from clipboard
-noremap <Space>p "+p
-"noremap <Space>P  a<Space><Esc>"+p
-noremap <Space>P  "+P
-
-" copy to clipboard
-noremap <Space>yy "+yy
-noremap <Space>Y "+Y
-noremap <Space>y "+y
-
 " Center line in window, j/k line on screen
 nnoremap <expr> j v:count ? 'jzz' : 'gjzz'
 vnoremap <expr> j v:count ? 'jzz' : 'gjzz'
@@ -148,6 +138,19 @@ nnoremap O O<Esc>zzi
 " change between windows h,j,k,l
 nnoremap <tab> <c-w>
 nnoremap <tab><tab> <c-w><c-w>
+
+" paste from clipboard
+noremap <Space>p "+p
+"noremap <Space>P  a<Space><Esc>"+p
+noremap <Space>P  "+P
+
+" copy to clipboard
+noremap <Space>yy "+yy
+noremap <Space>Y "+Y
+noremap <Space>y "+y
+
+" copy file name to clipboard
+nnoremap <Space>f :let @+ = expand("%")<CR>
 
 " cursor on the top of the screen on paragraph motion
 nnoremap <Space>j :nnoremap K k{jzt<CR>:nnoremap J }}{jzt<CR>
