@@ -22,6 +22,7 @@ alias h="cd ~"
 alias bindir="cd ~/.local/bin"
 alias media="cd /media/usb"
 alias acs="cd ~/acs"
+alias pydir="cd ~/.local/lib/python3.8/site-packages"
 
 alias va="vim ~/.bash_aliases"
 alias vb="vim ~/.bashrc"
