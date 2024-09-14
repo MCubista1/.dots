@@ -38,8 +38,10 @@ aliases['midas'] = 'cd ~/Documentos/fx/midas/midas_data'
 aliases['data'] = 'cd ~/Documentos/fx/midas/midas_data/data/H1'
 aliases['atom'] = 'cd ~/Documentos/fx/midas/atomsk/acs'
 aliases['ubt'] = 'cd ~/Documentos/fx/midas/atomsk/ubtst'
+aliases['entry'] = 'cd ~/Documentos/fx/midas/atomsk/ubtst/logic_entry'
 aliases['indis'] = 'cd ~/Documentos/mgit/python-packages/indis'
 aliases['nnfx'] = 'cd ~/Documentos/fx/nnfx'
+
 
 # user directories
 aliases['conf'] = 'cd ~/.config'
