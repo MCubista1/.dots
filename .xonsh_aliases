@@ -4,7 +4,7 @@ aliases['ll'] = lambda args: $[$LC_COLLATE='C' ls --group-directories-first -lAh
 aliases['lls'] = 'du -ah -d 1 | sort -hr'
 aliases['h'] = 'cd ~'
 aliases['cu'] = 'cd ..'
-aliases['cp'] = 'cd -'
+aliases['ca'] = 'cd -'
 aliases['mc'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
 aliases['cx'] = 'chmod +x'
 aliases['re'] = 'grep -RIin'
