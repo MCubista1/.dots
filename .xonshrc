@@ -122,6 +122,10 @@ def custom_keybindings(bindings, **kw):
     @bindings.add('J')
     def shift_j(event):
         event.current_buffer.history_forward()
+    # open in editor
+    @bindings.add('V')
+    def shift_v(event):
+        event.current_buffer.open_in_editor(event.cli)
     # buffer left
     @bindings.add('H')
     def shift_h(event):

@@ -47,7 +47,7 @@ aliases['nnfx'] = 'cd ~/Documentos/fx/nnfx'
 aliases['conf'] = 'cd ~/.config'
 aliases['bindir'] = 'cd ~/.local/bin'
 aliases['godir'] = 'cd ~/go/bin'
-aliases['pypkg'] = 'cd ~/.local/lib/python3.8/site-packages'
+aliases['pydir'] = 'cd ~/.local/lib/python3.8/site-packages'
 
 # media directories
 aliases['doc'] = 'cd ~/Documentos'
