@@ -150,7 +150,7 @@ noremap <Space>Y "+Y
 noremap <Space>y "+y
 
 " copy file name to clipboard
-nnoremap <Space>f :let @+ = expand("%")<CR>
+nnoremap <Space>f :let @+ = expand("%")<CR>:f<CR>
 
 " cursor on the top of the screen on paragraph motion
 nnoremap <Space>j :nnoremap K k{jzt<CR>:nnoremap J }}{jzt<CR>
