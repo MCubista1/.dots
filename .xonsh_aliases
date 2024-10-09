@@ -30,6 +30,8 @@ aliases['as'] = 'sudo arp-scan 192.168.100.0/24'
 aliases['serve'] = 'bash -c "nohup npx serve ~/Documentos/fx/midas/midas_data &>/dev/null &"'
 aliases['ventoy'] = 'sudo ~/Documentos/ventoy/VentoyWeb.sh'
 aliases['auth'] = 'cat ~/Documentos/authtp | xargs auth2f'
+aliases['start'] = 'ray start --head --num-cpus=0 --port=6379 && ssh atom'
+aliases['stop'] = 'ray stop'
 
 # directories
 aliases['gitdir'] = 'cd ~/Documentos/git'
