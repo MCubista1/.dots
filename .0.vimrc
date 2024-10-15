@@ -20,7 +20,7 @@ nnoremap <Leader><CR> <CR>
 " Backspace = delete left character
 nnoremap <BS> i<BS><Right><Esc>zz
 
-" Y as it should be
+" Y yank as it should be
 nnoremap Y y$
 
 " Join lines
@@ -144,12 +144,12 @@ noremap <Space>p "+p
 "noremap <Space>P  a<Space><Esc>"+p
 noremap <Space>P  "+P
 
-" copy to clipboard
+" yank to clipboard
 noremap <Space>yy "+yy
-noremap <Space>Y "+Y
+noremap <Space>Y "+y$
 noremap <Space>y "+y
 
-" copy file name to clipboard
+" yank file name to clipboard
 nnoremap <Space>f :let @+ = expand("%")<CR>:f<CR>
 
 " cursor on the top of the screen on paragraph motion
@@ -172,6 +172,9 @@ nnoremap <Space>- Vgu:s/ /_/g<CR>
 
 " replace one space for one tab
 nnoremap <Space><tab> :s/ /\t/g<CR>
+
+" Reload vimrc file
+noremap <Space>r :so $MYVIMRC<Enter>
 
 
 
@@ -226,6 +229,3 @@ colorscheme material-theme
 " set default syntax if there is none
 au BufNewFile,BufRead,SourcePre * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
 au BufRead,BufNewFile *mq4,*.mq5 set filetype=sh
-
-" Reload vimrc file
-noremap <Space>r :so $MYVIMRC<Enter>
