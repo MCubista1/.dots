@@ -118,10 +118,6 @@ md5sum (file name)
 sha256sum (file name)
 sha1sum (file name)
 
-# pdf pdftk impares/pares
-pdftk hints.pdf cat 1-endeven output hints1.pdf
-pdftk hints.pdf cat 1-endodd output hints2.pdf
-
 # MiniDLNA
 sudo service minidlna restart [start, force-reload, stop]
 
@@ -201,6 +197,27 @@ subl
 # htop rc
 ~/.config/htop/htoprc
 
+# pdf pdftk impares/pares
+pdftk hints.pdf cat 1-endeven output hints1.pdf
+pdftk hints.pdf cat 1-endodd output hints2.pdf
+
+# picture to pdf
+convert page*.png file.pdf
+# attempt to perform an operation not allowed by the security policy `PDF'
+sudo mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml.off
+sudo mv /etc/ImageMagick-6/policy.xml.off /etc/ImageMagick-6/policy.xml
+# permanent solution comment line
+<policy domain="coder" rights="none" pattern="{PDF}" />
+# or add line
+<policy domain="coder" rights="read | write" pattern="PDF" />#
+# cache resources exhausted error
+sudoedit /etc/ImageMagick-6/policy.xml
+# change 
+<policy domain="resource" name="disk" value="8GiB"/>
+
+# remove pdf restrictions
+qpdf --decrypt restricted-input.pdf unrestricted-output.pdf
+
 # delete pdf text
 pdftk file_1.pdf output file_unc.pdf uncompress
 sed 's/oldstring/newstring/g' < file_unc.pdf > file_mod.pdf
@@ -228,6 +245,18 @@ pdftk 2.pdf update_info bookmarks.txt output 2_b.pdf
 
 # pdf images
 pdfimages -png file_path save_path
+
+# pdf to jpg
+mkdir -p images && pdftoppm -jpeg -r 300 mypdf.pdf images/pg
+
+# set zathura as defaul pdf reader
+xdg-mime default org.pwmt.zathura.desktop application/pdf
+
+# search for text in pdf
+pdfgrep -Rin --cache 'text to search' .
+-R to search on all files
+-i ignore uper lowe_r case distinction
+-n prin page number
 
 # invert color
 convert input.png -negate output.png
@@ -725,14 +754,8 @@ tar -xvf file.tar[.gz.bz2.xz]
 # ssh sign_and_send_pubkey: signing failed
 ssh-add
 
-# set zathura as defaul pdf reader
-xdg-mime default org.pwmt.zathura.desktop application/pdf
-
 # create a symlink
 ln -s /source/location /symlink/location
-
-# pdf to jpg
-mkdir -p images && pdftoppm -jpeg -r 300 mypdf.pdf images/pg
 
 # enable hibernation
 sudo swapon -s
@@ -935,20 +958,6 @@ sudo apt install ./name.deb
 :so $MYVIMRC
 :so[urce] %
 
-# picture to pdf
-convert page*.png doc.pdf#
-# attempt to perform an operation not allowed by the security policy `PDF'
-sudo mv /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6/policy.xml.off
-sudo mv /etc/ImageMagick-6/policy.xml.off /etc/ImageMagick-6/policy.xml
-# permanent solution comment line
-<policy domain="coder" rights="none" pattern="{PDF}" />
-# or add line
-<policy domain="coder" rights="read | write" pattern="PDF" />#
-# cache resources exhausted error
-sudoedit /etc/ImageMagick-6/policy.xml
-# change 
-<policy domain="resource" name="disk" value="8GiB"/>
-
 # poweroff now
 sudo shutdown -P +0  #-poweroff +0 min
 
@@ -959,19 +968,10 @@ if error: dissable Download audio, enabel skip errors
 Add reverse: this will double the number of cards being imported, creates
 reverse cards that have the answer side show up first
 
-# remove pdf restrictions
-qpdf --decrypt restricted-input.pdf unrestricted-output.pdf
-
 # text to speach
 sudo apt install festival festvox-ellpc11k festvox-us1
 echo "hello" | festival --tts --language americanenglish
 echo "hola" | iconv -f utf-8 -t iso-8859-1 | festival --tts --language
-
-# search for text in pdf
-pdfgrep -Rin --cache 'text to search' .
--R to search on all files
--i ignore uper lowe_r case distinction
--n prin page number
 
 # extract txz
 tar -Jxvf calibre.txz
