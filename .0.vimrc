@@ -174,11 +174,11 @@ nnoremap <Space>- Vgu:s/ /_/g<CR>
 nnoremap <Space><tab> :s/ /\t/g<CR>
 
 " Reload vimrc file
-noremap <Space>r :so $MYVIMRC<Enter>
+noremap <Space>r :so $MYVIMRC<CR>
 
 " custom substitution
-nnoremap <Space>s2 :%s/period1/period1, period2/g
-nnoremap <Space>s3 :%s/period1/period1, period2, period3/g
+nnoremap <Space>s2 :%s/period1/period1, period2/g<CR>
+nnoremap <Space>s3 :%s/period1/period1, period2, period3/g<CR>
 
 
 
