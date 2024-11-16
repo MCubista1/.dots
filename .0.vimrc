@@ -55,7 +55,7 @@ vnoremap <C-u> <Nop>
 nnoremap G Gzz
 vnoremap G Gzz
 
-" Center line on seach
+" Center line on search
 nnoremap ; ;zz
 nnoremap , ,zz
 nnoremap n nzz
@@ -80,7 +80,7 @@ vnoremap <C-o> ``zz
 nnoremap g; g;zz
 nnoremap g, g,zz
 
-" First non-blank chatacter
+" First non-blank character
 nnoremap H g^
 vnoremap H g^
 onoremap H g^
@@ -90,12 +90,12 @@ nnoremap L g$
 vnoremap L g$<Left>
 onoremap L g$
 
-" Next Parragraph
+" Next Paragraph
 nnoremap J }}{jzz
 vnoremap J }zz
 onoremap J }
 
-" Previous Parragraph
+" Previous Paragraph
 nnoremap K k{jzz
 vnoremap K {zz
 onoremap K {
@@ -126,7 +126,7 @@ inoremap ,, <Esc><Right>a
 " Delete right character
 inoremap xx <Delete>
 
-" Visual identaton keeps selection
+" Visual indentation keeps selection
 vnoremap < <gv
 vnoremap > >gv
 
@@ -164,7 +164,7 @@ nnoremap <Space>9 :set tabstop=12<CR>
 " display column on status bar
 nnoremap <Space>c :set statusline+=col:\ %c <CR>
 
-" toogle line wrap
+" toggle line wrap
 nnoremap <Space>1 :set wrap!<CR>
 
 " replace spaces with underscores, lowercase
@@ -175,6 +175,10 @@ nnoremap <Space><tab> :s/ /\t/g<CR>
 
 " Reload vimrc file
 noremap <Space>r :so $MYVIMRC<Enter>
+
+" custom substitution
+nnoremap <Space>s2 :%s/period1/period1, period2/g
+nnoremap <Space>s3 :%s/period1/period1, period2, period3/g
 
 
 

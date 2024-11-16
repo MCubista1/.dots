@@ -11,8 +11,8 @@ imap <Down> <Nop>
 imap <Left> <Nop>
 imap <Right> <Nop>
 
-" command histoty
-set history=1000
+" command history
+set history=10000
 
 " spell language
 set spell spelllang=es
@@ -25,7 +25,7 @@ nnoremap zn ]szz
 map zo <Nop>
 nnoremap zo z=
 
-" spell change to first sugestion
+" spell change to first suggestion
 map zf <Nop>
 nnoremap zf 1z=
 
@@ -33,7 +33,7 @@ nnoremap zf 1z=
 map zr <Nop>
 nnoremap zr :spellrepall<cr>
 
-" spell correct all with first sugestion
+" spell correct all with first suggestion
 map za <Nop>
 nnoremap za 1z=:spellrepall<cr>
 
@@ -51,7 +51,7 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
-" set tabs on pyhon files
+" set tabs on python files
 aug python
     " ftype/python.vim overwrites this
     au FileType python setlocal ts=4 sw=4 sts=0 noexpandtab
@@ -81,7 +81,7 @@ command -bar Ga :Git add % | :Updstl
 "command -nargs=1 Gc :Gitcommit
 command -bar Gc :silent execute 'Git add % ' | :silent execute 'Git commit -m "'.input('Gc: ').'"' | :Updstl
 
-" commite all changes in the working directory 
+" commit all changes in the working directory 
 "command -nargs=1 Gca :Gitcommitall
 command! -bar Gca :silent execute 'Git add .' | :silent execute 'Git commit -m "'.input('Gca: ').'"' | :Updstl
 command -bar Gp :Git push | :Updstl
@@ -121,7 +121,7 @@ let &statusline = '%{get(b:, "GitStatus", "")}'
 " update status line with git status
 command Updstl Windo let b:GitStatus = substitute(system("git status --branch --porcelain 2>/dev/null | sed 's/^MM/●+/' | sed 's/^M /●/' | sed 's/^ M/+/' | tr '\n' ' ' | cut -d ' ' -f3- | sed 's/ahead /↑·/'"), "\n", " ", "g")
 
-" windo command focus the current window
+" window command focus the current window
 function! WinDo(command)
 	let currwin=winnr()
 	execute 'windo ' . a:command
