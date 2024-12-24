@@ -169,7 +169,7 @@ nnoremap <Space>1 :set wrap!<CR>
 
 " replace spaces with underscores, lowercase
 nnoremap <Space>- Vu:s/ /_/g<CR>
-vnoremap <Space>- ugv:'<,'>s/ /_/g<CR>
+vnoremap <Space>- ugv:s/\%V /_/g<CR>
 
 " replace one space for one tab
 nnoremap <Space><tab> :s/ /\t/g<CR>
