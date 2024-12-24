@@ -119,8 +119,9 @@ aliases['ene'] = 'echo -n ñ | xclip -sel clip'
 aliases['spicetify'] = '~/spicetify-cli/spicetify'
 aliases['tetris'] = '/snap/bin/tetris-thefenriswolf.tetris -a'
 aliases['pmoon'] = 'watch -t -n1800 pyphoon -x -n 19'
-# 25 words * 5 min = -n 125
-aliases['s'] = 'tt -words ox5000 -n 125 -t 300 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
+# 25 words * 5 min (300s) = -n 125
+# 25 words * 1 min (60s) = -n 25
+aliases['s'] = 'cd ~/.tt && tt -words ox5000 -n 25 -t 60 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
 aliases['dwarf'] = 'xdg-open ~/Documentos/libros/dwarf-fortress/Getting_Started_with_Dwarf_Fortress.pdf'
 aliases['xbox'] = 'sudo xboxdrv --silent'
 
