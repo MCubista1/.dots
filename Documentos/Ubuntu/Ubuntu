@@ -982,6 +982,9 @@ tar -Jxvf calibre.txz
 # difference between to files, full context
 git diff --no-index -U100 file1 file2
 
+# list files that match expression with full path
+find . -type f | grep "\.sw"
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
