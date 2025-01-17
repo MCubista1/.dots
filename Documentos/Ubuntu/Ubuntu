@@ -520,6 +520,9 @@ dots checkout origin/master -- .0.vimrc
 dots commit -m 'vimrc: test pi'
 dots push
 
+# copy fist to clipboard the filename of git status output
+git staus | head -n 1 | cut -d ' ' -f3 | tee /dev/tty | tr -d '\n' | clip
+
 # capture key in bash and vim
 C-V
 
