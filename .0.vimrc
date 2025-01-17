@@ -181,6 +181,10 @@ noremap <Space>r :so $MYVIMRC<CR>
 nnoremap <Space>s2 :%s/period1/period1, period2/g<CR>
 nnoremap <Space>s3 :%s/period1/period1, period2, period3/g<CR>
 
+" change language
+nnoremap <Space>le :set spell spelllang=en<CR>
+nnoremap <Space>ls :set spell spelllang=es<CR>
+
 
 
 " oooooo     oooo  o8o
