@@ -179,7 +179,7 @@ noremap <Space>r :so $MYVIMRC<CR>
 
 " custom substitution
 nnoremap <Space>s2 :%s/period1/period1, period2/g<CR>
-nnoremap <Space>s3 :%s/period1/period1, period2, period3/g<CR>
+nnoremap <Space>s3 :%s/period1, period2/period1, period2, period3/g<CR>
 
 " change language
 nnoremap <Space>le :set spell spelllang=en<CR>
