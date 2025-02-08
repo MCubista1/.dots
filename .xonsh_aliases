@@ -12,7 +12,7 @@ aliases['se'] = 'sed -i -e'
 aliases['cp'] = 'cp -vru'
 
 # system
-aliases['up'] = 'sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+aliases['up'] = 'bonsai -L 30 -c 🍂 && sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
 aliases['suspend'] = 'systemctl suspend'
 aliases['hibernate'] = 'sudo systemctl hibernate'
 aliases['sensor'] = 'watch -n 1 -t sensors -A'
