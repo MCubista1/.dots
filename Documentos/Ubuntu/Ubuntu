@@ -1000,6 +1000,9 @@ source env/bin/activate
 #(env) $
 deactivate
 
+# fff copy to clipboard
+w p
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
