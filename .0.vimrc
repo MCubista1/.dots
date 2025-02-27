@@ -186,6 +186,10 @@ nnoremap <Space>s4 :%s/period1, period2, period3/period1, period2, period3, peri
 nnoremap <Space>le :set spell spelllang=en<CR>
 nnoremap <Space>ls :set spell spelllang=es<CR>
 
+" global substitution
+nnoremap <Space>ss :%s/<C-r>0/
+vnoremap <Space>ss y:%s/<C-r>0/
+
 
 
 " oooooo     oooo  o8o
