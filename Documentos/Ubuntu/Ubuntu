@@ -523,6 +523,22 @@ dots push
 # copy fist to clipboard the filename of git status output
 git staus | head -n 1 | cut -d ' ' -f3 | tee /dev/tty | tr -d '\n' | clip
 
+# git show commits associated with file
+git log --follow -- filename
+
+# git show previous file version
+git show ef1a4b4:filename
+
+# git show changes with n previous changes
+git show -n filename
+
+# git show commit changes
+git show ef1a4b4
+
+# git list files asiciated to a commit
+git show --stat --oneline b24f5fb
+git show --name-only --oneline b24f5fb
+
 # capture key in bash and vim
 C-V
 
