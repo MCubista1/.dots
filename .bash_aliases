@@ -22,7 +22,7 @@ alias serve="nohup npx serve /home/ed/Documentos/fx/midas/midas_data &>/dev/null
 
 alias spicetify="/home/ed/spicetify-cli/spicetify"
 alias flush="sudo systemd-resolve --flush-caches"
-alias py_env="cd ~/python9 && source env/bin/activate && echo deactivate"
+alias pyenv="cd ~/python9 && source env/bin/activate && echo deactivate"
 
 alias h="cd ~"
 alias vid="cd ~/Vídeos"
