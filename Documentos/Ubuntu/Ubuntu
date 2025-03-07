@@ -1005,6 +1005,9 @@ git diff --no-index -U100 file1 file2
 find . -type f | grep "\.sw"
 find . -type f -iname "*.sw*"
 
+# delete temporary vim files
+find . -type f -iname ".*.sw*" -delete
+
 # python3.9 virtual environtment
 sudo apt install python3.9
 sudo apt install python3.9-venv
@@ -1018,6 +1021,8 @@ deactivate
 
 # fff copy to clipboard
 w p
+
+
 
 
 
