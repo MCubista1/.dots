@@ -71,7 +71,7 @@
     "vim.cursorStylePerMode.insert": "line",
     "vim.cursorStylePerMode.visualblock": "line",
     "vim.cursorStylePerMode.visualline": "line",
-    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorSmoothCaretAnimation": "on",
     "vim.cursorStylePerMode.replace": "block-outline",
     "files.associations": {
         "Ubuntu*": "shellscript",
@@ -326,7 +326,6 @@
     "color-highlight.markRuler": false,
     "errorLens.statusBarColorsEnabled": true,
     "material-icon-theme.folders.color": "#546e7a",
-    "workbench.colorTheme": "Community Material Theme",
     "window.customMenuBarAltFocus": false,
     "git.enableSmartCommit": true,
     "jupyter.interactiveWindowMode": "perFile",
@@ -346,8 +345,7 @@
     "editor.formatOnSave": true,
     "editor.gotoLocation.multipleDefinitions": "goto",
     "editor.gotoLocation.multipleTypeDefinitions": "goto",
-    "editor.lightbulb.enabled": false,
-    "terminal.integrated.enableBell": true,
+    "editor.lightbulb.enabled": "off",
     "terminal.integrated.fontFamily": "'Liberation mono'",
     "terminal.integrated.fontSize": 15,
     "debug.console.fontSize": 10,
@@ -390,7 +388,6 @@
         "python",
         "bash"
     ],
-    "workbench.activityBar.visible": false,
     "projectManager.sortList": "Recent",
     "terminal.integrated.defaultLocation": "editor",
     "liveServer.settings.donotVerifyTags": true,
@@ -440,4 +437,9 @@
     "[csv]": {
         "editor.wordWrap": "off",
     },
+    "workbench.activityBar.location": "hidden",
+    "accessibility.signals.terminalBell": {
+        "sound": "on"
+    },
+    "terminal.integrated.enableVisualBell": true,
 }
