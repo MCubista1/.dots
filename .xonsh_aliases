@@ -45,7 +45,6 @@ aliases['entry'] = 'cd ~/Documentos/fx/midas/atomsk/ubtst/logic_entry'
 aliases['indis'] = 'cd ~/Documentos/mgit/python-packages/indis'
 aliases['nnfx'] = 'cd ~/Documentos/fx/nnfx'
 
-
 # user directories
 aliases['conf'] = 'cd ~/.config'
 aliases['bindir'] = 'cd ~/.local/bin'
@@ -73,6 +72,7 @@ aliases['com'] = 'cd ~/Documentos/comcast'
 aliases['rnddir'] = 'cd ~/Documentos/mgit/rnd'
 aliases['steamdir'] = 'cd ~/.steam/debian-installation/steamapps/common'
 aliases['layout'] = 'tail -12 ~/Documentos/fx/midas/atomsk/ubtst/.notes'
+aliases['rmsw'] = 'find . -type f -name ".*.sw*" -delete'
 
 # vim
 aliases['v'] = 'vim'
