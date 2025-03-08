@@ -9,7 +9,6 @@ configuration {
 	terminal: "terminator";
 	run-shell-command: "{terminal} --command {cmd}";
 	m: "-4";
-	theme: "material" ;
 	display-window: "🌑";
 	display-drun: "🌕";
 /*	columns: 1;*/
@@ -85,7 +84,7 @@ configuration {
 	kb-remove-char-back: "BackSpace";
 	kb-remove-to-eol: "";
 /*	kb-remove-to-sol: "Control+u";*/
-	kb-accept-entry: "Control+l,Return,KP_Enter";
+	kb-accept-entry: "Return,KP_Enter";
 /*	kb-accept-custom: "Control+Return";*/
 /*	kb-accept-alt: "Shift+Return";*/
 /*	kb-delete-entry: "Shift+Delete";*/
@@ -143,6 +142,7 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
+@theme "material"
 timeout {
 	delay:  5;
 	action: "kb-cancel";

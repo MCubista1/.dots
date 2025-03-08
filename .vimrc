@@ -78,11 +78,9 @@ command Gd :Git diff
 command -bar Ga :Git add % | :Updstl 
 
 " stage file and commit staged files
-"command -nargs=1 Gc :Gitcommit
 command -bar Gc :silent execute 'Git add % ' | :silent execute 'Git commit -m "'.input('Gc: ').'"' | :Updstl
 
 " commit all changes in the working directory 
-"command -nargs=1 Gca :Gitcommitall
 command! -bar Gca :silent execute 'Git add .' | :silent execute 'Git commit -m "'.input('Gca: ').'"' | :Updstl
 command -bar Gp :Git push | :Updstl
 
@@ -91,24 +89,6 @@ command -bar Gr :Gread | :w | :Updstl
 
 " unstage file
 command -bar Gu :Git restore --staged -- % | :Updstl
-
-" commit changes and clear command line
-function! GitCommit()
-	execute "silent Git add % "
-	execute "silent Git commit -m <q-args>"
-	execute "echon ''"
-	execute "Updstl"
-endfunction
-command! -complete=command Gitcommit call GitCommit()
-
-" commit all changes and clear command line
-function! GitCommitAll()
-	execute "silent Git add ."
-	execute "silent Git commit -m <q-args>"
-	execute "echon ''"
-	execute "Updstl"
-endfunction
-command! -complete=command Gitcommitall call GitCommitAll()
 
 " autoupdate status line with git status
 augroup GitStatusLine
