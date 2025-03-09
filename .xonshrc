@@ -27,7 +27,7 @@ $PATH.append('/home/ed/.cargo/bin/')
 $PATH.append('/home/ed/go/bin')
 $GOBIN = '/home/ed/go/bin'
 
-xontrib load fzf-widgets
+#xontrib load fzf-widgets
 # xonsh fzf bindings
 $fzf_history_binding = "c-r"
 $fzf_file_binding = "c-t"
