@@ -59,7 +59,6 @@
     title_inactive_bg_color = "#263238"
   [[no-title]]
     background_color = "#263238"
-    cursor_shape = underline
     font = Liberation Mono 10
     foreground_color = "#abb2bf"
     show_titlebar = False
