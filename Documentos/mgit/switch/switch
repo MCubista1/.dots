@@ -579,5 +579,5 @@ elif [ -n "$geometry_flag" ]; then
     echo "$window_eval"
 
 elif [ -n "$mouse_flag" ]; then
-    xdotool mousemove 0 0
+    xdotool mousemove 0 24
 fi
