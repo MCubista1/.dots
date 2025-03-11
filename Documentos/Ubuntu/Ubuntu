@@ -1025,6 +1025,9 @@ w p
 # pip error: externally-managed-environment
 python3 -m pip config set global.break-system-packages true
 
+# run application with gtk inspector
+bash
+GTK_DEBUG=interactive app_command
 
 
 
