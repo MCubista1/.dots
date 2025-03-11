@@ -3611,7 +3611,7 @@ paned > separator.wide {
   min-width: 6px;
   min-height: 6px;
   background-color: #263238;
-  background-image: image(rgba(238, 255, 255, 0.12)), image(rgba(238, 255, 255, 0.12));
+  background-image: none;
   background-size: 1px 1px, 1px 1px;
 }
 
