@@ -821,11 +821,6 @@ sudo chmod -x *
 # select visudo editor
 sudo update-alternatives --config editor
 
-# reboot, poweroff without sudo
-sudo visudo
- ed ALL=NOPASSWD:/usr/sbin/reboot
- ed ALL=NOPASSWD:/usr/sbin/poweroff
-
 # select crontab editor
 select-editor
 sudo select-editor
@@ -1028,6 +1023,10 @@ python3 -m pip config set global.break-system-packages true
 # run application with gtk inspector
 bash
 GTK_DEBUG=interactive app_command
+
+# reboot, poweroff without password
+sudo visudo
+%group_name ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot, /sbin/shutdown
 
 
 
