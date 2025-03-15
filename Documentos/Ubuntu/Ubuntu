@@ -1028,6 +1028,11 @@ GTK_DEBUG=interactive app_command
 sudo visudo
 %group_name ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot, /sbin/shutdown
 
+# xonsh OSError: [Errno 9] Bad file descriptor
+#Xonsh encountered an issue during launch
+#Ubuntu 24.04, Python 3.12.3
+python3 -m pip install prompt-toolkit==3.0.40
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
