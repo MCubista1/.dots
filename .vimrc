@@ -60,6 +60,9 @@ aug end
 " statusline always visible
 set laststatus=2
 
+"W11: Warning file has changed
+autocmd FileChangedShell * :
+
 " vim-plug call
 call plug#begin('~/.vim/plugged')
 
