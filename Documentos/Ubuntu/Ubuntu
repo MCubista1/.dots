@@ -1026,7 +1026,7 @@ GTK_DEBUG=interactive app_command
 
 # reboot, poweroff without password
 sudo visudo
-%group_name ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot, /sbin/shutdown
+user_name ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot, /sbin/shutdown
 
 # xonsh OSError: [Errno 9] Bad file descriptor
 #Xonsh encountered an issue during launch
