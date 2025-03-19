@@ -190,6 +190,9 @@ nnoremap <Space>ls :set spell spelllang=es<CR>
 nnoremap <Space>ss :%s/<C-r>0/
 vnoremap <Space>ss y:%s/<C-r>0/
 
+" search
+nnoremap <Space>/ /<C-r>0<CR>
+vnoremap <Space>/ y/<C-r>0<CR>
 
 
 " oooooo     oooo  o8o
