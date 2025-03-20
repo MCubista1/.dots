@@ -53,7 +53,7 @@
     font = Liberation Mono 10
     foreground_color = "#abb2bf"
     scrollbar_position = hidden
-    scrollback_lines = 1000
+    scrollback_lines = 10000
     palette = "#263238:#ff5370:#c3e88d:#ffcb6b:#82aaff:#6182b8:#89ddff:#eeefff:#546e7a:#e53935:#91b859:#ffb62c:#6182b8:#7c4dff:#39adb5:#eeefff"
     use_custom_command = True
     custom_command = /usr/bin/xonsh
