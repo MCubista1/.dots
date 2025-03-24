@@ -255,6 +255,9 @@ au BufRead,BufNewFile *mq4,*.mq5 set filetype=sh
 "/____/\__/\__,_/_/   /____/\___/\__,_/_/   \___/_/ /_/ 
 "
 
+let s:savedCpo = &cpo
+set cpo&vim
+
 function! s:VStarsearch_searchCWord()
 	let wordStr = expand("<cword>")
 	if strlen(wordStr) == 0
