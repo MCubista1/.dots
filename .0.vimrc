@@ -172,7 +172,7 @@ nnoremap <Space>- Vu:s/ /_/g<CR>
 vnoremap <Space>- ugv:s/\%V /_/g<CR>
 
 " replace one space for one tab
-nnoremap <Space><tab> :s/ /\t/g<CR>
+nmap <Space><tab> :s/ /\t/g<CR>*
 
 " Reload vimrc file
 noremap <Space>r :so $MYVIMRC<CR>
@@ -246,3 +246,50 @@ colorscheme material-theme
 " set default syntax if there is none
 au BufNewFile,BufRead,SourcePre * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
 au BufRead,BufNewFile *mq4,*.mq5 set filetype=sh
+
+
+"   _____ __             _____                      __  
+"  / ___// /_____ ______/ ___/___  ____ ___________/ /_ 
+"  \__ \/ __/ __ `/ ___/\__ \/ _ \/ __ `/ ___/ ___/ __ \
+" ___/ / /_/ /_/ / /   ___/ /  __/ /_/ / /  / /__/ / / /
+"/____/\__/\__,_/_/   /____/\___/\__,_/_/   \___/_/ /_/ 
+"
+
+function! s:VStarsearch_searchCWord()
+	let wordStr = expand("<cword>")
+	if strlen(wordStr) == 0
+		echohl ErrorMsg
+		echo 'E348: No string under cursor'
+		echohl NONE
+		return
+	endif
+	
+	if wordStr[0] =~ '\<'
+		let @/ = '\<' . wordStr . '\>'
+	else
+		let @/ = wordStr
+	endif
+
+	let savedUnnamed = @"
+	let savedS = @s
+	normal! "syiw
+	if wordStr != @s
+		normal! w
+	endif
+	let @s = savedS
+	let @" = savedUnnamed
+endfunction
+
+function! s:VStarsearch_searchVWord()
+	let savedUnnamed = @"
+	let savedS = @s
+	normal! gv"sy
+	let @/ = '\V' . substitute(escape(@s, '\'), '\n', '\\n', 'g')
+	let @s = savedS
+	let @" = savedUnnamed
+endfunction
+
+nnoremap <silent> * :call <SID>VStarsearch_searchCWord()<CR>:set hls<CR>
+vnoremap <silent> * :<C-u>call <SID>VStarsearch_searchVWord()<CR>:set hls<CR>
+
+let &cpo = s:savedCpo
