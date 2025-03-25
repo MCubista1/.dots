@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# NASA Moon Phase and Libration
+# https://svs.gsfc.nasa.gov/gallery/moonphase/
+# 2021
+#moon_url="https://svs.gsfc.nasa.gov/vis/a000000/a004800/a004874/frames/730x730_1x1_30p/moon.$p_hours.jpg"
+# 2022
+#moon_url="https://svs.gsfc.nasa.gov/vis/a000000/a004900/a004955/frames/730x730_1x1_30p/moon.$p_hours.jpg"
+# 2023
+#moon_url="https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005048/frames/730x730_1x1_30p/moon.$p_hours.jpg"
+# 2024
+#moon_url="https://svs.gsfc.nasa.gov/vis/a000000/a005100/a005187/frames/730x730_1x1_30p/moon.$p_hours.jpg"	
+
 while :
 do
     d_min=$(date -u +%M | sed 's/^0*//')
@@ -7,19 +18,17 @@ do
     d_day=$(date -u +%j | sed 's/^0*//')
     d_hours=$(( (d_day - 1) * 24 + d_hour + d_min / 30 + 1 ))
     p_hours=$(printf "%04d\n" "$d_hours")
-	# NASA Moon Phase and Libration
-	# 2021
-    #moon_url="https://svs.gsfc.nasa.gov/vis/a000000/a004800/a004874/frames/730x730_1x1_30p/moon.$p_hours.jpg"
-	# 2022
-    #moon_url="https://svs.gsfc.nasa.gov/vis/a000000/a004900/a004955/frames/730x730_1x1_30p/moon.$p_hours.jpg"
-	# 2023
-    #moon_url="https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005048/frames/730x730_1x1_30p/moon.$p_hours.jpg"
-	# 2024
-	moon_url="https://svs.gsfc.nasa.gov/vis/a000000/a005100/a005187/frames/730x730_1x1_30p/moon.$p_hours.jpg"
-    moon_path="/home/ed/.moon.jpg"
-    wget "$moon_url" -qO "$moon_path"
-    convert "$moon_path" +sigmoidal-contrast 3.5x0 -fuzz 7% -fill "#263238" -opaque "#000000" "$moon_path"
-    clear
-    chafa -w 9 --color-space din99d "$moon_path"
-    sleep 1800
+	moon_h=$(cat "/home/ed/.moon_h")
+	if [[ "$p_hours" != "$moon_h" ]]; then
+		# 2025
+		moon_url="https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005415/frames/730x730_1x1_30p/moon.$p_hours.jpg"
+		moon_path="/home/ed/.moon.jpg"
+		wget "$moon_url" -qO "$moon_path"
+		convert "$moon_path" +sigmoidal-contrast 3.5x0 -fuzz 7% -fill "#263238" -opaque "#000000" "$moon_path"
+		clear
+		chafa -w 9 --color-space din99d "$moon_path"
+		echo "$p_hours" > "/home/ed/.moon_h"
+	fi
+    sleep 60
 done
+
