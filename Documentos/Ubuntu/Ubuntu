@@ -1005,12 +1005,13 @@ find . -type f -iname "*.sw*"
 # delete temporary vim files
 find . -type f -iname ".*.sw*" -delete
 
-# python3.9 virtual environtment
+# python3.9 virtual environtment on python3.8
 sudo apt install python3.9
 sudo apt install python3.9-venv
 #sudo apt install python3-venv
 mkdir my_env && cd my_env
 python3.9 -m venv env
+#usage
 bash
 source env/bin/activate
 #(env) $
@@ -1034,6 +1035,25 @@ user_name ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot, /sbin/shutdown
 #Xonsh encountered an issue during launch
 #Ubuntu 24.04, Python 3.12.3
 python3 -m pip install prompt-toolkit==3.0.40
+
+# python3.8 virtual environment on python3.10
+mkdir ~/miniconda3
+cd ~/miniconda3
+download miniconda3.sh
+#https://repo.anaconda.com/miniconda
+chmod +x miniconda3.sh
+~/miniconda.sh -b -u -p ~/miniconda3
+rm ~/miniconda3.sh
+source ~/miniconda3/bin/activate
+conda init --all
+# new venv
+conda update conda
+conda create -n yourenvname python=x.x anaconda
+#usage
+conda activate python8
+#(env) $
+conda deactivate
+
 
 
 
