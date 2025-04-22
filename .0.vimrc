@@ -194,6 +194,10 @@ vnoremap <Space>ss y:%s/<C-r>0/
 nnoremap <Space>/ /<C-r>0<CR>
 vnoremap <Space>/ y/<C-r>0<CR>
 
+" enclose with parenthesis
+nnoremap <Space>ap i(<Esc>wwi)<Esc>bh
+vnoremap <Space>ap <Esc>a)<Esc>gvo<Esc>i(<Esc>
+
 
 " oooooo     oooo  o8o
 "  `888.     .8'   `"'
