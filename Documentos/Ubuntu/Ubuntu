@@ -539,6 +539,9 @@ git show ef1a4b4
 git show --stat --oneline b24f5fb
 git show --name-only --oneline b24f5fb
 
+# revert to previous commit, unpublished commits
+git reset --hard 0d1d7fc32
+
 # capture key in bash and vim
 C-V
 
