@@ -160,7 +160,7 @@ nnoremap <Space>k :nnoremap K k{jzz<CR>:nnoremap J }}{jzz<CR>
 nnoremap <Space>7 :set tabstop=4<CR>
 nnoremap <Space>8 :set tabstop=8<CR>
 nnoremap <Space>9 :set tabstop=12<CR>
-nnoremap <Space>0 :set tabstop=18<CR>
+nnoremap <Space>0 :set tabstop=20<CR>
 
 " display column on status bar
 nnoremap <Space>c :set statusline+=col:\ %c <CR>
