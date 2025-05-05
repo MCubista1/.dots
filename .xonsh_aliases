@@ -103,7 +103,7 @@ aliases['nfetch'] = '$[tput reset]; $[clear]; neofetch'
 aliases['matrix'] = 'cmatrix -ab'
 aliases['fortune'] = 'bash -c "fortune | figlet -f smblock | lolcat"'
 aliases['sai'] = 't && bonsai -L 28 -c 🌸,🍂,🍂'
-aliases['inv'] = 't && invaders'
+aliases['inv'] = 'invaders'
 aliases['pac'] = 'pacman'
 
 # notification
