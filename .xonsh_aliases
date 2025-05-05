@@ -104,6 +104,7 @@ aliases['matrix'] = 'cmatrix -ab'
 aliases['fortune'] = 'bash -c "fortune | figlet -f smblock | lolcat"'
 aliases['sai'] = 't && bonsai -L 28 -c 🌸,🍂,🍂'
 aliases['inv'] = 't && invaders'
+aliases['pac'] = 'pacman'
 
 # notification
 aliases['beep'] = 'paplay $BEEP1'
