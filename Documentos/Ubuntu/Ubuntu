@@ -541,6 +541,7 @@ git show --name-only --oneline b24f5fb
 
 # revert to previous commit, unpublished commits
 git reset --hard 0d1d7fc32
+git reset --hard HEAD~1
 
 # capture key in bash and vim
 C-V
