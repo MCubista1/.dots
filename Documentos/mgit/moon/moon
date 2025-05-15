@@ -11,6 +11,7 @@
 # 2024
 #moon_url="https://svs.gsfc.nasa.gov/vis/a000000/a005100/a005187/frames/730x730_1x1_30p/moon.$p_hours.jpg"	
 
+moon_path="/home/ed/.moon.jpg"
 while :
 do
     d_min=$(date -u +%M | sed 's/^0*//')
@@ -22,13 +23,12 @@ do
 	if [[ "$p_hours" != "$moon_h" ]]; then
 		# 2025
 		moon_url="https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005415/frames/730x730_1x1_30p/moon.$p_hours.jpg"
-		moon_path="/home/ed/.moon.jpg"
 		wget "$moon_url" -qO "$moon_path"
 		convert "$moon_path" +sigmoidal-contrast 3.5x0 -fuzz 7% -fill "#263238" -opaque "#000000" "$moon_path"
 		clear
-		chafa -w 9 --color-space din99d "$moon_path"
 		echo "$p_hours" > "/home/ed/.moon_h"
 	fi
+	chafa -w 9 --color-space din99d "$moon_path"
     sleep 60
 done
 
