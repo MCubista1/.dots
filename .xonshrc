@@ -41,6 +41,10 @@ exclude_dirs += ' -and -not -path "*/node_modules/*"'
 $fzf_find_command = f'find "$(pwd)" -maxdepth 3 -type f {exclude_dirs}'
 $fzf_find_dirs_command = f'find "$(pwd)" -maxdepth 3 -type d {exclude_dirs} | sort -u'
 
+# completion menu colors, style_tools
+$XONSH_STYLE_OVERRIDES["Token.PTK.CompletionMenu.Completion"] = "#ABB2BF bg:ansiblack"
+$XONSH_STYLE_OVERRIDES["Token.PTK.CompletionMenu.Completion.Current"] = "#1A2327 bg:#ABB2BF"
+
 # fzf defaults
 $FZF_DEFAULT_OPTS = '--bind "-:preview-half-page-down,=:preview-half-page-up,ctrl-d:cancel+first,[:down,]:up"'
 $FZF_DEFAULT_OPTS += ' --preview-window "noborder"'
