@@ -1,5 +1,0 @@
-#!/bin/bash
-
-mv /home/ed/Imágenes/*.png /home/ed/Imágenes/dump 2>/dev/null
-mv /home/ed/Imágenes/*.jpg /home/ed/Imágenes/dump 2>/dev/null
-
