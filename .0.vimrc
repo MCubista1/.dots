@@ -199,6 +199,14 @@ vnoremap <Space>/ y/<C-r>0<CR>
 nnoremap <Space>ap i(<Esc>wea)<Esc>bh
 vnoremap <Space>ap <Esc>a)<Esc>gvo<Esc>i(<Esc>
 
+" enclose with brackets
+nnoremap <Space>a[ i[<Esc>wea]<Esc>bh
+vnoremap <Space>a[ <Esc>a]<Esc>gvo<Esc>i[<Esc>
+
+" enclose with quotes
+nnoremap <Space>a' i'<Esc>wea'<Esc>bh
+vnoremap <Space>a' <Esc>a'<Esc>gvo<Esc>i'<Esc>
+
 
 " oooooo     oooo  o8o
 "  `888.     .8'   `"'
