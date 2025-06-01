@@ -196,7 +196,7 @@ nnoremap <Space>/ /<C-r>0<CR>
 vnoremap <Space>/ y/<C-r>0<CR>
 
 " enclose with parenthesis
-nnoremap <Space>ap i(<Esc>wwi)<Esc>bh
+nnoremap <Space>ap i(<Esc>wea)<Esc>bh
 vnoremap <Space>ap <Esc>a)<Esc>gvo<Esc>i(<Esc>
 
 
