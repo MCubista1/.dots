@@ -1,0 +1,1 @@
+{"base-dir": "/home/ed/Música", "template": "%{artist}/%{album}/%{track} - %{title}", "overwrite": false, "no-art": false, "embed-art": false, "embed-lyrics": false, "group": false, "no-slugify": false, "ok-chars": "-_~", "space-char": "-", "ascii-only": false, "keep-spaces": false, "keep-upper": false, "no-confirm": false, "debug": false, "embed-genres": false}
