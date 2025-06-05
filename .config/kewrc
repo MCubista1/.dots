@@ -1,6 +1,6 @@
 # Make sure that kew is closed before editing this file in order for changes to take effect.
 
-path=/home/ed/Música
+path=/home/ed/Música/mus
 coverEnabled=1
 coverAnsi=0
 visualizerEnabled=0
@@ -20,32 +20,32 @@ cacheLibrary=-1
 # Logo color: 
 color=6
 # Header color in library view: 
-artistColor=6
+artistColor=9
 # Now playing song text in library view: 
-titleColor=6
+titleColor=9
 # Color of enqueued songs in library view: 
-enqueuedColor=6
+enqueuedColor=9
 
 # Key Bindings:
 
 volumeUp=+
 volumeUpAlt==
 volumeDown=-
-previousTrackAlt=h
-nextTrackAlt=l
+previousTrackAlt=s
+nextTrackAlt=d
 scrollUpAlt=k
 scrollDownAlt=j
 switchNumberedSong=
-togglePause=p
-toggleColorsDerivedFrom=i
+togglePause=a
+toggleColorsDerivedFrom=
 toggleVisualizer=v
 toggleCovers=c
-toggleAscii=b
+toggleAscii=
 toggleRepeat=r
 toggleShuffle=s
-seekBackward=a
-seekForward=d
-savePlaylist=x
+seekBackward=h
+seekForward=l
+savePlaylist=
 addToMainPlaylist=.
 updateLibrary=u
 quit=q
