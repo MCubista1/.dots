@@ -12,7 +12,7 @@
         "musixmatch"
     ],
     "ffmpeg": "ffmpeg",
-    "bitrate": null,
+    "bitrate": "192k",
     "ffmpeg_args": null,
     "format": "mp3",
     "save_file": "index.spotdl",
