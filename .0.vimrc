@@ -26,6 +26,11 @@ nnoremap Y y$
 nnoremap p "0p
 vnoremap p "0p
 
+" d to "0 register
+nnoremap d "0d
+nnoremap D "0D
+vnoremap d "0d
+
 " Join lines
 nnoremap M J
 vnoremap M J
