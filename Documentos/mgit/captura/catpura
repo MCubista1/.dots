@@ -1,0 +1,4 @@
+#!/bin/bash
+
+maim /home/ed/Imágenes/maim/$(date +%Y%m%d_%H%M%S).png
+paplay /usr/share/sounds/Yaru/stereo/message-new-instant.oga
