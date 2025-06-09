@@ -157,8 +157,11 @@ noremap <Space>q :wq<Enter>
 noremap <Space>Q :q!<Enter>
 noremap <Space>E :e!<Enter>zz
 
-" Reload vimrc file
+" Reload vimrc file, reload filetype for python files
 noremap <Space>r :so $MYVIMRC<CR>
+			\ :exe "if &syntax == 'python' 
+			\ \n exe ':set filetype='.&filetype 
+			\ \n endif"<CR>:f<CR>
 
 " paste from clipboard
 noremap <Space>p "+p
@@ -285,10 +288,6 @@ set linebreak
 " split panes to the right and below
 set splitright
 set splitbelow
-
-" set default syntax if there is none
-au BufNewFile,BufRead,SourcePre * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
-au BufRead,BufNewFile *mq4,*.mq5 set filetype=sh
 
 " Material Theme
 set termguicolors

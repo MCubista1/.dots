@@ -51,10 +51,14 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
+" set sh syntax 
+au BufNewFile,BufRead,SourcePre * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
+au BufRead,BufNewFile *mq4,*.mq5 set filetype=sh
+
 " set tabs on python files
 aug python
     " ftype/python.vim overwrites this
-    au FileType python setlocal ts=4 sw=4 sts=0 noexpandtab
+    au FileType python setlocal ts=4 sw=4 sts=0 expandtab
 aug end
 
 " statusline always visible
