@@ -73,7 +73,7 @@ aliases['com'] = 'cd ~/Documentos/comcast'
 aliases['rnddir'] = 'cd ~/Documentos/mgit/rnd'
 aliases['steamdir'] = 'cd ~/.steam/debian-installation/steamapps/common'
 aliases['layout'] = 'tail -12 ~/Documentos/fx/midas/atomsk/ubtst/.notes'
-aliases['rmsw'] = 'find . -type f -name ".*.sw*" -delete'
+aliases['rmsw'] = 'find . -type f -name ".*.sw*" -delete -print'
 
 # vim
 aliases['v'] = 'vim'
