@@ -277,6 +277,7 @@ python3 setup.py install
 
 # webp to png
 dwebp file.webp -o file.png
+find -name "*.webp" -exec dwebp {} -o {}.png \;
 
 # rar folder
 rar a folder.rar folder
@@ -742,12 +743,12 @@ killall xmobar
 #primary external monitor
 xrandr --output VGA-1 --primary
 
-# covert webp files to png
-find -name "*.webp" -exec dwebp {} -o {}.png \;
-
 # eneble/disable gnome super key
 gsettings set org.gnome.mutter overlay-key 'super'
 gsettings set org.gnome.mutter overlay-key ''
+
+# picture size
+identify file.png
 
 # crop image (Width, Height, Left/Top margin)
 convert -crop WxH+L+T input.jpg output.jpg
