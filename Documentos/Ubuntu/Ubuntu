@@ -373,6 +373,12 @@ ffmpeg -i 1.mp4 1.aac
 # trim audio file
 ffmpeg -i 1.aac -ss 00:00:20 -to 00:00:40 -c copy 2.aac 
 
+# mp3 audio to ogg
+ffmpeg -i file.mp3 -c:a libvorbis file.ogg
+for f in ./*.mp3; do
+	ffmpeg -i "$f" -c:a libvorbis "${f/%mp3/ogg}"
+done
+
 # reload .bashrc
 . ~/.bashrc
 
