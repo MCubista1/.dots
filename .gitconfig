@@ -9,11 +9,11 @@
 	aa = add .
 	c = commit -m
 	ca = commit -am
-	cam = commit --amend
+	cam = commit --amend #change commit message
 	ch = checkout
 	p = push
 	cd1 = clone --depth 1
-	r = restore
+	r = restore #file
 
 	# Log
 	l = log --oneline --graph
