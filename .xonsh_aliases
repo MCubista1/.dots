@@ -68,6 +68,7 @@ aliases['gada'] = 'cd ~/Documentos/gada'
 aliases['uni'] = 'cd ~/Documentos/unitec'
 aliases['eng'] = 'cd ~/Documentos/eng'
 aliases['com'] = 'cd ~/Documentos/comcast'
+aliases['wh'] = 'cd ~/Documentos/libros/wh40k'
 
 # misc directories
 aliases['rnddir'] = 'cd ~/Documentos/mgit/rnd'
@@ -130,7 +131,7 @@ aliases['s'] = 'cd ~/.tt && tt -words ox5000 -n 25 -t 60 -nobackspace -noskip -s
 aliases['dwarf'] = 'xdg-open ~/Documentos/libros/dwarf-fortress/Getting_Started_with_Dwarf_Fortress.pdf'
 aliases['xbox'] = 'sudo xboxdrv --silent'
 aliases['sync'] = 'spotdl --bitrate 192k sync'
-aliases['pytop'] = 'bpytop'
+aliases['btop'] = 'bpytop'
 
 # rubik
 aliases['sw'] = 'peaclock -u ~/.peaclock/sw'
