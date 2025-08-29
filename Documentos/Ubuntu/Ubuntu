@@ -230,7 +230,11 @@ k2pdfopt -h 1430p -w 1080p file.pdf -mode def -ocr-
 pdfcrop in.pdf out.pdf
 
 # trim pdf
-./crop -t "nleft ntop nright nbottom" in.pdf out.pcktest.gitdf 
+#./crop -t "nleft ntop nright nbottom" in.pdf out.pcktest.gitdf 
+pdfcpu crop -- "ntop nright nbottom nleft" file.pdf file_crop.pdf
+
+# pdf size
+pdfinfo file.pdf
 
 # extraer paginas pdf
 pdftk in.pdf cat n1-n2 output out.pdf
