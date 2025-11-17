@@ -894,6 +894,10 @@ r rotate 90 degrees
 ctrl+n toggle status bar
 tab show index
 
+# terminator, close current terminal
+ctrl-shift-q
+ctrl-shift-d
+
 # vimtes is installed
 :VimtexInfo
 
