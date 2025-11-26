@@ -1086,6 +1086,18 @@ sudo kpartx -a filer.img
 sudo kpartx -l filer.img
 sudo kpartx -d filer.img
 
+# increase partition size of img file
+# count in MB
+dd if=/dev/zero bs=1M count=1000 >> ./file.img
+parted file.img
+(parted) print
+# part number
+(parted) resizepart 2
+# endM, endG from print
+End? [current_end]? new_end
+(parted) print
+(parted) quit
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
