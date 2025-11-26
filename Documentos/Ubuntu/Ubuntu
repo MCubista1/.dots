@@ -1080,6 +1080,12 @@ ffmpeg -i file_name.webm file_name.mp3
 sudo apt install exfatprogs
 #sudo apt install exfat-utils
 
+# mount img file and edit content
+sudo apt install kpartx
+sudo kpartx -a filer.img
+sudo kpartx -l filer.img
+sudo kpartx -d filer.img
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
