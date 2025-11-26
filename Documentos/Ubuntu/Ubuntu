@@ -1076,6 +1076,10 @@ conda deactivate
 # convert webm to mp3
 ffmpeg -i file_name.webm file_name.mp3
 
+# exFAT on gnome disk utility
+sudo apt install exfatprogs
+#sudo apt install exfat-utils
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
