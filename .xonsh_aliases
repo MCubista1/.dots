@@ -5,7 +5,7 @@ aliases['lls'] = 'du -ah -d 1 | sort -hr'
 aliases['h'] = 'cd ~'
 aliases['cu'] = 'cd ..'
 aliases['ca'] = 'cd -'
-aliases['mc'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
+aliases['mkcd'] = lambda args: execx(f'mkdir -p {repr(args[0])} && cd {repr(args[0])}')
 aliases['cx'] = 'chmod +x'
 aliases['re'] = 'grep -RIin'
 aliases['se'] = 'sed -i -e'
@@ -18,7 +18,6 @@ aliases['hibernate'] = 'sudo systemctl hibernate'
 aliases['sensor'] = 'watch -n 1 -t sensors -A'
 aliases['flush'] = 'sudo systemd-resolve --flush-caches'
 aliases['clip'] = 'xclip -sel clip'
-aliases['k'] = 'pkill -9 -f "/bin/sh"'
 
 # terminal
 aliases['t'] = '$[tput reset]; $[clear]'
@@ -26,32 +25,26 @@ aliases['e'] = 'exit'
 
 # network
 aliases['ssh'] = 'ssh -q'
-aliases['nm'] = 'sudo nmap -sn 192.168.100.0/24'
-aliases['as'] = 'sudo arp-scan 192.168.100.0/24'
-aliases['red'] = 'sudo arp-scan 192.168.100.0/24'
-aliases['serve'] = 'bash -c "nohup npx serve ~/Documentos/fx/midas/midas_data &>/dev/null &"'
-aliases['ventoy'] = 'sudo ~/Documentos/ventoy/VentoyWeb.sh'
+aliases['scan'] = 'sudo nmap -sn 192.168.100.0/24'
+aliases['scan2'] = 'sudo arp-scan 192.168.100.0/24'
 aliases['auth'] = 'cat ~/Documentos/authtp | xargs auth2f'
-aliases['start'] = 'ray start --head --num-cpus=0 --port=6379 && ssh atom'
-aliases['stop'] = 'ray stop'
 
 # directories
 aliases['gitdir'] = 'cd ~/Documentos/git'
 aliases['mgit'] = 'cd ~/Documentos/mgit'
-aliases['midas'] = 'cd ~/Documentos/fx/midas/midas_data'
-aliases['data'] = 'cd ~/Documentos/fx/midas/midas_data/data/H1'
-aliases['atom'] = 'cd ~/Documentos/fx/midas/atomsk/acs'
+aliases['midas'] = 'cd ~/Documentos/fx/midas'
+aliases['data'] = 'cd ~/Documentos/fx/midas/atomsk/forexconnect'
+aliases['atom'] = 'cd ~/Documentos/fx/midas/atomsk'
 aliases['ubt'] = 'cd ~/Documentos/fx/midas/atomsk/ubtst'
-aliases['entry'] = 'cd ~/Documentos/fx/midas/atomsk/ubtst/logic_entry'
 aliases['indis'] = 'cd ~/Documentos/mgit/python-packages/indis'
 aliases['nnfx'] = 'cd ~/Documentos/fx/nnfx'
 aliases['udir'] = 'cd ~/Documentos/Ubuntu'
 
 # user directories
-aliases['conf'] = 'cd ~/.config'
+aliases['confdir'] = 'cd ~/.config'
 aliases['bindir'] = 'cd ~/.local/bin'
 aliases['godir'] = 'cd ~/go/bin'
-aliases['pydir'] = 'cd ~/.local/lib/python3.10/site-packages'
+aliases['pydir'] = 'cd ~/.local/lib/python3.12/site-packages'
 
 # media directories
 aliases['doc'] = 'cd ~/Documentos'
@@ -71,28 +64,25 @@ aliases['eng'] = 'cd ~/Documentos/eng'
 aliases['com'] = 'cd ~/Documentos/comcast'
 aliases['wh'] = 'cd ~/Documentos/libros/wh40k'
 
-# misc directories
-aliases['rnddir'] = 'cd ~/Documentos/mgit/rnd'
-aliases['steamdir'] = 'cd ~/.steam/debian-installation/steamapps/common'
-aliases['layout'] = 'tail -12 ~/Documentos/fx/midas/atomsk/ubtst/.notes'
-aliases['rmsw'] = 'find . -type f -name ".*.sw*" -delete -print'
-
 # vim
 aliases['v'] = 'vim'
 aliases['vx'] = 'vim ~/.xonshrc'
 aliases['va'] = 'vim ~/.xonsh_aliases'
 aliases['rx'] = 'source ~/.xonshrc'
-aliases['pyenv'] = 'source ~/.xonshrc_conda'
 aliases['vg'] = 'vim ~/.gitconfig'
 aliases['vu'] = 'vim ~/Documentos/Ubuntu/Ubuntu'
 aliases['vc'] = 'vim ~/Documentos/Ubuntu/colors'
 aliases['vv'] = 'vim ~/.0.vimrc'
 aliases['vvrc'] = 'vim ~/.vimrc'
 aliases['vs'] = 'vim ~/.ssh/config'
+aliases['rmsw'] = 'find . -type f -name ".*.sw*" -delete -print'
 
 # python
 aliases['py'] = 'python3'
 aliases['pip'] = 'python3 -m pip'
+aliases['start'] = 'ray start --head --num-cpus=0 --port=6379 && ssh atom'
+aliases['stop'] = 'ray stop'
+aliases['pyenv'] = 'source ~/.xonshrc_conda'
 
 # git
 aliases['g'] = 'git'
@@ -108,6 +98,8 @@ aliases['fortune'] = 'bash -c "fortune | figlet -f smblock | lolcat"'
 aliases['sai'] = 't && bonsai -L 28 -c 🌸,🍂,🍂'
 aliases['inv'] = 'invaders'
 aliases['pac'] = 'pacman'
+aliases['tetris'] = '/snap/bin/tetris-thefenriswolf.tetris -a'
+aliases['pmoon'] = 'watch -t -n1800 pyphoon -x -n 19'
 
 # notification
 aliases['beep'] = 'paplay $BEEP1'
@@ -122,17 +114,14 @@ aliases['cal'] = 'ncal -b -M -w -A2'
 aliases['calm'] = 'ncal -b -M -w'
 aliases['caly'] = 'ncal -b -M -w -y'
 aliases['week'] = 'date +%U'
-aliases['ene'] = 'echo -n ñ | xclip -sel clip'
+aliases['btop'] = 'bpytop'
+aliases['sync'] = 'spotdl --bitrate 192k sync'
 aliases['spicetify'] = '~/spicetify-cli/spicetify'
-aliases['tetris'] = '/snap/bin/tetris-thefenriswolf.tetris -a'
-aliases['pmoon'] = 'watch -t -n1800 pyphoon -x -n 19'
+aliases['ventoy'] = 'sudo ~/Documentos/ventoy_1.1.07/VentoyGUI.x86_64'
 # 25 words * 5 min (300s) = -n 125
 # 25 words * 1 min (60s) = -n 25
 aliases['s'] = 'cd ~/.tt && tt -words ox5000 -n 25 -t 60 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
-aliases['dwarf'] = 'xdg-open ~/Documentos/libros/dwarf-fortress/Getting_Started_with_Dwarf_Fortress.pdf'
-aliases['xbox'] = 'sudo xboxdrv --silent'
-aliases['sync'] = 'spotdl --bitrate 192k sync'
-aliases['btop'] = 'bpytop'
+aliases['ene'] = 'echo -n ñ | xclip -sel clip'
 
 # rubik
 aliases['sw'] = 'peaclock -u ~/.peaclock/sw'
