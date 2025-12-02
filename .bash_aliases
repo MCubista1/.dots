@@ -8,6 +8,8 @@ alias plot="python3 ~/acs/plot.py | grep '|*.|' | cut -d '|' -f2"
 alias logs="vim ~/acs/.log_acs"
 alias pos="python3 ~/tst/pos.py"
 alias top="bpytop"
+alias start="ray start --address='192.168.100.243:6379' && bpytop"
+alias stop="ray stop && sudo poweroff"
 
 alias ls="ls -A --color"
 alias ll="ls -lAh --color"
