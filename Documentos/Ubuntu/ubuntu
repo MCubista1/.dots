@@ -502,8 +502,8 @@ dots commit -m 'commit message'
 # github ssh key
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/github -C github_user_mail
 eval "$(ssh-agent -s)"
-ssh-add .ssh/github
-cat .ssh/github.pub
+ssh-add ~/.ssh/github
+cat ~/.ssh/github.pub
 # add ssh key to github
 ssh -T git@github.com
 
@@ -514,7 +514,7 @@ alias dots='git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 dots config status.showUntrackedFiles no
 # restore files
 # git --version < 2.23
-dots checkout .
+#dots checkout .
 # git --version >= 2.23
 dots restore .
 # github authentication
@@ -831,9 +831,10 @@ PATH=$PATH:~/opt/bin
 # sed delete characters after / of file lines
 sed -i 's/\/.*//' file
 
-# ssh login message
+# remove ssh login message
 ls /etc/update-motd.d
-sudo chmod -x *
+sudo chmod -x /etc/update-motd.d/*
+sudo systemctl restart ssh
 
 # select visudo editor
 sudo update-alternatives --config editor
@@ -1117,6 +1118,11 @@ remote: cd project.git/hooks; vim post-receive
 GIT_WORK_TREE=/home/atomsk/project GIT_DIR=/home/atomsk/project/.git git pull
 remote: chmod +x post-receive
 remote: git clone project.git project; cd project; git pull
+
+# remove desktop
+sudo apt purge x11*
+sudo apt purge gnome*
+sudo apt autoremove
 
 
 
