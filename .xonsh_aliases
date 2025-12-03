@@ -38,7 +38,7 @@ aliases['atom'] = 'cd ~/Documentos/fx/midas/atomsk'
 aliases['ubt'] = 'cd ~/Documentos/fx/midas/atomsk/ubtst'
 aliases['indis'] = 'cd ~/Documentos/mgit/python-packages/indis'
 aliases['nnfx'] = 'cd ~/Documentos/fx/nnfx'
-aliases['udir'] = 'cd ~/Documentos/ubuntu'
+aliases['udir'] = 'cd ~/Documentos/Ubuntu'
 
 # user directories
 aliases['confdir'] = 'cd ~/.config'
