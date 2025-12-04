@@ -1127,6 +1127,14 @@ sudo apt purge x11*
 sudo apt purge gnome*
 sudo apt autoremove
 
+# remove snap
+sudo snap list
+sudo snap remove each_package*
+sudo snap list
+# No snaps are installed yet. Try 'snap install hello-world'
+sudo apt purge snapd
+sudo apt-mark hold snapd
+
 
 
 # ██████╗  █████╗ ███████╗██████╗ ██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗
