@@ -839,9 +839,6 @@ ls /etc/update-motd.d
 sudo chmod -x /etc/update-motd.d/*
 sudo systemctl restart ssh
 
-# select visudo editor
-sudo update-alternatives --config editor
-
 # select crontab editor
 select-editor
 sudo select-editor
@@ -1050,10 +1047,6 @@ python3 -m pip config set global.break-system-packages true
 bash
 GTK_DEBUG=interactive app_command
 
-# reboot, poweroff without password
-sudo visudo
-user_name ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot, /sbin/shutdown
-
 # xonsh OSError: [Errno 9] Bad file descriptor
 #Xonsh encountered an issue during launch
 #Ubuntu 24.04, Python 3.12.3
@@ -1134,6 +1127,13 @@ sudo snap list
 # No snaps are installed yet. Try 'snap install hello-world'
 sudo apt purge snapd
 sudo apt-mark hold snapd
+
+# select visudo editor
+sudo update-alternatives --config editor
+
+# reboot, poweroff without password
+sudo visudo
+user_name ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot, /sbin/shutdown
 
 
 
