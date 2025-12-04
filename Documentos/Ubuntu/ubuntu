@@ -521,6 +521,9 @@ dots restore .
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/github
 # usage
+# change .dots/config http url 
+# url = git@github.com:user/repo.git
+# set git global user.name and user.email
 dots status
 dots commit -am 'commit message'
 dots push -u origin pi
