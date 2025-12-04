@@ -1,8 +1,6 @@
 alias fetch="neofetch"
 alias btop="bpytop"
-alias fxcm="python3 ~/tst_fxcm.py"
-alias start="ray start --address='192.168.100.243:6379' && bpytop"
-alias stop="ray stop && sudo poweroff"
+alias inv="invaders"
 
 alias ls="ls -A --color"
 alias ll="ls -lAh --color"
@@ -11,7 +9,6 @@ alias week="date +%U"
 
 alias t="tput reset && clear"
 alias e="exit"
-alias x="xonsh"
 alias cx="chmod +x"
 
 alias h="cd ~"
@@ -36,9 +33,6 @@ alias up="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 alias poweroff="sudo poweroff"
 #alias poweroff="echo rebooting... && sudo reboot"
 alias reboot="sudo reboot"
-
-alias vint="vim ~/.local/bin/internet_status"
-alias vtst="vim ~/.local/bin/tst"
 
 mkcd() {
     mkdir -p "$1" && cd "$1";
