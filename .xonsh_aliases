@@ -83,6 +83,7 @@ aliases['pip'] = 'python3 -m pip'
 aliases['start'] = 'ray start --head --num-cpus=0 --port=6379 && ssh atom'
 aliases['stop'] = 'ray stop'
 aliases['pyenv'] = 'source ~/.xonshrc_conda'
+aliases['py8'] = 'conda activate python8'
 
 # git
 aliases['g'] = 'git'
