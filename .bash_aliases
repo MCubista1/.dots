@@ -6,7 +6,7 @@ alias logs="vim ~/acs/.log_acs"
 alias pos="python3 ~/tst/pos.py"
 alias top="bpytop"
 alias start="ray start --address='192.168.100.243:6379' && bpytop"
-alias stop="ray stop && sudo poweroff"
+alias stop="ray stop && sudo poweroff --no-wall"
 
 alias ls="ls -A --color"
 alias ll="ls -lAh --color"
@@ -37,9 +37,9 @@ alias github='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/github'
 
 alias up="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 
-alias poweroff="sudo poweroff"
+alias poweroff="sudo poweroff --no-wall"
 #alias poweroff="echo rebooting... && sudo reboot"
-alias reboot="sudo reboot"
+alias reboot="sudo reboot --no-wall"
 
 alias vint="vim ~/.local/bin/internet_status"
 alias vtst="vim ~/.local/bin/tst"
