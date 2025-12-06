@@ -1,4 +1,4 @@
-source ~/.0.vimrc
+source ~/.vimrc_a
 
 " Disable arrows in normal and visual modes
 map <Up> <Nop>
