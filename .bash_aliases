@@ -28,7 +28,7 @@ alias va="vim ~/.bash_aliases"
 alias vb="vim ~/.bashrc"
 alias rb=". ~/.bashrc"
 alias vg="vim ~/.gitconfig"
-alias vv="vim ~/.0.vimrc"
+alias vv="vim ~/.vimrc_a"
 
 alias g="git"
 alias dots="git --git-dir=$HOME/.dots/ --work-tree=$HOME"
