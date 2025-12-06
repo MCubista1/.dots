@@ -1,0 +1,55 @@
+"           __            _
+"    ____  / /_  ______ _(_)___  _____
+"   / __ \/ / / / / __ `/ / __ \/ ___/
+"  / /_/ / / /_/ / /_/ / / / / (__  )
+" / .___/_/\__,_/\__, /_/_/ /_/____/
+"/_/            /____/
+
+"## vim-plug call
+call plug#begin('~/.vim/plugged')
+
+" vimtex
+Plug 'lervag/vimtex'
+Plug 'tpope/vim-fugitive'
+
+" vim-plug end call
+call plug#end()
+
+" fugitive git aliases
+command Gs :Git status -b --porcelain
+command Gd :Git diff
+
+" stage file
+command -bar Ga :Git add % | :Updstl
+
+" stage file and commit staged files
+command -bar Gc :silent execute 'Git add % ' | :silent execute 'Git commit -m "'.input('Gc: ').'"' | :Updstl
+
+" commit all changes in the working directory
+command! -bar Gca :silent execute 'Git add .' | :silent execute 'Git commit -m "'.input('Gca: ').'"' | :Updstl
+command -bar Gp :Git push | :Updstl
+
+" restore file
+command -bar Gr :Gread | :w | :Updstl
+
+" unstage file
+command -bar Gu :Git restore --staged -- % | :Updstl
+
+" autoupdate status line with git status
+augroup GitStatusLine
+    au!
+	autocmd BufEnter,FocusGained,BufWritePost *
+        \ Windo let b:GitStatus = substitute(system("git status --branch --porcelain 2>/dev/null | sed 's/^MM/●+/' | sed 's/^M /●/' | sed 's/^ M/+/' | tr '\n' ' ' | cut -d ' ' -f3- | sed 's/ahead /↑·/'"), "\n", " ", "g")
+augroup end
+let &statusline = '%{get(b:, "GitStatus", "")}'
+
+" update status line with git status
+command Updstl Windo let b:GitStatus = substitute(system("git status --branch --porcelain 2>/dev/null | sed 's/^MM/●+/' | sed 's/^M /●/' | sed 's/^ M/+/' | tr '\n' ' ' | cut -d ' ' -f3- | sed 's/ahead /↑·/'"), "\n", " ", "g")
+
+" window command focus the current window
+function! WinDo(command)
+	let currwin=winnr()
+	execute 'windo ' . a:command
+	execute currwin . 'wincmd w'
+endfunction
+command! -nargs=+ -complete=command Windo call WinDo(<q-args>)

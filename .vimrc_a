@@ -1,14 +1,11 @@
-" oooooo     oooo  o8o
-"  `888.     .8'   `"'
-"   `888.   .8'   oooo  ooo. .oo.  .oo.
-"    `888. .8'    `888  `888P"Y88bP"Y88b      ____ ___  ____ _____  _____
-"     `888.8'      888   888   888   888     / __ `__ \/ __ `/ __ \/ ___/
-"      `888'       888   888   888   888    / / / / / / /_/ / /_/ (__  )
-"       `8'       o888o o888o o888o o888o  /_/ /_/ /_/\__,_/ .___/____/
-"                                                         /_/
+"   ____ ___  ____ _____  _____
+"  / __ `__ \/ __ `/ __ \/ ___/
+" / / / / / / /_/ / /_/ (__  )
+"/_/ /_/ /_/\__,_/ .___/____/
+"               /_/
 
 "## leader
-let mapleader = "\\" 
+let mapleader = "\\"
 
 " Enter = new line
 nnoremap <CR> o<Esc>zz
@@ -111,7 +108,7 @@ nnoremap , ,zz
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
-nnoremap # #zz 
+nnoremap # #zz
 cnoremap <silent><expr> <enter> index(['/', '?'], getcmdtype()) >= 0 ? '<enter>zz' : '<enter>'
 
 " older/newer cursor position in jump list
@@ -143,7 +140,10 @@ vnoremap <C-D> <C-d>zz
 nnoremap <C-u> <Nop>
 vnoremap <C-u> <Nop>
 
-                                 
+" center line at start
+au BufEnter * :normal! zz
+
+
 "   _____
 "  / ___/____  ____ _________
 "  \__ \/ __ \/ __ `/ ___/ _ \
@@ -156,24 +156,6 @@ noremap <Space>w :w<Enter>
 noremap <Space>q :wq<Enter>
 noremap <Space>Q :q!<Enter>
 noremap <Space>E :e!<Enter>zz
-
-" Reload vimrc file, reload filetype for python files
-noremap <Space>r :so $MYVIMRC<CR>
-			\ :exe "if &syntax == 'python' 
-			\ \n exe ':set filetype='.&filetype 
-			\ \n endif"<CR>:f<CR>
-
-" paste from clipboard
-noremap <Space>p "+p
-noremap <Space>P  "+P
-
-" yank to clipboard
-noremap <Space>yy "+yy
-noremap <Space>Y "+y$
-noremap <Space>y "+y
-
-" yank file name to clipboard
-nnoremap <Space>f :let @+ = expand("%")<CR>:f<CR>
 
 " search: yanked or selected
 nnoremap <Space>/ /<C-r>0<CR>
@@ -198,10 +180,6 @@ vnoremap <Space>a' <Esc>a'<Esc>gvo<Esc>i'<Esc>
 " display column on status bar
 nnoremap <Space>c :set statusline+=col:\ %c <CR>
 
-" change language
-nnoremap <Space>le :set spell spelllang=en<CR>
-nnoremap <Space>ls :set spell spelllang=es<CR>
-
 " cursor on the middle/top of the screen on paragraph motion
 nnoremap <Space>j :nnoremap K k{jzz<CR>:nnoremap J }}{jzz<CR>
 nnoremap <Space>k :nnoremap K k{jzt<CR>:nnoremap J }}{jzt<CR>
@@ -221,7 +199,7 @@ nnoremap <Space>0 :set tabstop=20<CR>
 "  \__ \/ / / / __ \/ ___/ __/ / __/ / / / __/ / __ \/ __ \
 " ___/ / /_/ / /_/ (__  ) /_/ / /_/ /_/ / /_/ / /_/ / / / /
 "/____/\__,_/_.___/____/\__/_/\__/\__,_/\__/_/\____/_/ /_/
-                                                          
+
 "## global substitution: yanked, selected, searched or under cursor
 nnoremap <Space>ss :%s/<C-r>0/
 vnoremap <Space>ss "1y:%s/<C-r>1/
@@ -235,29 +213,13 @@ vnoremap <Space>- ugv:s/\%V /_/g<CR>
 " replace one space for one tab
 nmap <Space><tab> :s/ /\t/g<CR>*
 
-" custom substitution
-nnoremap <Space>s2 :%s/period1/period1, period2/g<CR>
-nnoremap <Space>s3 :%s/period1, period2/period1, period2, period3/g<CR>
-nnoremap <Space>s4 :%s/period1, period2, period3/period1, period2, period3, period4/g<CR>
-
-
-"    __         ______    _  __
-"   / /   ____ /_  __/__ | |/ /
-"  / /   / __ `// / / _ \|   /
-" / /___/ /_/ // / /  __/   |
-"/_____/\__,_//_/  \___/_/|_|
-                              
-"## math mode
-inoremap $ $$<Esc>i
-inoremap \[ \[\]<Left><Esc>i<CR><Esc>O
-
 
 "              __
 "   ________  / /_
 "  / ___/ _ \/ __/
 " (__  )  __/ /_
 "/____/\___/\__/
-                 
+
 
 "## Numbers and relative numbers
 set nu rnu
@@ -271,20 +233,11 @@ set hlsearch
 " incremental search
 set incsearch
 
-" tab size
-set noexpandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=0
-
 " visible spaces and tabs
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " disable ex
 map Q <Nop>
-
-" center line at start
-au BufEnter * :normal! zz
 
 " wrap break line at space
 set linebreak
@@ -293,18 +246,58 @@ set linebreak
 set splitright
 set splitbelow
 
-" Material Theme
-set termguicolors
-syntax enable
-set background=dark
-colorscheme material-theme
+"W11: Warning file has changed
+autocmd FileChangedShell * :
+
+" cursor on same line as when exit
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
 
 
-"   _____ __             _____                      __  
-"  / ___// /_____ ______/ ___/___  ____ ___________/ /_ 
+"   __        __
+"  / /_____ _/ /_  _____
+" / __/ __ `/ __ \/ ___/
+"/ /_/ /_/ / /_/ (__  )
+"\__/\__,_/_.___/____/
+
+"## tab size
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=0
+
+" set tabs on python files
+aug python
+    " ftype/python.vim overwrites this
+    au FileType python setlocal ts=4 sw=4 sts=0 expandtab
+aug end
+
+
+"                     __
+"   _______  ______  / /_____ __  __
+"  / ___/ / / / __ \/ __/ __ `/ |/_/
+" (__  ) /_/ / / / / /_/ /_/ />  <
+"/____/\__, /_/ /_/\__/\__,_/_/|_|
+"     /____/
+
+"## set sh syntax
+au BufNewFile,BufRead,SourcePre * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
+au BufRead,BufNewFile *mq4,*.mq5 set filetype=sh
+
+" Reload vimrc file, reload filetype for python files
+noremap <Space>r :so $MYVIMRC<CR>
+                       \ :exe "if &syntax == 'python' 
+                       \ \n exe ':set filetype='.&filetype 
+                       \ \n endif"<CR>:f<CR>
+
+
+"   _____ __             _____                      __
+"  / ___// /_____ ______/ ___/___  ____ ___________/ /_
 "  \__ \/ __/ __ `/ ___/\__ \/ _ \/ __ `/ ___/ ___/ __ \
 " ___/ / /_/ /_/ / /   ___/ /  __/ /_/ / /  / /__/ / / /
-"/____/\__/\__,_/_/   /____/\___/\__,_/_/   \___/_/ /_/ 
+"/____/\__/\__,_/_/   /____/\___/\__,_/_/   \___/_/ /_/
 
 "## * search forward for matching words, doesn't jump to the next word
 let s:savedCpo = &cpo

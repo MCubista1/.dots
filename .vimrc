@@ -1,4 +1,17 @@
+" oooooo     oooo  o8o
+"  `888.     .8'   `"'
+"   `888.   .8'   oooo  ooo. .oo.  .oo.
+"    `888. .8'    `888  `888P"Y88bP"Y88b
+"     `888.8'      888   888   888   888
+"      `888'       888   888   888   888
+"       `8'       o888o o888o o888o o888o
+
+" rc: clip, language, custom, latex
+" a: maps, center, space, substitution, set, tabs, syntax, starsearch
+" b: plugins
+
 source ~/.vimrc_a
+source ~/.vimrc_p
 
 " Disable arrows in normal and visual modes
 map <Up> <Nop>
@@ -14,8 +27,49 @@ imap <Right> <Nop>
 " command history
 set history=10000
 
-" spell language
+" statusline always visible
+set laststatus=2
+
+" Material Theme
+set termguicolors
+syntax enable
+set background=dark
+colorscheme material-theme
+
+
+"        ___
+"  _____/ (_)___
+" / ___/ / / __ \
+"/ /__/ / / /_/ /
+"\___/_/_/ .___/
+"       /_/
+
+"## paste from clipboard
+noremap <Space>p "+p
+noremap <Space>P  "+P
+
+" yank to clipboard
+noremap <Space>yy "+yy
+noremap <Space>Y "+y$
+noremap <Space>y "+y
+
+" yank file name to clipboard
+nnoremap <Space>f :let @+ = expand("%")<CR>:f<CR>
+
+
+"    __
+"   / /___ _____  ____ ___  ______ _____ ____
+"  / / __ `/ __ \/ __ `/ / / / __ `/ __ `/ _ \
+" / / /_/ / / / / /_/ / /_/ / /_/ / /_/ /  __/
+"/_/\__,_/_/ /_/\__, /\__,_/\__,_/\__, /\___/
+"              /____/            /____/
+
+"## spell language
 set spell spelllang=es
+
+" change language
+nnoremap <Space>le :set spell spelllang=en<CR>
+nnoremap <Space>ls :set spell spelllang=es<CR>
 
 " spell jump to next word
 map zn <Nop>
@@ -45,73 +99,25 @@ inoremap ;o ó
 inoremap ;u ú
 inoremap ;; ñ
 
-" cursor on same line as when exit
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
-endif
 
-" set sh syntax 
-au BufNewFile,BufRead,SourcePre * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
-au BufRead,BufNewFile *mq4,*.mq5 set filetype=sh
+"                   __
+"  _______  _______/ /_____  ____ ___
+" / ___/ / / / ___/ __/ __ \/ __ `__ \
+"/ /__/ /_/ (__  ) /_/ /_/ / / / / / /
+"\___/\__,_/____/\__/\____/_/ /_/ /_/
 
-" set tabs on python files
-aug python
-    " ftype/python.vim overwrites this
-    au FileType python setlocal ts=4 sw=4 sts=0 expandtab
-aug end
+"## custom substitution
+nnoremap <Space>s2 :%s/period1/period1, period2/g<CR>
+nnoremap <Space>s3 :%s/period1, period2/period1, period2, period3/g<CR>
+nnoremap <Space>s4 :%s/period1, period2, period3/period1, period2, period3, period4/g<CR>
 
-" statusline always visible
-set laststatus=2
 
-"W11: Warning file has changed
-autocmd FileChangedShell * :
+"    __         ______    _  __
+"   / /   ____ /_  __/__ | |/ /
+"  / /   / __ `// / / _ \|   /
+" / /___/ /_/ // / /  __/   |
+"/_____/\__,_//_/  \___/_/|_|
 
-" vim-plug call
-call plug#begin('~/.vim/plugged')
-
-" vimtex
-Plug 'lervag/vimtex'
-Plug 'tpope/vim-fugitive'
-
-" vim-plug end call
-call plug#end()
-
-" fugitive git aliases
-command Gs :Git status -b --porcelain
-command Gd :Git diff
-
-" stage file
-command -bar Ga :Git add % | :Updstl 
-
-" stage file and commit staged files
-command -bar Gc :silent execute 'Git add % ' | :silent execute 'Git commit -m "'.input('Gc: ').'"' | :Updstl
-
-" commit all changes in the working directory 
-command! -bar Gca :silent execute 'Git add .' | :silent execute 'Git commit -m "'.input('Gca: ').'"' | :Updstl
-command -bar Gp :Git push | :Updstl
-
-" restore file
-command -bar Gr :Gread | :w | :Updstl
-
-" unstage file
-command -bar Gu :Git restore --staged -- % | :Updstl
-
-" autoupdate status line with git status
-augroup GitStatusLine
-    au!
-	autocmd BufEnter,FocusGained,BufWritePost *
-        \ Windo let b:GitStatus = substitute(system("git status --branch --porcelain 2>/dev/null | sed 's/^MM/●+/' | sed 's/^M /●/' | sed 's/^ M/+/' | tr '\n' ' ' | cut -d ' ' -f3- | sed 's/ahead /↑·/'"), "\n", " ", "g")
-augroup end
-let &statusline = '%{get(b:, "GitStatus", "")}'
-
-" update status line with git status
-command Updstl Windo let b:GitStatus = substitute(system("git status --branch --porcelain 2>/dev/null | sed 's/^MM/●+/' | sed 's/^M /●/' | sed 's/^ M/+/' | tr '\n' ' ' | cut -d ' ' -f3- | sed 's/ahead /↑·/'"), "\n", " ", "g")
-
-" window command focus the current window
-function! WinDo(command)
-	let currwin=winnr()
-	execute 'windo ' . a:command
-	execute currwin . 'wincmd w'
-endfunction
-command! -nargs=+ -complete=command Windo call WinDo(<q-args>)
+"## math mode
+inoremap $ $$<Esc>i
+inoremap \[ \[\]<Left><Esc>i<CR><Esc>O
