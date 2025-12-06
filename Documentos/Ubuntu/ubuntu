@@ -609,11 +609,11 @@ ffmpeg -i concat:"input1.mp4|input2.mp4" output.mp4
 gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/ed/Imágenes/capturas"
 
 # Text to ASCII Art Generator TAAG, figlet
-ANSI Shadow
-Roman
-Big Money-ne
+Roman (roman)
 slant
-Tmplr
+ANSI Shadow (ansishadow)
+Big Money-ne (bigmoney-ne)
+Tmplr (tmplr)
 
 # print vim help
 :h <key>
