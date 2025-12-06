@@ -11,7 +11,7 @@
 " b: plugins
 
 source ~/.vimrc_a
-source ~/.vimrc_p
+source ~/.vimrc_b
 
 " Disable arrows in normal and visual modes
 map <Up> <Nop>
