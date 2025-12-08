@@ -82,7 +82,10 @@ nnoremap <tab><tab> <c-w><c-w>
 "/ /___/  __/ / / / /_/  __/ /
 "\____/\___/_/ /_/\__/\___/_/
 
-"## Center line in window, j/k line on screen
+"## center line at start
+au BufEnter * :normal! zz
+
+" Center line in window, j/k line on screen
 nnoremap <expr> j v:count ? 'jzz' : 'gjzz'
 vnoremap <expr> j v:count ? 'jzz' : 'gjzz'
 nnoremap <expr> k v:count ? 'kzz' : 'gkzz'
@@ -140,8 +143,9 @@ vnoremap <C-D> <C-d>zz
 nnoremap <C-u> <Nop>
 vnoremap <C-u> <Nop>
 
-" center line at start
-au BufEnter * :normal! zz
+" undo/redo changes
+nnoremap u uzz
+nnoremap <C-R> <C-R>zz
 
 
 "   _____
