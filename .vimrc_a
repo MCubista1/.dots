@@ -133,7 +133,7 @@ vnoremap <C-o> ``zz
 " center line in insert mode
 inoremap <Esc> <Esc>zz
 inoremap <Enter> <Enter><Esc>zzi
-nnoremap O O<Esc>zzi
+nnoremap o o<Esc>zzi
 
 " Scroll half screen
 nnoremap <C-E> <C-u>zz
