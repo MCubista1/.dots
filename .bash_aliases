@@ -38,6 +38,8 @@ alias nr="sudo needrestart -q -r a"
 alias va="vim ~/.bash_aliases"
 alias vb="vim ~/.bashrc"
 alias rb=". /home/ed/.bashrc"
+alias vv="vim ~/.vimrc_a"
+alias vrc="vim ~/.vimrc"
 
 alias devil="nohup devilspie &>/dev/null &"
 alias kdevil='kill "$(pidof devilspie)"'
