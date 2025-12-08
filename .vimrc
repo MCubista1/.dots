@@ -7,7 +7,7 @@
 "       `8'       o888o o888o o888o o888o
 
 " rc: clip, language, custom, latex
-" a: maps, center, space, substitution, set, tabs, syntax, starsearch
+" a: map, Center, Space, Substitution, set, Tabs, Syntax, StarSearch
 " b: plugins
 
 source ~/.vimrc_a
