@@ -288,7 +288,8 @@ aug end
 "     /____/
 
 "## set sh syntax
-au BufNewFile,BufRead,SourcePre * if (&syntax == '' || &syntax == 'text' || &syntax == 'sh') | set syntax=sh | endif
+au BufNewFile,BufRead,SourcePre * if (&syntax == '' || &syntax == 'text' 
+                                   \ || &syntax == 'sh') | set syntax=sh | endif
 au BufRead,BufNewFile *mq4,*.mq5 set filetype=sh
 
 " Reload vimrc file, reload filetype for python files
