@@ -136,12 +136,10 @@ inoremap <Enter> <Enter><Esc>zzi
 nnoremap o o<Esc>zzi
 
 " Scroll half screen
-nnoremap <C-E> <C-u>zz
-vnoremap <C-E> <C-u>zz
-nnoremap <C-D> <C-d>zz
-vnoremap <C-D> <C-d>zz
-nnoremap <C-u> <Nop>
-vnoremap <C-u> <Nop>
+nnoremap <C-b> <C-d>zz
+vnoremap <C-b> <C-d>zz
+nnoremap <C-u> <C-u>zz
+vnoremap <C-u> <C-u>zz
 
 " undo/redo changes
 nnoremap u uzz
