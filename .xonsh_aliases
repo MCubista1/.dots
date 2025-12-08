@@ -73,7 +73,7 @@ aliases['vg'] = 'vim ~/.gitconfig'
 aliases['vu'] = 'vim ~/Documentos/Ubuntu/ubuntu'
 aliases['vc'] = 'vim ~/Documentos/Ubuntu/colors'
 aliases['vv'] = 'vim ~/.vimrc_a'
-aliases['vvrc'] = 'vim ~/.vimrc'
+aliases['vrc'] = 'vim ~/.vimrc'
 aliases['vs'] = 'vim ~/.ssh/config'
 aliases['rmsw'] = 'find . -type f -name ".*.sw*" -delete -print'
 
