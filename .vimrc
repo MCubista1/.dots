@@ -1,3 +1,11 @@
+" oooooo     oooo  o8o
+"  `888.     .8'   `"'
+"   `888.   .8'   oooo  ooo. .oo.  .oo.
+"    `888. .8'    `888  `888P"Y88bP"Y88b
+"     `888.8'      888   888   888   888
+"      `888'       888   888   888   888
+"       `8'       o888o o888o o888o o888o
+
 source ~/.vimrc_a
 
 " Disable arrows in normal and visual modes
@@ -14,13 +22,8 @@ imap <Right> <Nop>
 " command histoty
 set history=1000
 
-" set tabs on pyhon files
-aug python
-    " ftype/python.vim overwrites this
-    au FileType python setlocal ts=4 sw=4 sts=0 noexpandtab
-aug end
-
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
-endif
+" Material Theme
+set termguicolors
+syntax enable
+set background=dark
+colorscheme material-theme
