@@ -75,6 +75,12 @@ vnoremap > >gv
 nnoremap <tab> <c-w>
 nnoremap <tab><tab> <c-w><c-w>
 
+" resize window
+nnoremap <tab>= <c-w>+
+nnoremap <tab>+ <c-w>=
+nnoremap <tab>, <c-w><
+nnoremap <tab>. <c-w>>
+
 
 "   ______           __
 "  / ____/__  ____  / /____  _____
