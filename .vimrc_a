@@ -179,6 +179,10 @@ vnoremap <Space>a{ <Esc>a}<Esc>gvo<Esc>i{<Esc>
 nnoremap <Space>a' i'<Esc>wea'<Esc>bh
 vnoremap <Space>a' <Esc>a'<Esc>gvo<Esc>i'<Esc>
 
+" enclose with double quotes
+nnoremap <Space>a" i"<Esc>wea"<Esc>bh
+vnoremap <Space>a" <Esc>a"<Esc>gvo<Esc>i"<Esc>
+
 " display column on status bar
 nnoremap <Space>c :set statusline+=col:\ %c <CR>
 
