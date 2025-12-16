@@ -118,5 +118,5 @@ nnoremap <Space>s4 :%s/period1, period2, period3/period1, period2, period3, peri
 "/_____/\__,_//_/  \___/_/|_|
 
 "## math mode
-inoremap $ $$<Esc>i
-inoremap \[ \[\]<Left><Esc>i<CR><Esc>O
+"inoremap $ $$<Esc>i
+"inoremap \[ \[\]<Left><Esc>i<CR><Esc>O
