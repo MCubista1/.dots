@@ -122,7 +122,7 @@ aliases['spicetify'] = '~/spicetify-cli/spicetify'
 aliases['ventoy'] = 'sudo ~/Documentos/ventoy_1.1.07/VentoyGUI.x86_64'
 # 25 words * 5 min (300s) = -n 125
 # 25 words * 1 min (60s) = -n 25
-aliases['s'] = 'cd ~/.tt && tt -words ox5000 -n 25 -t 60 -nobackspace -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
+aliases['s'] = 'cd ~/.tt && tt -words ox5000 -n 25 -t 60 -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
 aliases['ene'] = 'echo -n ñ | xclip -sel clip'
 
 # rubik
