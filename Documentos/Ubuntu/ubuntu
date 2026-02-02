@@ -1095,6 +1095,19 @@ End? [current_end]? new_end
 (parted) print
 (parted) quit
 
+# metatrader 4 error:
+# A debugger has been found running in your system.
+# downgrade wine 11 to version 10 on Ubuntu 24 noble
+sudo apt purge winehq-stable wine-stable
+sudo wget -NP /etc/apt/sources.list.d/ dl.winehq.org/../winehq-noble.sources
+sudo apt update
+sudo apt install wine-stable-i386=10.0.0.0~noble-1
+			     wine-stable-amd64=10.0.0.0~ noble-1
+sudo apt install wine-stable=10.0.0.0~noble-1
+sudo apt install winehq-stable=10.0.0.0~noble-1
+which wine && wine --version
+sudo apt-mark hold wine-stable-amd64 wine-stable-i386 wine-stable winehq-stable
+
 
 
 #  █████╗ ████████╗ ██████╗ ███╗   ███╗███████╗██╗  ██╗
