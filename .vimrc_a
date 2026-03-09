@@ -1,3 +1,7 @@
+" vimrc: clip, Language, Custom, LaTeX
+" vimrc_a: map, Center, Space, Substitution, set, Tabs, Syntax, StarSearch
+" vimrc_b: Plugins
+
 "   ____ ___  ____ _____
 "  / __ `__ \/ __ `/ __ \
 " / / / / / / /_/ / /_/ /
@@ -300,7 +304,10 @@ aug end
 "## set sh syntax
 au BufNewFile,BufRead,SourcePre * if (&syntax == '' || &syntax == 'text' 
                                    \ || &syntax == 'sh') | set syntax=sh | endif
-au BufRead,BufNewFile *mq4,*.mq5 set filetype=sh
+au BufRead,BufNewFile *.mq4,*.mq5 set filetype=sh
+
+" set txt language and syntax
+au BufRead,BufNewFile pad[0-9][0-9] set spell spelllang=en | set syntax=text
 
 " Reload vimrc file, reload filetype for python files
 noremap <Space>r :so $MYVIMRC<CR>

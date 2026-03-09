@@ -5,11 +5,12 @@
 "     `888.8'      888   888   888   888
 "      `888'       888   888   888   888
 "       `8'       o888o o888o o888o o888o
-" vimrc: clip, Language, Custom, LaTeX
 
+" vimrc: clip, Language, Custom, LaTeX
 " vimrc_a: map, Center, Space, Substitution, set, Tabs, Syntax, StarSearch
-source ~/.vimrc_a
 " vimrc_b: Plugins
+
+source ~/.vimrc_a
 source ~/.vimrc_b
 
 " Disable arrows in normal and visual modes
