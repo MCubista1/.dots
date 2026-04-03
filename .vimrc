@@ -98,7 +98,7 @@ inoremap ;i í
 inoremap ;o ó
 inoremap ;u ú
 inoremap ;; ñ
-inoremap ;/ ¿<Esc>"+yli
+inoremap ;/ ¿?<Esc>h"+y2la
 
 
 "   ______           __
