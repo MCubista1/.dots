@@ -91,13 +91,14 @@ nnoremap zr :spellrepall<cr>
 map za <Nop>
 nnoremap za 1z=:spellrepall<cr>
 
-" graphic accent
+" graphic accent, ene
 inoremap ;a á
 inoremap ;e é
 inoremap ;i í
 inoremap ;o ó
 inoremap ;u ú
 inoremap ;; ñ
+inoremap ;/ ¿<Esc>"+yli
 
 
 "   ______           __
