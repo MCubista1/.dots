@@ -124,6 +124,7 @@ aliases['ventoy'] = 'sudo ~/Documentos/ventoy_1.1.07/VentoyGUI.x86_64'
 # 25 words * 1 min (60s) = -n 25
 aliases['s'] = 'cd ~/.tt && tt -words ox5000 -n 25 -t 60 -noskip -showwpm -w 80 -theme vscode -csv >> ~/.tt/wpm.csv'
 aliases['ene'] = 'echo -n ñ | xclip -sel clip'
+aliases['qs'] = 'echo -n "¿?" | xclip -sel clip'
 
 # rubik
 aliases['sw'] = 'peaclock -u ~/.peaclock/sw'
