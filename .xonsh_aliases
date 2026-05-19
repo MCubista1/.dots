@@ -118,6 +118,8 @@ aliases['caly'] = 'ncal -b -M -w -y'
 aliases['week'] = 'date +%U'
 aliases['btop'] = 'bpytop'
 aliases['sync'] = 'spotdl --bitrate 192k sync'
+aliases['mpv'] = 'mpv --vo=null .'
+aliases['radio'] = 'mpv --vo=null --shuffle .'
 aliases['spicetify'] = '~/spicetify-cli/spicetify'
 aliases['ventoy'] = 'sudo ~/Documentos/ventoy_1.1.07/VentoyGUI.x86_64'
 # 25 words * 5 min (300s) = -n 125
