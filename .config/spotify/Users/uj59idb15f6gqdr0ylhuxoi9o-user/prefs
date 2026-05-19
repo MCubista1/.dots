@@ -1,9 +1,11 @@
-connect.mdns_devices="[]"
+audio.allow_downgrade=false
+connect.mdns_devices="[{\"created_timestamp\":1777043110,\"device_id\":\"e1897f57-4b2e-4063-ab0f-d6ee9c84eee2\",\"device_info\":{\"addresses\":[\"192.168.100.14\"],\"availability\":\"any\",\"brand_display_name\":\"Amazon\",\"client_id\":\"27d4dfe427b34d57995b463e5d63198d\",\"device_aliases\":[{\"id\":1,\"is_group\":false,\"name\":\"Echo Dot de Olga\"}],\"device_type\":\"speaker\",\"get_info_json\":\"{\\\"status\\\": 101, \\\"statusString\\\": \\\"OK\\\", \\\"spotifyError\\\": 0, \\\"version\\\": \\\"2.9.0\\\", \\\"deviceID\\\": \\\"e1897f57-4b2e-4063-ab0f-d6ee9c84eee2\\\", \\\"remoteName\\\": \\\"\\\", \\\"publicKey\\\": \\\"gFiO8Zeoik9SzuiGKM59NYnq3qy8G2ZaeviohY2NcgMKgcxH4rD/m1iuk5ktcKrKjS2n6liI/UmxeH9CjmUIyazlzjHVORSjYlVkWANHXiS5/o+FVukrmyZ05APhdMDt\\\", \\\"deviceType\\\": \\\"SPEAKER\\\", \\\"libraryVersion\\\": \\\"3.209.367-g12ca7f99\\\", \\\"brandDisplayName\\\": \\\"Amazon\\\", \\\"groupStatus\\\": \\\"NONE\\\", \\\"modelDisplayName\\\": \\\"Echo_Dot\\\", \\\"resolverVersion\\\": \\\"0\\\", \\\"tokenType\\\": \\\"accesstoken\\\", \\\"scope\\\": \\\"streaming\\\", \\\"availability\\\": \\\"\\\", \\\"aliases\\\": [ {\\\"name\\\": \\\"Echo Dot de Olga\\\", \\\"id\\\": \\\"1\\\", \\\"isGroup\\\": \\\"false\\\"} ], \\\"clientID\\\": \\\"27d4dfe427b34d57995b463e5d63198d\\\", \\\"productID\\\": 2000000006}\\u000a\",\"group_status\":\"NONE\",\"is_group\":false,\"library_version\":\"3.209.367-g12ca7f99\",\"model_display_name\":\"Echo_Dot\",\"product_id\":\"2000000006\",\"resolver_version\":\"0\",\"scope\":\"streaming\",\"should_send_wol\":false,\"token_type\":\"accesstoken\"},\"discovery_name\":\"SpotifyConnect._spotify-connect._tcp.local\",\"display_name\":\"\",\"hostname\":\"none.local\",\"last_seen\":1777573585,\"page_uri\":\"/spotifyConnect\",\"port\":4070,\"public_ip\":\"\",\"required_device_info\":{\"public_key\":\"gFiO8Zeoik9SzuiGKM59NYnq3qy8G2ZaeviohY2NcgMKgcxH4rD/m1iuk5ktcKrKjS2n6liI/UmxeH9CjmUIyazlzjHVORSjYlVkWANHXiS5/o+FVukrmyZ05APhdMDt\",\"remote_name\":\"\",\"version\":\"2.9.0\"},\"ttl\":120,\"txt_records\":{\"CPath\":\"/spotifyConnect\"},\"verified_ip_idx\":0}]"
 connect.dial_devices="[]"
 audio.sync_bitrate_enumeration=3
 audio.play_bitrate_non_metered_migrated=true
 audio.equalizer_v2=true
 ui.track_notifications_enabled=false
-audio.play_bitrate_non_metered_enumeration=0
-audio.play_bitrate_enumeration=0
+audio.play_bitrate_non_metered_enumeration=3
+audio.play_bitrate_enumeration=3
 app.browser.zoom-level=-50
+app.player.volume=55499
