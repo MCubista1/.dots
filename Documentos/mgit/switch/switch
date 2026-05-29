@@ -425,10 +425,15 @@ elif [ -n "$desktops_flag" ]; then
 				done
 			fi
 		done
+		if [ -n "$up_flag" ]; then
+			desktop_c=$(echo "$desktop_c+1" | bc)
+			wmctrl -s "$desktop_c"
+		fi
 	else
 		desktop_c=$(echo "$desktop_c+1" | bc)
-		if [ -z "$up_flag" ]; then
-			desktop_c=$(echo "$desktop_c+1" | bc)
+		if [ -n "$up_flag" ]; then
+			desktop_c=$(echo "$desktop_c-1" | bc)
+			wmctrl -s "$(echo "$desktop_c-1" | bc)"
 		fi
 		for i_d in $(seq $desktop_c $desktops_n1); do
 			# echo "$i_d"
