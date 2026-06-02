@@ -414,7 +414,14 @@ elif [ -n "$desktops_flag" ]; then
 		if [ -z "$up_flag" ]; then
 			desktop_c=$(echo "$desktop_c+1" | bc)
 		fi
+		count_1="0"
 		for i_d in $(seq $desktop_c $desktops_n1); do
+			if [ "$count_1" -eq 0 ]; then
+				if [ -n "$up_flag" ]; then
+					wmctrl -s "$(echo "$desktop_c+1" | bc)"
+					count_1="1"
+				fi
+			fi
 			# echo "$i_d"
 			ip_d=$(echo "$i_d+1" | bc)
 			wins_d=$(echo "$windows_all" | grep "^\S* $i_d" )
@@ -425,17 +432,19 @@ elif [ -n "$desktops_flag" ]; then
 				done
 			fi
 		done
-		if [ -n "$up_flag" ]; then
-			desktop_c=$(echo "$desktop_c+1" | bc)
-			wmctrl -s "$desktop_c"
-		fi
 	else
 		desktop_c=$(echo "$desktop_c+1" | bc)
 		if [ -n "$up_flag" ]; then
 			desktop_c=$(echo "$desktop_c-1" | bc)
-			wmctrl -s "$(echo "$desktop_c-1" | bc)"
 		fi
+		count_1="0"
 		for i_d in $(seq $desktop_c $desktops_n1); do
+			if [ "$count_1" -eq 0 ]; then
+				if [ -n "$up_flag" ]; then
+					wmctrl -s "$(echo "$desktop_c-1" | bc)"
+					count_1="1"
+				fi
+			fi
 			# echo "$i_d"
 			im_d=$(echo "$i_d-1" | bc)
 			wins_d=$(echo "$windows_all" | grep "^\S* $i_d" )
