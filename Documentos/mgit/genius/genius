@@ -2,6 +2,9 @@
 
 genius_url="https://api.genius.com"
 user_token="$( cat ~/.genius_token )"
+ad_song=" Escucha música sin anuncios."
+ad2_song=" —"
+demo_song=" ESCÚCHALO AHORA"
 
 media_player_metadata () {
     playing=$(dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata 2>/dev/null)
@@ -9,7 +12,14 @@ media_player_metadata () {
     song=$(echo "$playing" | sed -n '/title/{n;p}' | cut -d '"' -f 2 | sed -e 's/(.*$//' -e 's/ -.*$//')
     artist=$(echo "$playing" | sed -n '/artist/{n;n;p}' | cut -d '"' -f 2)
 
-    current_song="$artist $song"
+	if [[ "$artist" == "" ]]; then
+		current_song="$ad2_song"
+	else
+		current_song="$artist $song"
+	fi
+	#echo $artist
+	#echo $song
+	#echo $current_song
 }
 
 
@@ -23,28 +33,40 @@ search_print_lyrics () {
     printf "%*s\n" $(((${#song}+$columns)/2)) "$song"
     printf "%*s\n" $(((${#artist}+$columns)/2)) "$artist"
 
-    current_song_str=$(echo "$current_song" | sed 's/ /%20/g')
-    search_url="$genius_url/search?q=$current_song_str"
-    search_html=$(curl $search_url --oauth2-bearer $user_token 2>/dev/null)
+	
+	if [[ "$current_song" == "$ad_song" || "$current_song" == "$demo_song" || "$current_song" == "$ad2_song" ]]; then
+		pactl set-sink-mute @DEFAULT_SINK@ true
+	elif [[ "$past_song" == "$ad_song" || "$past_song" == "$demo_song" || "$past_song" == "$ad2_song" ]]; then
+		pactl set-sink-mute @DEFAULT_SINK@ false
+	fi
 
-    song_id=$(echo "$search_html" | grep -o '/songs/[0-9]\+' | head -1)
-    id_url="$genius_url$song_id"
-    id_html=$(curl $id_url --oauth2-bearer $user_token 2>/dev/null | sed -r -e 's/</\n</g' -e 's/>/>\n/g')
+	if [[ "$current_song" != "$ad_song" || "$current_song" != "$demo_song"  || "$current_song" == "$ad2_song" ]]; then
+		current_song_str=$(echo "$current_song" | sed 's/ /%20/g')
+		search_url="$genius_url/search?q=$current_song_str"
+		search_html=$(curl $search_url --oauth2-bearer $user_token 2>/dev/null)
 
-    lyrics_url=$(echo "$id_html" | grep '<a href=.https://genius.com/[a-zA-Z0-9-]\+lyrics' | cut -d"'" -f2)
-    lyrics_html=$(curl "$lyrics_url" 2>/dev/null | sed 's/^ \+//' | tr -d '\n'| sed -e 's/>/>\n/g' -e 's/</\n</g' | sed '/^$/d')
- 
-	song_lyrics=$(echo "$lyrics_html" | sed -n '/<div class="LyricsHeader/,/<div class="LyricsFooter/p' | tr -d '\n' | sed -e 's/<br>\|<br\/>/\n/g' | sed -e 's/<[^>]*class="ReferentFragment[^>]*>//g' -e 's/>[[:print:]]*</></g' -e 's/<[^>]*>//g' -e 's/<[^>]*>//g' -e 's/\&quot;/"/g' -e "s/&#x27;/'/g" | cat -s)
+		song_id=$(echo "$search_html" | grep -o '/songs/[0-9]\+' | head -1)
+		id_url="$genius_url$song_id"
+		id_html=$(curl $id_url --oauth2-bearer $user_token 2>/dev/null | sed -r -e 's/</\n</g' -e 's/>/>\n/g')
 
-    echo "$song_lyrics"
+		lyrics_url=$(echo "$id_html" | grep '<a href=.https://genius.com/[a-zA-Z0-9-]\+lyrics' | cut -d"'" -f2)
+		lyrics_html=$(curl "$lyrics_url" 2>/dev/null | sed 's/^ \+//' | tr -d '\n'| sed -e 's/>/>\n/g' -e 's/</\n</g' | sed '/^$/d')
+	 
+		song_lyrics=$(echo "$lyrics_html" | sed -n '/<div class="LyricsHeader/,/<div class="LyricsFooter/p' | tr -d '\n' | sed -e 's/<br>\|<br\/>/\n/g' | sed -e 's/<[^>]*class="ReferentFragment[^>]*>//g' -e 's/>[[:print:]]*</></g' -e 's/<[^>]*>//g' -e 's/<[^>]*>//g' -e 's/\&quot;/"/g' -e "s/&#x27;/'/g" | cat -s)
+
+		echo "$song_lyrics"
+	fi
 
     past_song=$current_song
 }
 
 
 media_player_metadata
-search_print_lyrics
-
+if [[ "$current_song" == "$ad_song" || "$current_song" == "$demo_song" || "$current_song" == "$ad2_song" ]]; then
+	pactl set-sink-mute @DEFAULT_SINK@ true
+else
+	search_print_lyrics
+fi
 while :
 do
     media_player_metadata
