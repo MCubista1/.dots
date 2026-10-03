@@ -1,25 +1,50 @@
-# Insert your preferred key mappings here.
-unmap O
-map O Vomnibar.activate
-unmap o
-map o Vomnibar.activateInNewTab
-unmap J
-map <c-h> previousTab
-unmap K
-map <c-l> nextTab
-unmap d
-map J scrollPageDown
-map d scrollPageDown
+# Scroll
 unmap u
-map K scrollPageUp
 map e scrollPageUp
-unmap p
-map p openCopiedUrlInNewTab
-unmap P
-map P openCopiedUrlInCurrentTab
+map E scrollFullPageUp
+map D scrollFullPageDown
+
+# Tabs
+unmap J
+unmap K
+unmap <<
+unmap >>
+map <c-j> previousTab
+map <c-k> nextTab
+map <c-J> moveTabLeft
+map <c-K> moveTabRight
+
+# hints
 unmap f
-map f LinkHints.activateModeToOpenInNewTab
 unmap F
 map F LinkHints.activateMode
-map <c-H> moveTabLeft
-map <c-L> moveTabRight
+map f LinkHints.activateModeToOpenInNewTab
+
+# History
+unmap o
+unmap O
+map O Vomnibar.activate
+map o Vomnibar.activateInNewTab
+
+# Bookmarks
+unmap b
+unmap B
+map B Vomnibar.activateBookmarks
+map b Vomnibar.activateBookmarksInNewTab
+
+# Open url
+unmap p
+unmap P
+map P openCopiedUrlInCurrentTab
+map p openCopiedUrlInNewTab
+
+# Edit URL
+unmap ge
+unmap gE
+map <a-e> Vomnibar.activateEditUrl
+map <a-E> Vomnibar.activateEditUrlInNewTab
+
+# Focus Input
+unmap i
+unmap gi
+map i focusInput

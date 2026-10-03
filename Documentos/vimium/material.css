@@ -1,17 +1,29 @@
-:root {
-  .vimiumReset, #vomnibar, .vimiumHUD {
-    /** Customizable Palette */
-    --accent: hotpink;
-    --text: #EEEFFF;
-    --background: #263238;
+#vimiumHintMarkerContainer div.internalVimiumHintMarker, #vimiumHintMarkerContainer div.vimiumHintMarker {
+  padding: 4px 5px;
+  background: #263238;
+  border: 1px solid #546E7A;
+  box-shadow: none;
+}
 
-    /** Calcurated Palette */
-    --text-secondary: color-mix(in srgb, var(--text) 60%, transparent);
-    --text-tertiary: color-mix(in srgb, var(--text) 35%, transparent);
-    --background-selected: #1A2327;
-    --border-primary: #263238;
-    --box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
-  }
+div > .vimiumHintMarker span {
+  color: #ABB2BF;
+  font-size: inherit;
+  text-shadow: none;
+}
+
+#vimiumHintMarkerContainer div > .matchingCharacter {
+  opacity: 1;
+}
+
+#vimiumHintMarkerContainer div > .matchingCharacter ~ span {
+  color: #ABB2BF;
+}
+
+#vomnibar {
+  background: #263238;
+  border: none;
+  box-shadow: none;
+  animation: show 200ms cubic-bezier(0, 0, 0.2, 1) forwards;
 }
 
 @keyframes show {
@@ -19,137 +31,85 @@
     transform: translateY(50px);
     opacity: 0;
   }
-
   100% {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
-#vimiumHintMarkerContainer {
-  .internalVimiumHintMarker {
-    padding: 3px 4px;
-    background: var(--background);
-    border: none;
-    box-shadow: var(--box-shadow);
-  }
-
-  span {
-    color: var(--text);
-    text-shadow: none;
-  }
-
-  .matchingCharacter {
-    opacity: 0.4;
-
-    ~ span {
-      color: var(--accent);
-    }
-  }
+#vomnibar .vomnibarSearchArea,
+#vomnibar input {
+  color: #ABB2BF;
+  background: transparent;
+  border: none;
 }
 
-#vomnibar {
-  background: var(--background);
-  border: none;
-  box-shadow: var(--box-shadow);
-  animation: show 200ms cubic-bezier(0, 0, 0.2, 1) forwards;
+#vomnibar .vomnibarSearchArea {
+  padding: 10px 30px;
+}
 
-  .vomnibarSearchArea {
-    padding: 10px 30px;
-    color: var(--text);
-    background: transparent;
-    border: none;
-  }
+#vomnibar input {
+  padding: 0;
+}
 
-  #vomnibarInput {
-    padding: 0;
-    color: var(--text);
-    background: transparent;
-    box-shadow: none;
-  }
+#vomnibar ul {
+  padding: 0;
+  background: #263238;
+  border-top: 1px solid #333;
+}
 
-  ul {
-    margin: 0;
-    padding: 0;
-    background: transparent;
-    border-top: 1px solid var(--border-primary);
-  }
+#vomnibar li {
+  padding: 10px;
+  border-bottom: 1px solid #37474F;
+}
 
-  li {
-    padding: 5px;
-    border-bottom: 1px solid var(--border-primary);
+#vomnibar li .vomnibarTopHalf,
+#vomnibar li .vomnibarBottomHalf {
+  padding: 3px 0;
+}
 
-    .vomnibarTopHalf,
-    .vomnibarBottomHalf {
-      display: flex;
-      padding: 3px 0;
-    }
+#vomnibar li .vomnibarSource {
+  color: #546E7A;
+}
 
-    .vomnibarTitle,
-    .vomnibarSource {
-      color: var(--text);
-    }
+#vomnibar li em,
+#vomnibar li .vomnibarTitle {
+  color: #ABB2BF;
+}
 
-    .vomnibarUrl {
-      overflow: hidden;
-      color: var(--text);
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
+#vomnibar li .vomnibarUrl {
+  color: #546E7A;
+}
 
-    .vomnibarMatch {
-      color: var(--accent);
-      font-weight: normal;
-    }
+#vomnibar li .vomnibarMatch {
+  color: #ABB2BF;
+  font-weight: normal;
+}
 
-    .vomnibarTitle .vomnibarMatch {
-      color: var(--accent);
-    }
+#vomnibar li .vomnibarTitle .vomnibarMatch {
+  color: #ABB2BF;
+}
 
-    &.vomnibarSelected {
-      background-color: var(--background-selected);
-      border-bottom: 1px solid transparent;
-    }
-  }
+#vomnibar li.vomnibarSelected {
+  background-color: #1A2327;
 }
 
 div.vimiumHUD {
-  background: var(--background);
+  background: #1A2327;
   border: none;
-  box-shadow: var(--box-shadow);
+  box-shadow: none;
+}
 
-  .hud-find {
-    display: flex;
-  }
+div.vimiumHUD span#hud-find-input,
+div.vimiumHUD .vimiumHUDSearchAreaInner {
+  color: #ABB2BF;
+}
 
-  span#hud-find-input {
-    position: relative;
-    width: 100%;
-    color: var(--text);
+div.vimiumHUD .hud-find {
+  background-color: transparent;
+  border: none;
+}
 
-    &::before {
-      position: sticky;
-      left: 0;
-      padding-right: 4px;
-      color: var(--text);
-      background: linear-gradient(
-        90deg,
-        var(--background) 0%,
-        var(--background) 50%,
-        transparent 100%
-      );
-    }
-  }
-
-  #hud-match-count {
-    flex-shrink: 0;
-    float: none;
-    padding-left: 4px;
-  }
-
-  .hud-find,
-  .vimiumHUDSearchArea {
-    background-color: transparent;
-    border: none;
-  }
+div.vimiumHUD .vimiumHUDSearchArea {
+  background-color: transparent;
 }
