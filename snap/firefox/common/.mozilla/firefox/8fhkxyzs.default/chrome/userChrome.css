@@ -3,12 +3,14 @@ toolkit.legacyUserProfileCustomizations.stylesheets to true*/
 
 /* TABS: color */
 tab {
-	color: #607A86 !important;
+	color: #546E7A !important;
 	counter-increment: tab-counter;
 }
+
 tab[selected] {
-	color: #EEEFFF !important;
+	color: #ABB2BF !important;
 }
+
 .tab-background, #TabsToolbar .toolbar-items {
 	background: #263238 !important;
 }
@@ -20,24 +22,17 @@ tab[selected] {
 	top: 5px;
 	right: 0px;
 	padding: 0px 0px;
-	color: #5F7B86;
+	color: #546E7A;
 	background: transparent;
 	font-size: 60%;
-}
-
-/* TABS: text align */
-.tab-label-container {
-	margin-bottom: 2px !important;
 }
 
 /* TABS: image filter */
 .tab-icon-image {
 	filter: saturate(17%) opacity(45%) !important;
-	margin-bottom: 2px;
 }
 .tab-icon-image[selected] {
 	filter: none !important;
-	margin-bottom: 2px;
 }
 
 /* TABS: decoration */
@@ -67,7 +62,19 @@ tab[selected] {
 
 /* TABS: width */
 .tabbrowser-tab[fadein]:not([pinned]) {
-	max-width: 140px !important;
+	max-width: 240px !important;
+}
+
+/* TABS: remove shadow, green bottom border */
+.tab-background[selected] {
+	box-shadow: none !important;
+	border-radius: 0 !important;
+	border-bottom: 1px solid #C3E88D !important;
+}
+
+/* URL bar*/
+#urlbar-background, #searchbar {
+	--toolbar-field-background-color: #263238 !important;
 }
 
 /* NAVBAR: color */
@@ -85,9 +92,6 @@ tab[selected] {
 #urlbar-container {
 	--urlbar-container-height: 24px !important;
 }
-#urlbar {
-	margin-bottom: -12px !important;
-}
 
 /* NAVBAR: icons */
 #star-button, #star-button-box, 
@@ -95,3 +99,14 @@ tab[selected] {
 .toolbarbutton-1 {
 	fill: #ABB2BF !important;
 }
+
+/*** Hide Tab Close buttons ***/ 
+.tabbrowser-tab .tab-close-button {
+ visibility: hidden !important; 
+}
+
+/* Remove close button*/
+.titlebar-buttonbox-container{ display:none } 
+
+/* Top left corner empyt space */
+.titlebar-spacer{display:none!important;}

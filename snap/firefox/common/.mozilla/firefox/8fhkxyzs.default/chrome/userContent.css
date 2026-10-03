@@ -1,4 +1,4 @@
- @-moz-document url("about:home"),url(about:preferences),url("about:blank"),url("about:newtab"),url("about:privatebrowsing")
+@-moz-document url("about:home"),url(about:preferences),url("about:blank"),url("about:newtab"),url("about:privatebrowsing")
 {
 	body{background-color:#263238!important;
 	--newtab-search-icon: transparent !important;
@@ -48,7 +48,7 @@ body.vimiumBody div#state, body.vimiumBody div#footer {
 body.vimiumBody textarea, body.vimiumBody input {
 	background-color: #263238 !important;
 	color: #9BA8BB !important;
-    border: none !important;
+	border: 1px solid #546E7A !important;
 }
 body.vimiumBody div.example {
 	color: #9BA8BB !important;
